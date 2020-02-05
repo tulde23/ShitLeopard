@@ -1,10 +1,8 @@
-import { DataService } from '@/services/data.service';
 import { Helper } from '@/services/helper';
 import moment from 'moment-timezone';
 import numeral from 'numeral';
 
 const helper = new Helper();
-const dataService = new DataService();
 
 const CustomFilters = {
   install: (Vue, options) => {
@@ -27,12 +25,6 @@ const CustomFilters = {
       const mb = 0.000001;
 
       return numeral(value * mb).format('0.0000') + ' MB'; // displaying other groupings/separators is possible, look at the docs
-    });
-    Vue.filter('formatProgramType', function(value) {
-      return helper.resolveProgramType(value);
-    });
-    Vue.filter('sport', value => {
-      return helper.formatActivityType(value);
     });
 
     Vue.filter('formatGB', function(value) {
@@ -63,15 +55,6 @@ const CustomFilters = {
         return 'Player';
       }
       return 'Volunteer';
-      // displaying other groupings/separators is possible, look at the docs
-    });
-    Vue.filter('category', function(value) {
-      const ct = dataService.controlTypes();
-      const item = ct.find(x => x.value === value);
-      if (item) {
-        return item.title;
-      }
-      return value;
       // displaying other groupings/separators is possible, look at the docs
     });
 
@@ -107,9 +90,7 @@ const CustomFilters = {
     Vue.filter('limit', function(value) {
       return helper.limit(value);
     });
-    Vue.filter('formatLevel', function(value) {
-      return helper.formatLogLevel(value);
-    });
+
     Vue.filter('truncate', function(value) {
       if (value && value.length > 50) {
         try {

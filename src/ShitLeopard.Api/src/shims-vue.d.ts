@@ -1,11 +1,8 @@
 import { Subscription } from 'rxjs';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 
-import {
-  FileUploadService,
-  Helper,
-  HttpService,
-  MessageService
-} from '@/services';
+import { FileUploadService, Helper, HttpService, MessageService } from '@/services';
 
 declare module '*.vue' {
   import Vue from 'vue';
