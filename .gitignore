@@ -1,7 +1,6 @@
 site/
 .vs/
 .vscode/
-.sonarqube/
 Documentation/
 src/BSB.Microservices.NGB/Properties/PublishProfiles/
 Set-FrameworkVersion.ps1
@@ -11,6 +10,7 @@ src/BSB.Microservices.NGB/Logs/
 **/idea/
 **/reports/
 **/coverage/
+**/node_modules/
 src/BSB.Microservices.NGB/APILogs/
 coverage.xml
 src/BSB.Microservices.NGB/wwwroot/node_modules
@@ -40,10 +40,7 @@ src/BSB\.Microservices\.NGB\.NgTest/'\.\./BSB\.Microservices\.NGB/wwwroot'/style
 src/BSB\.Microservices\.NGB\.NgTest/'\.\./BSB\.Microservices\.NGB/wwwroot'/vendor\.bundle\.js
 tests/BSB\.Microservices\.NGB\.UnitTests/TestResults/
 
-src/Gozer\.Gatekeeper/logs/
+src/Gozer/logs/
 
-nuget\.exe
-
-src/BSB\.Microservices\.NGB/startupLogs/
-
-results/
+.idea
+*.user

@@ -57,7 +57,7 @@ namespace ShitLeopard
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shit Leopard");
-                c.RoutePrefix = string.Empty;
+               // c.RoutePrefix = string.Empty;
             });
 
 
@@ -65,6 +65,9 @@ namespace ShitLeopard
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
+          
 
             app.UseHttpsRedirection();
 
