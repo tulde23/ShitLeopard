@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
      <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+   
   </PropertyGroup>
   <PropertyGroup>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
@@ -16,6 +17,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShitLeopard.DataLayer\ShitLeopard.DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

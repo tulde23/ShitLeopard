@@ -1,4 +1,7 @@
-﻿namespace ShitLeopard.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace ShitLeopard.DataLayer.Entities
 {
     public partial class ScriptWord
     {

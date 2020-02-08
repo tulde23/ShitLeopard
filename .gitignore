@@ -6,6 +6,7 @@ src/BSB.Microservices.NGB/Properties/PublishProfiles/
 Set-FrameworkVersion.ps1
 src/BSB.Microservices.NGB/Logs/
 **/bin/
+**/ubuntu
 **/obj/
 **/idea/
 **/reports/

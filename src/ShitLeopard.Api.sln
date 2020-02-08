@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB94BD65
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShitLeopard.DataLayer", "ShitLeopard.DataLayer\ShitLeopard.DataLayer.csproj", "{BB1488BE-F0D4-4995-A1A0-A2176A0C3240}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShitLeopard.DataLoader", "ShitLeopard.DataLoader\ShitLeopard.DataLoader.csproj", "{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{BB1488BE-F0D4-4995-A1A0-A2176A0C3240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB1488BE-F0D4-4995-A1A0-A2176A0C3240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB1488BE-F0D4-4995-A1A0-A2176A0C3240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0C44EC32-DBCF-4398-9D9B-CABE8100F8D2} = {E55C8822-5E58-4470-86C8-DE2B42063F5E}
 		{BB1488BE-F0D4-4995-A1A0-A2176A0C3240} = {E55C8822-5E58-4470-86C8-DE2B42063F5E}
+		{53D5C7FF-B2ED-4D29-BDF6-9C04FD4ED07F} = {E55C8822-5E58-4470-86C8-DE2B42063F5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8DDCE4E-B410-4465-9FD0-31965E0E02CA}

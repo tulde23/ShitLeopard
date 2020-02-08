@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShitLeopard.Entities
+namespace ShitLeopard.DataLayer.Entities
 {
     public partial class Episode
     {

@@ -13,6 +13,12 @@ const mutations = {
     if (e && e.status === 401) {
       this._vm.$eventHub.$emit('authError', `An Exception Occurred. ${e}`);
     }
+  },
+  [ACTIONS.SET_EPISODE](state, e) {
+    state.episode = e;
+  },
+  [ACTIONS.SET_EPISODES](state, e) {
+    state.episodes = e;
   }
 };
 

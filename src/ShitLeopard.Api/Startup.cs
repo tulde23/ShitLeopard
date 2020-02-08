@@ -1,25 +1,21 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using ShitLeopard.Entities;
+using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard
 {
     public class Startup
     {
         public ILifetimeScope AutofacContainer { get; private set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,16 +26,16 @@ namespace ShitLeopard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddTransient<ShitLeopardContext>();
             services.AddOptions();
-            services.AddControllers().AddNewtonsoftJson(a=>
+            services.AddControllers().AddNewtonsoftJson(a =>
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shit Leopard", Version = "v1" });
+               
             });
         }
 
@@ -57,31 +53,31 @@ namespace ShitLeopard
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shit Leopard");
-               // c.RoutePrefix = string.Empty;
+                c.RoutePrefix = "docs";
             });
-
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-          
+           
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.All
+            }); ;
 
-            app.UseHttpsRedirection();
+            //      app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+        //    app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
         }
-       
-
-     
     }
 }

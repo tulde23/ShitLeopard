@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
-import { FileUploadService, Helper, HttpService, MessageService } from '@/services';
+import { FileUploadService, Helper, HttpService, MessageService, DataService } from '@/services';
 
 declare module '*.vue' {
   import Vue from 'vue';
@@ -17,6 +17,7 @@ declare module 'vue/types/vue' {
     $helper: Helper;
     $messageBus: MessageService;
     $http: HttpService;
+    $api: DataService;
     $upload: FileUploadService;
   }
 }

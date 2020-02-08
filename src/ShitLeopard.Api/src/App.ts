@@ -8,6 +8,9 @@ export default class App extends Vue {
   public get router(): any {
     return this.$router;
   }
+  public get busy() {
+    return this.$store.getters.isBusy;
+  }
 
   public get buildVersion() {
     return this.$store.getters.buildVersion;

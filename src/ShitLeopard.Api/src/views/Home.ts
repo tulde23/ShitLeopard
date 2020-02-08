@@ -6,4 +6,8 @@ import { Component } from 'vue-property-decorator';
 })
 export default class Home extends Vue {
   created() {}
+
+  search() {
+    this.$api.getSeasons();
+  }
 }

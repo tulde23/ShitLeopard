@@ -2,6 +2,7 @@ import App from '@/App';
 import AceEditor from '@/components/Widgets/Ace';
 import CustomFilters from '@/plugins/filters';
 import {
+  DataService,
   FileUploadService,
   Helper,
   HttpService,
@@ -17,7 +18,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Axios, { AxiosRequestConfig } from 'axios';
-import IdleVue from 'idle-vue';
 import Vue from 'vue';
 import VueCytoscape from 'vue-cytoscape';
 import EventHub from 'vue-event-hub';
@@ -34,6 +34,7 @@ Vue.prototype.$helper = new Helper();
 Vue.prototype.$messageBus = new MessageService();
 Vue.prototype.$http = httpService;
 Vue.prototype.$upload = new FileUploadService(httpService);
+Vue.prototype.$api = new DataService(store, httpService);
 
 Vue.use(CustomFilters);
 Vue.use(EventHub);
@@ -43,11 +44,6 @@ Vue.use(VueCytoscape);
 Vue.config.productionTip = false;
 Vue.prototype.$http = Axios;
 const eventsHub = new Vue();
-// 15 minute timeout.
-Vue.use(IdleVue, {
-  eventEmitter: eventsHub,
-  idleTime: 900000
-});
 
 library.add(faCoffee, faBlind, faChild, faUsers);
 

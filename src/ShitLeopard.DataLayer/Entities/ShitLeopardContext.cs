@@ -1,18 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ShitLeopard.Entities
+namespace ShitLeopard.DataLayer.Entities
 {
     public partial class ShitLeopardContext : DbContext
     {
-        public ShitLeopardContext()
-        {
-        }
+      
 
         public ShitLeopardContext(DbContextOptions<ShitLeopardContext> options)
             : base(options)
         {
         }
 
+        public virtual DbSet<Character> Character { get; set; }
         public virtual DbSet<Episode> Episode { get; set; }
         public virtual DbSet<Script> Script { get; set; }
         public virtual DbSet<ScriptLine> ScriptLine { get; set; }
@@ -23,13 +24,26 @@ namespace ShitLeopard.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;User Id=sa;Password=Tulde30#;Database=ShitLeopard");
+                OnConfiguringPartial(optionsBuilder);
             }
         }
 
+        partial void OnConfiguringPartial(DbContextOptionsBuilder optionsBuilder);
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Character>(entity =>
+            {
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Notes)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Episode>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -63,6 +77,11 @@ namespace ShitLeopard.Entities
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Body).IsRequired();
+
+                entity.HasOne(d => d.Character)
+                    .WithMany(p => p.ScriptLine)
+                    .HasForeignKey(d => d.CharacterId)
+                    .HasConstraintName("FK_ScriptLine_Character");
 
                 entity.HasOne(d => d.Script)
                     .WithMany(p => p.ScriptLine)
