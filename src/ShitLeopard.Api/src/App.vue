@@ -1,7 +1,7 @@
 <template>
 <v-app>
-  <v-progress-linear :indeterminate="busy" height="4"></v-progress-linear>
-    <v-toolbar>
+  <v-progress-linear color="yellow" :indeterminate="busy" height="4" style="paddin:0; margin:0"></v-progress-linear>
+    <v-toolbar flat dark>
         <v-toolbar-title>Shit Leopard</v-toolbar-title>
         <v-spacer></v-spacer>
    <v-toolbar-items class="hidden-sm-and-down">

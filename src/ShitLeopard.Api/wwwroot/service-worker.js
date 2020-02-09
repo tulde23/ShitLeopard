@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.4b2abc0a35074e0981b142e7e513c4c0.js"
+  "/precache-manifest.23b9182ea9ffa65e64dba44ce0decbdf.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "shit-leopard"});
