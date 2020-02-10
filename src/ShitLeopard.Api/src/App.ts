@@ -33,11 +33,19 @@ export default class App extends Vue {
       }
     });
   }
+  public refresh() {
+    this.$api.askMe('test');
+  }
   beforeDestroy() {
     // unsubscribe to ensure no memory leaks
     this.$subscription.unsubscribe();
   }
-  mounted() {}
+  mounted() {
+    this.$api.askMe('test');
+  }
+  public get answer() {
+    return this.$store.getters.answer;
+  }
 
   public get isErrorAvailable() {
     if (this.errorMessage) {

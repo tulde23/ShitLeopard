@@ -3,11 +3,15 @@ export interface State {
   episodes: [];
   seasons: [];
   episode: any;
+  answer: any;
+  lines: [];
 }
 
 export const InitState = {
   isBusy: false,
   episodes: [],
   seasons: [],
-  episode: null
+  episode: null,
+  answer: null,
+  lines: []
 };

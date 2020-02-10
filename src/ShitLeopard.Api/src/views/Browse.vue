@@ -4,9 +4,6 @@
     </v-select>
     <br>
 
-<code>
-   
-    </code>
     <v-list two-line subheader v-if="selectedEpisode">
         <v-subheader>Script Lines</v-subheader>
 

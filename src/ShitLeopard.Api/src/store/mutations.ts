@@ -19,6 +19,14 @@ const mutations = {
   },
   [ACTIONS.SET_EPISODES](state, e) {
     state.episodes = e;
+  },
+  [ACTIONS.SET_ANSWER](state, e) {
+    console.log('setting answer', e);
+    state.answer = e;
+  },
+  [ACTIONS.SET_LINES](state, e) {
+    console.log('setting lines', e);
+    state.lines = e || [];
   }
 };
 

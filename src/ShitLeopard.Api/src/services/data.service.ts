@@ -23,6 +23,17 @@ export class DataService {
       )
     );
   }
+
+  askMe(question: string) {
+    return this.http
+      .post('/api/Search', { text: question })
+      .then(resp => this.store.commit(A.SET_ANSWER, resp.data));
+  }
+  search(term: string) {
+    return this.http
+      .post(`/api/Search/LinesContaining`, { text: term })
+      .then(resp => this.store.commit(A.SET_LINES, resp.data));
+  }
   getEpisode(id: number) {
     return this.http
       .get(`/api/Episode/${id}`)
