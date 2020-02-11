@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Api.Contracts;
+using ShitLeopard.Api.Models;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class ScriptController : BaseController
+    public class ScriptController : ServiceController<IScriptService>
     {
-        public ScriptController(ILogger<BaseController> logger, ShitLeopardContext shitLeopardContext) : base(logger, shitLeopardContext)
+        public ScriptController(ILoggerFactory loggerFactory, IScriptService service) : base(loggerFactory, service)
         {
         }
 
@@ -20,14 +19,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet("{scriptId:long}")]
         [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(Script))]
-        public async Task<Script> GetScript(long scriptId)
+        [ProducesResponseType(200, Type = typeof(ScriptModel))]
+        public async Task<ScriptModel> GetScript(long scriptId)
         {
-            return await Context.Script.AsNoTracking()
-                .Include(x => x.Episode)
-                .Include(x => x.ScriptLine)
-                .ThenInclude(y => y.ScriptWord)
-                .SingleOrDefaultAsync(x => x.Id == scriptId);
+            return await Service.GetScript(scriptId);
         }
 
         /// <summary>
@@ -38,10 +33,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet("Lines/{scriptId:long}")]
         [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(Script))]
-        public async Task<IEnumerable<ScriptLine>> GetScriptLines([FromRoute] long scriptId, [FromQuery] bool? includeAll=null)
+        [ProducesResponseType(200, Type = typeof(ScriptLineModel))]
+        public async Task<IEnumerable<ScriptLineModel>> GetScriptLineModels([FromRoute] long scriptId, [FromQuery] bool? includeAll = null)
         {
-            return await Context.ScriptLine.AsNoTracking().Where(x => x.ScriptId == scriptId).ToListAsync();
+            return await Service.GetScriptLines(scriptId, includeAll);
         }
 
         /// <summary>
@@ -50,11 +45,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet("Words/{scriptLineId:long}")]
         [Produces("application/json")]
-       
-        [ProducesResponseType(200, Type = typeof(Script))]
-        public async Task<IEnumerable<ScriptWord>> GetScriptWords(long scriptLineId)
+        [ProducesResponseType(200, Type = typeof(ScriptWordModel))]
+        public async Task<IEnumerable<ScriptWordModel>> GetScriptWords(long scriptLineId)
         {
-            return await Context.ScriptWord.AsNoTracking().Where(x => x.ScriptLineId == scriptLineId).ToListAsync();
+            return await Service.GetScriptWords(scriptLineId);
         }
     }
 }

@@ -6,7 +6,7 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
-
+using ShitLeopard.Api;
 
 namespace ShitLeopard
 {
@@ -42,7 +42,7 @@ namespace ShitLeopard
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb=>AutoFacRegistrationModule.Build(cb)))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

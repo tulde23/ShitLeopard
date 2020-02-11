@@ -1,12 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ShitLeopard.DataLayer.Entities
 {
     public partial class ShitLeopardContext : DbContext
     {
-      
+        public ShitLeopardContext()
+        {
+        }
 
         public ShitLeopardContext(DbContextOptions<ShitLeopardContext> options)
             : base(options)
@@ -15,10 +15,12 @@ namespace ShitLeopard.DataLayer.Entities
 
         public virtual DbSet<Character> Character { get; set; }
         public virtual DbSet<Episode> Episode { get; set; }
+        public virtual DbSet<Quote> Quote { get; set; }
         public virtual DbSet<Script> Script { get; set; }
         public virtual DbSet<ScriptLine> ScriptLine { get; set; }
         public virtual DbSet<ScriptWord> ScriptWord { get; set; }
         public virtual DbSet<Season> Season { get; set; }
+        public virtual DbSet<Tags> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,12 +30,14 @@ namespace ShitLeopard.DataLayer.Entities
             }
         }
 
-        partial void OnConfiguringPartial(DbContextOptionsBuilder optionsBuilder);
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Character>(entity =>
             {
+                entity.Property(e => e.Aliases)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(255)
@@ -41,6 +45,10 @@ namespace ShitLeopard.DataLayer.Entities
 
                 entity.Property(e => e.Notes)
                     .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PlayedBy)
+                    .HasMaxLength(255)
                     .IsUnicode(false);
             });
 
@@ -57,6 +65,17 @@ namespace ShitLeopard.DataLayer.Entities
                     .WithMany(p => p.Episode)
                     .HasForeignKey(d => d.SeasonId)
                     .HasConstraintName("FK_Episode_Season");
+            });
+
+            modelBuilder.Entity<Quote>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.Body)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<Script>(entity =>
@@ -116,9 +135,30 @@ namespace ShitLeopard.DataLayer.Entities
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Tags>(entity =>
+            {
+                entity.HasIndex(e => e.Name)
+                    .HasName("IX_Tags");
+
+                entity.HasIndex(e => new { e.Name, e.Category })
+                    .HasName("IX_Tags_1");
+
+                entity.Property(e => e.Category)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        partial void OnConfiguringPartial(DbContextOptionsBuilder optionsBuilder);
     }
 }

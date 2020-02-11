@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using ShitLeopard.Api.Contracts;
+using ShitLeopard.Api.Models;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class SeasonController : BaseController
+    public class SeasonController : ServiceController<ISeasonService>
     {
-        public SeasonController(ILogger<BaseController> logger, ShitLeopardContext shitLeopardContext) : base(logger, shitLeopardContext)
+        public SeasonController(ILoggerFactory loggerFactory, ISeasonService service) : base(loggerFactory, service)
         {
         }
 
@@ -20,9 +21,9 @@ namespace ShitLeopard.Api.Controllers
         [HttpGet]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(List<Season>))]
-        public async Task<IEnumerable<Season>> Get()
+        public async Task<IEnumerable<SeasonModel>> Get()
         {
-            return await Context.Season.AsNoTracking().ToListAsync();
+            return await Service.ListAsync();
         }
 
         /// <summary>
@@ -32,9 +33,9 @@ namespace ShitLeopard.Api.Controllers
         [HttpGet("{seasonId:long}")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(Season))]
-        public async Task<Season> GetSeason([FromRoute] long seasonId)
+        public async Task<SeasonModel> GetSeason([FromRoute] long seasonId)
         {
-            return await Context.Season.AsNoTracking().Include(x => x.Episode).ThenInclude(x => x.Script).FirstOrDefaultAsync(x => x.Id == seasonId);
+            return await Service.GetSeasonAsync(seasonId);
         }
     }
 }

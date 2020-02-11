@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Api.Contracts;
+using ShitLeopard.Api.Models;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class CharacterController : BaseController
+    public class CharacterController : ServiceController<ICharacterService>
     {
-        public CharacterController(ILogger<BaseController> logger, ShitLeopardContext shitLeopardContext) : base(logger, shitLeopardContext)
+        public CharacterController(ILoggerFactory loggerFactory, ICharacterService service) : base(loggerFactory, service)
         {
         }
 
@@ -19,10 +19,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(List<Character>))]
-        public async Task<IEnumerable<Character>> GetCharacters()
+        [ProducesResponseType(200, Type = typeof(List<CharacterModel>))]
+        public async Task<IEnumerable<CharacterModel>> GetCharacters()
         {
-            return await Context.Character.AsNoTracking().ToListAsync();
+            return await Service.GetCharactersAsync();
         }
     }
 }

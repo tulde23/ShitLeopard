@@ -12,7 +12,9 @@ namespace ShitLeopard.DataLayer.Entities
 
         public long Id { get; set; }
         public string Name { get; set; }
+        public string Aliases { get; set; }
         public string Notes { get; set; }
+        public string PlayedBy { get; set; }
 
         public virtual ICollection<ScriptLine> ScriptLine { get; set; }
     }

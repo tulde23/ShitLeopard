@@ -1,1 +1,1 @@
-dotnet ef dbcontext scaffold  "Server=localhost;User Id=sa;Password=Tulde30#;Database=ShitLeopard;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c  ShitLeopardContext -f
+dotnet ef dbcontext scaffold  "Server=tully.world;User Id=sa;Password=Tulde30#;Database=ShitLeopard;" Microsoft.EntityFrameworkCore.SqlServer -o Entities -c  ShitLeopardContext -f

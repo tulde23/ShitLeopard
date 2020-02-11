@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Api.Contracts;
+using ShitLeopard.Api.Models;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class EpisodeController : BaseController
+    public class EpisodeController : ServiceController<IEpisodeService>
     {
-        public EpisodeController(ILogger<BaseController> logger, ShitLeopardContext shitLeopardContext) : base(logger, shitLeopardContext)
+        public EpisodeController(ILoggerFactory loggerFactory, IEpisodeService service) : base(loggerFactory, service)
         {
         }
 
@@ -19,10 +19,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(List<Season>))]
-        public async Task<IEnumerable<Episode>> GetEpisodes()
+        [ProducesResponseType(200, Type = typeof(List<EpisodeModel>))]
+        public async Task<IEnumerable<EpisodeModel>> GetEpisodes()
         {
-            return await Context.Episode.AsNoTracking().ToListAsync();
+            return await Service.GetEpisodes();
         }
 
         /// <summary>
@@ -31,13 +31,10 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet("{episodeId:long}")]
         [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(Episode))]
-        public async Task<Episode> GetEpisode([FromRoute] long episodeId)
+        [ProducesResponseType(200, Type = typeof(EpisodeModel))]
+        public async Task<EpisodeModel> GetEpisode([FromRoute] long episodeId)
         {
-            return await Context.Episode.AsNoTracking( )
-                .Include(x => x.Script)
-                .ThenInclude(x => x.ScriptLine)
-                .FirstOrDefaultAsync(x => x.Id == episodeId);
+            return await Service.GetEpisode(episodeId);
         }
     }
 }
