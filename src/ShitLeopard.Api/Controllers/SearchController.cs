@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
@@ -34,12 +36,14 @@ namespace ShitLeopard.Api.Controllers
 
         return query.ToList();
              * */
-            var query = "select top 10 * from ScriptLine  where contains( Body, '\"@Term\"')";
+            var query = "select top 10  * from ScriptLine where ID in (select ScriptLineId from  ScriptWord where contains( word, @SearchTerm) )";
             using (var c = Context.Database.GetDbConnection())
             {
                 c.Open();
 
-                var test = await c.QueryAsync<ScriptLine>(query, new { Term = question.Text });
+                var p = new DynamicParameters();
+                p.Add("SearchTerm", $"\"{question.Text}\"");
+                var test = await c.QueryAsync<ScriptLine>(query, p);
                 return test;
             }
         }
@@ -47,11 +51,24 @@ namespace ShitLeopard.Api.Controllers
         [HttpPost]
         public async Task<dynamic> Ask([FromBody] Question question)
         {
+            List<string> terms = new List<string>()
+            {
+                "shit*",
+                "fuck*",
+                "cock*",
+                "dope*"
+            };
+
+            var query = new StringBuilder("select top 1 Body From ScriptLine WHERE ");
+
+            query.Append(string.Join(" OR ", terms.Select(x => $" CONTAINS (body, '\"{x})\"' )")));
+            query.Append(" ORDER BY NewID()");
+
             using (var c = Context.Database.GetDbConnection())
             {
                 c.Open();
 
-                return await c.ExecuteScalarAsync<string>("select top 1 Body From ScriptLine   where contains(body, 'shit*') OR contains(body,'fuck*') ORDER BY NewID()");
+                return await c.ExecuteScalarAsync<string>(query.ToString());
             }
         }
     }
