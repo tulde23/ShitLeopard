@@ -7,6 +7,7 @@ param(
 	
 
 )
+#(.net\/)(\?o=(\S+))(&)(v=(\d+))(&)(e=(\d+))&(t=(\S+))
 $folder = "C:\Users\jtully\Downloads";
 $fileName = "e$e.html"
 $source = "$folder\download"
