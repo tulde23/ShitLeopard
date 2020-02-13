@@ -13,6 +13,9 @@ namespace ShitLeopard.DataLoader
         private static void Main(string[] args)
         {
             Console.WriteLine("Starting....");
+
+            XmlClosedCaptionParser.Parse(@"C:\Development\ShitLeopard\ClosedCaptions\s1");
+
             var json = DataParser.GetDocument(_defaultPath);
             var seasons = DataParser.GetSeasons(json);
             using (var db = new ShitLeopardContext("Server=192.168.1.96;User Id=sa;Password=Tulde30#;Database=ShitLeopard;"))
