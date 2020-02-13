@@ -1,38 +1,52 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Linq;
-using EFCore.BulkExtensions;
+using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader
 {
     public class Program
     {
+        private static ConsoleApplication consoleApplication = new ConsoleApplication();
         private const string _defaultPath = @"C:\Development\Spotify.Playlister\src\Spotify.Playlister\bin\Debug\netcoreapp2.2\TPBoys.json";
 
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
             Console.WriteLine("Starting....");
+            var options = new Options(args);
 
-            XmlClosedCaptionParser.Parse(@"C:\Development\ShitLeopard\ClosedCaptions\s1");
+            //XmlClosedCaptionParser.Parse(@"C:\Development\ShitLeopard\ClosedCaptions\s1");
 
-            var json = DataParser.GetDocument(_defaultPath);
-            var seasons = DataParser.GetSeasons(json);
-            using (var db = new ShitLeopardContext("Server=192.168.1.96;User Id=sa;Password=Tulde30#;Database=ShitLeopard;"))
-            {
-                //seasons
-                db.BulkInsert<Season>(seasons.ToList());
-                //episodes
-                db.BulkInsert(seasons.SelectMany(x => x.Episode).ToList());
-                //scripts
-                db.BulkInsert(seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script)).ToList());
-                //script lines
-                var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(x => x.ScriptLine))).ToList();
-                db.BulkInsert(lines);
-                //script words
-                var words = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(x => x.ScriptLine.SelectMany(z => z.ScriptWord)))).ToList();
-                db.BulkInsert(words);
-            }
+            //var json = DataParser.GetDocument(_defaultPath);
+            //var seasons = DataParser.GetSeasons(json);
+            //using (var db = new ShitLeopardContext("Server=192.168.1.96;User Id=sa;Password=Tulde30#;Database=ShitLeopard;"))
+            //{
+            //    //seasons
+            //    db.BulkInsert<Season>(seasons.ToList());
+            //    //episodes
+            //    db.BulkInsert(seasons.SelectMany(x => x.Episode).ToList());
+            //    //scripts
+            //    db.BulkInsert(seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script)).ToList());
+            //    //script lines
+            //    var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(x => x.ScriptLine))).ToList();
+            //    db.BulkInsert(lines);
+            //    //script words
+            //    var words = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(x => x.ScriptLine.SelectMany(z => z.ScriptWord)))).ToList();
+            //    db.BulkInsert(words);
+            //}
+            await Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb => AutoFacRegistrationModule.Build(cb)))
+            .ConfigureServices((hostContext, services) =>
+             {
+                 services.AddSingleton(options);
+                 services.AddSingleton(consoleApplication);
+                 services.AddTransient<ShitLeopardContext>();
+                 services.AddHostedService<ConsoleService>();
+             })
+             .Build().RunAsync(consoleApplication.TokenSource.Token);
         }
 
         private static SqlCommand CreateCommand(string text, object p)
