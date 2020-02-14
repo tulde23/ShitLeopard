@@ -11,6 +11,7 @@ namespace ShitLeopard.DataLoader
             containerBuilder.RegisterType<XDocParser>().As<ISeasonParser>().SingleInstance().Named<ISeasonParser>("xdoc");
             containerBuilder.RegisterType<HtmlAgilityPackParser>().As<ISeasonParser>().SingleInstance().Named<ISeasonParser>("html");
             containerBuilder.RegisterType<BulkDataImporter>().As<IBulkDataImporter>().InstancePerDependency();
+            containerBuilder.RegisterType<WokiScraper>().As<IWikiScraper>().InstancePerDependency();
         }
     }
 }

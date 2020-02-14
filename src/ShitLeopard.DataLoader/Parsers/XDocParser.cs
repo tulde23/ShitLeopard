@@ -42,7 +42,7 @@ namespace ShitLeopard.DataLoader.Parsers
             {
                 //first level directory will be the season
                 var season = document.Key;
-               Console.WriteLine($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
+                Console.WriteLine($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
                 var seasonEntity = new Season
                 {
                     Id = int.Parse(document.Key.Replace("s", string.Empty)),
@@ -52,12 +52,14 @@ namespace ShitLeopard.DataLoader.Parsers
                 seasons.Add(seasonEntity);
                 foreach (var closedCaptionFile in document)
                 {
+                   
                     var episode = new Episode()
                     {
                         Id = episodeCount++,
                         SeasonId = seasonEntity.Id,
                         Title = string.Empty
                     };
+                   
                     seasonEntity.Episode.Add(episode);
                     var doc = XDocument.Load(closedCaptionFile.FullName);
 
@@ -71,6 +73,8 @@ namespace ShitLeopard.DataLoader.Parsers
                         }
                     }
                     var node = new Paragraph(rootNode);
+                    node.Season = seasonEntity.Id;
+                    node.Episode = episode.Id;
                     var scriptBuilder = new StringBuilder();
                     var lines = new List<string>();
                     if (node?.Node == null)
@@ -81,8 +85,10 @@ namespace ShitLeopard.DataLoader.Parsers
                     try
                     {
                         var root = NextParagrah(node);
+                   
                         while ((root = NextParagrah(root)) != null)
                         {
+                           
                             scriptBuilder.AppendLine(root.Text);
                             lines.Add(root.Text);
                             root = root.NextNode;
@@ -93,6 +99,7 @@ namespace ShitLeopard.DataLoader.Parsers
                             {
                                  Id = scriptCounter,
                                   Body = scriptBuilder.ToString(),
+                                  EpisodeId = episode.Id,
                                   ScriptLine = lines.Select( s=> new ScriptLine
                                   {
                                       Id= lineCounter,
@@ -115,6 +122,7 @@ namespace ShitLeopard.DataLoader.Parsers
 
             return Task.FromResult(seasons.AsEnumerable());
         }
+
         private static List<ScriptWord> GetWordsFromLine(string line, long scriptLineId, ref long idCounter)
         {
             List<ScriptWord> words = new List<ScriptWord>();
@@ -153,6 +161,7 @@ namespace ShitLeopard.DataLoader.Parsers
         private Paragraph NextParagrah(Paragraph node)
         {
             Paragraph p = node;
+          
 
             if (p?.Name?.Equals("p") == true)
             {
@@ -190,11 +199,15 @@ namespace ShitLeopard.DataLoader.Parsers
             {
                 return false;
             }
-            return char.IsPunctuation(x[x.Length - 1]);
+            char lastItem = x[x.Length - 1];
+            return char.IsPunctuation(lastItem) && lastItem != ',';
         }
 
         public class Paragraph
         {
+            public long Season { get; set; }
+            public long Episode { get; set; }
+            public string EndLocation { get; set; }
             public Paragraph(XNode element)
             {
                 Node = element;
@@ -208,35 +221,30 @@ namespace ShitLeopard.DataLoader.Parsers
                           .Replace("\n", string.Empty);
                 var text = sb.ToString().Trim();
                 text = Regex.Replace(text, @"(\[(.+)\])+", string.Empty);
-                Text = Regex.Replace(text, @"(\s{1,})", " ");
+                Text = Regex.Replace(text, @"(\s{1,})", " ").ToUpper();
                 if (!string.IsNullOrEmpty(Text))
                 {
-                    EndsWithPunctuation = char.IsPunctuation(this.Text[this.Text.Length - 1]);
+                    EndsWithPunctuation = EndsWith(Text);
                 }
+                EndLocation = e.Attribute("end")?.Value;
             }
 
             public Paragraph(Paragraph paragraph)
             {
                 Node = paragraph?.NextNode?.Node;
-                //var e = Node as XElement;
-                //if (e == null)
-                //{
-                //    return;
-                //}
-                //var sb = new StringBuilder(e.Value.Trim())
-                //          .Replace("-", string.Empty)
-                //          .Replace("\n", string.Empty);
-                //var text = sb.ToString().Trim();
-                //text = Regex.Replace(text, @"(\[(.+)\])+", string.Empty);
-                //Text = Regex.Replace(text, @"(\s{1,})", " ");
-
+                EndLocation = paragraph?.EndLocation;
+                Season = paragraph?.Season ?? 0;
+                Episode = paragraph?.Episode ?? 0;
                 Paragraph next = paragraph;
-                Text = paragraph.Text;
+                Text = paragraph?.Text;
+                var sb = new StringBuilder(" ");
+                sb.Append(Text);
                 while ((next = next?.NextNode) != null)
                 {
                     if (!string.IsNullOrWhiteSpace(next.Text))
                     {
-                        Text = Text + " " + next.Text;
+                        sb.Append(" ").Append(next.Text);
+                        Text = sb.ToString();
                         EndsWithPunctuation = EndsWith(next.Text);
                         if (EndsWithPunctuation)
                         {

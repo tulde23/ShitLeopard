@@ -14,20 +14,29 @@ namespace ShitLeopard.DataLoader
         private readonly ConsoleApplication _consoleApplication;
         private readonly IIndex<string, ISeasonParser> _index;
         private readonly IBulkDataImporter _bulkDataImporter;
+        private readonly IWikiScraper _wikiScraper;
         private readonly Options _options;
 
         public ConsoleService(ConsoleApplication consoleApplication,
             IIndex<string, ISeasonParser> index,
             IBulkDataImporter bulkDataImporter,
+            IWikiScraper wikiScraper,
             Options options)
         {
             _consoleApplication = consoleApplication;
             _index = index;
             _bulkDataImporter = bulkDataImporter;
+            _wikiScraper = wikiScraper;
             _options = options;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
+        {
+            var episodes = await _wikiScraper.GetEpisodesAsync();
+            await _bulkDataImporter.UpdateEpisodes(episodes);
+        }
+
+        private async Task RunImport()
         {
             var service = "xdoc";
             var parser = _index[service];

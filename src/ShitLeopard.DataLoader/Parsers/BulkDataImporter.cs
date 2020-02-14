@@ -40,9 +40,23 @@ namespace ShitLeopard.DataLoader.Parsers
                 var words = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(x => x.ScriptLine.SelectMany(z => z.ScriptWord)))).ToList();
                 await db.BulkInsertAsync(words);
                 Console.WriteLine($"Import {words.Count} words");
-
             }
             return seasons.Count();
+        }
+
+        public async Task<int> UpdateEpisodes(IEnumerable<Episode> episodes)
+        {
+            using (var db = _contextProvider())
+            {
+              await   db.BulkUpdateAsync(episodes.ToList(), new BulkConfig
+                {
+                    PropertiesToInclude = new List<string>()
+                    {
+                        "Title"
+                    }
+                });
+            }
+            return episodes.Count();
         }
     }
 }
