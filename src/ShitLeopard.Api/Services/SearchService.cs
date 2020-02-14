@@ -49,8 +49,19 @@ namespace ShitLeopard.Api.Services
         {
             using (var context = ContextProvider())
             {
-                var query = "select top 10  * from ScriptLine where ID in (select ScriptLineId from  ScriptWord where contains( word, @SearchTerm) )";
-                using (var c = context.Database.GetDbConnection())
+                var query = @"
+sELECT 
+   FT_TBL.*
+FROM ScriptLine AS FT_TBL INNER JOIN  
+   CONTAINSTABLE (ScriptLine,  
+      Body,   
+      @SearchTerm,  
+      25
+   ) AS KEY_TBL
+   ON FT_TBL.Id = KEY_TBL.[KEY]
+
+";
+               using (var c = context.Database.GetDbConnection())
                 {
                     c.Open();
 

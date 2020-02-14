@@ -17,6 +17,12 @@ namespace ShitLeopard.DataLoader.Parsers
         private readonly Options _options;
         private readonly ILogger<XDocParser> _logger;
 
+        private readonly List<XNamespace> _ns = new List<XNamespace>()
+        {
+          "http://www.w3.org/2006/10/ttaf1",
+            "http://www.w3.org/ns/ttml"
+        };
+
         public XDocParser(Options options, ILogger<XDocParser> logger)
         {
             _options = options;
@@ -27,36 +33,121 @@ namespace ShitLeopard.DataLoader.Parsers
         {
             XNamespace tt = "http://www.w3.org/2006/10/ttaf1";
             var documents = directoryInfo.GetFiles("*.html", SearchOption.AllDirectories);
+            var seasons = new List<Season>();
+            int episodeCount = 1;
+            int lineCounter = 1;
+            int scriptCounter = 1;
+            long wordCounter = 1;
             foreach (var document in documents.GroupBy(x => x.Directory.Name).OrderBy(x => int.Parse(x.Key.Replace("s", string.Empty))))
             {
                 //first level directory will be the season
                 var season = document.Key;
-                _logger.LogInformation($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
+               Console.WriteLine($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
+                var seasonEntity = new Season
+                {
+                    Id = int.Parse(document.Key.Replace("s", string.Empty)),
+                    Title = document.Key,
+                    Episode = new List<Episode>()
+                };
+                seasons.Add(seasonEntity);
                 foreach (var closedCaptionFile in document)
                 {
+                    var episode = new Episode()
+                    {
+                        Id = episodeCount++,
+                        SeasonId = seasonEntity.Id,
+                        Title = string.Empty
+                    };
+                    seasonEntity.Episode.Add(episode);
                     var doc = XDocument.Load(closedCaptionFile.FullName);
-                    var node = new Paragraph(doc.Root.Descendants(tt + "p").FirstOrDefault());
-                    if( node == null)
+
+                    XElement rootNode = null;
+                    foreach (var n in _ns)
+                    {
+                        rootNode = doc.Root.Descendants(n + "p").FirstOrDefault();
+                        if (rootNode != null)
+                        {
+                            break;
+                        }
+                    }
+                    var node = new Paragraph(rootNode);
+                    var scriptBuilder = new StringBuilder();
+                    var lines = new List<string>();
+                    if (node?.Node == null)
                     {
                         Console.WriteLine("no root node");
+                        continue;
                     }
                     try
                     {
                         var root = NextParagrah(node);
                         while ((root = NextParagrah(root)) != null)
                         {
-                            Console.WriteLine(root.Text);
+                            scriptBuilder.AppendLine(root.Text);
+                            lines.Add(root.Text);
                             root = root.NextNode;
                         }
+                        episode.Script = new List<Script>()
+                        {
+                            new Script
+                            {
+                                 Id = scriptCounter,
+                                  Body = scriptBuilder.ToString(),
+                                  ScriptLine = lines.Select( s=> new ScriptLine
+                                  {
+                                      Id= lineCounter,
+                                       Body = s,
+                                       ScriptId = scriptCounter,
+                                        ScriptWord = GetWordsFromLine(s,lineCounter++, ref wordCounter)
+                                  }).ToList()
+                            }
+                        };
+                        scriptCounter++;
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.StackTrace);
                     }
+
+                    Console.WriteLine($"\tEpisode {episode.Id} has  {episode.Script?.FirstOrDefault()?.ScriptLine?.Count} Lines.");
                 }
             }
 
-            return Task.FromResult(Enumerable.Empty<Season>());
+            return Task.FromResult(seasons.AsEnumerable());
+        }
+        private static List<ScriptWord> GetWordsFromLine(string line, long scriptLineId, ref long idCounter)
+        {
+            List<ScriptWord> words = new List<ScriptWord>();
+            Queue<char> letters = new Queue<char>();
+            foreach (var c in line)
+            {
+                if (Char.IsWhiteSpace(c) || (Char.IsPunctuation(c) && c != '\''))
+                {
+                    if (letters.Any())
+                    {
+                        var sb = new StringBuilder();
+                        while (letters.Count > 0)
+                        {
+                            sb.Append(letters.Dequeue());
+                        }
+                        words.Add(new ScriptWord
+                        {
+                            Id = ++idCounter,
+                            ScriptLineId = scriptLineId,
+                            Word = sb.ToString(),
+                        });
+                    }
+                }
+                else if (Char.IsSeparator(c) || (Char.IsPunctuation(c) && c != '\''))
+                {
+                    continue;
+                }
+                else
+                {
+                    letters.Enqueue(c);
+                }
+            }
+            return words;
         }
 
         private Paragraph NextParagrah(Paragraph node)
