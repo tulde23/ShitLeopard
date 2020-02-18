@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using Autofac.Extensions.DependencyInjection;
+using DslParser.Parsing;
+using DslParser.Parsing.Tokenizers.MoreEfficient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader
@@ -18,6 +22,21 @@ namespace ShitLeopard.DataLoader
             Console.WriteLine("Starting....");
             var options = new Options(args);
 
+
+            string query = @"MATCH app = 'MyTestApp'
+AND ex IN ('System.NullReferenceException', 'System.FormatException')
+BETWEEN 2016-01-01 00:00:00 AND 2016-02-01 00:00:00
+LIMIT 100";
+            var parser = new Parser();
+            var tokenizer = new PrecedenceBasedRegexTokenizer();
+            var tokenSequence = tokenizer.Tokenize(query).ToList();
+            foreach (var token in tokenSequence)
+                Console.WriteLine(string.Format("TokenType: {0}, Value: {1}", token.TokenType, token.Value));
+
+            var dataRepresentation = parser.Parse(tokenSequence);
+            Console.WriteLine("");
+            Console.WriteLine("Data Representation (serialized to JSON)");
+            Console.WriteLine(JsonConvert.SerializeObject(dataRepresentation, Formatting.Indented));
             //XmlClosedCaptionParser.Parse(@"C:\Development\ShitLeopard\ClosedCaptions\s1");
 
             //var json = DataParser.GetDocument(_defaultPath);

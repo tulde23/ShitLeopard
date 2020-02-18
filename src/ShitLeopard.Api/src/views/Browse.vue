@@ -4,16 +4,26 @@
     </v-select>
     <br>
 
-    <v-list two-line subheader v-if="selectedEpisode">
-        <v-subheader>Script Lines</v-subheader>
+    <div v-if="selectedEpisode && selectedEpisode.script">
 
-        <v-list-tile avatar v-for="(line,index) in selectedEpisode.script[0].scriptLine" :key="index">
-            <v-list-tile-content>
+        <v-data-table :items="selectedEpisode.script[0].scriptLine" item-key="id" :rows-per-page-items="gridModel.rowsPerPageItems" v-bind:pagination.sync="gridModel.pagination" class="elevation-1" hide-headers>
+            <template v-slot:items="props">
 
-                <v-list-tile-sub-title> {{line.body}}</v-list-tile-sub-title>
-            </v-list-tile-content>
-        </v-list-tile>
-    </v-list>
+                <td class="text-xs-left">{{ props.item.body }}</td>
+                <td>
+                    <v-select :items="characters" @change="saveLine(props.item)" clearable v-model="props.item.characterId" label="Said By" class="input-group--focused" item-text="name" item-value="id">
+                    </v-select>
+                </td>
+                <td>
+                    <v-btn color="green" @click="upvote(props.item)" fab small title="Like this quote">
+                        <v-icon>thumb_up</v-icon>
+                    </v-btn>
+                </td>
+
+            </template>
+        </v-data-table>
+    </div>
+
 </v-container>
 </template>
 

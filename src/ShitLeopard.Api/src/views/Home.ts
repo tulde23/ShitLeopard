@@ -13,6 +13,9 @@ export default class Home extends Vue {
     this.$api.search(this.question);
   }
 
+  public upvote(item) {
+    this.$api.upvote(item.id);
+  }
   public get answer(): any {
     return this.$store.getters.answer;
   }

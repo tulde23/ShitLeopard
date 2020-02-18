@@ -50,5 +50,17 @@ namespace ShitLeopard.Api.Controllers
         {
             return await Service.GetScriptWords(scriptLineId);
         }
+
+        /// <summary>
+        /// Retrieves all words in a script line.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("ScripLine/{id}/{cid}")]
+        [Produces("application/json")]
+        [ProducesResponseType(200, Type = typeof(ScriptWordModel))]
+        public async Task UpdateCharacter(long id, long cid)
+        {
+            await Service.SetScriptLineCharacter(id, cid);
+        }
     }
 }

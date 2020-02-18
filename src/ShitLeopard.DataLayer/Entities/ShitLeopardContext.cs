@@ -69,7 +69,7 @@ namespace ShitLeopard.DataLayer.Entities
 
             modelBuilder.Entity<Quote>(entity =>
             {
-                entity.HasNoKey();
+          
 
                 entity.Property(e => e.Body)
                     .HasMaxLength(1000)

@@ -27,11 +27,11 @@ namespace ShitLeopard.Api.Services
         {
         }
 
-        public async Task<string> FindRandomSingleQuoteAsync()
+        public async Task<ScriptLineModel> FindRandomSingleQuoteAsync()
         {
             using (var context = ContextProvider())
             {
-                var query = new StringBuilder("select top 1 Body From ScriptLine WHERE ");
+                var query = new StringBuilder("select top 1 * From ScriptLine WHERE ");
 
                 query.Append(string.Join(" OR ", _terms.Select(x => $" CONTAINS (body, '\"{x})\"' )")));
                 query.Append(" ORDER BY NewID()");
@@ -40,7 +40,7 @@ namespace ShitLeopard.Api.Services
                 {
                     c.Open();
 
-                    return await c.ExecuteScalarAsync<string>(query.ToString());
+                    return (await c.QueryAsync<ScriptLineModel>(query.ToString()))?.FirstOrDefault();
                 }
             }
         }
@@ -50,24 +50,25 @@ namespace ShitLeopard.Api.Services
             using (var context = ContextProvider())
             {
                 var query = @"
-sELECT 
-   FT_TBL.*
-FROM ScriptLine AS FT_TBL INNER JOIN  
-   CONTAINSTABLE (ScriptLine,  
-      Body,   
-      @SearchTerm,  
-      25
+sELECT
+      FT_TBL.*, E.Id as EpisodeId, E.SeasonId, E.Title as EpisodeTitle
+FROM ScriptLine AS FT_TBL INNER JOIN
+   CONTAINSTABLE (ScriptLine,
+      Body,
+      @SearchTerm,
+      50
    ) AS KEY_TBL
    ON FT_TBL.Id = KEY_TBL.[KEY]
-
+   inner join Script S on S.Id = FT_TBL.ScriptId
+   inner join Episode E on E.Id = S.Id
 ";
-               using (var c = context.Database.GetDbConnection())
+                using (var c = context.Database.GetDbConnection())
                 {
                     c.Open();
 
                     var p = new DynamicParameters();
                     p.Add("SearchTerm", $"\"{question.Text}\"");
-                    return Mapper.MapCollection<ScriptLineModel, ScriptLine>(await c.QueryAsync<ScriptLine>(query, p));
+                    return await c.QueryAsync<ScriptLineModel>(query, p);
                 }
             }
         }

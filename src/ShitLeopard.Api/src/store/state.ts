@@ -5,6 +5,8 @@ export interface State {
   episode: any;
   answer: any;
   lines: [];
+  characters: [];
+  quote: any;
 }
 
 export const InitState = {
@@ -13,5 +15,7 @@ export const InitState = {
   seasons: [],
   episode: null,
   answer: null,
-  lines: []
+  lines: [],
+  characters: [],
+  quote: null
 };

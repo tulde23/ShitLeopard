@@ -12,6 +12,6 @@ namespace ShitLeopard.Api.Contracts
         /// Finds the random single quote.
         /// </summary>
         /// <returns></returns>
-        Task<string> FindRandomSingleQuoteAsync();
+        Task<ScriptLineModel> FindRandomSingleQuoteAsync();
     }
 }

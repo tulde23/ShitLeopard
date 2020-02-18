@@ -44,14 +44,22 @@ namespace ShitLeopard.Api.Services
         {
             using (var context = ContextProvider())
             {
-                var existing = await context.Quote.SingleOrDefaultAsync(x => x.Id == quoteModel.Id);
+                var existing = await context.Quote.SingleOrDefaultAsync(x => x.ScriptLineId == quoteModel.ScriptLineId);
                 if (existing == null)
                 {
-                    context.Add(quoteModel);
+                    var sl = await context.ScriptLine.AsNoTracking().SingleOrDefaultAsync(x => x.Id == quoteModel.ScriptLineId );
+                    context.Add(new Quote
+                    {
+                        ScriptLineId = quoteModel.ScriptLineId,
+                        Popularity = 1,
+                        Body = sl.Body
+                    });
                 }
                 else
                 {
-                    existing.Popularity = quoteModel.Popularity;
+                    var sl = await context.ScriptLine.AsNoTracking().SingleOrDefaultAsync(x => x.Id == quoteModel.ScriptLineId);
+                    existing.Body = sl.Body;
+                    existing.Popularity++;
                 }
                 await context.SaveChangesAsync();
             }

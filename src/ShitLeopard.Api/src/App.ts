@@ -34,17 +34,21 @@ export default class App extends Vue {
     });
   }
   public refresh() {
-    this.$api.askMe('test');
+    this.$api.getRandomQuote();
+  }
+  public upvote() {
+    this.answer.popularity++;
+    this.$api.likeQuote(this.answer);
   }
   beforeDestroy() {
     // unsubscribe to ensure no memory leaks
     this.$subscription.unsubscribe();
   }
   mounted() {
-    this.$api.askMe('test');
+    this.$api.getRandomQuote();
   }
   public get answer() {
-    return this.$store.getters.answer;
+    return this.$store.getters.quote;
   }
 
   public get isErrorAvailable() {

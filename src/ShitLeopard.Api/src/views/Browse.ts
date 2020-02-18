@@ -1,3 +1,4 @@
+import { EpisodeGridModel } from '@/models/EpisodeGridModel';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
@@ -6,10 +7,21 @@ import { Component } from 'vue-property-decorator';
 })
 export default class Browse extends Vue {
   public episode: any;
+  public gridModel = new EpisodeGridModel();
+
+  public get characters() {
+    return this.$store.getters.characters;
+  }
   created() {}
 
   mounted() {
-    this.$api.getEpisodes();
+    this.$api.getCharacters().then(x => this.$api.getEpisodes());
+  }
+  public upvote(item) {
+    this.$api.upvote(item.id);
+  }
+  public saveLine(line) {
+    this.$api.saveLine(line.id, line.characterId);
   }
   public setEpisode(id) {
     this.$api.getEpisode(id);

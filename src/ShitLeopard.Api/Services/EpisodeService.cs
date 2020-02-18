@@ -20,6 +20,8 @@ namespace ShitLeopard.Api.Services
         {
             using (var context = ContextProvider())
             {
+
+
                 return Mapper.Map<EpisodeModel>(await context.Episode.AsNoTracking()
                         .Include(x => x.Script)
                         .ThenInclude(x => x.ScriptLine)

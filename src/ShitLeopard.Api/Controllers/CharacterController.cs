@@ -24,5 +24,7 @@ namespace ShitLeopard.Api.Controllers
         {
             return await Service.GetCharactersAsync();
         }
+
+  
     }
 }

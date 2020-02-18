@@ -44,5 +44,19 @@ namespace ShitLeopard.Api.Services
                 return Mapper.MapCollection<ScriptWordModel, ScriptWord>(await context.ScriptWord.AsNoTracking().Where(x => x.ScriptLineId == scriptLineId).ToListAsync());
             }
         }
+
+        public async Task SetScriptLineCharacter(long scriptLineId, long characterId)
+        {
+            using (var context = ContextProvider())
+            {
+                var item = await context.ScriptLine.FirstOrDefaultAsync(x => x.Id == scriptLineId);
+                if (item != null)
+                {
+                    item.CharacterId = characterId;
+                    context.Update(item);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
     }
 }

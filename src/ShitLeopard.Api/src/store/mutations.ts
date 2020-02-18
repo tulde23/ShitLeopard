@@ -27,6 +27,12 @@ const mutations = {
   [ACTIONS.SET_LINES](state, e) {
     console.log('setting lines', e);
     state.lines = e || [];
+  },
+  [ACTIONS.SET_CHARACTERS](state, e) {
+    state.characters = e || [];
+  },
+  [ACTIONS.SET_QUOTE](state, e) {
+    state.quote = e;
   }
 };
 

@@ -27,5 +27,13 @@ namespace ShitLeopard.Api.Contracts
         /// <param name="scriptLineId">The script line identifier.</param>
         /// <returns></returns>
         Task<IEnumerable<ScriptWordModel>> GetScriptWords(long scriptLineId);
+
+        /// <summary>
+        /// Sets the script line character.
+        /// </summary>
+        /// <param name="scriptLineId">The script line identifier.</param>
+        /// <param name="characterId">The character identifier.</param>
+        /// <returns></returns>
+        Task SetScriptLineCharacter(long scriptLineId, long characterId);
     }
 }

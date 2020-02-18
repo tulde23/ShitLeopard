@@ -12,5 +12,10 @@ namespace ShitLeopard.Api.Models
         public virtual CharacterModel Character { get; set; }
         public virtual ScriptModel Script { get; set; }
         public virtual ICollection<ScriptWordModel> ScriptWord { get; set; }
+
+
+        public int? EpisodeId { get; set; }
+        public int? SeasonId { get; set; }
+        public string EpisodeTitle { get; set; }
     }
 }
