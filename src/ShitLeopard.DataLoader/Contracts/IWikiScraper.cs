@@ -4,7 +4,7 @@ using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader.Contracts
 {
-    public interface IWikiScraper
+    public interface IWikiScraper 
     {
         Task<IEnumerable<Episode>> GetEpisodesAsync();
     }

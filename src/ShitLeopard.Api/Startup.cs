@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using App.Metrics;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
@@ -9,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Providers;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard
@@ -33,6 +36,11 @@ namespace ShitLeopard
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
+            services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
+            var metrics = AppMetrics.CreateDefaultBuilder().Build();
+
+            services.AddMetrics(metrics);
+            services.AddMetricsTrackingMiddleware();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
@@ -44,6 +52,9 @@ namespace ShitLeopard
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            // Or to cherry-pick the tracking of interest
+            app.UseMetricsAllEndpoints();
             // If, for some reason, you need a reference to the built container, you
             // can use the convenience extension method GetAutofacRoot.
             this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
@@ -62,6 +73,7 @@ namespace ShitLeopard
             {
                 app.UseDeveloperExceptionPage();
             }
+   
             app.UseDefaultFiles();
             app.UseStaticFiles();
            

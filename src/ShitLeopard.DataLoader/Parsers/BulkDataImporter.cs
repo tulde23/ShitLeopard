@@ -52,7 +52,8 @@ namespace ShitLeopard.DataLoader.Parsers
                 {
                     PropertiesToInclude = new List<string>()
                     {
-                        "Title"
+                        "OffsetId",
+                        "Synopsis"
                     }
                 });
             }

@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using ShitLeopard.Common.Contracts;
 
 namespace ShitLeopard.DataLayer.Entities
 {
     public partial class ShitLeopardContext
     {
-        private readonly IConfiguration _configuration;
+        private readonly IConnectionStringProvider _configuration;
         private readonly string _cs;
 
         public ShitLeopardContext(string cs)
@@ -13,14 +13,14 @@ namespace ShitLeopard.DataLayer.Entities
             _cs = cs;
         }
 
-        public ShitLeopardContext(IConfiguration configuration)
+        public ShitLeopardContext(IConnectionStringProvider configuration)
         {
             _configuration = configuration;
         }
 
         partial void OnConfiguringPartial(DbContextOptionsBuilder optionsBuilder)
         {
-            var cs = _cs ?? _configuration["connectionString"];
+            var cs = _configuration.GetConnectionString();
             optionsBuilder.UseSqlServer(cs);
         }
     }

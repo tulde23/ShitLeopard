@@ -26,7 +26,7 @@ namespace ShitLeopard.DataLayer.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                OnConfiguringPartial(optionsBuilder);
+                OnConfiguringPartial( optionsBuilder);
             }
         }
 
@@ -56,6 +56,8 @@ namespace ShitLeopard.DataLayer.Entities
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
+                entity.Property(e => e.Synopsis).IsUnicode(false);
+
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(255)
@@ -69,13 +71,9 @@ namespace ShitLeopard.DataLayer.Entities
 
             modelBuilder.Entity<Quote>(entity =>
             {
-          
-
                 entity.Property(e => e.Body)
                     .HasMaxLength(1000)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<Script>(entity =>

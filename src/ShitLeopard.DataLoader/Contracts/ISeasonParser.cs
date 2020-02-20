@@ -5,7 +5,7 @@ using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader.Contracts
 {
-    public interface ISeasonParser
+    public interface ISeasonParser 
     {
         /// <summary>
         /// Loads and parsers local files to produce season instances.

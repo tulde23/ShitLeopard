@@ -14,37 +14,20 @@ namespace ShitLeopard
     {
         public static void Main(string[] args)
         {
-
-
-//            var data = File.ReadAllText(@"C:\Logs\replay.events.json");
-//            var jarray =JsonConvert.DeserializeObject<List< Rootobject>>(data);
-
-//            var exclusions = new List<string>()
-//            {
-//"5","48"
-//            };
-//            var ids = jarray.Select(x => x.NgbId).Distinct().ToList();
-
-//            var test = string.Join(",", ids.OrderBy(x => x));
-//           int count =  jarray.RemoveAll(x => !exclusions.Contains(x.NgbId));
-
-//           foreach( var item in jarray.GroupBy(x => x.NgbId))
-//            {
-//                Console.WriteLine($"{item.Key} -> ,  {item.Count()}");
-//            }
-
-//            Console.WriteLine(count);
-
-
-//            File.WriteAllText("Failed-LL-5-48.json", JsonConvert.SerializeObject(jarray, Formatting.Indented));
-            CreateHostBuilder(args).Build().Run();
+           CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                       .UseEnvironment("development")
             .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb=>AutoFacRegistrationModule.Build(cb)))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+
+                    webBuilder.UseMetricsEndpoints();
+                    webBuilder.UseMetricsWebTracking();
+              
+                 
                     webBuilder.UseStartup<Startup>();
                 });
     }

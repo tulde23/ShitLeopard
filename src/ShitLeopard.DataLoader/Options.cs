@@ -1,24 +1,12 @@
-﻿using System.IO;
+﻿using CommandLine;
 
 namespace ShitLeopard.DataLoader
 {
     public class Options
     {
-        public string[] Arguments { get; }
-
-        public DirectoryInfo DocumentDirectory { get; }
-
-        public Options(params string[] args)
-        {
-            this.Arguments = args;
-            if (args.Length == 1)
-            {
-                DocumentDirectory = new DirectoryInfo(args[0]);
-            }
-            else
-            {
-                DocumentDirectory = new DirectoryInfo(@"C:\Development\ShitLeopard\ClosedCaptions");
-            }
-        }
+        [Option('a', "action", Required = true, HelpText = "action to run")]
+        public string Action { get; set; }
+        [Option('i', "import", Required = false, HelpText = "Import Directory")]
+        public string ImportDirectory { get; set; }
     }
 }

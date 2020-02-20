@@ -4,7 +4,7 @@ using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader.Contracts
 {
-    public interface IBulkDataImporter
+    public interface IBulkDataImporter 
     {
         /// <summary>
         /// Imports the asynchronous.

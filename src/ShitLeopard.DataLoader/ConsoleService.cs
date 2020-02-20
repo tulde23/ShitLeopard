@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac.Features.Indexed;
@@ -49,7 +50,7 @@ namespace ShitLeopard.DataLoader
             }
             else
             {
-                seasons = await parser.GetSeasonsAsync(_options.DocumentDirectory);
+                seasons = await parser.GetSeasonsAsync(new DirectoryInfo(_options.ImportDirectory));
             }
             var json = JsonConvert.SerializeObject(seasons, Formatting.Indented);
             System.IO.File.WriteAllText("Data.json", json);
