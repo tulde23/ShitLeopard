@@ -22,9 +22,11 @@ namespace ShitLeopard.Api.Services
                 "cock*",
                 "dope*"
             };
+        private readonly ITagService _tagService;
 
-        public SearchService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
+        public SearchService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper, ITagService tagService) : base(loggerFactory, contextProvider, mapper)
         {
+            _tagService = tagService;
         }
 
         public async Task<ScriptLineModel> FindRandomSingleQuoteAsync()
@@ -62,6 +64,12 @@ FROM ScriptLine AS FT_TBL INNER JOIN
    inner join Script S on S.Id = FT_TBL.ScriptId
    inner join Episode E on E.Id = S.Id
 ";
+
+                await _tagService.SaveTagAsync(new TagsModel
+                {
+                    Name = question.Text,
+                    Category = "Search"
+                });
                 using (var c = context.Database.GetDbConnection())
                 {
                     c.Open();

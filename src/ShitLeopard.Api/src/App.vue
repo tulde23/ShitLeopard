@@ -1,57 +1,41 @@
 <template>
-<v-app>
+<v-app id="shitleopard">
     <v-progress-linear color="#D4AF37" :indeterminate="busy" height="4" style="paddin:0; margin:0"></v-progress-linear>
-    <v-toolbar flat>
-        <v-toolbar-title>
+    <v-navigation-drawer :expand-on-hover="expandOnHover" :mini-variant="isMini" absolute>
+        <v-list dense nav class="py-0">
+            <v-list-item two-line :class="isMini && 'px-0'">
+                <v-list-item-avatar>
+                    <img src="logo.png">
+                </v-list-item-avatar>
 
-            <img src="/img/logo300.png" class="responsive">
+                <v-list-item-content>
+                    <v-list-item-title>Shit Leopard</v-list-item-title>
+                    <v-list-item-subtitle>Trailer Park Boys</v-list-item-subtitle>
+                </v-list-item-content>
+            </v-list-item>
 
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn flat to="/">Ask Me</v-btn>
-            <v-btn flat to="/browse">Browse</v-btn>
+            <v-divider></v-divider>
 
-        </v-toolbar-items>
-    </v-toolbar>
+            <v-list-item v-for="item in authorizedRoutes" :key="item.path" link :to="item.path">
+                <v-list-item-icon>
+                    <v-icon>{{ item.icon}}</v-icon>
+                </v-list-item-icon>
 
-    <div id="random-quote" v-if="answer">
-        <v-container>
-            <v-layout>
-                <v-flex xs1 sm1 md1>
-                    <v-badge color="red" left>
-                        <template v-slot:badge>
-                            <span>{{answer.popularity}}</span>
-                        </template>
+                <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
 
-                    </v-badge>
-                </v-flex>
-                <v-flex xs12 sm6 md6 buffer>
-                    <p class="text-xs-left"> {{answer.body}}</p>
+        </v-list>
+    </v-navigation-drawer>
+    <v-sheet>
 
-                </v-flex>
-                <v-flex xs12 sm5 md5 buffer class="text-xs-left">
-                    <v-btn @click="refresh" fab small>
-                        <v-icon>refresh</v-icon>
-                    </v-btn>
-                    <v-btn color="blue" @click="upvote" fab small>
-                        <v-icon>thumb_up</v-icon>
+        <transition name="fade-transition">
+            <router-view></router-view>
+        </transition>
 
-                    </v-btn>
+    </v-sheet>
 
-                </v-flex>
-            </v-layout>
-        </v-container>
-
-    </div>
-
-    <v-content id="main-app" style="padding-top:50px">
-        <v-container>
-            <transition name="fade-transition">
-                <router-view></router-view>
-            </transition>
-        </v-container>
-    </v-content>
 </v-app>
 </template>
 

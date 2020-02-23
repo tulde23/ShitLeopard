@@ -1,15 +1,14 @@
-using System.Collections.Generic;
-using App.Metrics;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Providers;
 using ShitLeopard.DataLayer.Entities;
@@ -36,25 +35,20 @@ namespace ShitLeopard
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
+            services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
-            var metrics = AppMetrics.CreateDefaultBuilder().Build();
 
-            services.AddMetrics(metrics);
-            services.AddMetricsTrackingMiddleware();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shit Leopard", Version = "v1" });
-               
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-            // Or to cherry-pick the tracking of interest
-            app.UseMetricsAllEndpoints();
+           
             // If, for some reason, you need a reference to the built container, you
             // can use the convenience extension method GetAutofacRoot.
             this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
@@ -69,14 +63,11 @@ namespace ShitLeopard
                 c.RoutePrefix = "docs";
             });
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-   
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-           
+            app.UseDeveloperExceptionPage();
+            app.UseSerilogRequestLogging();
+       //     app.UseDefaultFiles();
+       //     app.UseStaticFiles();
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All
@@ -86,12 +77,23 @@ namespace ShitLeopard
 
             app.UseRouting();
 
-        //    app.UseAuthorization();
+            //    app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+            app.UseSpaStaticFiles();
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "client-app";
+                if (env.IsDevelopment())
+                {
+                    // Launch development server for Vue.js
+                    spa.UseVueDevelopmentServer();
+                }
+            });
+
         }
     }
 }

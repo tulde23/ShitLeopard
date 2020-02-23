@@ -1,0 +1,60 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+.responsive {
+  height: 55px;
+}
+
+.container {
+  max-width: 100%;
+}
+.label-padding {
+  padding-bottom: 1%;
+}
+.label-padding .body-2 {
+  font-weight: bold;
+}
+
+.label-column {
+  width: 20%;
+  font-weight: bold;
+}
+.data-column {
+  width: 30%;
+  font-size: 90%;
+}
+
+.dark-red {
+  color: #a00404;
+}
+.maroon {
+  color: #5e0404;
+}
+.saddle-brown {
+  color: #612918;
+}
+.indian-red {
+  color: #cd7c62;
+}
+.sienna {
+  color: #975743;
+}
+.dim-gray {
+  color: #746162;
+}
+.light-steel-blue {
+  color: #b6bdd4;
+}
+.midnight-blue {
+  color: #102033;
+}
+.logo-bar {
+  max-width: 250px;
+}
+.slim {
+  padding: 1px;
+}

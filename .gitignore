@@ -45,3 +45,4 @@ src/Gozer/logs/
 
 .idea
 *.user
+src/ShitLeopard.Api/appsettings.production.json

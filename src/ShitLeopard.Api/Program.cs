@@ -1,38 +1,51 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
+using Serilog;
+using Serilog.Events;
 using ShitLeopard.Api;
 
 namespace ShitLeopard
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-           CreateHostBuilder(args).Build().Run();
+            Log.Logger = new LoggerConfiguration()
+           .MinimumLevel.Debug()
+           .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
+           .Enrich.FromLogContext()
+           .WriteTo.Console()
+              .WriteTo.File("ShitLeopardSpots.txt", rollingInterval: RollingInterval.Day)
+           .CreateLogger();
+
+            try
+            {
+                Log.Information("Starting web host");
+                CreateHostBuilder(args).Build().Run();
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Host terminated unexpectedly");
+                return 1;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                       .UseEnvironment("development")
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb=>AutoFacRegistrationModule.Build(cb)))
+
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb => AutoFacRegistrationModule.Build(cb)))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-
-                    webBuilder.UseMetricsEndpoints();
-                    webBuilder.UseMetricsWebTracking();
-              
-                 
                     webBuilder.UseStartup<Startup>();
-                });
+                }).UseSerilog(); 
     }
-
-
 
     public class Rootobject
     {
@@ -54,5 +67,4 @@ namespace ShitLeopard
         public int? DivisionId { get; set; }
         public string ProgramName { get; set; }
     }
-
 }

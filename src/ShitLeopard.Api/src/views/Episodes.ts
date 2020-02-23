@@ -9,20 +9,13 @@ export default class Episodes extends Vue {
   public episode: any;
   public gridModel = new EpisodeGridModel();
 
-  public get episodes() {
-    return this.$store.getters.episodes;
-  }
-
-  public get groupedBySeason() {
-    if (this.episodes) {
-      return this.$helper.groupBy(this.episodes, 'seasonId');
-    }
-    return undefined;
+  public get episodes(): any[] {
+    return this.$store.getters.groupedEpisodes;
   }
 
   created() {}
 
   mounted() {
-    this.$api.getEpisodes();
+    this.$api.getEpisodeGroups();
   }
 }

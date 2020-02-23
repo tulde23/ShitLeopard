@@ -1,9 +1,9 @@
 <template>
 <v-container>
 
-    <v-text-field label="Solo" solo placeholder="Ask me a question you greasy bastard" append-icon="search" v-model="question" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
+    <v-text-field label="Solo" solo placeholder="Ask me a question you greasy bastard" append-icon="mdi-search" v-model="question" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
 
-    <v-data-table :items="lines" class="elevation-1" hide-actions hide-headers>
+    <v-data-table :items="lines" class="elevation-1" hide-default-footer hide-default-header>
         <template v-slot:items="props">
 
             <td class="text-xs-left">{{ props.item.body }}</td>

@@ -26,7 +26,7 @@ namespace ShitLeopard.Api.Contracts
         /// </summary>
         /// <param name="tags">The tags.</param>
         /// <returns></returns>
-        Task AddAsync(TagsModel tags);
+        Task SaveTagAsync(TagsModel tags);
 
         /// <summary>
         /// Removes the asynchronous.

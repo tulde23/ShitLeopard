@@ -17,16 +17,24 @@ namespace ShitLeopard.Api.Services
         {
         }
 
-        public async Task AddAsync(TagsModel tags)
+        public async Task SaveTagAsync(TagsModel tags)
         {
             using (var context = ContextProvider())
             {
                 var existing = await (context.Tags.FirstOrDefaultAsync(x =>
-                   x.Category.Equals(tags.Category, StringComparison.OrdinalIgnoreCase) &&
-                   x.Name.Equals(tags.Name, StringComparison.OrdinalIgnoreCase)));
+                   x.Category.Equals(tags.Category) &&
+                   x.Name.Equals(tags.Name)));
                 if (existing == null)
                 {
-                    context.Tags.Add(Mapper.Map<TagsModel, Tags>(tags));
+                    var t = Mapper.Map<TagsModel, Tags>(tags);
+                    t.Frequency = 1;
+                    context.Tags.Add(t);
+                    await context.SaveChangesAsync();
+                }
+                else
+                {
+                    existing.Frequency = existing.Frequency + 1;
+                    context.Tags.Update(existing);
                     await context.SaveChangesAsync();
                 }
             }

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ShitLeopard.DataLayer.Entities
 {
@@ -14,6 +16,7 @@ namespace ShitLeopard.DataLayer.Entities
         }
 
         public virtual DbSet<Character> Character { get; set; }
+        public virtual DbSet<CharacterTags> CharacterTags { get; set; }
         public virtual DbSet<Episode> Episode { get; set; }
         public virtual DbSet<Quote> Quote { get; set; }
         public virtual DbSet<Script> Script { get; set; }
@@ -26,7 +29,7 @@ namespace ShitLeopard.DataLayer.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                OnConfiguringPartial( optionsBuilder);
+                OnConfiguringPartial(optionsBuilder);
             }
         }
 
@@ -50,6 +53,13 @@ namespace ShitLeopard.DataLayer.Entities
                 entity.Property(e => e.PlayedBy)
                     .HasMaxLength(255)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<CharacterTags>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<Episode>(entity =>

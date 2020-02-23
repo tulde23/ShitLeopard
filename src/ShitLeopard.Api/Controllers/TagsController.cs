@@ -35,7 +35,7 @@ namespace ShitLeopard.Api.Controllers
         [Consumes("application/json")]
         public async Task Add([FromBody] TagsModel tags)
         {
-            await Service.AddAsync(tags);
+            await Service.SaveTagAsync(tags);
         }
 
         /// <summary>

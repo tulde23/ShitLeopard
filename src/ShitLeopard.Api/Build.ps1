@@ -29,15 +29,23 @@ param(
   npm run build
  }
  
- dotnet publish -c Release -o ubuntu -r linux-x64
+ 
+ $publish = "ubuntu"
+
+ $source="ubuntu"
+  $destination = $source
+
+
+
+ dotnet publish -c Release -o $source -r linux-x64
 
  if( $publishLocal -eq $True){
  Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.1.96:/home/tulde23/sl';
- pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.1.96:/home/tulde23/sl
+ pscp -unsafe -r $destination tulde23@192.168.1.96:/home/tulde23/sl
  }
  else{
  Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/sl';
- pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/sl
+ pscp -unsafe -r $destination tulde23@tully.world:/home/tulde23/sl
  }
- #sudo cp -RT sl /var/aspnetcore/shit_leopard
+ #sudo cp -RT sl/ubuntu /var/aspnetcore/shit_leopard
  #sudo systemctl restart kestrel-shit-leopard.service

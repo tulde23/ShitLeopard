@@ -32,6 +32,7 @@ namespace ShitLeopard.DataLoader
 
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "production";
 
+            NLPTests.Test();
 
             await Host.CreateDefaultBuilder(args)
                 .UseEnvironment(env)

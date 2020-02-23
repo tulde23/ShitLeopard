@@ -1,76 +1,21 @@
-import App from '@/App';
-import AceEditor from '@/components/Widgets/Ace';
-import CustomFilters from '@/plugins/filters';
-import {
-  DataService,
-  FileUploadService,
-  Helper,
-  HttpService,
-  MessageService
-} from '@/services';
-import store from '@/store';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faBlind,
-  faChild,
-  faCoffee,
-  faUsers
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import Axios, { AxiosRequestConfig } from 'axios';
+import { DataService, Helper, HttpService } from '@/services';
 import Vue from 'vue';
-import VueCytoscape from 'vue-cytoscape';
-import EventHub from 'vue-event-hub';
 
-import './plugins/vuetify';
 import '@babel/polyfill';
-import 'vue-cytoscape/dist/vue-cytoscape.css';
 
+import App from './App.vue';
+import vuetify from './plugins/vuetify';
 import router from './router';
+import store from './store';
 
-// Plugins
+Vue.config.productionTip = false;
 const httpService = new HttpService(store);
 Vue.prototype.$helper = new Helper();
-Vue.prototype.$messageBus = new MessageService();
 Vue.prototype.$http = httpService;
-Vue.prototype.$upload = new FileUploadService(httpService);
 Vue.prototype.$api = new DataService(store, httpService);
-
-Vue.use(CustomFilters);
-Vue.use(EventHub);
-// Tell Vue to use the plugi
-const helper = new Helper();
-Vue.use(VueCytoscape);
-Vue.config.productionTip = false;
-Vue.prototype.$http = Axios;
-const eventsHub = new Vue();
-
-library.add(faCoffee, faBlind, faChild, faUsers);
-
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.component('ace-editor', AceEditor);
-
-Axios.interceptors.request.use(
-  function(request: AxiosRequestConfig) {
-    request.withCredentials = true;
-    return Promise.resolve(request);
-  },
-  function(error) {}
-);
-Axios.interceptors.response.use(
-  response => {
-    // Do something with response data
-    return response;
-  },
-  error => {
-    // Do something with response error
-
-    return Promise.reject(error);
-  }
-);
-
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app');
