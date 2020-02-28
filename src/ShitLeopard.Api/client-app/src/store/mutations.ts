@@ -1,4 +1,11 @@
-import { Character, Episode, ScriptLine, EpisodeGroup, Quote } from '@/viewModels';
+import {
+  Character,
+  Episode,
+  EpisodeGroup,
+  Quote,
+  ScriptLine,
+  Tag
+} from '@/viewModels';
 
 import * as ACTIONS from './mutation-types';
 import { State } from './state';
@@ -6,6 +13,9 @@ import { State } from './state';
 const mutations = {
   [ACTIONS.EXECUTING](state: State) {
     state.isBusy = true;
+  },
+  [ACTIONS.SET_REFRESH](state: State, e: boolean) {
+    state.timeToRefresh = e;
   },
   [ACTIONS.COMPLETE](state: State) {
     state.isBusy = false;
@@ -35,6 +45,9 @@ const mutations = {
   },
   [ACTIONS.SET_QUOTE](state: State, e: Quote) {
     state.quote = e;
+  },
+  [ACTIONS.SET_TAGS](state: State, e: Tag[]) {
+    state.tags = e;
   }
 };
 

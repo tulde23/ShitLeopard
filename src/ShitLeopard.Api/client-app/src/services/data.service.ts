@@ -7,6 +7,10 @@ import { HttpService } from './http.service';
 export class DataService {
   constructor(private store: Store<any>, private http: HttpService) {}
 
+  updateRefreshInterval(state: boolean) {
+    this.store.commit(A.SET_REFRESH, state);
+  }
+
   getSeasons() {
     return this.http.get('/api/Season');
   }
@@ -68,5 +72,16 @@ export class DataService {
   }
   getRandomQuote() {
     return this.http.get('/api/Quote').then(resp => this.store.commit(A.SET_QUOTE, resp.data));
+  }
+
+  searchTags(filter: string | undefined, category: string | undefined) {
+    return this.http
+      .get(`/api/Tags?category=${category}&name=${filter}`)
+      .then(resp => this.store.commit(A.SET_TAGS, resp.data));
+  }
+  getMostPopularTags(category: string | undefined, count: number) {
+    return this.http
+      .get(`/api/Tags/Popular/${category}/${count}`)
+      .then(resp => this.store.commit(A.SET_TAGS, resp.data));
   }
 }

@@ -17,6 +17,9 @@ export default class Browse extends Vue {
   mounted() {
     this.$api.getCharacters().then(x => this.$api.getEpisodes());
   }
+  public get busy() {
+    return this.$store.getters.isBusy;
+  }
   public upvote(item: any) {
     this.$api.upvote(item.id);
   }

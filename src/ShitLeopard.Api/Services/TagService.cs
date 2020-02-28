@@ -19,6 +19,13 @@ namespace ShitLeopard.Api.Services
 
         public async Task SaveTagAsync(TagsModel tags)
         {
+            if (tags == null ||
+                string.IsNullOrEmpty(tags.Name) ||
+                tags.Name.Length <= 2)
+            {
+                return;
+            }
+
             using (var context = ContextProvider())
             {
                 var existing = await (context.Tags.FirstOrDefaultAsync(x =>
@@ -55,13 +62,40 @@ namespace ShitLeopard.Api.Services
             }
         }
 
-        public async Task<IEnumerable<string>> SearchAsync(string category, string name)
+        public async Task<IEnumerable<TagsModel>> GetMostPopularTagsAsync(string category, int count)
         {
+            if (string.IsNullOrEmpty(category))
+            {
+                return Enumerable.Empty<TagsModel>();
+            }
             using (var context = ContextProvider())
             {
-                return await (context.Tags.Where(x =>
-                    x.Category.Equals(category, StringComparison.OrdinalIgnoreCase) &&
-                    x.Name.StartsWith(name, StringComparison.OrdinalIgnoreCase)).Select(x => x.Name).ToListAsync());
+                var query = from t in context.Tags select t;
+                query = query.Where(x => x.Category.Equals(category));
+                query = query.Where(x => !string.IsNullOrEmpty(x.Name));
+
+                query = query.OrderByDescending(x => x.Frequency);
+                return Mapper.MapCollection<TagsModel, Tags>(await (query.Take(count).ToListAsync()));
+            }
+        }
+
+        public async Task<IEnumerable<TagsModel>> SearchAsync(string category, string name)
+        {
+            if (string.IsNullOrEmpty(category))
+            {
+                return Enumerable.Empty<TagsModel>();
+            }
+
+            using (var context = ContextProvider())
+            {
+                var query = from t in context.Tags select t;
+                query = query.Where(x => x.Category.Equals(category));
+                if (!string.IsNullOrEmpty(name))
+                {
+                    query = query.Where(x => x.Name.StartsWith(name));
+                }
+                query = query.OrderByDescending(x => x.Frequency);
+                return Mapper.MapCollection<TagsModel, Tags>(await (query.ToListAsync()));
             }
         }
 

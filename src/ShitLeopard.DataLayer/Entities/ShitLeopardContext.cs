@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ShitLeopard.DataLayer.Entities
 {
@@ -19,6 +17,7 @@ namespace ShitLeopard.DataLayer.Entities
         public virtual DbSet<CharacterTags> CharacterTags { get; set; }
         public virtual DbSet<Episode> Episode { get; set; }
         public virtual DbSet<Quote> Quote { get; set; }
+        public virtual DbSet<RequestProfile> RequestProfile { get; set; }
         public virtual DbSet<Script> Script { get; set; }
         public virtual DbSet<ScriptLine> ScriptLine { get; set; }
         public virtual DbSet<ScriptWord> ScriptWord { get; set; }
@@ -84,6 +83,20 @@ namespace ShitLeopard.DataLayer.Entities
                 entity.Property(e => e.Body)
                     .HasMaxLength(1000)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<RequestProfile>(entity =>
+            {
+                entity.Property(e => e.AgentString).IsUnicode(false);
+
+                entity.Property(e => e.Headers).IsUnicode(false);
+
+                entity.Property(e => e.Ipaddress)
+                    .HasColumnName("IPAddress")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastAccessTime).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Script>(entity =>

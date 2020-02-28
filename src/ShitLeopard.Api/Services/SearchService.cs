@@ -53,7 +53,7 @@ namespace ShitLeopard.Api.Services
             {
                 var query = @"
 sELECT
-      FT_TBL.*, E.Id as EpisodeId, E.SeasonId, E.Title as EpisodeTitle
+      FT_TBL.*, E.Id as EpisodeId, E.SeasonId, E.Title as EpisodeTitle, E.OffsetId
 FROM ScriptLine AS FT_TBL INNER JOIN
    CONTAINSTABLE (ScriptLine,
       Body,

@@ -1,23 +1,28 @@
 <template>
-<v-container>
-    <v-badge color="red" left>
-        <template v-slot:badge>
-            <span>{{answer.popularity}}</span>
-        </template>
+<v-alert dense v-if="quote" border="left" colored-border color="blue accent-4" elevation="2" transition="fade-transition">
 
-    </v-badge>
-    <p v-if="quote">
-        {{quote.body}}
-    </p>
-    <v-btn @click="refresh" fab small>
-        <v-icon>refresh</v-icon>
-    </v-btn>
-    <v-btn color="blue" @click="upvote" fab small>
-        <v-icon>thumb_up</v-icon>
+    <v-row align="center">
 
-    </v-btn>
+        <v-col class="grow">
 
-</v-container>
+            <v-badge color="green" :content="quote.popularity">
+                {{quote.body}}
+            </v-badge>
+
+        </v-col>
+        <v-col class="shrink">
+            <v-btn-toggle dense rounded>
+                <v-btn @click="refresh" color="red" fab x-small title="Get a new quote pussy tits!">
+                    <v-icon color="white">mdi-refresh</v-icon>
+                </v-btn>
+                <v-btn @click="upvote" color="blue" fab x-small title="Like this quote">
+                    <v-icon color="white">mdi-thumb-up-outline</v-icon>
+                </v-btn>
+            </v-btn-toggle>
+
+        </v-col>
+    </v-row>
+</v-alert>
 </template>
 
 <script lang="ts" src="./RandomQuote.ts">

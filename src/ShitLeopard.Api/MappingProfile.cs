@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ShitLeopard.Api.Models;
+using ShitLeopard.Common.Models;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.Api
@@ -16,6 +17,7 @@ namespace ShitLeopard.Api
             CreateMap<Script, ScriptModel>().ReverseMap();
             CreateMap<ScriptWord, ScriptWordModel>().ReverseMap();
             CreateMap<Season, SeasonModel>().ReverseMap();
+            CreateMap<RequestProfile, RequestProfileModel>().ReverseMap();
         }
     }
 }

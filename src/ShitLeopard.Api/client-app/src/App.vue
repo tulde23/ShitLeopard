@@ -1,18 +1,18 @@
 <template>
 <v-app id="shitleopard">
     <v-progress-linear color="#D4AF37" :indeterminate="busy" height="4" style="paddin:0; margin:0"></v-progress-linear>
-  <!--  <v-app-bar app clipped-left color="amber">
+ <!-- <v-app-bar app clipped-left color="amber">
         <v-app-bar-nav-icon @click="drawer = !drawer" />
         <span class="title ml-3 mr-5">Google&nbsp;<span class="font-weight-light">Keep</span></span>
-        <v-text-field solo-inverted flat hide-details label="Search" prepend-inner-icon="search" />
+        <v-text-field solo-inverted flat hide-details label="Search" prepend-inner-icon="mdi-search" />
 
         <v-spacer />
-    </v-app-bar>-->
-    <v-navigation-drawer :expand-on-hover="expandOnHover" :mini-variant="isMini" absolute>
+    </v-app-bar> -->
+    <v-navigation-drawer :expand-on-hover="expandOnHover" :mini-variant="isMini" app overflow>
         <v-list dense nav class="py-0">
             <v-list-item two-line :class="isMini && 'px-0'">
                 <v-list-item-avatar>
-                    <img src="logo.png">
+                    <img src="ShitLeopard.png">
                 </v-list-item-avatar>
 
                 <v-list-item-content>
@@ -37,18 +37,21 @@
     </v-navigation-drawer>
 
     <v-content>
-        <v-container>
-            <v-row align="center" justify="center" style="margin-left:250px">
-                <v-col class="text-center">
-                    <div class="text-center">
-                        <v-sheet>
+        <v-container fluid>
+            <v-row align="center" justify="center">
+                <v-col cols="12">
+                    <v-sheet>
                         <xquote></xquote>
-                            <transition name="fade-transition">
-                                <router-view></router-view>
-                            </transition>
-                        </v-sheet>
-                    </div>
-
+                    </v-sheet>
+                </v-col>
+            </v-row>
+            <v-row align="center" justify="center">
+                <v-col cols="12">
+                    <v-sheet>
+                        <transition name="fade-transition">
+                            <router-view></router-view>
+                        </transition>
+                    </v-sheet>
                 </v-col>
             </v-row>
         </v-container>

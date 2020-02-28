@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Services;
+using ShitLeopard.Common.Contracts;
 
 namespace ShitLeopard.Api
 {
@@ -15,6 +16,7 @@ namespace ShitLeopard.Api
             builder.RegisterType<ScriptService>().As<IScriptService>().InstancePerDependency();
             builder.RegisterType<SearchService>().As<ISearchService>().InstancePerDependency();
             builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
+            builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
         }
     }
 }

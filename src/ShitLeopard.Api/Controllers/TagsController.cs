@@ -21,9 +21,16 @@ namespace ShitLeopard.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Produces("application/json")]
-        public async Task<IEnumerable<string>> Search([FromQuery] string category, [FromQuery] string name)
+        public async Task<IEnumerable<TagsModel>> Search([FromQuery] string category, [FromQuery] string name)
         {
             return await Service.SearchAsync(category, name);
+        }
+
+        [HttpGet("Popular/{category}/{count}")]
+        [Produces("application/json")]
+        public async Task<IEnumerable<TagsModel>> GetMostPopularTags([FromRoute] string category, [FromRoute] int count)
+        {
+            return await Service.GetMostPopularTagsAsync(category,count);
         }
 
         /// <summary>

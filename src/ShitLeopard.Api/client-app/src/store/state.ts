@@ -4,11 +4,13 @@ import {
   EpisodeGroup,
   Quote,
   ScriptLine,
-  Season
+  Season,
+  Tag
 } from '@/viewModels';
 
 export interface State {
   isBusy: boolean;
+  timeToRefresh: boolean;
   episodes: Episode[];
   seasons: Season[];
   episode: Episode;
@@ -16,11 +18,13 @@ export interface State {
   lines: ScriptLine[];
   characters: Character[];
   groupedEpisodes: EpisodeGroup[];
+  tags: Tag[];
   quote: Quote;
 }
 
 export const InitState = {
   isBusy: false,
+  timeToRefresh: false,
   episodes: [],
   seasons: [],
   episode: {},
@@ -28,5 +32,6 @@ export const InitState = {
   lines: [],
   characters: [],
   groupedEpisodes: [],
-  quote: {}
+  quote: {},
+  tags: []
 };

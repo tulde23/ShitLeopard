@@ -15,6 +15,8 @@ namespace ShitLeopard.Api.Models
 
 
         public int? EpisodeId { get; set; }
+
+        public int? OffsetId { get; set; }
         public int? SeasonId { get; set; }
         public string EpisodeTitle { get; set; }
     }

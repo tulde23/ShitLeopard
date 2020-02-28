@@ -3,7 +3,8 @@ import {
   Episode,
   EpisodeGroup,
   Quote,
-  ScriptLine
+  ScriptLine,
+  Tag
 } from '@/viewModels';
 
 import { State } from './state';
@@ -16,7 +17,8 @@ const getters = {
   lines: (state: State): ScriptLine[] => state.lines,
   characters: (state: State): Character[] => state.characters,
   quote: (state: State): Quote => state.quote,
-  groupedEpisodes: (state: State): EpisodeGroup[] => state.groupedEpisodes
+  groupedEpisodes: (state: State): EpisodeGroup[] => state.groupedEpisodes,
+  tags: (state: State): Tag[] => state.tags
 };
 
 export default getters;
