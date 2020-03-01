@@ -31,9 +31,8 @@ namespace ShitLeopard.Api.Contracts
         /// <summary>
         /// Sets the script line character.
         /// </summary>
-        /// <param name="scriptLineId">The script line identifier.</param>
-        /// <param name="characterId">The character identifier.</param>
+        /// <param name="model">The model.</param>
         /// <returns></returns>
-        Task SetScriptLineCharacter(long scriptLineId, long characterId);
+        Task UpdateScriptLineAsync(ScriptLineModel model);
     }
 }

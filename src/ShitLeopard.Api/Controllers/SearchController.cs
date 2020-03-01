@@ -23,7 +23,7 @@ namespace ShitLeopard.Api.Controllers
         [HttpPost("LinesContaining")]
         public async Task<IEnumerable<ScriptLineModel>> LinesContaining([FromBody] Question question)
         {
-            if (string.IsNullOrEmpty(question?.Text) == true || question.Text.Length > 255)
+            if (string.IsNullOrEmpty(question?.Text)  || question.Text.Length > 255)
             {
                 return Enumerable.Empty<ScriptLineModel>();
             }
@@ -34,6 +34,10 @@ namespace ShitLeopard.Api.Controllers
         [HttpPost]
         public async Task<dynamic> Ask([FromBody] Question question)
         {
+            if (string.IsNullOrEmpty(question?.Text)  || question.Text.Length > 255)
+            {
+                return Enumerable.Empty<ScriptLineModel>();
+            }
             return await Service.FindRandomSingleQuoteAsync();
         }
     }

@@ -1,3 +1,4 @@
+import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
   Episode,
@@ -7,6 +8,7 @@ import {
   Season,
   Tag
 } from '@/viewModels';
+import { SiteMetric } from '@/viewModels/SiteMetric';
 
 export interface State {
   isBusy: boolean;
@@ -20,6 +22,7 @@ export interface State {
   groupedEpisodes: EpisodeGroup[];
   tags: Tag[];
   quote: Quote;
+  siteMetrics: PagedResult<SiteMetric>;
 }
 
 export const InitState = {
@@ -33,5 +36,6 @@ export const InitState = {
   characters: [],
   groupedEpisodes: [],
   quote: {},
-  tags: []
+  tags: [],
+  siteMetrics: new PagedResult<SiteMetric>(0, [])
 };

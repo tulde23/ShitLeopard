@@ -10,3 +10,4 @@ export const SET_CHARACTERS = 'set_characters';
 export const SET_QUOTE = 'set_quote';
 export const SET_TAGS = 'set_tags';
 export const SET_REFRESH = 'set_refresh';
+export const SET_METRICS = 'set_metrics';

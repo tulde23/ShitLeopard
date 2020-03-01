@@ -1,3 +1,4 @@
+import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
   Episode,
@@ -6,6 +7,7 @@ import {
   ScriptLine,
   Tag
 } from '@/viewModels';
+import { SiteMetric } from '@/viewModels/SiteMetric';
 
 import * as ACTIONS from './mutation-types';
 import { State } from './state';
@@ -48,6 +50,9 @@ const mutations = {
   },
   [ACTIONS.SET_TAGS](state: State, e: Tag[]) {
     state.tags = e;
+  },
+  [ACTIONS.SET_METRICS](state: State, e: PagedResult<SiteMetric>) {
+    state.siteMetrics = e;
   }
 };
 

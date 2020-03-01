@@ -14,7 +14,9 @@
             <template v-slot:body="{ items }">
                 <tbody>
                     <tr v-for="e in items" :key="e.id">
-                        <td class="text-xs-left">{{ e.body }}</td>
+                        <td class="text-xs-left">
+                            <v-textarea rows="2" v-model="e.body" @change="saveDebounce(e)"></v-textarea>
+                        </td>
                         <td>
                             <v-select :items="characters" @change="saveLine(e)" clearable v-model="e.characterId" label="Said By" class="input-group--focused" item-text="name" item-value="id">
                             </v-select>

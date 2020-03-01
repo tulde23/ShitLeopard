@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 import Browse from '../views/Browse.vue';
 import Home from '../views/Home.vue';
+import Metrics from '../views/Metrics.vue';
 import TimeLine from '../views/TimeLine.vue';
 
 Vue.use(VueRouter);
@@ -31,6 +32,14 @@ const routes = [
     icon: 'mdi-find-replace',
 
     component: Browse
+  },
+  {
+    path: '/metrics',
+    name: 'metrics',
+    title: 'Metrics',
+    icon: 'mdi-finance',
+
+    component: Metrics
   }
 ];
 

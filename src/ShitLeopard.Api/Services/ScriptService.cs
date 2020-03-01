@@ -45,14 +45,24 @@ namespace ShitLeopard.Api.Services
             }
         }
 
-        public async Task SetScriptLineCharacter(long scriptLineId, long characterId)
+        public async Task UpdateScriptLineAsync(ScriptLineModel model)
         {
             using (var context = ContextProvider())
             {
-                var item = await context.ScriptLine.FirstOrDefaultAsync(x => x.Id == scriptLineId);
+                var item = await context.ScriptLine.FirstOrDefaultAsync(x => x.Id == model.Id);
+
                 if (item != null)
                 {
-                    item.CharacterId = characterId;
+                    var existingLength = item.Body.Length - model.Body.Length;
+                    if( existingLength < 0)
+                    {
+                        existingLength = existingLength * -1;
+                    }
+                    if( !string.IsNullOrEmpty(model.Body) &&  existingLength <= 10)
+                    {
+                        item.Body = model.Body;
+                    }
+                    item.CharacterId = model.CharacterId;
                     context.Update(item);
                     await context.SaveChangesAsync();
                 }

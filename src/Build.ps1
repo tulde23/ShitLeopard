@@ -13,7 +13,7 @@ param(
 
 	
     [Parameter(HelpMessage="Builds VueJS App")]
-	[switch] $buildVue,
+	[switch] $build,
     [Parameter(HelpMessage="Publish Local")]
 	[switch] $publishLocal,
     [Parameter(HelpMessage="Remote Compy")]
@@ -38,8 +38,12 @@ param(
   $destination = $source
 
 
+  if( $build -eq $True){
 
+  Write-Host "Building...."
  dotnet publish -c Release -o $source -r linux-x64
+ }
+
 
  if( $pscp){
 

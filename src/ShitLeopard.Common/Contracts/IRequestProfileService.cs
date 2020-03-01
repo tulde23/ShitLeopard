@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Common.Contracts
@@ -14,5 +15,14 @@ namespace ShitLeopard.Common.Contracts
         /// <param name="requestProfileModel">The request profile model.</param>
         /// <returns></returns>
         Task SaveAsync(RequestProfileModel requestProfileModel);
+
+        /// <summary>
+        /// Searches the asynchronous.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
+        Task<PagedResult<SiteMetricsModel>> SearchAsync(RequestProfileSearchCommand command);
+
+
     }
 }

@@ -1,5 +1,6 @@
+import { SearchMetricsCommand } from '@/models/SearchMetricsCommand';
 import * as A from '@/store/mutation-types';
-import { Episode, Quote } from '@/viewModels';
+import { Episode, Quote, ScriptLine } from '@/viewModels';
 import { Store } from 'vuex';
 
 import { HttpService } from './http.service';
@@ -44,8 +45,8 @@ export class DataService {
       .get('/api/Character')
       .then(resp => this.store.commit(A.SET_CHARACTERS, resp.data));
   }
-  saveLine(id: number, cid: number) {
-    return this.http.post(`/api/Script/ScripLine/${id}/${cid}`, {});
+  saveLine(line: ScriptLine) {
+    return this.http.post(`/api/Script/ScripLine`, line);
   }
 
   askMe(question: string) {
@@ -83,5 +84,10 @@ export class DataService {
     return this.http
       .get(`/api/Tags/Popular/${category}/${count}`)
       .then(resp => this.store.commit(A.SET_TAGS, resp.data));
+  }
+  searchMetrics(command: SearchMetricsCommand) {
+    return this.http
+      .post(`/api/SiteMetrics`, command)
+      .then(resp => this.store.commit(A.SET_METRICS, resp.data));
   }
 }

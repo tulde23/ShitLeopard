@@ -8,6 +8,7 @@ import { Component } from 'vue-property-decorator';
 export default class Browse extends Vue {
   public episode: any;
   public gridModel = new EpisodeGridModel();
+  searchTimer: number | undefined = undefined;
 
   public get characters() {
     return this.$store.getters.characters;
@@ -24,7 +25,7 @@ export default class Browse extends Vue {
     this.$api.upvote(item.id);
   }
   public saveLine(line: any) {
-    this.$api.saveLine(line.id, line.characterId);
+    this.$api.saveLine(line);
   }
   public setEpisode(id: any) {
     this.$api.getEpisode(id);
@@ -34,5 +35,15 @@ export default class Browse extends Vue {
   }
   public get selectedEpisode() {
     return this.$store.getters.selectedEpisode;
+  }
+
+  saveDebounce(line: any) {
+    clearTimeout(this.searchTimer);
+    this.searchTimer = setTimeout(() => {
+      if (!line || !line.body || line.body.length <= 1) {
+        return;
+      }
+      this.saveLine(line);
+    }, 500); /* 500ms throttle */
   }
 }

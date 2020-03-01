@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
+using Newtonsoft.Json;
 using ShitLeopard.Api.Models;
 using ShitLeopard.Common.Models;
 using ShitLeopard.DataLayer.Entities;
@@ -18,6 +20,11 @@ namespace ShitLeopard.Api
             CreateMap<ScriptWord, ScriptWordModel>().ReverseMap();
             CreateMap<Season, SeasonModel>().ReverseMap();
             CreateMap<RequestProfile, RequestProfileModel>().ReverseMap();
+            CreateMap<RequestProfile, SiteMetricsModel>()
+                   .ForMember(dest => dest.Headers, opts =>
+                   opts.MapFrom(src => JsonConvert.DeserializeObject(src.Headers ?? string.Empty)));
+
+
         }
     }
 }

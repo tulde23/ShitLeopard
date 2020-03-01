@@ -11,7 +11,7 @@ export default class Home extends Vue {
   created() {}
 
   mounted() {
-    this.$api.getMostPopularTags('Search', 5);
+    this.$api.getMostPopularTags('Search', 10);
   }
 
   public get busy() {

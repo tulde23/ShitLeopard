@@ -5,9 +5,16 @@
 
         <v-col class="grow">
 
-            <v-badge color="green" :content="quote.popularity">
-                {{quote.body}}
-            </v-badge>
+      
+            <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                    <span v-on="on">
+                        {{quote.body}}
+
+                    </span>
+                </template>
+                <span>{{quote.episodeTitle}} {{quote.episodeId}}</span>
+            </v-tooltip>
 
         </v-col>
         <v-col class="shrink">
