@@ -17,6 +17,7 @@ namespace ShitLeopard.Api
             builder.RegisterType<SearchService>().As<ISearchService>().InstancePerDependency();
             builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
             builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
+            builder.RegisterType<StanfordNaturalLanguageService>().As<INaturalLanguageService>().InstancePerDependency();
         }
     }
 }

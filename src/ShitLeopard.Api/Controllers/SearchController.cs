@@ -38,7 +38,7 @@ namespace ShitLeopard.Api.Controllers
             {
                 return Enumerable.Empty<ScriptLineModel>();
             }
-            return await Service.FindRandomSingleQuoteAsync();
+            return await Service.AskQuestionAsync(question);
         }
     }
 }

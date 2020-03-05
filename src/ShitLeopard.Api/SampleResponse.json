@@ -1,0 +1,449 @@
+{
+  "docDate": "2020-03-05T12:25:32",
+  "sentences": [
+    {
+      "index": 0,
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "="
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "many",
+          "dependent": 2,
+          "dependentGloss": "How"
+        },
+        {
+          "dep": "amod",
+          "governor": 4,
+          "governorGloss": "seasons",
+          "dependent": 3,
+          "dependentGloss": "many"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 4,
+          "dependentGloss": "seasons"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "=",
+          "dependent": 5,
+          "dependentGloss": "are"
+        },
+        {
+          "dep": "expl",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 6,
+          "dependentGloss": "there"
+        },
+        {
+          "dep": "case",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 7,
+          "dependentGloss": "of"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 8,
+          "dependentGloss": "``"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 9,
+          "dependentGloss": "Trailer"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 10,
+          "dependentGloss": "Park"
+        },
+        {
+          "dep": "nmod",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 11,
+          "dependentGloss": "Boys"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 12,
+          "dependentGloss": "''"
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "="
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "many",
+          "dependent": 2,
+          "dependentGloss": "How"
+        },
+        {
+          "dep": "amod",
+          "governor": 4,
+          "governorGloss": "seasons",
+          "dependent": 3,
+          "dependentGloss": "many"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 4,
+          "dependentGloss": "seasons"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "=",
+          "dependent": 5,
+          "dependentGloss": "are"
+        },
+        {
+          "dep": "expl",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 6,
+          "dependentGloss": "there"
+        },
+        {
+          "dep": "case",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 7,
+          "dependentGloss": "of"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 8,
+          "dependentGloss": "``"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 9,
+          "dependentGloss": "Trailer"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 10,
+          "dependentGloss": "Park"
+        },
+        {
+          "dep": "nmod:of",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 11,
+          "dependentGloss": "Boys"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 12,
+          "dependentGloss": "''"
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "="
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "many",
+          "dependent": 2,
+          "dependentGloss": "How"
+        },
+        {
+          "dep": "amod",
+          "governor": 4,
+          "governorGloss": "seasons",
+          "dependent": 3,
+          "dependentGloss": "many"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 4,
+          "dependentGloss": "seasons"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "=",
+          "dependent": 5,
+          "dependentGloss": "are"
+        },
+        {
+          "dep": "expl",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 6,
+          "dependentGloss": "there"
+        },
+        {
+          "dep": "case",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 7,
+          "dependentGloss": "of"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 8,
+          "dependentGloss": "``"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 9,
+          "dependentGloss": "Trailer"
+        },
+        {
+          "dep": "compound",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 10,
+          "dependentGloss": "Park"
+        },
+        {
+          "dep": "nmod:of",
+          "governor": 5,
+          "governorGloss": "are",
+          "dependent": 11,
+          "dependentGloss": "Boys"
+        },
+        {
+          "dep": "punct",
+          "governor": 11,
+          "governorGloss": "Boys",
+          "dependent": 12,
+          "dependentGloss": "''"
+        }
+      ],
+      "openie": [
+        {
+          "subject": "many seasons",
+          "subjectSpan": [
+            2,
+            4
+          ],
+          "relation": "are of",
+          "relationSpan": [
+            4,
+            7
+          ],
+          "object": "Trailer Park Boys",
+          "objectSpan": [
+            8,
+            11
+          ]
+        },
+        {
+          "subject": "seasons",
+          "subjectSpan": [
+            3,
+            4
+          ],
+          "relation": "are of",
+          "relationSpan": [
+            4,
+            7
+          ],
+          "object": "Trailer Park Boys",
+          "objectSpan": [
+            8,
+            11
+          ]
+        }
+      ],
+      "entitymentions": [],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "=",
+          "originalText": "=",
+          "lemma": "=",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "JJ",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        },
+        {
+          "index": 2,
+          "word": "How",
+          "originalText": "How",
+          "lemma": "how",
+          "characterOffsetBegin": 1,
+          "characterOffsetEnd": 4,
+          "pos": "WRB",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "many",
+          "originalText": "many",
+          "lemma": "many",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 9,
+          "pos": "JJ",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "seasons",
+          "originalText": "seasons",
+          "lemma": "season",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 17,
+          "pos": "NNS",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "are",
+          "originalText": "are",
+          "lemma": "be",
+          "characterOffsetBegin": 18,
+          "characterOffsetEnd": 21,
+          "pos": "VBP",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 6,
+          "word": "there",
+          "originalText": "there",
+          "lemma": "there",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 27,
+          "pos": "EX",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 7,
+          "word": "of",
+          "originalText": "of",
+          "lemma": "of",
+          "characterOffsetBegin": 28,
+          "characterOffsetEnd": 30,
+          "pos": "IN",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 8,
+          "word": "``",
+          "originalText": "\"",
+          "lemma": "``",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 32,
+          "pos": "``",
+          "ner": "O",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 9,
+          "word": "Trailer",
+          "originalText": "Trailer",
+          "lemma": "Trailer",
+          "characterOffsetBegin": 32,
+          "characterOffsetEnd": 39,
+          "pos": "NNP",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 10,
+          "word": "Park",
+          "originalText": "Park",
+          "lemma": "Park",
+          "characterOffsetBegin": 40,
+          "characterOffsetEnd": 44,
+          "pos": "NNP",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 11,
+          "word": "Boys",
+          "originalText": "Boys",
+          "lemma": "Boys",
+          "characterOffsetBegin": 45,
+          "characterOffsetEnd": 49,
+          "pos": "NNPS",
+          "ner": "O",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 12,
+          "word": "''",
+          "originalText": "\"",
+          "lemma": "''",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 50,
+          "pos": "''",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        }
+      ]
+    }
+  ]
+}

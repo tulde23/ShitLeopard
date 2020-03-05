@@ -31,6 +31,7 @@ namespace ShitLeopard
         {
             services.AddTransient<ShitLeopardContext>();
             services.AddOptions();
+            services.AddHttpClient();
             services.AddControllers().AddNewtonsoftJson(a =>
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;

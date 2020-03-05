@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
+using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Models;
 using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.Api.Services
@@ -23,10 +25,27 @@ namespace ShitLeopard.Api.Services
                 "dope*"
             };
         private readonly ITagService _tagService;
+        private readonly INaturalLanguageService _naturalLanguageService;
 
-        public SearchService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper, ITagService tagService) : base(loggerFactory, contextProvider, mapper)
+        public SearchService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper, ITagService tagService, INaturalLanguageService naturalLanguageService) : base(loggerFactory, contextProvider, mapper)
         {
             _tagService = tagService;
+            _naturalLanguageService = naturalLanguageService;
+        }
+
+        public async Task<QuestionAnswer> AskQuestionAsync(Question question)
+        {
+            var result = await _naturalLanguageService.ParseSentenceAsync(question.Text);
+            using (var context = ContextProvider())
+            {
+
+                var value = await context.CountOccurencesOfSingleWord("fuck");
+            }
+                return new QuestionAnswer
+            {
+                Question = question,
+                Answer = result
+            };
         }
 
         public async Task<ScriptLineModel> FindRandomSingleQuoteAsync()
