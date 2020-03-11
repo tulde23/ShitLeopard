@@ -31,6 +31,10 @@ namespace ShitLeopard.Api.Services
             using (var client = _httpClientFactory.CreateClient())
             {
                 var ls = _connectionStringProvider.GetString("languageService");
+                if(string.IsNullOrEmpty(ls))
+                {
+                    ls = "http://localhost:5000";
+                }
                var qs = new StringBuilder("properties=")
                 .Append(WebUtility.UrlEncode(JsonConvert.SerializeObject(new
                 {

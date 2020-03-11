@@ -1,7 +1,4 @@
-import { Helper } from '@/services/helper';
 import moment from 'moment-timezone';
-
-const helper = new Helper();
 
 const CustomFilters = {
   install: (Vue: any, options: any) => {
