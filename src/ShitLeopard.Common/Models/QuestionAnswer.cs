@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ShitLeopard.Api.Models;
+﻿using ShitLeopard.Api.Models;
 
 namespace ShitLeopard.Common.Models
 {
@@ -9,5 +6,10 @@ namespace ShitLeopard.Common.Models
     {
         public Question Question { get; set; }
         public dynamic Answer { get; set; }
+
+        public bool Match { get; set; }
+
+        public string Comment { get; set; }
+        public bool IsArray { get; set; }
     }
 }

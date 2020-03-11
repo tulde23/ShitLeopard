@@ -7,6 +7,7 @@ import {
   ScriptLine,
   Tag
 } from '@/viewModels';
+import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
 
 import * as ACTIONS from './mutation-types';
@@ -37,6 +38,9 @@ const mutations = {
   [ACTIONS.SET_ANSWER](state: State, e: any) {
     console.log('setting answer', e);
     state.answer = e;
+  },
+  [ACTIONS.SET_QUESTION_ANSWER](state: State, e: QuestionAnswer) {
+    state.questionAnswer = e;
   },
   [ACTIONS.SET_LINES](state: State, e: ScriptLine[]) {
     console.log('setting lines', e);

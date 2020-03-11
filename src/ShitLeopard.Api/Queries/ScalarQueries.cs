@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,10 @@ namespace ShitLeopard.DataLayer.Entities
         /// </summary>
         /// <param name="shitLeopardContext">The shit leopard context.</param>
         /// <param name="word">The word.</param>
-        /// <param name="seasonId">The season identifier.</param>
-        /// <param name="episodeId">The episode identifier.</param>
+        /// <param name="seasonId">Filter by season</param>
+        /// <param name="episodeId">Filter by episode</param>
         /// <returns></returns>
-        public static async Task<long> CountOccurencesOfSingleWord(this ShitLeopardContext shitLeopardContext, string word, int? seasonId=null, int? episodeId=null)
+        public static async Task<long> CountOccurencesOfSingleWord(this ShitLeopardContext shitLeopardContext, string word, int? seasonId = null, int? episodeId = null)
         {
             //how many time does fuck appear in season 1
             var query = from sw in shitLeopardContext.ScriptWord
@@ -43,6 +44,30 @@ namespace ShitLeopard.DataLayer.Entities
             }
 
             return await query.LongCountAsync();
+        }
+
+        public static async Task<long> CountOccurencesOfPhrase(this ShitLeopardContext shitLeopardContext, string phrase, int? seasonId = null, int? episodeId = null)
+        {
+            try
+
+            {
+                phrase = $"FORMSOF(FREETEXT, \"{phrase}\")";
+
+                var query = shitLeopardContext.ScriptLine
+                    .FromSqlRaw(@"SELECT s.* FROM ScriptLine S
+INNER JOIN Script C on S.ScriptId = C.Id
+inner join Episode E on E.Id = C.EpisodeId
+                    WHERE CONTAINS(S.Body, @p0) AND
+                    E.OffsetId = coalesce(@p1, e.OffsetId) AND
+                    E.SeasonId = coalesce(@p2,e.SeasonId)", phrase, episodeId, seasonId)
+                    .AsNoTracking();
+
+                return (await query.CountAsync());
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
         }
     }
 }

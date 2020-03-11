@@ -17,6 +17,9 @@ namespace ShitLeopard.Api.Services
 {
     public class SearchService : BaseService, ISearchService
     {
+        private readonly string _defaultComment = "Does that answer your question pussy tits?";
+        private readonly string _defaultMiss = "How the fuck are you so stupid?";
+
         private readonly List<string> _terms = new List<string>()
             {
                 "shit*",
@@ -24,6 +27,7 @@ namespace ShitLeopard.Api.Services
                 "cock*",
                 "dope*"
             };
+
         private readonly ITagService _tagService;
         private readonly INaturalLanguageService _naturalLanguageService;
 
@@ -35,17 +39,45 @@ namespace ShitLeopard.Api.Services
 
         public async Task<QuestionAnswer> AskQuestionAsync(Question question)
         {
+            long occurences = 0;
             var result = await _naturalLanguageService.ParseSentenceAsync(question.Text);
+            if (!result.IsQuestion)
+            {
+                var lines = await SearchScriptLinesAsync(question);
+                return new QuestionAnswer
+                {
+                    Question = question,
+                    Answer = lines,
+                    Match = lines.Any(),
+                    IsArray = true,
+                    Comment = lines.Any() ? _defaultComment : _defaultMiss
+                };
+            }
             using (var context = ContextProvider())
             {
-
-                var value = await context.CountOccurencesOfSingleWord("fuck");
+                if (question.Text.Trim().Split(" ".ToCharArray()).Length > 1)
+                {
+                    occurences = await context.CountOccurencesOfPhrase(question.Text);
+                    return new QuestionAnswer
+                    {
+                        Question = question,
+                        Answer = FormatAnswer("phrase", question.Text, occurences),
+                        Match = occurences > 0,
+                        Comment = occurences > 0 ? _defaultComment : _defaultMiss
+                    };
+                }
+                else
+                {
+                    occurences = await context.CountOccurencesOfSingleWord(question.Text);
+                    return new QuestionAnswer
+                    {
+                        Question = question,
+                        Answer = FormatAnswer("word", question.Text, occurences),
+                        Match = occurences > 0,
+                        Comment = occurences > 0 ? _defaultComment : _defaultMiss
+                    };
+                }
             }
-                return new QuestionAnswer
-            {
-                Question = question,
-                Answer = result
-            };
         }
 
         public async Task<ScriptLineModel> FindRandomSingleQuoteAsync()
@@ -77,7 +109,7 @@ FROM ScriptLine AS FT_TBL INNER JOIN
    CONTAINSTABLE (ScriptLine,
       Body,
       @SearchTerm,
-      50
+      150
    ) AS KEY_TBL
    ON FT_TBL.Id = KEY_TBL.[KEY]
    inner join Script S on S.Id = FT_TBL.ScriptId
@@ -97,6 +129,23 @@ FROM ScriptLine AS FT_TBL INNER JOIN
                     p.Add("SearchTerm", $"\"{question.Text}\"");
                     return await c.QueryAsync<ScriptLineModel>(query, p);
                 }
+            }
+        }
+
+        private static string FormatAnswer(string type, string text, long occurrances)
+        {
+            var formatted = String.Format("{0:n0}", occurrances);
+            if (occurrances > 0)
+            {
+                return $" The {type} '{text}' occurs {formatted} times";
+            }
+            else if (occurrances == 1)
+            {
+                return $"The {type} '{text}' occurs once.";
+            }
+            else
+            {
+                return $"The {type} '{text}' produces no matches.";
             }
         }
     }

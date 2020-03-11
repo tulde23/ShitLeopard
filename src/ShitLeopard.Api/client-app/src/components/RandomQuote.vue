@@ -1,11 +1,10 @@
 <template>
-<v-alert dense v-if="quote" border="left" colored-border color="blue accent-4" elevation="2" transition="fade-transition">
+<v-alert dense v-if="quote" border="left" colored-border color="primary accent-4" elevation="2" transition="fade-transition">
 
     <v-row align="center">
 
         <v-col class="grow">
 
-      
             <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                     <span v-on="on">

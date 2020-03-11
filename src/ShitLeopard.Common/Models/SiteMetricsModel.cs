@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ShitLeopard.Common.Models
 {
     public class SiteMetricsModel
     {
+        public long Id { get; set; }
         public object Headers { get; set; }
 
         public string Ipaddress { get; set; }

@@ -46,3 +46,5 @@ src/Gozer/logs/
 .idea
 *.user
 src/ShitLeopard.Api/appsettings.production.json
+
+src/ShitLeopard.Api/appsettings.json

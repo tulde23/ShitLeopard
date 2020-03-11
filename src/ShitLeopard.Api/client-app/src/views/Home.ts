@@ -1,3 +1,5 @@
+import { QuestionGridModel } from '@/models/QuestionGridModel';
+import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import Vue from 'vue';
 import { Component, Watch } from 'vue-property-decorator';
 
@@ -8,6 +10,7 @@ export default class Home extends Vue {
   public question: string = '';
   public query: string = '';
   searchTimer: number | undefined = undefined;
+  public viewModel = new QuestionGridModel();
   created() {}
 
   mounted() {
@@ -20,7 +23,7 @@ export default class Home extends Vue {
 
   search() {
     //this.$api.askMe(this.question);
-    this.$api.search(this.question);
+    this.$api.askMe(this.question);
   }
 
   public get tags() {
@@ -35,11 +38,18 @@ export default class Home extends Vue {
   public upvote(item: any) {
     this.$api.upvote(item.id);
   }
-  public get answer(): any {
-    return this.$store.getters.answer;
+  public get response(): QuestionAnswer {
+    return this.$store.getters.questionAnswer;
   }
   public get lines() {
-    return this.$store.getters.lines;
+    if (this.response) {
+      return this.response.answer;
+    }
+  }
+  public get answer() {
+    if (this.response) {
+      return this.response.answer;
+    }
   }
   @Watch('query') onQueryChanged(o: any, n: any) {
     this.fetchEntriesDebounced();

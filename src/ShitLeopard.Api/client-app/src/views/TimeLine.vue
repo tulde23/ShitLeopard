@@ -3,7 +3,7 @@
     <v-chip-group column active-class="primary--text">
         <v-chip v-for="(s,i) in episodes" :key="s.id">
 
-            <a :href="`#alert${i}`">
+            <a :href="`#season${(i+1)}`" style="cursor:point; text-decoration:none">
                 {{ s.season }}
             </a>
 
@@ -12,21 +12,21 @@
 
     <v-sheet v-for="(season, i) in episodes" :key="i">
 
-        <v-alert color="primary" dark border="left" prominent :id="`alert${i}`">
+        <v-alert color="primary" dark border="left" prominent :id="`season${(i+1)}`">
             {{season.season}} - ({{season.episodes.length}}) episodes.
         </v-alert>
 
         <v-timeline class="d-none d-md-block">
-            <v-timeline-item v-for="(e, i) in season.episodes" :key="i" color="red" small left>
+            <v-timeline-item v-for="(e, i) in season.episodes" :key="i" color="accent" small left>
                 <span slot="opposite"> {{season.season}} - Episode {{e.offsetId}} / {{e.id}}</span>
 
                 <v-card>
 
-                    <v-card-title class="red lighten-2">
-                        <v-icon dark size="18" class="mr-1">
+                    <v-card-title  class="secondary">
+                        <v-icon  size="18" class="mr-1">
                             mdi-information
                         </v-icon>
-                        <div class="white--text font-weight-light">{{e.title}}</div>
+                        <div >{{e.title}}</div>
                     </v-card-title>
                     <v-container>
                         <v-row>
@@ -49,25 +49,25 @@
                     <tbody v-for="(e, i) in season.episodes" :key="i">
                         <tr>
                             <td>
-                                <p  class="subtitle-1">
-                                  {{e.offsetId}}).  {{e.title}}
+                                <p class="subtitle-1">
+                                    {{e.offsetId}}). {{e.title}}
                                 </p>
                             </td>
 
                         </tr>
                         <tr>
                             <td>
-                               <p style="font-size:0.75em"> {{e.synopsis}} </p>
+                                <p style="font-size:0.75em"> {{e.synopsis}} </p>
 
                             </td>
                         </tr>
-                        
+
                     </tbody>
                 </template>
             </v-simple-table>
 
         </div>
-     
+
         <br>
     </v-sheet>
 

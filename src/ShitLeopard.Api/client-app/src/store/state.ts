@@ -8,6 +8,7 @@ import {
   Season,
   Tag
 } from '@/viewModels';
+import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
 
 export interface State {
@@ -17,6 +18,7 @@ export interface State {
   seasons: Season[];
   episode: Episode;
   answer: string;
+  questionAnswer: QuestionAnswer;
   lines: ScriptLine[];
   characters: Character[];
   groupedEpisodes: EpisodeGroup[];
@@ -28,6 +30,7 @@ export interface State {
 export const InitState = {
   isBusy: false,
   timeToRefresh: false,
+  questionAnswer: {},
   episodes: [],
   seasons: [],
   episode: {},

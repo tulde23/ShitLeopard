@@ -1,5 +1,6 @@
 import { SearchMetricsCommand } from '@/models/SearchMetricsCommand';
 import { SiteMetricGridModel } from '@/models/SiteMetricGridModel';
+import { SiteMetric } from '@/viewModels/SiteMetric';
 import Vue from 'vue';
 import { Component, Watch } from 'vue-property-decorator';
 
@@ -28,6 +29,12 @@ export default class Metrics extends Vue {
     return this.$store.getters.isBusy;
   }
 
+  public formatHeaders(item: SiteMetric) {
+    if (item.headers) {
+      return JSON.stringify(item.headers);
+    }
+    return '-';
+  }
   search() {
     //this.$api.askMe(this.question);
     this.$api.searchMetrics(this.searchModel);

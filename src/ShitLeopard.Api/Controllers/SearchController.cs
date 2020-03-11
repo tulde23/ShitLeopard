@@ -31,14 +31,5 @@ namespace ShitLeopard.Api.Controllers
             return await Service.SearchScriptLinesAsync(question);
         }
 
-        [HttpPost]
-        public async Task<dynamic> Ask([FromBody] Question question)
-        {
-            if (string.IsNullOrEmpty(question?.Text)  || question.Text.Length > 255)
-            {
-                return Enumerable.Empty<ScriptLineModel>();
-            }
-            return await Service.AskQuestionAsync(question);
-        }
     }
 }

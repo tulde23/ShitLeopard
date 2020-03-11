@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -9,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Services
 {
@@ -17,50 +17,46 @@ namespace ShitLeopard.Api.Services
         private readonly string _path = @"C:\Development\ShitLeopard\src\ShitLeopard.Api\SampleResponse.json";
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IConfiguration _configuration;
+        private readonly IConnectionStringProvider _connectionStringProvider;
 
-        public StanfordNaturalLanguageService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+        public StanfordNaturalLanguageService(IHttpClientFactory httpClientFactory, IConfiguration configuration, IConnectionStringProvider connectionStringProvider )
         {
             _httpClientFactory = httpClientFactory;
             _configuration = configuration;
+            _connectionStringProvider = connectionStringProvider;
         }
 
-        public async Task<dynamic> ParseSentenceAsync(string sentence)
+        public async Task<ParsedSentence> ParseSentenceAsync(string sentence)
         {
             using (var client = _httpClientFactory.CreateClient())
             {
-                var qs = new StringBuilder("properties=")
+                var ls = _connectionStringProvider.GetString("languageService");
+               var qs = new StringBuilder("properties=")
                 .Append(WebUtility.UrlEncode(JsonConvert.SerializeObject(new
                 {
                     annotators = "tokenize,ssplit,pos,ner,depparse,openie,sentiment"
                 }))).Append("&pipelineLanguage=en");
-                var uriBuilder = new UriBuilder(_configuration["nlpHost"]);
+                var uriBuilder = new UriBuilder(ls);
                 uriBuilder.Query = qs.ToString();
                 var message = new HttpRequestMessage(HttpMethod.Post, uriBuilder.Uri);
                 message.Content = new FormUrlEncodedContent(new List<KeyValuePair<string, string>>() { new KeyValuePair<string, string>(string.Empty, sentence) });
-                var response = await client.SendAsync(message);
-                var content = await response.Content.ReadAsStringAsync();
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    var entity = JObject.Parse(content);
-                    var arrayOfSentences = entity.SelectToken("sentences") as JArray;
-                    foreach (var sentenceToken in arrayOfSentences)
+                    var response = await client.SendAsync(message);
+                    var content = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
                     {
-                        var tokens = sentenceToken.SelectToken("tokens") as JArray;
-                        var isQuestion = IsQuestion(tokens);
+                        var entity = JObject.Parse(content);
 
-
-
+                        return ParsedSentence.Build(entity);
                     }
-                    return entity;
+                }
+                catch
+                {
                 }
 
-                return new { };
+                return new ParsedSentence();
             }
-        }
-
-        private bool IsQuestion( JArray tokens)
-        {
-            return tokens.OfType<JObject>().Any(x => x.Property("pos").Value.ToString().StartsWith("W"));
         }
     }
 }

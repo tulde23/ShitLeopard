@@ -21,8 +21,11 @@ namespace ShitLeopard.Api.Services
         {
             using (var context = ContextProvider())
             {
-                context.Add(Mapper.Map<RequestProfile>(requestProfileModel));
-                await context.SaveChangesAsync();
+                if (requestProfileModel.Ipaddress != "::1")
+                {
+                    context.Add(Mapper.Map<RequestProfile>(requestProfileModel));
+                    await context.SaveChangesAsync();
+                }
             }
         }
 
@@ -30,7 +33,7 @@ namespace ShitLeopard.Api.Services
         {
             using (var context = ContextProvider())
             {
-                var query = from p in context.RequestProfile select p;
+                var query = from p in context.RequestProfile where p.Ipaddress != "::1" select p;
                 query = query.OrderByDescending(x => x.LastAccessTime);
                 var count = query.Count();
 

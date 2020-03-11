@@ -9,12 +9,7 @@ export class SiteMetricGridModel extends GridModel {
         sortable: false,
         value: 'ipaddress'
       },
-      {
-        text: 'Use-Agent',
-        align: 'left',
-        sortable: false,
-        value: 'agentString'
-      },
+
       {
         text: 'Route',
         align: 'left',

@@ -1,3 +1,4 @@
+import CustomFilters from '@/plugins/filters';
 import { DataService, Helper, HttpService } from '@/services';
 import Vue from 'vue';
 
@@ -14,7 +15,7 @@ const httpService = new HttpService(store);
 Vue.prototype.$helper = new Helper();
 Vue.prototype.$http = httpService;
 Vue.prototype.$api = new DataService(store, httpService);
-
+Vue.use(CustomFilters);
 Vue.component('xquote', RandomQuote);
 new Vue({
   router,

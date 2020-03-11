@@ -1,6 +1,7 @@
 import { SearchMetricsCommand } from '@/models/SearchMetricsCommand';
 import * as A from '@/store/mutation-types';
 import { Episode, Quote, ScriptLine } from '@/viewModels';
+import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { Store } from 'vuex';
 
 import { HttpService } from './http.service';
@@ -50,9 +51,16 @@ export class DataService {
   }
 
   askMe(question: string) {
-    return this.http
-      .post('/api/Search', { text: question })
-      .then(resp => this.store.commit(A.SET_ANSWER, resp.data));
+    return this.http.post('/api/Question', { text: question }).then(resp => {
+      const data = resp.data as QuestionAnswer;
+      console.log('data', data);
+      this.store.commit(A.SET_QUESTION_ANSWER, resp.data);
+      if (data.isArray) {
+        this.store.commit(A.SET_LINES, data.answer);
+      } else {
+        this.store.commit(A.SET_ANSWER, data.answer);
+      }
+    });
   }
   search(term: string) {
     return this.http

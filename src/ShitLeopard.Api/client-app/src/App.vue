@@ -8,12 +8,14 @@
 
         <v-spacer />
     </v-app-bar> -->
-    <v-navigation-drawer :expand-on-hover="expandOnHover" :mini-variant="isMini" app overflow>
+    <v-navigation-drawer :expand-on-hover="expandOnHover" :mini-variant="isMini" app overflow color="accent text-light">
         <v-list dense nav class="py-0">
             <v-list-item two-line :class="isMini && 'px-0'">
                 <v-list-item-avatar>
-                    <img src="ShitLeopard.png">
+                    <img src="Logo500.png">
                 </v-list-item-avatar>
+
+                
 
                 <v-list-item-content>
                     <v-list-item-title>Shit Leopard</v-list-item-title>

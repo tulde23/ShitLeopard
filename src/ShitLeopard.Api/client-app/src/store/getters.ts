@@ -7,6 +7,7 @@ import {
   ScriptLine,
   Tag
 } from '@/viewModels';
+import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
 
 import { State } from './state';
@@ -21,7 +22,8 @@ const getters = {
   quote: (state: State): Quote => state.quote,
   groupedEpisodes: (state: State): EpisodeGroup[] => state.groupedEpisodes,
   tags: (state: State): Tag[] => state.tags,
-  siteMetrics: (state: State): PagedResult<SiteMetric> => state.siteMetrics
+  siteMetrics: (state: State): PagedResult<SiteMetric> => state.siteMetrics,
+  questionAnswer: (state: State): QuestionAnswer => state.questionAnswer
 };
 
 export default getters;

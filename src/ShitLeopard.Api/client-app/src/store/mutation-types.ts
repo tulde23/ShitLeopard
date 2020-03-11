@@ -11,3 +11,4 @@ export const SET_QUOTE = 'set_quote';
 export const SET_TAGS = 'set_tags';
 export const SET_REFRESH = 'set_refresh';
 export const SET_METRICS = 'set_metrics';
+export const SET_QUESTION_ANSWER = 'set_question_answer';

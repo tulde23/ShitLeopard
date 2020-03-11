@@ -1,5 +1,6 @@
 export class SiteMetric {
   constructor(
+    public id?: number,
     public headers?: any,
     public ipaddress?: string,
     public agentString?: string,
