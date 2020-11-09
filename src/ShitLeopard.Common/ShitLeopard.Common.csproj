@@ -9,9 +9,7 @@
     <Compile Remove="Contracts\INaturalLanguageService.cs" />
     <Compile Remove="Contracts\IQuoteService.cs" />
     <Compile Remove="Contracts\IRequestProfileService.cs" />
-    <Compile Remove="Contracts\ISearchService.cs" />
     <Compile Remove="Contracts\ISeasonService.cs" />
-    <Compile Remove="Contracts\ITagService.cs" />
   </ItemGroup>
 
   <ItemGroup>

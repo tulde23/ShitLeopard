@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ShitLeopard.Common.Contracts;
@@ -35,6 +36,7 @@ namespace ShitLeopard
             });
             services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
+
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
@@ -80,15 +82,15 @@ namespace ShitLeopard
                 endpoints.MapControllers();
             });
             app.UseSpaStaticFiles();
-            //app.UseSpa(spa =>
-            //{
-            //    spa.Options.SourcePath = "client-app";
-            //    if (env.IsDevelopment())
-            //    {
-            //        // Launch development server for Vue.js
-            //        spa.UseVueDevelopmentServer();
-            //    }
-            //});
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "client-app";
+                if (env.IsDevelopment())
+                {
+                    // Launch development server for Vue.js
+                    spa.UseVueDevelopmentServer();
+                }
+            });
         }
     }
 }

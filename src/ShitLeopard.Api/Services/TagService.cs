@@ -4,15 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
 using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Documents;
 
 namespace ShitLeopard.Api.Services
 {
     public class TagService : BaseService, ITagService
     {
-        public TagService(ILoggerFactory loggerFactory, Func<IMongoProvider> contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
+        public TagService(ILoggerFactory loggerFactory, IMongoProvider contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
         {
         }
 
@@ -25,39 +28,34 @@ namespace ShitLeopard.Api.Services
                 return;
             }
 
-            using (var context = ContextProvider())
+            var collection = ContextProvider.GetTagsCollection();
+            var query = from t in collection.AsQueryable() where t.Category.Equals(tags.Category) && t.Name.Equals(tags.Name) select t;
+
+            var existing = await query.FirstOrDefaultAsync();
+            if (existing == null)
             {
-                var existing = await (context.Tags.FirstOrDefaultAsync(x =>
-                   x.Category.Equals(tags.Category) &&
-                   x.Name.Equals(tags.Name)));
-                if (existing == null)
-                {
-                    var t = Mapper.Map<TagsModel, Tags>(tags);
-                    t.Frequency = 1;
-                    context.Tags.Add(t);
-                    await context.SaveChangesAsync();
-                }
-                else
-                {
-                    existing.Frequency = existing.Frequency + 1;
-                    context.Tags.Update(existing);
-                    await context.SaveChangesAsync();
-                }
+                var t = Mapper.Map<TagsModel, TagsDocument>(tags);
+                t.Frequency = 1;
+                await collection.InsertOneAsync(t);
+            }
+            else
+            {
+                existing.Frequency = existing.Frequency + 1;
+                await collection.UpdateOneAsync(x => x.Id == existing.Id, Builders<TagsDocument>.Update.Set(x => x.Frequency, existing.Frequency));
             }
         }
 
         public async Task RemoveAsync(TagsModel tags)
         {
-            using (var context = ContextProvider())
+            var collection = ContextProvider.GetTagsCollection();
+            var query = from t in collection.AsQueryable() select t;
+
+            query = query.Where(x => x.Category.Equals(tags.Category));
+            query = query.Where(x => x.Name.Equals( tags.Name));
+            var existing = await query.FirstOrDefaultAsync();
+            if (existing != null)
             {
-                var existing = await (context.Tags.Where(x =>
-                    x.Category.Equals(tags.Category, StringComparison.OrdinalIgnoreCase) &&
-                    x.Name.Equals(tags.Name, StringComparison.OrdinalIgnoreCase)).FirstOrDefaultAsync());
-                if (existing != null)
-                {
-                    context.Tags.Remove(existing);
-                    await context.SaveChangesAsync();
-                }
+                await collection.DeleteOneAsync(x => x.Id == existing.Id);
             }
         }
 
@@ -67,15 +65,15 @@ namespace ShitLeopard.Api.Services
             {
                 return Enumerable.Empty<TagsModel>();
             }
-            using (var context = ContextProvider())
-            {
-                var query = from t in context.Tags select t;
-                query = query.Where(x => x.Category.Equals(category));
-                query = query.Where(x => !string.IsNullOrEmpty(x.Name));
+            var collection = ContextProvider.GetTagsCollection();
 
-                query = query.OrderByDescending(x => x.Frequency);
-                return Mapper.MapCollection<TagsModel, Tags>(await (query.Take(count).ToListAsync()));
-            }
+            var query = from t in collection.AsQueryable() select t;
+
+            query = query.Where(x => x.Category.Equals(category));
+            query = query.Where(x => !string.IsNullOrEmpty(x.Name));
+
+            query = query.OrderByDescending(x => x.Frequency);
+            return Mapper.MapCollection<TagsModel, TagsDocument>(await (query.Take(count).ToListAsync()));
         }
 
         public async Task<IEnumerable<TagsModel>> SearchAsync(string category, string name)
@@ -84,33 +82,32 @@ namespace ShitLeopard.Api.Services
             {
                 return Enumerable.Empty<TagsModel>();
             }
+            var collection = ContextProvider.GetTagsCollection();
 
-            using (var context = ContextProvider())
+            var query = from t in collection.AsQueryable() select t;
+            query = query.Where(x => x.Category.Equals(category));
+            if (!string.IsNullOrEmpty(name))
             {
-                var query = from t in context.Tags select t;
-                query = query.Where(x => x.Category.Equals(category));
-                if (!string.IsNullOrEmpty(name))
-                {
-                    query = query.Where(x => x.Name.StartsWith(name));
-                }
-                query = query.OrderByDescending(x => x.Frequency);
-                return Mapper.MapCollection<TagsModel, Tags>(await (query.ToListAsync()));
+                query = query.Where(x => x.Name.StartsWith(name));
             }
+            query = query.OrderByDescending(x => x.Frequency);
+
+            return Mapper.MapCollection<TagsModel, TagsDocument>(await (query.ToListAsync()));
         }
 
         public async Task<IEnumerable<string>> SearchCategoriesAsync(string term = null)
         {
-            using (var context = ContextProvider())
+            var collection = ContextProvider.GetTagsCollection();
+
+            if (!string.IsNullOrEmpty(term))
             {
-                if (!string.IsNullOrEmpty(term))
-                {
-                    return await (context.Tags.Where(x =>
-                        x.Category.StartsWith(term, StringComparison.OrdinalIgnoreCase)).Select(x => x.Category).Distinct().ToListAsync());
-                }
-                else
-                {
-                    return await (context.Tags.Select(x => x.Category).Distinct().ToListAsync());
-                }
+                var results = await collection.Find(Builders<TagsDocument>.Filter.Text(term, new TextSearchOptions { CaseSensitive = true })).Project(x => x.Category).ToListAsync();
+                return results;
+            }
+            else
+            {
+                var results = await collection.Distinct(x => x.Category, Builders<TagsDocument>.Filter.Text(term, new TextSearchOptions { CaseSensitive = true })).ToListAsync();
+                return results;
             }
         }
     }

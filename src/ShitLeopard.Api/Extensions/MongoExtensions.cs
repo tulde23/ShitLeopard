@@ -24,5 +24,9 @@ namespace ShitLeopard.Common.Contracts
         {
             return provider.GetMongoCollection<CharacterDocument>();
         }
+        public static IMongoCollection<TagsDocument> GetTagsCollection(this IMongoProvider provider)
+        {
+            return provider.GetMongoCollection<TagsDocument>();
+        }
     }
 }

@@ -13,9 +13,7 @@ export default class Home extends Vue {
   public viewModel = new QuestionGridModel();
   created() {}
 
-  mounted() {
-    this.$api.getMostPopularTags('Search', 10);
-  }
+  mounted() {}
 
   public get busy() {
     return this.$store.getters.isBusy;

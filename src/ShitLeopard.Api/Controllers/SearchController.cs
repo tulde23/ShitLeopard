@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ShitLeopard.Api.Contracts;
-using ShitLeopard.Api.Filters;
 using ShitLeopard.Api.Models;
 
 namespace ShitLeopard.Api.Controllers
@@ -19,17 +18,16 @@ namespace ShitLeopard.Api.Controllers
         {
         }
 
-        [InboundRequestInspectorFilter]
+        ///   [InboundRequestInspectorFilter]
         [HttpPost("LinesContaining")]
         public async Task<IEnumerable<ScriptLineModel>> LinesContaining([FromBody] Question question)
         {
-            if (string.IsNullOrEmpty(question?.Text)  || question.Text.Length > 255)
+            if (string.IsNullOrEmpty(question?.Text) || question.Text.Length > 255)
             {
                 return Enumerable.Empty<ScriptLineModel>();
             }
 
             return await Service.SearchScriptLinesAsync(question);
         }
-
     }
 }

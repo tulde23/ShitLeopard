@@ -1,7 +1,7 @@
 <template>
 <v-container>
 
-    <v-text-field label="Solo" solo placeholder="Ask me a question you greasy bastard" append-icon="mdi-search" v-model="question" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
+    <v-text-field label="Solo" style="margin:auto; width:45%" solo placeholder="Ask me a question you greasy bastard" append-icon="mdi-search" v-model="question" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
     <v-chip-group column color="accent">
         <v-chip v-for="tag in tags" :key="tag.id" @click="question = tag.name">
 
