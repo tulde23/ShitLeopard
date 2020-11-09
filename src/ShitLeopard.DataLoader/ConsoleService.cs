@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac.Features.Indexed;
@@ -33,11 +34,14 @@ namespace ShitLeopard.DataLoader
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
+      
             var episodes = await _wikiScraper.GetEpisodesAsync();
-            await _bulkDataImporter.UpdateEpisodes(episodes);
+            await RunImport(episodes);
+
+          
         }
 
-        private async Task RunImport()
+        private async Task RunImport(IEnumerable<Episode> episodes)
         {
             var service = "xdoc";
             var parser = _index[service];
@@ -54,8 +58,20 @@ namespace ShitLeopard.DataLoader
             }
             var json = JsonConvert.SerializeObject(seasons, Formatting.Indented);
             System.IO.File.WriteAllText("Data.json", json);
+            var allEpisodes = seasons.SelectMany(x => x.Episode.Select(y=> new { Episode = y, Season = x }) ).ToList();
+            foreach( var e in episodes)
+            {
+                var match = allEpisodes.FirstOrDefault(x => x.Episode.Id == e.Id);
+                if( match != null)
+                {
+                    match.Episode.Title = e.Title;
+                    match.Episode.Synopsis = e.Synopsis;
+                    match.Episode.OffsetId = e.OffsetId;
+                    match.Episode.Season = e.Season;
+                }
+            }
             await _bulkDataImporter.ImportAsync(seasons);
-            _consoleApplication.TokenSource.Cancel();
+          //  _consoleApplication.TokenSource.Cancel();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

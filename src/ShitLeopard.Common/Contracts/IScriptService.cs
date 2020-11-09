@@ -9,9 +9,12 @@ namespace ShitLeopard.Api.Contracts
         /// <summary>
         /// Gets the script.
         /// </summary>
-        /// <param name="scriptId">The script identifier.</param>
+        /// <param name="episodeId">The episode identifier.</param>
         /// <returns></returns>
-        Task<ScriptModel> GetScript(long scriptId);
+        Task<ScriptModel> GetScriptAsync(long episodeId);
+
+
+
 
         /// <summary>
         /// Gets the script lines.
@@ -19,14 +22,14 @@ namespace ShitLeopard.Api.Contracts
         /// <param name="scriptId">The script identifier.</param>
         /// <param name="includeAll">The include all.</param>
         /// <returns></returns>
-        Task<IEnumerable<ScriptLineModel>> GetScriptLines(long scriptId, bool? includeAll = null);
+        Task<IEnumerable<ScriptLineModel>> SearchScriptLinesAsync(string pattern);
 
         /// <summary>
         /// Gets the script words.
         /// </summary>
         /// <param name="scriptLineId">The script line identifier.</param>
         /// <returns></returns>
-        Task<IEnumerable<ScriptWordModel>> GetScriptWords(long scriptLineId);
+        Task<IEnumerable<ScriptWordModel>> GetScriptWordsForLineAsync(long scriptLineId);
 
         /// <summary>
         /// Sets the script line character.

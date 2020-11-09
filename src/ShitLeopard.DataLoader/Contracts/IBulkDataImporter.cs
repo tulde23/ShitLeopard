@@ -4,7 +4,7 @@ using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard.DataLoader.Contracts
 {
-    public interface IBulkDataImporter 
+    public interface IBulkDataImporter
     {
         /// <summary>
         /// Imports the asynchronous.
@@ -13,12 +13,11 @@ namespace ShitLeopard.DataLoader.Contracts
         /// <returns></returns>
         Task<int> ImportAsync(IEnumerable<Season> seasons);
 
-
-        /// <summary>
-        /// Updates the episodes.
-        /// </summary>
-        /// <param name="episodes">The episodes.</param>
-        /// <returns></returns>
-        Task<int> UpdateEpisodes(IEnumerable<Episode> episodes);
+        ///// <summary>
+        ///// Updates the episodes.
+        ///// </summary>
+        ///// <param name="episodes">The episodes.</param>
+        ///// <returns></returns>
+        //Task<int> UpdateEpisodes(IEnumerable<Episode> episodes);
     }
 }

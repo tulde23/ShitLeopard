@@ -1,0 +1,1391 @@
+2020-11-09 13:42:58.664 -05:00 [INF] Starting web host
+2020-11-09 13:42:59.794 -05:00 [DBG] Hosting starting
+2020-11-09 13:43:00.151 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 13:43:00.248 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 13:43:00.312 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 13:43:00.313 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 13:43:00.314 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 13:43:00.318 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 13:43:00.319 -05:00 [INF] Hosting environment: Development
+2020-11-09 13:43:00.320 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 13:43:00.322 -05:00 [DBG] Hosting started
+2020-11-09 13:43:00.614 -05:00 [DBG] Connection id "0HM44RT4C27IE" received FIN.
+2020-11-09 13:43:00.618 -05:00 [DBG] Connection id "0HM44RT4C27IE" accepted.
+2020-11-09 13:43:00.618 -05:00 [DBG] Connection id "0HM44RT4C27IF" accepted.
+2020-11-09 13:43:00.622 -05:00 [DBG] Connection id "0HM44RT4C27IF" received FIN.
+2020-11-09 13:43:00.631 -05:00 [DBG] Connection id "0HM44RT4C27IE" started.
+2020-11-09 13:43:00.632 -05:00 [DBG] Connection id "0HM44RT4C27IF" started.
+2020-11-09 13:43:00.666 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:43:00.666 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:43:00.742 -05:00 [DBG] Connection id "0HM44RT4C27IE" stopped.
+2020-11-09 13:43:00.743 -05:00 [DBG] Connection id "0HM44RT4C27IF" stopped.
+2020-11-09 13:43:00.746 -05:00 [DBG] Connection id "0HM44RT4C27IE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:43:00.746 -05:00 [DBG] Connection id "0HM44RT4C27IF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:43:02.602 -05:00 [DBG] Connection id "0HM44RT4C27IG" accepted.
+2020-11-09 13:43:02.610 -05:00 [DBG] Connection id "0HM44RT4C27IG" started.
+2020-11-09 13:43:02.612 -05:00 [DBG] Connection id "0HM44RT4C27IH" accepted.
+2020-11-09 13:43:02.630 -05:00 [DBG] Connection id "0HM44RT4C27IH" started.
+2020-11-09 13:43:02.720 -05:00 [DBG] Connection id "0HM44RT4C27IG" received FIN.
+2020-11-09 13:43:02.748 -05:00 [DBG] Connection id "0HM44RT4C27IG" is closed. The last processed stream ID was 0.
+2020-11-09 13:43:02.750 -05:00 [DBG] Connection id "0HM44RT4C27IG" sending FIN because: "The client closed the connection."
+2020-11-09 13:43:02.756 -05:00 [DBG] Connection id "0HM44RT4C27IG" stopped.
+2020-11-09 13:43:02.805 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001//docs  
+2020-11-09 13:43:02.811 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 13:43:02.847 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:43:02.890 -05:00 [DBG] No candidates found for the request path '//docs'
+2020-11-09 13:43:02.891 -05:00 [DBG] Request did not match any endpoints
+2020-11-09 13:43:02.892 -05:00 [DBG] The request path //docs does not match a supported file type
+2020-11-09 13:43:02.895 -05:00 [INF] HTTP GET //docs responded 404 in 43.757 ms
+2020-11-09 13:43:02.910 -05:00 [INF] Request finished in 111.4232ms 404 
+2020-11-09 13:43:10.345 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs  
+2020-11-09 13:43:10.349 -05:00 [INF] Request finished in 3.9314ms 301 
+2020-11-09 13:43:10.358 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 13:43:10.389 -05:00 [INF] Request finished in 30.9223ms 200 text/html;charset=utf-8
+2020-11-09 13:43:10.408 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/swagger-ui.css  
+2020-11-09 13:43:10.408 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/swagger-ui-bundle.js  
+2020-11-09 13:43:10.408 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/swagger-ui-standalone-preset.js  
+2020-11-09 13:43:10.476 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-11-09 13:43:10.476 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-11-09 13:43:10.482 -05:00 [INF] Request finished in 74.2837ms 200 text/css
+2020-11-09 13:43:10.482 -05:00 [INF] Request finished in 73.9262ms 200 application/javascript
+2020-11-09 13:43:10.482 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-11-09 13:43:10.490 -05:00 [INF] Request finished in 81.5654ms 200 application/javascript
+2020-11-09 13:43:10.721 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 13:43:10.734 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/favicon-32x32.png  
+2020-11-09 13:43:10.737 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-11-09 13:43:10.739 -05:00 [INF] Request finished in 4.848ms 200 image/png
+2020-11-09 13:43:10.808 -05:00 [INF] Request finished in 86.9901ms 200 application/json;charset=utf-8
+2020-11-09 13:43:52.328 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/2  
+2020-11-09 13:43:52.330 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:43:52.337 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Episode/2'
+2020-11-09 13:43:52.346 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is valid for the request path '/api/Episode/2'
+2020-11-09 13:43:52.357 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:43:52.359 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:43:52.370 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 13:43:52.416 -05:00 [INF] Route matched with {action = "GetEpisode", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[ShitLeopard.Api.Models.EpisodeModel] GetEpisode(Int64) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:43:52.421 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:43:52.424 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:43:52.427 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:43:52.432 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:43:52.433 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:43:52.440 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:43:52.581 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:43:52.595 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 13:43:52.598 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' using the name 'episodeId' in request data ...
+2020-11-09 13:43:52.600 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:43:52.602 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:43:52.604 -05:00 [DBG] Attempting to validate the bound parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 13:43:52.606 -05:00 [DBG] Done attempting to validate the bound parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:43:55.313 -05:00 [WRN] Non Production setting connectionString= Server=localhost;User Id=sa;Password=Tulde30#;Database=ShitLeopard;
+2020-11-09 13:43:57.941 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api) in 5498.66ms
+2020-11-09 13:43:57.946 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:43:57.949 -05:00 [ERR] HTTP GET /api/Episode/2 responded 500 in 5617.6048 ms
+MongoDB.Driver.MongoConfigurationException: The connection string 'Server=localhost;User Id=sa;Password=Tulde30#;Database=ShitLeopard;' is not valid.
+   at MongoDB.Driver.Core.Configuration.ConnectionString.Parse()
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString, IDnsResolver dnsResolver)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString)
+   at MongoDB.Driver.MongoUrlBuilder.Parse(String url)
+   at MongoDB.Driver.MongoUrlBuilder..ctor(String url)
+   at MongoDB.Driver.MongoUrl..ctor(String url)
+   at MongoDB.Driver.MongoClientSettings.FromConnectionString(String connectionString)
+   at MongoDB.Driver.MongoClient..ctor(String connectionString)
+   at ShitLeopard.Common.Contracts.MongoProvider.ConnectAsync() in C:\Development\ShitLeopard\src\ShitLeopard.Common\Contracts\IMongoProvider.cs:line 28
+   at ShitLeopard.Common.Contracts.MongoProvider.GetMongoCollection[T](String name) in C:\Development\ShitLeopard\src\ShitLeopard.Common\Contracts\IMongoProvider.cs:line 44
+   at ShitLeopard.Common.Contracts.MongoExtensions.GetEpisodesCollection(IMongoProvider provider) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Extensions\MongoExtensions.cs:line 10
+   at ShitLeopard.Api.Services.EpisodeService.GetEpisode(Int64 episodeId) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\EpisodeService.cs:line 22
+   at ShitLeopard.Api.Controllers.EpisodeController.GetEpisode(Int64 episodeId) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\EpisodeController.cs:line 62
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 13:43:57.984 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+MongoDB.Driver.MongoConfigurationException: The connection string 'Server=localhost;User Id=sa;Password=Tulde30#;Database=ShitLeopard;' is not valid.
+   at MongoDB.Driver.Core.Configuration.ConnectionString.Parse()
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString, IDnsResolver dnsResolver)
+   at MongoDB.Driver.Core.Configuration.ConnectionString..ctor(String connectionString)
+   at MongoDB.Driver.MongoUrlBuilder.Parse(String url)
+   at MongoDB.Driver.MongoUrlBuilder..ctor(String url)
+   at MongoDB.Driver.MongoUrl..ctor(String url)
+   at MongoDB.Driver.MongoClientSettings.FromConnectionString(String connectionString)
+   at MongoDB.Driver.MongoClient..ctor(String connectionString)
+   at ShitLeopard.Common.Contracts.MongoProvider.ConnectAsync() in C:\Development\ShitLeopard\src\ShitLeopard.Common\Contracts\IMongoProvider.cs:line 28
+   at ShitLeopard.Common.Contracts.MongoProvider.GetMongoCollection[T](String name) in C:\Development\ShitLeopard\src\ShitLeopard.Common\Contracts\IMongoProvider.cs:line 44
+   at ShitLeopard.Common.Contracts.MongoExtensions.GetEpisodesCollection(IMongoProvider provider) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Extensions\MongoExtensions.cs:line 10
+   at ShitLeopard.Api.Services.EpisodeService.GetEpisode(Int64 episodeId) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\EpisodeService.cs:line 22
+   at ShitLeopard.Api.Controllers.EpisodeController.GetEpisode(Int64 episodeId) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\EpisodeController.cs:line 62
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 13:43:58.005 -05:00 [INF] Request finished in 5678.2047ms 500 text/plain
+2020-11-09 13:48:11.559 -05:00 [INF] Starting web host
+2020-11-09 13:48:12.326 -05:00 [DBG] Hosting starting
+2020-11-09 13:48:12.596 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 13:48:12.663 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 13:48:12.710 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 13:48:12.712 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 13:48:12.713 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 13:48:12.715 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 13:48:12.716 -05:00 [INF] Hosting environment: Development
+2020-11-09 13:48:12.717 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 13:48:12.718 -05:00 [DBG] Hosting started
+2020-11-09 13:48:13.044 -05:00 [DBG] Connection id "0HM44S01FL757" received FIN.
+2020-11-09 13:48:13.044 -05:00 [DBG] Connection id "0HM44S01FL758" received FIN.
+2020-11-09 13:48:13.057 -05:00 [DBG] Connection id "0HM44S01FL757" accepted.
+2020-11-09 13:48:13.057 -05:00 [DBG] Connection id "0HM44S01FL758" accepted.
+2020-11-09 13:48:13.063 -05:00 [DBG] Connection id "0HM44S01FL757" started.
+2020-11-09 13:48:13.063 -05:00 [DBG] Connection id "0HM44S01FL758" started.
+2020-11-09 13:48:13.085 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:48:13.085 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:48:13.140 -05:00 [DBG] Connection id "0HM44S01FL757" stopped.
+2020-11-09 13:48:13.147 -05:00 [DBG] Connection id "0HM44S01FL758" stopped.
+2020-11-09 13:48:13.151 -05:00 [DBG] Connection id "0HM44S01FL757" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:48:13.151 -05:00 [DBG] Connection id "0HM44S01FL758" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:48:14.443 -05:00 [DBG] Connection id "0HM44S01FL759" accepted.
+2020-11-09 13:48:14.447 -05:00 [DBG] Connection id "0HM44S01FL759" started.
+2020-11-09 13:48:14.578 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001//docs  
+2020-11-09 13:48:14.582 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 13:48:14.608 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:48:14.637 -05:00 [DBG] No candidates found for the request path '//docs'
+2020-11-09 13:48:14.638 -05:00 [DBG] Request did not match any endpoints
+2020-11-09 13:48:14.639 -05:00 [DBG] The request path //docs does not match a supported file type
+2020-11-09 13:48:14.642 -05:00 [INF] HTTP GET //docs responded 404 in 30.3961 ms
+2020-11-09 13:48:14.651 -05:00 [INF] Request finished in 75.731ms 404 
+2020-11-09 13:48:17.773 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 13:48:17.798 -05:00 [INF] Request finished in 25.1644ms 200 text/html;charset=utf-8
+2020-11-09 13:48:18.038 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 13:48:18.128 -05:00 [INF] Request finished in 89.837ms 200 application/json;charset=utf-8
+2020-11-09 13:48:28.485 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/2  
+2020-11-09 13:48:28.487 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:48:28.493 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Episode/2'
+2020-11-09 13:48:28.498 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is valid for the request path '/api/Episode/2'
+2020-11-09 13:48:28.501 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:48:28.504 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:48:28.514 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 13:48:28.552 -05:00 [INF] Route matched with {action = "GetEpisode", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[ShitLeopard.Api.Models.EpisodeModel] GetEpisode(Int64) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:48:28.556 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:48:28.557 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:48:28.559 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:48:28.561 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:48:28.562 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:48:28.564 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:48:28.701 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:48:28.715 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 13:48:28.719 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' using the name 'episodeId' in request data ...
+2020-11-09 13:48:28.721 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:48:28.723 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:48:28.724 -05:00 [DBG] Attempting to validate the bound parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 13:48:28.726 -05:00 [DBG] Done attempting to validate the bound parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 13:48:52.672 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:49:11.179 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:49:11.184 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:49:11.189 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:49:11.190 -05:00 [INF] Executing ObjectResult, writing value of type 'ShitLeopard.Api.Models.EpisodeModel'.
+2020-11-09 13:49:11.316 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api) in 42748.5572ms
+2020-11-09 13:49:11.321 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)'
+2020-11-09 13:49:11.323 -05:00 [INF] HTTP GET /api/Episode/2 responded 200 in 42835.0319 ms
+2020-11-09 13:49:11.326 -05:00 [INF] Request finished in 42842.0876ms 200 application/json; charset=utf-8
+2020-11-09 13:49:48.296 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode  
+2020-11-09 13:49:48.299 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:49:48.300 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Episode'
+2020-11-09 13:49:48.302 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)' with route pattern 'api/Episode' is valid for the request path '/api/Episode'
+2020-11-09 13:49:48.304 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:49:48.306 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:49:48.314 -05:00 [INF] Route matched with {action = "GetEpisodes", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.EpisodeModel]] GetEpisodes() on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:49:48.319 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:49:48.322 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:49:48.324 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:49:48.325 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:49:48.327 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:49:48.330 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:49:48.332 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:49:50.580 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:49:50.873 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:49:50.877 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:49:50.880 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:49:50.882 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.EpisodeModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:49:50.915 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api) in 2584.8451ms
+2020-11-09 13:49:50.917 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:49:50.918 -05:00 [INF] HTTP GET /api/Episode responded 200 in 2618.2702 ms
+2020-11-09 13:49:50.921 -05:00 [INF] Request finished in 2625.8682ms 200 application/json; charset=utf-8
+2020-11-09 13:50:41.263 -05:00 [INF] Starting web host
+2020-11-09 13:50:42.203 -05:00 [DBG] Hosting starting
+2020-11-09 13:50:42.559 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 13:50:42.640 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 13:50:42.730 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 13:50:42.732 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 13:50:42.733 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 13:50:42.734 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 13:50:42.736 -05:00 [INF] Hosting environment: Development
+2020-11-09 13:50:42.737 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 13:50:42.738 -05:00 [DBG] Hosting started
+2020-11-09 13:50:43.151 -05:00 [DBG] Connection id "0HM44S1E74KHC" accepted.
+2020-11-09 13:50:43.151 -05:00 [DBG] Connection id "0HM44S1E74KHB" accepted.
+2020-11-09 13:50:43.153 -05:00 [DBG] Connection id "0HM44S1E74KHC" started.
+2020-11-09 13:50:43.154 -05:00 [DBG] Connection id "0HM44S1E74KHB" started.
+2020-11-09 13:50:43.180 -05:00 [DBG] Connection id "0HM44S1E74KHB" received FIN.
+2020-11-09 13:50:43.180 -05:00 [DBG] Connection id "0HM44S1E74KHC" received FIN.
+2020-11-09 13:50:43.210 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:50:43.210 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:50:43.251 -05:00 [DBG] Connection id "0HM44S1E74KHC" stopped.
+2020-11-09 13:50:43.257 -05:00 [DBG] Connection id "0HM44S1E74KHB" stopped.
+2020-11-09 13:50:43.260 -05:00 [DBG] Connection id "0HM44S1E74KHC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:50:43.260 -05:00 [DBG] Connection id "0HM44S1E74KHB" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:50:44.895 -05:00 [DBG] Connection id "0HM44S1E74KHD" accepted.
+2020-11-09 13:50:44.913 -05:00 [DBG] Connection id "0HM44S1E74KHD" started.
+2020-11-09 13:50:45.110 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 13:50:45.115 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 13:50:45.184 -05:00 [INF] Request finished in 76.5747ms 200 text/html;charset=utf-8
+2020-11-09 13:50:45.495 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 13:50:45.609 -05:00 [INF] Request finished in 113.7056ms 200 application/json;charset=utf-8
+2020-11-09 13:50:48.979 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode  
+2020-11-09 13:50:48.986 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:50:49.025 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Episode'
+2020-11-09 13:50:49.030 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)' with route pattern 'api/Episode' is valid for the request path '/api/Episode'
+2020-11-09 13:50:49.033 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:50:49.036 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:50:49.048 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 13:50:49.094 -05:00 [INF] Route matched with {action = "GetEpisodes", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.EpisodeModel]] GetEpisodes() on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:50:49.099 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:50:49.101 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:50:49.103 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:50:49.105 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:50:49.106 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:50:49.108 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:50:49.247 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:50:51.157 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:50:52.312 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:50:52.320 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:50:52.325 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:50:52.327 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.EpisodeModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:50:52.524 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api) in 3410.5008ms
+2020-11-09 13:50:52.528 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodes (ShitLeopard.Api)'
+2020-11-09 13:50:52.532 -05:00 [INF] HTTP GET /api/Episode responded 200 in 3540.1685 ms
+2020-11-09 13:50:52.537 -05:00 [INF] Request finished in 3558.4469ms 200 application/json; charset=utf-8
+2020-11-09 13:53:25.022 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason  
+2020-11-09 13:53:25.023 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:53:25.025 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:53:25.026 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:53:25.032 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:53:25.035 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:53:25.038 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:53:25.040 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:53:25.044 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason() on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:53:25.050 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:53:25.052 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:53:25.055 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:53:25.058 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:53:25.059 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:53:25.064 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:53:25.066 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:53:27.294 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:53:27.477 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:53:27.481 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:53:27.483 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:53:27.486 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.EpisodeGroupingModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:53:27.508 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 2444.4927ms
+2020-11-09 13:53:27.512 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:53:27.513 -05:00 [INF] HTTP GET /api/Episode/GroupBySeason responded 200 in 2488.8488 ms
+2020-11-09 13:53:27.515 -05:00 [INF] Request finished in 2493.8223ms 200 application/json; charset=utf-8
+2020-11-09 13:55:55.836 -05:00 [INF] Starting web host
+2020-11-09 13:55:56.804 -05:00 [DBG] Hosting starting
+2020-11-09 13:55:57.130 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 13:55:57.200 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 13:55:57.255 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 13:55:57.257 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 13:55:57.258 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 13:55:57.259 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 13:55:57.260 -05:00 [INF] Hosting environment: Development
+2020-11-09 13:55:57.261 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 13:55:57.262 -05:00 [DBG] Hosting started
+2020-11-09 13:55:57.343 -05:00 [DBG] Connection id "0HM44S4BRHSQT" received FIN.
+2020-11-09 13:55:57.343 -05:00 [DBG] Connection id "0HM44S4BRHSQS" received FIN.
+2020-11-09 13:55:57.378 -05:00 [DBG] Connection id "0HM44S4BRHSQS" accepted.
+2020-11-09 13:55:57.378 -05:00 [DBG] Connection id "0HM44S4BRHSQT" accepted.
+2020-11-09 13:55:57.381 -05:00 [DBG] Connection id "0HM44S4BRHSQS" started.
+2020-11-09 13:55:57.381 -05:00 [DBG] Connection id "0HM44S4BRHSQT" started.
+2020-11-09 13:55:57.407 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:55:57.407 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:55:57.457 -05:00 [DBG] Connection id "0HM44S4BRHSQS" stopped.
+2020-11-09 13:55:57.461 -05:00 [DBG] Connection id "0HM44S4BRHSQT" stopped.
+2020-11-09 13:55:57.464 -05:00 [DBG] Connection id "0HM44S4BRHSQS" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:55:57.464 -05:00 [DBG] Connection id "0HM44S4BRHSQT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:55:59.002 -05:00 [DBG] Connection id "0HM44S4BRHSQU" accepted.
+2020-11-09 13:55:59.011 -05:00 [DBG] Connection id "0HM44S4BRHSQU" started.
+2020-11-09 13:55:59.194 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 13:55:59.200 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 13:55:59.283 -05:00 [INF] Request finished in 93.9747ms 200 text/html;charset=utf-8
+2020-11-09 13:55:59.549 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 13:55:59.661 -05:00 [INF] Request finished in 112.6789ms 200 application/json;charset=utf-8
+2020-11-09 13:56:37.123 -05:00 [INF] Starting web host
+2020-11-09 13:56:38.097 -05:00 [DBG] Hosting starting
+2020-11-09 13:56:38.463 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 13:56:38.588 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 13:56:38.648 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 13:56:38.650 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 13:56:38.651 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 13:56:38.653 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 13:56:38.654 -05:00 [INF] Hosting environment: Development
+2020-11-09 13:56:38.655 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 13:56:38.657 -05:00 [DBG] Hosting started
+2020-11-09 13:56:38.677 -05:00 [DBG] Connection id "0HM44S4O5O1R9" received FIN.
+2020-11-09 13:56:38.677 -05:00 [DBG] Connection id "0HM44S4O5O1RA" received FIN.
+2020-11-09 13:56:38.692 -05:00 [DBG] Connection id "0HM44S4O5O1R9" accepted.
+2020-11-09 13:56:38.692 -05:00 [DBG] Connection id "0HM44S4O5O1RA" accepted.
+2020-11-09 13:56:38.694 -05:00 [DBG] Connection id "0HM44S4O5O1R9" started.
+2020-11-09 13:56:38.695 -05:00 [DBG] Connection id "0HM44S4O5O1RA" started.
+2020-11-09 13:56:38.726 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:56:38.726 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 13:56:38.780 -05:00 [DBG] Connection id "0HM44S4O5O1R9" stopped.
+2020-11-09 13:56:38.781 -05:00 [DBG] Connection id "0HM44S4O5O1RA" stopped.
+2020-11-09 13:56:38.785 -05:00 [DBG] Connection id "0HM44S4O5O1R9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:56:38.785 -05:00 [DBG] Connection id "0HM44S4O5O1RA" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 13:56:40.457 -05:00 [DBG] Connection id "0HM44S4O5O1RB" accepted.
+2020-11-09 13:56:40.466 -05:00 [DBG] Connection id "0HM44S4O5O1RB" started.
+2020-11-09 13:56:40.693 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 13:56:40.702 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 13:56:40.812 -05:00 [INF] Request finished in 125.8634ms 200 text/html;charset=utf-8
+2020-11-09 13:56:41.231 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 13:56:41.374 -05:00 [INF] Request finished in 143.4786ms 200 application/json;charset=utf-8
+2020-11-09 13:56:51.258 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason?pattern=ricky  
+2020-11-09 13:56:51.261 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:56:51.296 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:56:51.300 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:56:51.306 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:56:51.313 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:56:51.315 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:56:51.316 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:56:51.327 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 13:56:51.373 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason(System.String) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:56:51.377 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:56:51.379 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:56:51.380 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:56:51.382 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:56:51.384 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:56:51.389 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:56:51.520 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:56:51.533 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:56:51.540 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 13:56:51.544 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:56:51.545 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:56:51.546 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:56:51.549 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 13:56:57.887 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:56:58.720 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:56:58.726 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:56:58.729 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:56:58.731 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.EpisodeGroupingModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:56:58.862 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 7470.1883ms
+2020-11-09 13:56:58.865 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:56:58.868 -05:00 [INF] HTTP GET /api/Episode/GroupBySeason?pattern=ricky responded 200 in 7600.9289 ms
+2020-11-09 13:56:58.872 -05:00 [INF] Request finished in 7614.3107ms 200 application/json; charset=utf-8
+2020-11-09 13:57:18.072 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason?pattern=%22ricky%20decides%22  
+2020-11-09 13:57:18.075 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:57:18.076 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:18.077 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:18.080 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:18.082 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:18.084 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:18.088 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:18.090 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason(System.String) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:57:18.092 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:57:18.094 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:57:18.095 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:57:18.097 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:57:18.098 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:57:18.100 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:18.106 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:18.108 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:18.109 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 13:57:18.111 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:18.112 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:18.113 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:18.114 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:23.829 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:57:23.999 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:57:24.004 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:57:24.006 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:57:24.007 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.EpisodeGroupingModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:57:24.011 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 5911.2288ms
+2020-11-09 13:57:24.012 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:24.014 -05:00 [INF] HTTP GET /api/Episode/GroupBySeason?pattern=%22ricky%20decides%22 responded 200 in 5937.7418 ms
+2020-11-09 13:57:24.015 -05:00 [INF] Request finished in 5943.3566ms 200 application/json; charset=utf-8
+2020-11-09 13:57:38.739 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason?pattern=%22prison%22  
+2020-11-09 13:57:38.741 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:57:38.742 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:38.745 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:38.746 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:38.750 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:38.754 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:38.756 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:38.760 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason(System.String) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:57:38.762 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:57:38.764 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:57:38.765 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:57:38.767 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:57:38.770 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:57:38.775 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:38.777 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:38.779 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:38.780 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 13:57:38.781 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:38.783 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:38.785 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:38.789 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:38.790 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:57:38.809 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:57:38.813 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:57:38.816 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:57:38.820 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.EpisodeGroupingModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:57:38.822 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 47.2664ms
+2020-11-09 13:57:38.825 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:38.826 -05:00 [INF] HTTP GET /api/Episode/GroupBySeason?pattern=%22prison%22 responded 200 in 83.5255 ms
+2020-11-09 13:57:38.827 -05:00 [INF] Request finished in 88.2337ms 200 application/json; charset=utf-8
+2020-11-09 13:57:51.454 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason?pattern=%22The%20Kiss%22  
+2020-11-09 13:57:51.456 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 13:57:51.457 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:51.459 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:51.461 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:51.464 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 13:57:51.471 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:51.476 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:51.477 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason(System.String) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 13:57:51.482 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 13:57:51.483 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 13:57:51.487 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 13:57:51.492 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 13:57:51.493 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 13:57:51.496 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:51.498 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 13:57:51.500 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:51.503 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 13:57:51.505 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:51.507 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:51.508 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 13:57:51.509 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 13:57:51.512 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 13:57:51.640 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 13:57:51.644 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 13:57:51.646 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 13:57:51.649 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.EpisodeGroupingModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 13:57:51.652 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 155.7362ms
+2020-11-09 13:57:51.654 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 13:57:51.655 -05:00 [INF] HTTP GET /api/Episode/GroupBySeason?pattern=%22The%20Kiss%22 responded 200 in 198.13 ms
+2020-11-09 13:57:51.657 -05:00 [INF] Request finished in 203.9043ms 200 application/json; charset=utf-8
+2020-11-09 14:21:55.139 -05:00 [INF] Starting web host
+2020-11-09 14:21:56.106 -05:00 [DBG] Hosting starting
+2020-11-09 14:21:56.428 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 14:21:56.520 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 14:21:56.617 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 14:21:56.618 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 14:21:56.619 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 14:21:56.621 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 14:21:56.622 -05:00 [INF] Hosting environment: Development
+2020-11-09 14:21:56.623 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 14:21:56.624 -05:00 [DBG] Hosting started
+2020-11-09 14:21:56.639 -05:00 [DBG] Connection id "0HM44SISI55NR" received FIN.
+2020-11-09 14:21:56.639 -05:00 [DBG] Connection id "0HM44SISI55NQ" received FIN.
+2020-11-09 14:21:56.656 -05:00 [DBG] Connection id "0HM44SISI55NR" accepted.
+2020-11-09 14:21:56.656 -05:00 [DBG] Connection id "0HM44SISI55NQ" accepted.
+2020-11-09 14:21:56.658 -05:00 [DBG] Connection id "0HM44SISI55NR" started.
+2020-11-09 14:21:56.659 -05:00 [DBG] Connection id "0HM44SISI55NQ" started.
+2020-11-09 14:21:56.690 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:21:56.690 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:21:56.741 -05:00 [DBG] Connection id "0HM44SISI55NQ" stopped.
+2020-11-09 14:21:56.743 -05:00 [DBG] Connection id "0HM44SISI55NR" stopped.
+2020-11-09 14:21:56.748 -05:00 [DBG] Connection id "0HM44SISI55NR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:21:56.748 -05:00 [DBG] Connection id "0HM44SISI55NQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:21:58.521 -05:00 [DBG] Connection id "0HM44SISI55NS" accepted.
+2020-11-09 14:21:58.527 -05:00 [DBG] Connection id "0HM44SISI55NS" started.
+2020-11-09 14:21:58.871 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 14:21:58.878 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 14:21:58.962 -05:00 [INF] Request finished in 96.3153ms 200 text/html;charset=utf-8
+2020-11-09 14:21:59.261 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 14:21:59.435 -05:00 [INF] Request finished in 174.2726ms 200 application/json;charset=utf-8
+2020-11-09 14:22:13.091 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/1  
+2020-11-09 14:22:13.094 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:22:13.129 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Script/1'
+2020-11-09 14:22:13.134 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is valid for the request path '/api/Script/1'
+2020-11-09 14:22:13.139 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:13.140 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:13.148 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 14:22:13.191 -05:00 [INF] Route matched with {action = "GetScript", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[ShitLeopard.Api.Models.ScriptModel] GetScript(Int64) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:22:13.194 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:22:13.196 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:22:13.198 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:22:13.199 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:22:13.201 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:22:13.204 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:22:13.210 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api) in 3.2729ms
+2020-11-09 14:22:13.214 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:13.216 -05:00 [ERR] HTTP GET /api/Script/1 responded 500 in 118.9198 ms
+System.InvalidOperationException: Unable to resolve service for type 'ShitLeopard.Api.Contracts.IScriptService' while attempting to activate 'ShitLeopard.Api.Controllers.ScriptController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 14:22:13.230 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ShitLeopard.Api.Contracts.IScriptService' while attempting to activate 'ShitLeopard.Api.Controllers.ScriptController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 14:22:13.245 -05:00 [INF] Request finished in 154.7893ms 500 text/plain
+2020-11-09 14:22:32.939 -05:00 [INF] Starting web host
+2020-11-09 14:22:33.681 -05:00 [DBG] Hosting starting
+2020-11-09 14:22:33.971 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 14:22:34.030 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 14:22:34.101 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 14:22:34.104 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 14:22:34.105 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 14:22:34.106 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 14:22:34.107 -05:00 [INF] Hosting environment: Development
+2020-11-09 14:22:34.109 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 14:22:34.110 -05:00 [DBG] Hosting started
+2020-11-09 14:22:34.506 -05:00 [DBG] Connection id "0HM44SJ7R8CJ6" accepted.
+2020-11-09 14:22:34.506 -05:00 [DBG] Connection id "0HM44SJ7R8CJ7" accepted.
+2020-11-09 14:22:34.514 -05:00 [DBG] Connection id "0HM44SJ7R8CJ6" started.
+2020-11-09 14:22:34.517 -05:00 [DBG] Connection id "0HM44SJ7R8CJ7" started.
+2020-11-09 14:22:34.517 -05:00 [DBG] Connection id "0HM44SJ7R8CJ6" received FIN.
+2020-11-09 14:22:34.517 -05:00 [DBG] Connection id "0HM44SJ7R8CJ7" received FIN.
+2020-11-09 14:22:34.544 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:22:34.544 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:22:34.586 -05:00 [DBG] Connection id "0HM44SJ7R8CJ7" stopped.
+2020-11-09 14:22:34.590 -05:00 [DBG] Connection id "0HM44SJ7R8CJ6" stopped.
+2020-11-09 14:22:34.593 -05:00 [DBG] Connection id "0HM44SJ7R8CJ7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:22:34.593 -05:00 [DBG] Connection id "0HM44SJ7R8CJ6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:22:35.910 -05:00 [DBG] Connection id "0HM44SJ7R8CJ8" accepted.
+2020-11-09 14:22:35.914 -05:00 [DBG] Connection id "0HM44SJ7R8CJ8" started.
+2020-11-09 14:22:36.081 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 14:22:36.088 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 14:22:36.165 -05:00 [INF] Request finished in 86.5906ms 200 text/html;charset=utf-8
+2020-11-09 14:22:36.472 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 14:22:36.600 -05:00 [INF] Request finished in 128.6332ms 200 application/json;charset=utf-8
+2020-11-09 14:22:42.007 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/1  
+2020-11-09 14:22:42.013 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:22:42.047 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Script/1'
+2020-11-09 14:22:42.053 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is valid for the request path '/api/Script/1'
+2020-11-09 14:22:42.056 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:42.057 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:42.068 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 14:22:42.110 -05:00 [INF] Route matched with {action = "GetScript", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[ShitLeopard.Api.Models.ScriptModel] GetScript(Int64) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:22:42.113 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:22:42.115 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:22:42.116 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:22:42.120 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:22:42.124 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:22:42.126 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:22:42.288 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:22:42.300 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 14:22:42.305 -05:00 [DBG] Attempting to bind parameter 'episodeId' of type 'System.Int64' using the name 'episodeId' in request data ...
+2020-11-09 14:22:42.306 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 14:22:42.309 -05:00 [DBG] Done attempting to bind parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 14:22:42.310 -05:00 [DBG] Attempting to validate the bound parameter 'episodeId' of type 'System.Int64' ...
+2020-11-09 14:22:42.313 -05:00 [DBG] Done attempting to validate the bound parameter 'episodeId' of type 'System.Int64'.
+2020-11-09 14:22:42.327 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:22:43.275 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 14:22:43.281 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 14:22:43.285 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 14:22:43.287 -05:00 [INF] Executing ObjectResult, writing value of type 'ShitLeopard.Api.Models.ScriptModel'.
+2020-11-09 14:22:43.402 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api) in 1273.0707ms
+2020-11-09 14:22:43.404 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)'
+2020-11-09 14:22:43.407 -05:00 [INF] HTTP GET /api/Script/1 responded 200 in 1388.5043 ms
+2020-11-09 14:22:43.410 -05:00 [INF] Request finished in 1403.7384ms 200 application/json; charset=utf-8
+2020-11-09 14:23:10.272 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Words/5  
+2020-11-09 14:23:10.274 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:23:10.277 -05:00 [DBG] 1 candidate(s) found for the request path '/api/Script/Words/5'
+2020-11-09 14:23:10.279 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptWords (ShitLeopard.Api)' with route pattern 'api/Script/Words/{scriptLineId:long}' is valid for the request path '/api/Script/Words/5'
+2020-11-09 14:23:10.286 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptWords (ShitLeopard.Api)'
+2020-11-09 14:23:10.290 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptWords (ShitLeopard.Api)'
+2020-11-09 14:23:10.295 -05:00 [INF] Route matched with {action = "GetScriptWords", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptWordModel]] GetScriptWords(Int64) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:23:10.300 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:23:10.302 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:23:10.304 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:23:10.305 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:23:10.307 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:23:10.308 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:23:10.310 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:23:10.311 -05:00 [DBG] Attempting to bind parameter 'scriptLineId' of type 'System.Int64' ...
+2020-11-09 14:23:10.314 -05:00 [DBG] Attempting to bind parameter 'scriptLineId' of type 'System.Int64' using the name 'scriptLineId' in request data ...
+2020-11-09 14:23:10.316 -05:00 [DBG] Done attempting to bind parameter 'scriptLineId' of type 'System.Int64'.
+2020-11-09 14:23:10.317 -05:00 [DBG] Done attempting to bind parameter 'scriptLineId' of type 'System.Int64'.
+2020-11-09 14:23:10.319 -05:00 [DBG] Attempting to validate the bound parameter 'scriptLineId' of type 'System.Int64' ...
+2020-11-09 14:23:10.321 -05:00 [DBG] Done attempting to validate the bound parameter 'scriptLineId' of type 'System.Int64'.
+2020-11-09 14:23:10.323 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:23:10.997 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 14:23:11.003 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 14:23:11.007 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 14:23:11.009 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.ScriptWordModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 14:23:11.021 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptWords (ShitLeopard.Api) in 712.5411ms
+2020-11-09 14:23:11.024 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptWords (ShitLeopard.Api)'
+2020-11-09 14:23:11.025 -05:00 [INF] HTTP GET /api/Script/Words/5 responded 200 in 749.1792 ms
+2020-11-09 14:23:11.027 -05:00 [INF] Request finished in 755.0148ms 200 application/json; charset=utf-8
+2020-11-09 14:23:29.920 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=%22my%20tits%22  
+2020-11-09 14:23:29.922 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:23:29.923 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:23:29.925 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:23:29.931 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:23:29.937 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:23:29.940 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:23:29.941 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:23:29.946 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:23:29.949 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:23:29.950 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:23:29.952 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:23:29.956 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:23:29.958 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:23:29.959 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:23:29.961 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:23:29.963 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:23:29.965 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:23:29.967 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:23:29.969 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:23:29.972 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:23:29.974 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:23:29.977 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:23:30.248 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 288.7203ms
+2020-11-09 14:23:30.252 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:23:30.253 -05:00 [ERR] HTTP GET /api/Script/Lines?pattern=%22my%20tits%22 responded 500 in 330.198 ms
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 14:23:30.286 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 14:23:30.312 -05:00 [INF] Request finished in 392.7468ms 500 text/plain
+2020-11-09 14:45:46.622 -05:00 [INF] Starting web host
+2020-11-09 14:45:47.662 -05:00 [DBG] Hosting starting
+2020-11-09 14:45:48.034 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 14:45:48.110 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 14:45:48.163 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 14:45:48.164 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 14:45:48.166 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 14:45:48.168 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 14:45:48.169 -05:00 [INF] Hosting environment: Development
+2020-11-09 14:45:48.170 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 14:45:48.171 -05:00 [DBG] Hosting started
+2020-11-09 14:45:48.655 -05:00 [DBG] Connection id "0HM44T07ASD03" accepted.
+2020-11-09 14:45:48.655 -05:00 [DBG] Connection id "0HM44T07ASD02" accepted.
+2020-11-09 14:45:48.658 -05:00 [DBG] Connection id "0HM44T07ASD03" started.
+2020-11-09 14:45:48.662 -05:00 [DBG] Connection id "0HM44T07ASD02" started.
+2020-11-09 14:45:48.696 -05:00 [DBG] Connection id "0HM44T07ASD03" received FIN.
+2020-11-09 14:45:48.696 -05:00 [DBG] Connection id "0HM44T07ASD02" received FIN.
+2020-11-09 14:45:48.709 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:45:48.709 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:45:48.772 -05:00 [DBG] Connection id "0HM44T07ASD02" stopped.
+2020-11-09 14:45:48.772 -05:00 [DBG] Connection id "0HM44T07ASD03" stopped.
+2020-11-09 14:45:48.779 -05:00 [DBG] Connection id "0HM44T07ASD02" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:45:48.779 -05:00 [DBG] Connection id "0HM44T07ASD03" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:45:50.449 -05:00 [DBG] Connection id "0HM44T07ASD04" accepted.
+2020-11-09 14:45:50.453 -05:00 [DBG] Connection id "0HM44T07ASD04" started.
+2020-11-09 14:45:50.629 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 14:45:50.633 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 14:45:50.712 -05:00 [INF] Request finished in 85.7596ms 200 text/html;charset=utf-8
+2020-11-09 14:45:50.998 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 14:45:51.125 -05:00 [INF] Request finished in 127.2704ms 200 application/json;charset=utf-8
+2020-11-09 14:46:03.535 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=%22my%20tits%22  
+2020-11-09 14:46:03.539 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:46:03.573 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:46:03.578 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:46:03.583 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:46:03.588 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:46:03.590 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:46:03.592 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:46:03.600 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 14:46:03.641 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:46:03.645 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:46:03.647 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:46:03.648 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:46:03.650 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:46:03.652 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:46:03.655 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:46:03.796 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:46:03.810 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:46:03.814 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:46:03.817 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:03.819 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:03.821 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:46:03.824 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:03.838 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:46:04.640 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 981.827ms
+2020-11-09 14:46:04.644 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:46:04.646 -05:00 [ERR] HTTP GET /api/Script/Lines?pattern=%22my%20tits%22 responded 500 in 1103.1221 ms
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 14:46:04.682 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 14:46:04.711 -05:00 [INF] Request finished in 1177.0376ms 500 text/plain
+2020-11-09 14:46:33.307 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=%22my%20tits%22  
+2020-11-09 14:46:33.309 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:46:33.313 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:46:33.315 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:46:33.318 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:46:33.321 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:46:33.323 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:46:33.324 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:46:33.325 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:46:33.327 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:46:33.331 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:46:33.333 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:46:33.336 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:46:33.338 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:46:33.340 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:46:33.341 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:46:33.343 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:46:33.345 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:46:33.347 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:33.348 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:33.349 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:46:33.351 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:46:35.915 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:47:11.986 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 38646.5938ms
+2020-11-09 14:47:11.989 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:47:11.991 -05:00 [ERR] HTTP GET /api/Script/Lines?pattern=%22my%20tits%22 responded 500 in 38679.865 ms
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 14:47:12.011 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.ScriptService.SearchScriptLinesAsync(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\ScriptService.cs:line 54
+   at ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\ScriptController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 14:47:12.030 -05:00 [INF] Request finished in 38724.0023ms 500 text/plain
+2020-11-09 14:47:24.749 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Episode/GroupBySeason?pattern=shit  
+2020-11-09 14:47:24.751 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:47:24.753 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Episode/GroupBySeason'
+2020-11-09 14:47:24.754 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)' with route pattern 'api/Episode/GroupBySeason' is valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 14:47:24.756 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'GroupBySeason' for the request path '/api/Episode/GroupBySeason'
+2020-11-09 14:47:24.761 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisode (ShitLeopard.Api)' with route pattern 'api/Episode/{episodeId:long}' is not valid for the request path '/api/Episode/GroupBySeason'
+2020-11-09 14:47:24.763 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 14:47:24.764 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 14:47:24.773 -05:00 [INF] Route matched with {action = "GetEpisodesBySeason", controller = "Episode"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.EpisodeGroupingModel]] GetEpisodesBySeason(System.String) on controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api).
+2020-11-09 14:47:24.778 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:47:24.780 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:47:24.781 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:47:24.783 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:47:24.786 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:47:24.790 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 14:47:24.792 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.EpisodeController (ShitLeopard.Api)
+2020-11-09 14:47:24.794 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:47:24.795 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:47:24.796 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:47:24.798 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:47:24.799 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:47:24.801 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:47:24.805 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:47:24.941 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api) in 151.1454ms
+2020-11-09 14:47:24.943 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason (ShitLeopard.Api)'
+2020-11-09 14:47:24.944 -05:00 [ERR] HTTP GET /api/Episode/GroupBySeason?pattern=shit responded 500 in 191.7241 ms
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.EpisodeService.GetEpisodes(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\EpisodeService.cs:line 35
+   at ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\EpisodeController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-11-09 14:47:24.960 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+MongoDB.Driver.MongoCommandException: Command find failed: text index required for $text query.
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ProcessResponse(ConnectionId connectionId, CommandMessage responseMessage)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.ExecuteAsync(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocolAsync[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.ExecuteAsync[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.ExecuteAsync(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperationAsync[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperationAsync[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSessionAsync[TResult](Func`2 funcAsync, CancellationToken cancellationToken)
+   at MongoDB.Driver.IAsyncCursorSourceExtensions.ToListAsync[TDocument](IAsyncCursorSource`1 source, CancellationToken cancellationToken)
+   at ShitLeopard.Api.Services.EpisodeService.GetEpisodes(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Services\EpisodeService.cs:line 35
+   at ShitLeopard.Api.Controllers.EpisodeController.GetEpisodesBySeason(String pattern) in C:\Development\ShitLeopard\src\ShitLeopard.Api\Controllers\EpisodeController.cs:line 39
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-11-09 14:47:24.979 -05:00 [INF] Request finished in 230.1801ms 500 text/plain
+2020-11-09 14:49:57.901 -05:00 [INF] Starting web host
+2020-11-09 14:49:58.693 -05:00 [DBG] Hosting starting
+2020-11-09 14:49:58.974 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 14:49:59.050 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 14:49:59.101 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 14:49:59.102 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 14:49:59.104 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 14:49:59.105 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 14:49:59.105 -05:00 [INF] Hosting environment: Development
+2020-11-09 14:49:59.106 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 14:49:59.107 -05:00 [DBG] Hosting started
+2020-11-09 14:49:59.503 -05:00 [DBG] Connection id "0HM44T2I34UIA" accepted.
+2020-11-09 14:49:59.503 -05:00 [DBG] Connection id "0HM44T2I34UI9" accepted.
+2020-11-09 14:49:59.508 -05:00 [DBG] Connection id "0HM44T2I34UI9" started.
+2020-11-09 14:49:59.508 -05:00 [DBG] Connection id "0HM44T2I34UIA" started.
+2020-11-09 14:49:59.544 -05:00 [DBG] Connection id "0HM44T2I34UIA" received FIN.
+2020-11-09 14:49:59.544 -05:00 [DBG] Connection id "0HM44T2I34UI9" received FIN.
+2020-11-09 14:49:59.574 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:49:59.574 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:49:59.647 -05:00 [DBG] Connection id "0HM44T2I34UI9" stopped.
+2020-11-09 14:49:59.647 -05:00 [DBG] Connection id "0HM44T2I34UIA" stopped.
+2020-11-09 14:49:59.652 -05:00 [DBG] Connection id "0HM44T2I34UIA" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:49:59.652 -05:00 [DBG] Connection id "0HM44T2I34UI9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:50:00.383 -05:00 [INF] Application is shutting down...
+2020-11-09 14:50:00.387 -05:00 [DBG] Hosting stopping
+2020-11-09 14:50:00.405 -05:00 [DBG] Hosting stopped
+2020-11-09 14:51:00.500 -05:00 [INF] Starting web host
+2020-11-09 14:51:01.454 -05:00 [DBG] Hosting starting
+2020-11-09 14:51:01.773 -05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-11-09 14:51:01.866 -05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 3CB4A555E54A10A0ED8AC7D974BB7F790946F690)
+2020-11-09 14:51:01.939 -05:00 [INF] Now listening on: https://localhost:5001
+2020-11-09 14:51:01.940 -05:00 [INF] Now listening on: http://localhost:5000
+2020-11-09 14:51:01.942 -05:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2020-11-09 14:51:01.943 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-11-09 14:51:01.944 -05:00 [INF] Hosting environment: Development
+2020-11-09 14:51:01.945 -05:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2020-11-09 14:51:01.946 -05:00 [DBG] Hosting started
+2020-11-09 14:51:01.954 -05:00 [DBG] Connection id "0HM44T34MP362" received FIN.
+2020-11-09 14:51:01.970 -05:00 [DBG] Connection id "0HM44T34MP362" accepted.
+2020-11-09 14:51:01.971 -05:00 [DBG] Connection id "0HM44T34MP362" started.
+2020-11-09 14:51:01.993 -05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2020-11-09 14:51:02.036 -05:00 [DBG] Connection id "0HM44T34MP362" stopped.
+2020-11-09 14:51:02.040 -05:00 [DBG] Connection id "0HM44T34MP362" sending FIN because: "The Socket transport's send loop completed gracefully."
+2020-11-09 14:51:03.716 -05:00 [DBG] Connection id "0HM44T34MP363" accepted.
+2020-11-09 14:51:03.720 -05:00 [DBG] Connection id "0HM44T34MP363" started.
+2020-11-09 14:51:03.893 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/docs/index.html  
+2020-11-09 14:51:03.897 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-11-09 14:51:03.985 -05:00 [INF] Request finished in 93.2264ms 200 text/html;charset=utf-8
+2020-11-09 14:51:04.267 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2020-11-09 14:51:04.395 -05:00 [INF] Request finished in 127.5888ms 200 application/json;charset=utf-8
+2020-11-09 14:51:11.757 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=fuck  
+2020-11-09 14:51:11.761 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:51:11.802 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:51:11.808 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:51:11.813 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:51:11.817 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:51:11.823 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:11.825 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:11.834 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-11-09 14:51:11.890 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:51:11.895 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:51:11.896 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:51:11.898 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:51:11.900 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:51:11.903 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:51:11.905 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:51:12.070 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:51:12.084 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:51:12.089 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:51:12.092 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:12.093 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:12.094 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:51:12.098 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:13.948 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:51:16.629 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 14:51:16.638 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 14:51:16.642 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 14:51:16.644 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.ScriptLineModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 14:51:18.960 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 7052.5285ms
+2020-11-09 14:51:18.964 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:18.967 -05:00 [INF] HTTP GET /api/Script/Lines?pattern=fuck responded 200 in 7200.5855 ms
+2020-11-09 14:51:18.972 -05:00 [INF] Request finished in 7215.4051ms 200 application/json; charset=utf-8
+2020-11-09 14:51:42.767 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=%22my%20tits%22  
+2020-11-09 14:51:42.770 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:51:42.774 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:51:42.776 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:51:42.778 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:51:42.782 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:51:42.785 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:42.790 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:42.792 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:51:42.794 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:51:42.795 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:51:42.797 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:51:42.798 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:51:42.800 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:51:42.805 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:51:42.807 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:51:42.809 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:51:42.810 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:51:42.812 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:42.813 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:42.814 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:51:42.815 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:51:44.406 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:51:44.668 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 14:51:44.672 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 14:51:44.675 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 14:51:44.676 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.ScriptLineModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 14:51:44.789 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 1983.1195ms
+2020-11-09 14:51:44.791 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:51:44.792 -05:00 [INF] HTTP GET /api/Script/Lines?pattern=%22my%20tits%22 responded 200 in 2020.1117 ms
+2020-11-09 14:51:44.794 -05:00 [INF] Request finished in 2028.0836ms 200 application/json; charset=utf-8
+2020-11-09 14:52:11.195 -05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Script/Lines?pattern=%22furry%20whore%22  
+2020-11-09 14:52:11.198 -05:00 [DBG] The request path  does not match the path filter
+2020-11-09 14:52:11.200 -05:00 [DBG] 2 candidate(s) found for the request path '/api/Script/Lines'
+2020-11-09 14:52:11.204 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)' with route pattern 'api/Script/Lines' is valid for the request path '/api/Script/Lines'
+2020-11-09 14:52:11.208 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' was rejected by constraint 'episodeId':'Microsoft.AspNetCore.Routing.Constraints.LongRouteConstraint' with value 'Lines' for the request path '/api/Script/Lines'
+2020-11-09 14:52:11.210 -05:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScript (ShitLeopard.Api)' with route pattern 'api/Script/{episodeId:long}' is not valid for the request path '/api/Script/Lines'
+2020-11-09 14:52:11.212 -05:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:52:11.213 -05:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:52:11.215 -05:00 [INF] Route matched with {action = "GetScriptLineModels", controller = "Script"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.ScriptLineModel]] GetScriptLineModels(System.String) on controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api).
+2020-11-09 14:52:11.217 -05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-11-09 14:52:11.223 -05:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-11-09 14:52:11.224 -05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2020-11-09 14:52:11.226 -05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-11-09 14:52:11.227 -05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-11-09 14:52:11.229 -05:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:52:11.230 -05:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ScriptController (ShitLeopard.Api)
+2020-11-09 14:52:11.232 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:52:11.233 -05:00 [DBG] Attempting to bind parameter 'pattern' of type 'System.String' using the name 'pattern' in request data ...
+2020-11-09 14:52:11.237 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:52:11.238 -05:00 [DBG] Done attempting to bind parameter 'pattern' of type 'System.String'.
+2020-11-09 14:52:11.241 -05:00 [DBG] Attempting to validate the bound parameter 'pattern' of type 'System.String' ...
+2020-11-09 14:52:11.242 -05:00 [DBG] Done attempting to validate the bound parameter 'pattern' of type 'System.String'.
+2020-11-09 14:52:12.442 -05:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2020-11-09 14:52:12.692 -05:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2020-11-09 14:52:12.696 -05:00 [DBG] Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2020-11-09 14:52:12.705 -05:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2020-11-09 14:52:12.707 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.ScriptLineModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-11-09 14:52:12.802 -05:00 [INF] Executed action ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api) in 1573.4918ms
+2020-11-09 14:52:12.805 -05:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ScriptController.GetScriptLineModels (ShitLeopard.Api)'
+2020-11-09 14:52:12.807 -05:00 [INF] HTTP GET /api/Script/Lines?pattern=%22furry%20whore%22 responded 200 in 1607.4614 ms
+2020-11-09 14:52:12.809 -05:00 [INF] Request finished in 1614.0536ms 200 application/json; charset=utf-8

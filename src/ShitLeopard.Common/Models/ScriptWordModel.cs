@@ -6,6 +6,5 @@
         public long ScriptLineId { get; set; }
         public string Word { get; set; }
 
-        public virtual ScriptLineModel ScriptLine { get; set; }
     }
 }

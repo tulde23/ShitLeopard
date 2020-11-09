@@ -22,9 +22,9 @@ namespace ShitLeopard.Api.Controllers
         [HttpGet]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(List<EpisodeModel>))]
-        public async Task<IEnumerable<EpisodeModel>> GetEpisodes()
+        public async Task<IEnumerable<EpisodeModel>> GetEpisodes([FromQuery] string pattern = null)
         {
-            return await Service.GetEpisodes();
+            return await Service.GetEpisodes(pattern);
         }
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace ShitLeopard.Api.Controllers
         [HttpGet("GroupBySeason")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(List<EpisodeModel>))]
-        public async Task<IEnumerable<EpisodeGroupingModel>> GetEpisodesBySeason()
+        public async Task<IEnumerable<EpisodeGroupingModel>> GetEpisodesBySeason([FromQuery] string pattern = null)
         {
-            var episodes = await Service.GetEpisodes();
+            var episodes = await Service.GetEpisodes(pattern);
             var items = new List<EpisodeGroupingModel>();
             foreach (var item in episodes.GroupBy(x => x.SeasonId))
             {

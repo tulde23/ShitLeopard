@@ -28,13 +28,35 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShitLeopard.Common\ShitLeopard.Common.csproj" />
-    <ProjectReference Include="..\ShitLeopard.DataLayer\ShitLeopard.DataLayer.csproj" />
   </ItemGroup>
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\BaseController.cs" />
+    <Compile Remove="Controllers\CharacterController.cs" />
+    <Compile Remove="Controllers\QuestionController.cs" />
+    <Compile Remove="Controllers\QuoteController.cs" />
+    <Compile Remove="Controllers\SearchController.cs" />
+    <Compile Remove="Controllers\SeasonController.cs" />
+    <Compile Remove="Controllers\SiteMetricsController.cs" />
+    <Compile Remove="Controllers\TagsController.cs" />
+    <Compile Remove="Filters\InboundRequestInspectorFilterAttribute.cs" />
+    <Compile Remove="Queries\ScalarQueries.cs" />
+    <Compile Remove="Services\CharacterService.cs" />
+    <Compile Remove="Services\QuoteService.cs" />
+    <Compile Remove="Services\RequestProfileService.cs" />
+    <Compile Remove="Services\SearchService.cs" />
+    <Compile Remove="Services\SeasonService.cs" />
+    <Compile Remove="Services\StanfordNaturalLanguageService.cs" />
+    <Compile Remove="Services\TagService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filters\" />
+    <Folder Include="Queries\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

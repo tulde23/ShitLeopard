@@ -3,7 +3,6 @@ using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +10,6 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Providers;
-using ShitLeopard.DataLayer.Entities;
 
 namespace ShitLeopard
 {
@@ -29,7 +27,6 @@ namespace ShitLeopard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ShitLeopardContext>();
             services.AddOptions();
             services.AddHttpClient();
             services.AddControllers().AddNewtonsoftJson(a =>
@@ -38,7 +35,6 @@ namespace ShitLeopard
             });
             services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
-
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
@@ -49,7 +45,6 @@ namespace ShitLeopard
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-           
             // If, for some reason, you need a reference to the built container, you
             // can use the convenience extension method GetAutofacRoot.
             this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
@@ -66,8 +61,8 @@ namespace ShitLeopard
 
             app.UseDeveloperExceptionPage();
             app.UseSerilogRequestLogging();
-       //     app.UseDefaultFiles();
-       //     app.UseStaticFiles();
+            //     app.UseDefaultFiles();
+            //     app.UseStaticFiles();
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -85,16 +80,15 @@ namespace ShitLeopard
                 endpoints.MapControllers();
             });
             app.UseSpaStaticFiles();
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "client-app";
-                if (env.IsDevelopment())
-                {
-                    // Launch development server for Vue.js
-                    spa.UseVueDevelopmentServer();
-                }
-            });
-
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = "client-app";
+            //    if (env.IsDevelopment())
+            //    {
+            //        // Launch development server for Vue.js
+            //        spa.UseVueDevelopmentServer();
+            //    }
+            //});
         }
     }
 }

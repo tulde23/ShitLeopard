@@ -1,13 +1,13 @@
 ﻿using System;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Common.Contracts;
 
 namespace ShitLeopard.Api.Services
 {
     public abstract class BaseService
     {
-        protected BaseService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper)
+        protected BaseService(ILoggerFactory loggerFactory,IMongoProvider contextProvider, IMapper mapper)
         {
             Logger = loggerFactory.CreateLogger(this.GetType());
             ContextProvider = contextProvider;
@@ -15,7 +15,7 @@ namespace ShitLeopard.Api.Services
         }
 
         public ILogger Logger { get; }
-        public Func<ShitLeopardContext> ContextProvider { get; }
+        public IMongoProvider ContextProvider { get; }
         public IMapper Mapper { get; }
     }
 }

@@ -9,8 +9,7 @@ namespace ShitLeopard.Api.Models
         public string Title { get; set; }
         public long? SeasonId { get; set; }
         public string Synopsis { get; set; }
-        public virtual SeasonModel Season { get; set; }
-        public virtual List<ScriptModel> Script { get; set; }
+
 
       
     }
