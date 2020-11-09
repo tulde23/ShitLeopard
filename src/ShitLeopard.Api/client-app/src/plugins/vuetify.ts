@@ -9,13 +9,15 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: '#870111',
-        secondary: '#ECC91A',
-        accent: '#929982',
-        error: '#870111',
-        info: '#33658A',
-        success: '#A8C256 ',
-        warning: '#585123'
+        primary: '#304A9A',
+        secondary: '#4EC3C8',
+        tertiary: '#4EC890',
+        accent: '#4B309A',
+        error: '#9A304A',
+        info: '#9A307F',
+        success: '#309A4B',
+        warning: '#9A8030',
+        complement: '#282A36'
       }
     }
   }

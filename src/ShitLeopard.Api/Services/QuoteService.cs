@@ -27,25 +27,26 @@ namespace ShitLeopard.Api.Services
             }
         }
 
-        public async Task<QuoteModel> GetRandomQuoteAsync()
+        public  Task<QuoteModel> GetRandomQuoteAsync()
         {
-            using (var context = ContextProvider())
-            {
-                var query = @"
-select top 1 Q.*, E.Title EpisodeTitle, 's'+cast(e.SeasonId as varchar(10)) +'e'+cast( e.OffsetId as varchar(10)) EpisodeId from quote Q  inner join ScriptLine on Q.ScriptLineId = ScriptLine.Id
-inner join Script S on S.Id = ScriptLine.ScriptId
-inner join Episode E on e.Id = S.EpisodeId
-ORDER BY 
- NewId(), Popularity
+            //            using (var context = ContextProvider())
+            //            {
+            //                var query = @"
+            //select top 1 Q.*, E.Title EpisodeTitle, 's'+cast(e.SeasonId as varchar(10)) +'e'+cast( e.OffsetId as varchar(10)) EpisodeId from quote Q  inner join ScriptLine on Q.ScriptLineId = ScriptLine.Id
+            //inner join Script S on S.Id = ScriptLine.ScriptId
+            //inner join Episode E on e.Id = S.EpisodeId
+            //ORDER BY 
+            // NewId(), Popularity
 
-"
-;
-                using (var c = context.Database.GetDbConnection())
-                {
-                    c.Open();
-                    return (await c.QueryAsync<QuoteModel>(query)).FirstOrDefault();
-                }
-            }
+            //"
+            //;
+            //                using (var c = context.Database.GetDbConnection())
+            //                {
+            //                    c.Open();
+            //                    return (await c.QueryAsync<QuoteModel>(query)).FirstOrDefault();
+            //                }
+            //            }
+            return Task.FromResult(new QuoteModel());
         }
 
         public async Task SaveQuoteAsync(QuoteModel quoteModel)

@@ -56,5 +56,6 @@ param(
  pscp -unsafe -r $destination tulde23@tully.world:/home/tulde23/sl
  }
  }
- #sudo cp -RT sl/ubuntu /var/aspnetcore/shit_leopard
+ #sudo cp -RT sl/  /var/aspnetcore/shit_leopard
  #sudo systemctl restart kestrel-shit-leopard.service
+
