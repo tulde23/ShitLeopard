@@ -31,27 +31,34 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Controllers\**" />
+    <Compile Remove="Services\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Controllers\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="Services\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Controllers\**" />
+    <None Remove="Services\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Controllers\BaseController.cs" />
-    <Compile Remove="Controllers\CharacterController.cs" />
-    <Compile Remove="Controllers\QuoteController.cs" />
-    <Compile Remove="Controllers\SeasonController.cs" />
-    <Compile Remove="Controllers\SiteMetricsController.cs" />
-    <Compile Remove="Controllers\TagsController.cs" />
-    <Compile Remove="Filters\InboundRequestInspectorFilterAttribute.cs" />
     <Compile Remove="Queries\ScalarQueries.cs" />
-    <Compile Remove="Services\CharacterService.cs" />
-    <Compile Remove="Services\QuoteService.cs" />
-    <Compile Remove="Services\RequestProfileService.cs" />
-    <Compile Remove="Services\SeasonService.cs" />
-    <Compile Remove="Services\StanfordNaturalLanguageService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Filters\" />
+    <Compile Include="Controllers\EpisodeController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Services\EntityContext.cs" />
+    <Compile Include="Services\EpisodeService.cs" />
+    <Compile Include="Services\RequestProfileService.cs" />
+    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\TagService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
     <Folder Include="Queries\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

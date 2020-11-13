@@ -1,6 +1,7 @@
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
+  DialogModel,
   Episode,
   EpisodeGroup,
   Quote,
@@ -57,6 +58,21 @@ const mutations = {
   },
   [ACTIONS.SET_METRICS](state: State, e: PagedResult<SiteMetric>) {
     state.siteMetrics = e;
+  },
+  [ACTIONS.SET_DIALOG_LINES](state: State, e: DialogModel[]) {
+    state.dialogLines = e;
+  },
+  [ACTIONS.SET_SELECTED_DIALOG](state: State, e: DialogModel) {
+    state.selectedDialog = e;
+  },
+  [ACTIONS.SET_IS_OPEN](state: State, e: boolean) {
+    state.isOpen = e;
+  },
+  [ACTIONS.SET_HIGHLIGHTED_TEXT](state: State, e: string[]) {
+    state.highlightedText = e;
+  },
+  [ACTIONS.SET_ADJACENT_TEXT](state: State, e: DialogModel[]) {
+    state.adjacentText = e;
   }
 };
 

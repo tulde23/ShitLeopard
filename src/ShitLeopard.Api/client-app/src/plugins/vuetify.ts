@@ -4,8 +4,7 @@ import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 
 Vue.use(Vuetify);
-
-export default new Vuetify({
+const opts = {
   theme: {
     themes: {
       light: {
@@ -19,4 +18,5 @@ export default new Vuetify({
       }
     }
   }
-});
+};
+export default new Vuetify(opts);

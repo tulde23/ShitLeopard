@@ -34,14 +34,7 @@ namespace ShitLeopard.Api.Services
             };
         }
 
-        public async Task<IEnumerable<ScriptWordModel>> GetScriptWordsForLineAsync(long scriptLineId)
-        {
-            var collection = ContextProvider.GetWordsCollection();
-
-            var results = await collection.Find(Builders<WordDocument>.Filter.Eq(x => x.ScriptLineId, scriptLineId)).ToListAsync();
-
-            return Mapper.MapCollection<ScriptWordModel, WordDocument>(results);
-        }
+      
 
         public async Task<IEnumerable<ScriptLineModel>> SearchScriptLinesAsync(string pattern)
         {
@@ -59,7 +52,7 @@ namespace ShitLeopard.Api.Services
         {
             var collection = ContextProvider.GetLinesCollection();
 
-            var result = await collection.FindOneAndUpdateAsync(s => s.Id == model.Id,
+            var result = await collection.FindOneAndUpdateAsync(s => s.ID == model.Id,
                  Builders<LineDocument>.Update
                     .Set(x => x.Body, model.Body));
         }

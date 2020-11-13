@@ -72,9 +72,7 @@ namespace ShitLeopard.DataLoader
                     {
                         Id = ++scriptLineId,
                         Body = x,
-                        Script = script,
-                        ScriptId = script.Id,
-                        ScriptWord = GetWordsFromLine(x, scriptLineId, ref scriptWordId)
+                        ScriptId = script.Id
                     }));
             }
             return seasons;

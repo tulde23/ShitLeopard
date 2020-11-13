@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
@@ -12,68 +11,125 @@ namespace ShitLeopard.DataLoader.Parsers
 {
     internal class BulkDataImporter : IBulkDataImporter
     {
-      
+        public async Task InitAsync()
+        {
+            await DB.InitAsync("ShitLeopard", MongoClientSettings.FromConnectionString("mongodb://admin:Tulde30#@192.168.86.27:27017"));
+        }
 
         public async Task<int> ImportAsync(IEnumerable<Season> seasons)
         {
-            await DB.InitAsync("ShitLeopard", MongoClientSettings.FromConnectionString("mongodb://admin:Tulde30#@192.168.86.27:27017"));
-            var client = new MongoClient("mongodb://admin:Tulde30#@192.168.86.27:27017");
-            var db = client.GetDatabase("ShitLeopard");
-            Console.WriteLine(db.Settings);
-            db.DropCollection("lines");
-            db.DropCollection("words");
-            db.DropCollection("episodes");
-            db.DropCollection("characters");
+          
+            var dialogLines = new List<DialogDocument>();
 
-            var scriptWordCollection = db.GetCollection<WordDocument>("words");
-            await scriptWordCollection.Indexes.CreateOneAsync(new CreateIndexModel<WordDocument>(Builders<WordDocument>.IndexKeys.Text(x=>x.Text)));
-
-            var scriptLineCollection = db.GetCollection<LineDocument>("lines");
-            await scriptLineCollection.Indexes.CreateOneAsync(new CreateIndexModel<LineDocument>(Builders<LineDocument>.IndexKeys.Text(k => k.Body).Text(k => k.EpisodeTitle)));
-
-            var episodeCollection = db.GetCollection<EpisodeDocument>("episodes");
-            await episodeCollection.Indexes.CreateOneAsync(new CreateIndexModel<EpisodeDocument>(Builders<EpisodeDocument>.IndexKeys.Text(k => k.Synopsis).Text(k => k.Title)));
-
-            var characterCollection = db.GetCollection<CharacterDocument>("characters");
-            await characterCollection.Indexes.CreateOneAsync(new CreateIndexModel<CharacterDocument>(Builders<CharacterDocument>.IndexKeys.Text(k => k.Name).Text(x => x.PlayedBy)));
-
-            var words = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(z => z.ScriptLine.SelectMany(a => a.ScriptWord))));
-            await scriptWordCollection.InsertManyAsync(words.Select(x => new WordDocument
+            var episodes = seasons.SelectMany(x => x.Episode.Select(y => new { Season = x, Episode = y }).Select(x => new EpisodeDocument
             {
-                Id = x.Id,
-                ScriptLineId = x.ScriptLineId,
-                Text = x.Word
+                EpisodeNumber = x.Episode.Id,
+                OffsetId = x.Episode.OffsetId,
+                Title = x.Episode.Title,
+                SeasonId = $"{ x.Season.Id}",
+                Synopsis = x.Episode.Synopsis
             }));
+            await DB.Collection<EpisodeDocument>().InsertManyAsync(episodes);
 
-            var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(z => z.ScriptLine.Select(a => new { Line = a, Episode = y }))));
-            await scriptLineCollection.InsertManyAsync(lines.Select(x => new LineDocument
+            var allEpisodes = await DB.Find<EpisodeDocument>().ExecuteAsync();
+
+            foreach (var season in seasons)
             {
-                Id = x.Line.Id,
-                Body = x.Line.Body,
-                EpisodeId = x.Episode.Id,
-                EpisodeTitle = x.Episode.Title,
-
-                Character = x.Line.Character == null ? new CharacterDocument() : new CharacterDocument
+                foreach (var episode in season.Episode)
                 {
-                    Aliases = x.Line.Character.Aliases,
-                    Id = x.Line.Character.Id,
-                    Name = x.Line.Character.Name,
-                    Notes = x.Line.Character.Notes,
-                    PlayedBy = x.Line.Character.PlayedBy
+                    foreach (var line in episode.Script.SelectMany(x => x.ScriptLine))
+                    {
+                        var match = allEpisodes.Find(x => x.EpisodeNumber == episode.Id);
+                        var dialog = new DialogDocument
+                        {
+                            DialogLineNumber = line.Id,
+                            Body = line.Body,
+                            End = line.End,
+                            Start = line.Start,
+                            Episode = match
+                        };
+                        dialogLines.Add(dialog);
+                    }
                 }
-            }));
+            }
 
-            var episodes = seasons.SelectMany(x => x.Episode);
-            await episodeCollection.InsertManyAsync(episodes.Select(x => new EpisodeDocument
-            {
-                Id = x.Id,
-                OffsetId = x.OffsetId,
-                SeasonId = x.SeasonId,
-                Synopsis = x.Synopsis,
-                Title = x.Title
-            }));
+            await DB.Collection<DialogDocument>().InsertManyAsync(dialogLines);
+
+            //var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(z => z.ScriptLine.Select(a => new { Line = a, Episode = y }))));
+            //var scriptLines = lines.Select(x => new LineDocument
+            //{
+            //    ScriptLineId = x.Line.Id,
+            //    Body = x.Line.Body,
+            //    EpisodeId = x.Episode.Id,
+            //    EpisodeTitle = x.Episode.Title,
+
+            //    Character = x.Line.Character == null ? new CharacterDocument() : new CharacterDocument
+            //    {
+            //        Aliases = x.Line.Character.Aliases,
+            //        ID = x.Line.Character.Id,
+            //        Name = x.Line.Character.Name,
+            //        Notes = x.Line.Character.Notes,
+            //        PlayedBy = x.Line.Character.PlayedBy
+            //    }
+            //});
+
+            //await scriptLineCollection.InsertManyAsync(lines.Select(x => new LineDocument
+            //{
+            //    ID = x.Line.Id,
+            //    Body = x.Line.Body,
+            //    EpisodeId = x.Episode.Id,
+            //    EpisodeTitle = x.Episode.Title,
+
+            //    Character = x.Line.Character == null ? new CharacterDocument() : new CharacterDocument
+            //    {
+            //        Aliases = x.Line.Character.Aliases,
+            //        ID = x.Line.Character.Id,
+            //        Name = x.Line.Character.Name,
+            //        Notes = x.Line.Character.Notes,
+            //        PlayedBy = x.Line.Character.PlayedBy
+            //    }
+            //}));
+
+            //var episodes = seasons.SelectMany(x => x.Episode);
+            //await episodeCollection.InsertManyAsync(episodes.Select(x => new EpisodeDocument
+            //{
+            //    ID = x.Id,
+            //    OffsetId = x.OffsetId,
+            //    SeasonId = x.SeasonId,
+            //    Synopsis = x.Synopsis,
+            //    Title = x.Title
+            //  }));
 
             return 0;
+        }
+
+        public async Task RecycleIndexes()
+        {
+            await DB.DropCollectionAsync<CharacterDocument>();
+            await DB.DropCollectionAsync<TagsDocument>();
+            await DB.DropCollectionAsync<DialogDocument>();
+            await DB.DropCollectionAsync<EpisodeDocument>();
+
+            await DB.Index<CharacterDocument>()
+               .Key(k => k.Name, KeyType.Text)
+               .Key(k => k.PlayedBy, KeyType.Text)
+               .CreateAsync();
+
+            await DB.Index<TagsDocument>()
+               .Key(k => k.Category, KeyType.Text)
+               .Key(k => k.Name, KeyType.Text)
+               .CreateAsync();
+            await DB.Index<EpisodeDocument>()
+              .Key(k => k.Title, KeyType.Text)
+              .Key(k => k.Synopsis, KeyType.Text)
+              .CreateAsync();
+            await DB.Index<DialogDocument>()
+               .Key(k => k.Body, KeyType.Text)
+               .CreateAsync();
+
+            await DB.Index<DialogDocument>()
+             .Key(k => k.DialogLineNumber, KeyType.Ascending)
+             .CreateAsync();
         }
 
         //public async Task<int> UpdateEpisodes(IEnumerable<Episode> episodes)

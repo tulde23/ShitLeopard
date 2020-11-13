@@ -1,6 +1,7 @@
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
+  DialogModel,
   Episode,
   EpisodeGroup,
   Quote,
@@ -13,8 +14,12 @@ import { SiteMetric } from '@/viewModels/SiteMetric';
 
 export interface State {
   isBusy: boolean;
+  isOpen: boolean;
   timeToRefresh: boolean;
   episodes: Episode[];
+  highlightedText: string[];
+  dialogLines: DialogModel[];
+  adjacentText: DialogModel[];
   seasons: Season[];
   episode: Episode;
   answer: string;
@@ -25,12 +30,19 @@ export interface State {
   tags: Tag[];
   quote: Quote;
   siteMetrics: PagedResult<SiteMetric>;
+  selectedDialog: DialogModel;
+  distance: number;
 }
 
 export const InitState = {
   isBusy: false,
+  isOpen: false,
   timeToRefresh: false,
+  distance: 2,
+  highlightedText: [],
+  adjacentText: [],
   questionAnswer: {},
+  dialogLines: [],
   episodes: [],
   seasons: [],
   episode: {},
@@ -40,5 +52,6 @@ export const InitState = {
   groupedEpisodes: [],
   quote: {},
   tags: [],
-  siteMetrics: new PagedResult<SiteMetric>(0, [])
+  siteMetrics: new PagedResult<SiteMetric>(0, []),
+  selectedDialog: {}
 };

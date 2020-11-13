@@ -1,60 +1,92 @@
 <template>
-<v-container>
+<div>
+    <v-img src="/MainLogo.png" max-width="250" class="text-center"></v-img>
+    <v-text-field label="search, you greasy bastard" append-icon="mdi-search" v-model="question.text" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
+    <v-toolbar flat dense>
+        <v-switch v-model="question.isFuzzy" color="info" label='Fuzzy Search?'></v-switch>
+        <v-spacer></v-spacer>
+        <v-chip color="info" dense style="color:white">Showing Results: {{resultCount}}</v-chip>
+    </v-toolbar>
 
-    <v-text-field label="Solo" style="margin:auto; width:45%" solo placeholder="Ask me a question you greasy bastard" append-icon="mdi-search" v-model="question" clearable @keyup.enter.native="search" @click:append="search"></v-text-field>
-    <v-chip-group column color="accent">
-        <v-chip v-for="tag in tags" :key="tag.id" @click="question = tag.name">
+    <template v-if="dialogLines && dialogLines.length > 0">
+        <div>
 
-            <v-avatar left color="info lighten-1" style="color:white">
-                {{ tag.frequency }}
-            </v-avatar>
-            {{ tag.name }}
-        </v-chip>
-    </v-chip-group>
+            <v-card class="mx-auto">
+                <v-virtual-scroll :items="dialogLines" height="600" item-height="64" transition name="fade-transition">
+                    <template v-slot:default="{ item }">
+                        <v-list-item :key="item.id">
+                            <v-list-item-action>
+                                <v-btn fab small depressed color="primary">
+                                    S{{ item.seasonId }}
+                                </v-btn>
+                            </v-list-item-action>
 
-    <v-alert v-if="response && response.comment" dense type="warning">
-        {{response.comment}}
-    </v-alert>
-    <!--  <v-simple-table dense v-if="response && response.isArray">
-        <template v-slot:default>
+                            <v-list-item-content>
+                                <v-list-item-title>
 
-            <tbody>
-                <tr v-for="item in lines" :key="item.id">
-                    <td class="text-xs-left">{{ item.body }}</td>
-                    <td style="font-size:0.75em">s{{item.seasonId}}e{{item.offsetId}}</td>
-                    <td style="font-size:0.75em">
-                        {{item.episodeTitle}}
+                                    <text-highlight :queries="highlightedText">{{ item.body }}</text-highlight>
+                                </v-list-item-title>
+                                <v-list-item-title>
+                                    Episode: <strong> {{ item.episodeTitle }}</strong>
+                                </v-list-item-title>
 
-                    </td>
-                    <td style="padding:2px">
-                        <v-btn color="brown" @click="upvote(item)" fab x-small title="Like this quote">
-                            <v-icon color="white">mdi-thumb-up-outline</v-icon>
+                            </v-list-item-content>
+
+                            <v-list-item-action>
+
+                                <v-icon @click="openDeails(item)">
+                                    mdi-open-in-new
+                                </v-icon>
+
+                            </v-list-item-action>
+                        </v-list-item>
+
+                        <v-divider></v-divider>
+                    </template>
+                </v-virtual-scroll>
+            </v-card>
+            <v-dialog v-model="isOpen" fullscreen hide-overlay transition="dialog-bottom-transition" persistent>
+
+                <v-card>
+                    <v-toolbar dark color="info" dark>
+
+                        <v-toolbar-title>Episode {{selectedDialog.episodeNumber}}, Season {{selectedDialog.seasonId}}</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                    <v-card-title class="text-xs-center pb-5">{{ selectedDialog.episodeTitle}}</v-card-title>
+                    <v-card-subtitle>
+
+                        <p v-for="(d,i) in adjacentText" :key="i">
+                            <i>
+                                <text-highlight :queries="highlightedText"> {{ d.body }} </text-highlight>
+                            </i>
+                        </p>
+
+                        <p>
+
+                            <v-slider v-model="distance" label="Distance From Search Term" class="align-center" max="10" min="1" :thumb-size="24" thumb-label="always">
+
+                            </v-slider>
+                        </p>
+                    </v-card-subtitle>
+                    <v-card-text>
+
+                        {{ selectedDialog.synopsis}}
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn text color="success" @click="closeDetails()">
+                            close
                         </v-btn>
-                    </td>
-                </tr>
-            </tbody>
-        </template>
-    </v-simple-table> -->
-    <template v-if="response && response.isArray">
-        <v-data-table :headers="viewModel.headers" :items="lines" item-key="id" :loading="busy" class="elevation-1">
+                    </v-card-actions>
+                </v-card>
 
-            <template v-slot:item.seasonId="{ item }">
-                s{{item.seasonId}}e{{item.offsetId}}
-            </template>
-            <template v-slot:item.episodeId="{ item }">
-                <v-btn color="success" @click="upvote(item)" fab x-small title="Like this quote">
-                    <v-icon color="white">mdi-thumb-up-outline</v-icon>
-                </v-btn>
-            </template>
+            </v-dialog>
+        </div>
 
-        </v-data-table>
     </template>
 
-    <div v-if="response && !response.isArray">
-        {{answer}}
-    </div>
-
-</v-container>
+</div>
 </template>
 
 <script lang="ts" src="./Home.ts">

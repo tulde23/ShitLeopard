@@ -48,13 +48,16 @@ param(
  if( $pscp){
 
  if( $publishLocal -eq $True){
- Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.1.96:/home/tulde23/sl';
- pscp -unsafe -r $destination tulde23@192.168.1.96:/home/tulde23/sl
- }
- else{
- Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/sl';
- pscp -unsafe -r $destination tulde23@tully.world:/home/tulde23/sl
- }
+		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.86.38:/home/tulde23/ubuntu';
+		pscp -P 22 -unsafe -r $destination tulde23@192.168.86.38:/home/tulde23/ubuntu 
+	}
+	else{
+		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/ubuntu';
+		pscp -P 22 -unsafe -r $destination tulde23@tully.world:/home/tulde23/ubuntu 
+	}
  }
  #sudo cp -RT sl/ubuntu /var/aspnetcore/shit_leopard
- #sudo systemctl restart kestrel-shit-leopard.service
+ #sudo systemctl restart kestrel-shitleopard.service
+
+ #sudo cp -RT ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
+

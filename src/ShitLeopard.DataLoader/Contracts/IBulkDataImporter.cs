@@ -7,6 +7,16 @@ namespace ShitLeopard.DataLoader.Contracts
     public interface IBulkDataImporter
     {
         /// <summary>
+        /// Initializes the asynchronous.
+        /// </summary>
+        /// <returns></returns>
+        Task InitAsync();
+        /// <summary>
+        /// Recycles the indexes.
+        /// </summary>
+        /// <returns></returns>
+        Task RecycleIndexes();
+        /// <summary>
         /// Imports the asynchronous.
         /// </summary>
         /// <param name="seasons">The seasons.</param>

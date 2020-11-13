@@ -1,19 +1,16 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Entities;
 
 namespace ShitLeopard.Common.Documents
 {
-    [Display(Name ="episodes")]
-    public class EpisodeDocument
+    public class EpisodeDocument : Entity
     {
         public EpisodeDocument()
         {
         }
-
-        public long Id { get; set; }
+        public long EpisodeNumber { get; set; }
         public int? OffsetId { get; set; }
         public string Title { get; set; }
-        public long? SeasonId { get; set; }
+        public string SeasonId { get; set; }
         public string Synopsis { get; set; }
     }
 }

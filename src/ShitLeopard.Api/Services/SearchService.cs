@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
+using MongoDB.Entities;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
 using ShitLeopard.Common.Contracts;
@@ -13,80 +12,123 @@ using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Services
 {
-    public class SearchService : BaseService, ISearchService
+    public class SearchService : ISearchService
     {
-        private readonly string _defaultComment = "Does that answer your question pussy tits?";
-        private readonly string _defaultMiss = "How the fuck are you so stupid?";
-
-        private static Random rand = new Random((int)DateTime.Now.Ticks);
-
-        private readonly List<string> _terms = new List<string>()
-            {
-                "shit*",
-                "fuck*",
-                "cock*",
-                "dope*"
-            };
-
+        private readonly IEntityContext _entityContext;
         private readonly ITagService _tagService;
 
-        public SearchService(ILoggerFactory loggerFactory, IMongoProvider contextProvider, IMapper mapper, ITagService tagService) : base(loggerFactory, contextProvider, mapper)
+        public SearchService(IEntityContext entityContext, ITagService tagService)
         {
+            _entityContext = entityContext;
             _tagService = tagService;
+        }
+
+        public async Task<IEnumerable<DialogModel>> SearchScriptLinesAsync(Question question)
+        {
+            await _tagService.SaveTagAsync(new TagsModel
+            {
+                Category = "DialogSearch",
+                Frequency = 0,
+                Name = question.Text
+            });
+
+            var results = await SearchAsync(question);
+
+            return results.Select(x => new DialogModel
+            {
+                Body = x.Body,
+                DialogLineNumber = x.DialogLineNumber,
+                End = x.End,
+                EpisodeNumber = x.Episode.EpisodeNumber,
+                EpisodeOffsetId = x.Episode.OffsetId,
+                EpisodeTitle = x.Episode.Title,
+                Id = x.ID,
+                SeasonId = x.Episode.SeasonId,
+                Start = x.Start,
+                Synopsis = x.Episode.Synopsis
+            });
+        }
+
+        public async Task<DialogModel> FindRandomSingleQuoteAsync()
+        {
+            var total = await DB.CountAsync<DialogDocument>();
+
+            var id = 1;
+
+            var result = await DB.Find<DialogDocument>().OneAsync(id.ToString());
+            return _entityContext.Mapper.Map<DialogModel>(result);
         }
 
         public async Task<QuestionAnswer> AskQuestionAsync(Question question)
         {
-            var collection = ContextProvider.GetLinesCollection();
-            var results = await collection.Find(Builders<LineDocument>.Filter.Text(question.Text, new TextSearchOptions { CaseSensitive = false })).ToListAsync();
+            var results = await SearchAsync(question);
 
             var answer = new QuestionAnswer();
             answer.IsArray = true;
             answer.Match = true;
             answer.Question = question;
-            answer.Answer = results.Take(1000).ToList();
+            answer.Answer = results.Select(x => new DialogModel
+            {
+                Body = x.Body,
+                DialogLineNumber = x.DialogLineNumber,
+                End = x.End,
+                EpisodeNumber = x.Episode.EpisodeNumber,
+                EpisodeOffsetId = x.Episode.OffsetId,
+                EpisodeTitle = x.Episode.Title,
+                Id = x.ID,
+                SeasonId = x.Episode.SeasonId,
+                Start = x.Start,
+                Synopsis = x.Episode.Synopsis
+            });
             return answer;
         }
 
-        public async Task<ScriptLineModel> FindRandomSingleQuoteAsync()
+        private async Task<IEnumerable<DialogDocument>> SearchAsync(Question question)
         {
-            var collection = ContextProvider.GetLinesCollection();
-            var total = await collection.CountDocumentsAsync(Builders<LineDocument>.Filter.Empty);
-
-            var id = rand.Next(1,(int)total);
-
-            var result = await collection.FindAsync(x => x.Id == id);
-            return Mapper.Map<ScriptLineModel>(result);
-        }
-
-        public async Task<IEnumerable<ScriptLineModel>> SearchScriptLinesAsync(Question question)
-        {
-            var collection = ContextProvider.GetLinesCollection();
-            var results = await collection.Find(Builders<LineDocument>.Filter.Text(question.Text, new TextSearchOptions { CaseSensitive = false })).ToListAsync();
-
-            await _tagService.SaveTagAsync(new TagsModel
+            var limit = question.Limit <= 0 || question.Limit > 500 ? 500 : question.Limit;
+            IEnumerable<DialogDocument> results = null;
+            var pattern = question.FormatText();
+            if (question.IsFuzzy)
             {
-                Name = question.Text,
-                Category = "Search"
-            });
-            return Mapper.MapCollection<ScriptLineModel, LineDocument>(results);
-        }
+                results = await DB.Find<DialogDocument>()
+                                            .Limit(limit)
+                                            .Match(Search.Fuzzy, pattern)
+                                            .ExecuteAsync();
 
-        private static string FormatAnswer(string type, string text, long occurrances)
-        {
-            var formatted = String.Format("{0:n0}", occurrances);
-            if (occurrances > 0)
-            {
-                return $" The {type} '{text}' occurs {formatted} times";
-            }
-            else if (occurrances == 1)
-            {
-                return $"The {type} '{text}' occurs once.";
+                return results.SortByRelevance(pattern, x => x.Body, 50);
             }
             else
             {
-                return $"The {type} '{text}' produces no matches.";
+                return await DB.Find<DialogDocument>()
+                  .Limit(limit)
+                 .Match(f => f.Text(pattern, new TextSearchOptions { CaseSensitive = false }))
+                 .SortByTextScore()
+                 .Sort(x => x.Episode.SeasonId, Order.Ascending)
+                 .Sort(x => x.Episode.EpisodeNumber, Order.Ascending)
+                 .ExecuteAsync();
             }
+        }
+
+        public async Task<IEnumerable<DialogModel>> GetAdjacentDialogTextAsync(string id, int distance)
+        {
+            distance = distance <= 0 || distance > 10 ? 1 : distance;
+            var match = await DB.Find<DialogDocument>().OneAsync(id);
+            if (match != null)
+            {
+                int lowerRange = (int)match.DialogLineNumber - distance;
+                int upperRange = (int)match.DialogLineNumber + distance;
+
+                lowerRange = lowerRange < 0 ? 0 : lowerRange;
+
+          
+
+                var query = from d in DB.Queryable<DialogDocument>()
+                            where d.DialogLineNumber >= lowerRange && d.DialogLineNumber <= upperRange
+                            select d;
+                var result = await query.ToListAsync();
+                return _entityContext.Mapper.MapCollection<DialogModel, DialogDocument>(result);
+            }
+            return Enumerable.Empty<DialogModel>();
         }
     }
 }

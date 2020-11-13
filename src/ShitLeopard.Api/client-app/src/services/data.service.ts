@@ -1,6 +1,7 @@
+import { QuestionModel } from '@/models/QuestionModel';
 import { SearchMetricsCommand } from '@/models/SearchMetricsCommand';
 import * as A from '@/store/mutation-types';
-import { Episode, Quote, ScriptLine } from '@/viewModels';
+import { DialogModel, Episode, Quote, ScriptLine } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { Store } from 'vuex';
 
@@ -11,6 +12,9 @@ export class DataService {
 
   updateRefreshInterval(state: boolean) {
     this.store.commit(A.SET_REFRESH, state);
+  }
+  isOpen(state: boolean) {
+    this.store.commit(A.SET_IS_OPEN, state);
   }
 
   getSeasons() {
@@ -50,8 +54,8 @@ export class DataService {
     return this.http.post(`/api/Script/ScripLine`, line);
   }
 
-  askMe(question: string) {
-    return this.http.post('/api/Question', { text: question }).then(resp => {
+  askMe(question: string, fuzzy?: boolean) {
+    return this.http.post('/api/Question', { text: question, isFuzzy: fuzzy }).then(resp => {
       const data = resp.data as QuestionAnswer;
       console.log('data', data);
       this.store.commit(A.SET_QUESTION_ANSWER, resp.data);
@@ -62,10 +66,10 @@ export class DataService {
       }
     });
   }
-  search(term: string) {
+  search(question: QuestionModel) {
     return this.http
-      .post(`/api/Search/LinesContaining`, { text: term })
-      .then(resp => this.store.commit(A.SET_LINES, resp.data));
+      .post(`/api/Search`, question)
+      .then(resp => this.store.commit(A.SET_DIALOG_LINES, resp.data));
   }
   getEpisode(id: number) {
     this.store.commit(A.SET_EPISODE, undefined);
@@ -97,5 +101,22 @@ export class DataService {
     return this.http
       .post(`/api/SiteMetrics`, command)
       .then(resp => this.store.commit(A.SET_METRICS, resp.data));
+  }
+  setSelectedDialog(dialog: DialogModel) {
+    this.store.commit(A.SET_SELECTED_DIALOG, dialog);
+  }
+  setHighlightedText(text: string) {
+    this.store.commit(A.SET_HIGHLIGHTED_TEXT, [text]);
+  }
+  getAdjacentText(id?: string, distance?: number) {
+    if (!distance || distance <= 0) {
+      return;
+    }
+    return this.http
+      .get(`/api/Search/${id}?distance=${distance}`)
+      .then(resp => this.store.commit(A.SET_ADJACENT_TEXT, resp.data));
+  }
+  clearAdjacentText() {
+    this.store.commit(A.SET_ADJACENT_TEXT, []);
   }
 }

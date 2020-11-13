@@ -1,16 +1,22 @@
 <template>
 <v-app id="shitleopard">
-    <v-progress-linear color="#D4AF37" :indeterminate="busy" height="4" style="paddin:0; margin:0"></v-progress-linear>
+    <v-dialog v-model="busy" persistent hide-overlay width="300">
 
-    <v-content>
+        <v-progress-linear elevation="20" color="#D4AF37" indeterminate height="20"></v-progress-linear>
+
+    </v-dialog>
+    <v-content style="background-color:maroon">
         <v-container fluid>
-            
+
             <v-row align="center" justify="center">
-                <v-col cols="12">
-                    <v-sheet>
-                        <transition name="fade-transition">
-                            <router-view></router-view>
-                        </transition>
+                <v-col md="6" xs="1" sm="1">
+                    <v-sheet elevation="10" rounded>
+                        <v-container>
+
+                            <transition name="fade-transition">
+                                <router-view></router-view>
+                            </transition>
+                        </v-container>
                     </v-sheet>
                 </v-col>
             </v-row>
@@ -27,3 +33,12 @@
 <style scoped src="./App.scss" lang="scss">
 
 </style>
+
+
+
+
+
+
+
+
+

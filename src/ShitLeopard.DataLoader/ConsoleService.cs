@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -34,17 +35,18 @@ namespace ShitLeopard.DataLoader
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-      
             var episodes = await _wikiScraper.GetEpisodesAsync();
+            Console.WriteLine("Downloading Episode Metadata");
             await RunImport(episodes);
-
-          
         }
 
         private async Task RunImport(IEnumerable<Episode> episodes)
         {
+            await _bulkDataImporter.InitAsync();
             var service = "xdoc";
             var parser = _index[service];
+
+            bool runFullImport = true;
 
             IEnumerable<Season> seasons = null;
             if (System.IO.File.Exists("Data.json"))
@@ -54,15 +56,18 @@ namespace ShitLeopard.DataLoader
             }
             else
             {
+                _options.ImportDirectory = @"C:\Development\ShitLeopard\src\MediaAssets\ClosedCaptions";
+                Console.WriteLine($"Loading ClosedCaption Files....");
                 seasons = await parser.GetSeasonsAsync(new DirectoryInfo(_options.ImportDirectory));
+                var json = JsonConvert.SerializeObject(seasons, Formatting.Indented);
+                System.IO.File.WriteAllText("Data.json", json);
             }
-            var json = JsonConvert.SerializeObject(seasons, Formatting.Indented);
-            System.IO.File.WriteAllText("Data.json", json);
-            var allEpisodes = seasons.SelectMany(x => x.Episode.Select(y=> new { Episode = y, Season = x }) ).ToList();
-            foreach( var e in episodes)
+
+            var allEpisodes = seasons.SelectMany(x => x.Episode.Select(y => new { Episode = y, Season = x })).ToList();
+            foreach (var e in episodes)
             {
                 var match = allEpisodes.FirstOrDefault(x => x.Episode.Id == e.Id);
-                if( match != null)
+                if (match != null)
                 {
                     match.Episode.Title = e.Title;
                     match.Episode.Synopsis = e.Synopsis;
@@ -70,8 +75,12 @@ namespace ShitLeopard.DataLoader
                     match.Episode.Season = e.Season;
                 }
             }
+            Console.WriteLine($"RecycleIndexes");
+            await _bulkDataImporter.RecycleIndexes();
+
+            Console.WriteLine($"ImportAsync");
             await _bulkDataImporter.ImportAsync(seasons);
-          //  _consoleApplication.TokenSource.Cancel();
+            _consoleApplication.TokenSource.Cancel();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

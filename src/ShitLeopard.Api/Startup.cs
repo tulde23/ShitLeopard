@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using ShitLeopard.Api.HostedServices;
 using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Providers;
 
@@ -36,7 +37,7 @@ namespace ShitLeopard
             });
             services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
-
+            services.AddHostedService<MongoHostedService>();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {

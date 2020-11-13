@@ -5,16 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Contracts\ICharacterService.cs" />
-    <Compile Remove="Contracts\INaturalLanguageService.cs" />
-    <Compile Remove="Contracts\IQuoteService.cs" />
-    <Compile Remove="Contracts\IRequestProfileService.cs" />
-    <Compile Remove="Contracts\ISeasonService.cs" />
+    <Compile Remove="Contracts\**" />
+    <EmbeddedResource Remove="Contracts\**" />
+    <None Remove="Contracts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Contracts\IConnectionStringProvider.cs" />
+    <Compile Include="Contracts\IEntityContext.cs" />
+    <Compile Include="Contracts\IEpisodeService.cs" />
+    <Compile Include="Contracts\IRequestProfileService.cs" />
+    <Compile Include="Contracts\ISearchService.cs" />
+    <Compile Include="Contracts\ITagService.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.2" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
     <PackageReference Include="MongoDB.Entities" Version="20.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

@@ -4,7 +4,7 @@ namespace ShitLeopard.Common.Models
 {
     public class SiteMetricsModel
     {
-        public long Id { get; set; }
+        public string ID { get; set; }
         public object Headers { get; set; }
 
         public string Ipaddress { get; set; }

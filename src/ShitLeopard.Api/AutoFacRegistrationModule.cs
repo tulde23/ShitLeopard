@@ -13,11 +13,12 @@ namespace ShitLeopard.Api
             //builder.RegisterType<CharacterService>().As<ICharacterService>().InstancePerDependency();
             //builder.RegisterType<QuoteService>().As<IQuoteService>().InstancePerDependency();
             builder.RegisterType<EpisodeService>().As<IEpisodeService>().InstancePerDependency();
-            builder.RegisterType<MongoProvider>().As<IMongoProvider>().InstancePerDependency();
-            builder.RegisterType<ScriptService>().As<IScriptService>().InstancePerDependency();
+            //builder.RegisterType<MongoProvider>().As<IMongoProvider>().SingleInstance();
+            //builder.RegisterType<ScriptService>().As<IScriptService>().InstancePerDependency();
             builder.RegisterType<SearchService>().As<ISearchService>().InstancePerDependency();
+            builder.RegisterType<EntityContext>().As<IEntityContext>().InstancePerDependency();
             //builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
-            //builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
+            builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
             //builder.RegisterType<StanfordNaturalLanguageService>().As<INaturalLanguageService>().InstancePerDependency();
         }
     }

@@ -1,6 +1,7 @@
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
+  DialogModel,
   Episode,
   EpisodeGroup,
   Quote,
@@ -14,6 +15,7 @@ import { State } from './state';
 
 const getters = {
   isBusy: (state: State): boolean => state.isBusy,
+  isOpen: (state: State): boolean => state.isOpen,
   selectedEpisode: (state: State): Episode => state.episode,
   episodes: (state: State): Episode[] => state.episodes,
   answer: (state: State): string => state.answer,
@@ -23,7 +25,11 @@ const getters = {
   groupedEpisodes: (state: State): EpisodeGroup[] => state.groupedEpisodes,
   tags: (state: State): Tag[] => state.tags,
   siteMetrics: (state: State): PagedResult<SiteMetric> => state.siteMetrics,
-  questionAnswer: (state: State): QuestionAnswer => state.questionAnswer
+  questionAnswer: (state: State): QuestionAnswer => state.questionAnswer,
+  selectedDialog: (state: State): DialogModel => state.selectedDialog,
+  dialogLines: (state: State): DialogModel[] => state.dialogLines,
+  highlightedText: (state: State): string[] => state.highlightedText,
+  adjacentText: (state: State): DialogModel[] => state.adjacentText
 };
 
 export default getters;

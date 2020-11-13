@@ -52,14 +52,13 @@ namespace ShitLeopard.DataLoader.Parsers
                 seasons.Add(seasonEntity);
                 foreach (var closedCaptionFile in document)
                 {
-                   
                     var episode = new Episode()
                     {
                         Id = episodeCount++,
                         SeasonId = seasonEntity.Id,
                         Title = string.Empty
                     };
-                   
+
                     seasonEntity.Episode.Add(episode);
                     var doc = XDocument.Load(closedCaptionFile.FullName);
 
@@ -76,7 +75,7 @@ namespace ShitLeopard.DataLoader.Parsers
                     node.Season = seasonEntity.Id;
                     node.Episode = episode.Id;
                     var scriptBuilder = new StringBuilder();
-                    var lines = new List<string>();
+                    var lines = new List<Paragraph>();
                     if (node?.Node == null)
                     {
                         Console.WriteLine("no root node");
@@ -85,12 +84,11 @@ namespace ShitLeopard.DataLoader.Parsers
                     try
                     {
                         var root = NextParagrah(node);
-                   
+
                         while ((root = NextParagrah(root)) != null)
                         {
-                           
                             scriptBuilder.AppendLine(root.Text);
-                            lines.Add(root.Text);
+                            lines.Add(root);
                             root = root.NextNode;
                         }
                         episode.Script = new List<Script>()
@@ -102,10 +100,11 @@ namespace ShitLeopard.DataLoader.Parsers
                                   EpisodeId = episode.Id,
                                   ScriptLine = lines.Select( s=> new ScriptLine
                                   {
-                                      Id= lineCounter,
-                                       Body = s,
-                                       ScriptId = scriptCounter,
-                                        ScriptWord = GetWordsFromLine(s,lineCounter++, ref wordCounter)
+                                      Id= lineCounter++,
+                                       Body = s.Text,
+                                       End = s.EndLocation,
+                                       Start = s.StartLocation,
+                                       ScriptId = scriptCounter
                                   }).ToList()
                             }
                         };
@@ -161,7 +160,6 @@ namespace ShitLeopard.DataLoader.Parsers
         private Paragraph NextParagrah(Paragraph node)
         {
             Paragraph p = node;
-          
 
             if (p?.Name?.Equals("p") == true)
             {
@@ -208,6 +206,9 @@ namespace ShitLeopard.DataLoader.Parsers
             public long Season { get; set; }
             public long Episode { get; set; }
             public string EndLocation { get; set; }
+
+            public string StartLocation { get; set; }
+
             public Paragraph(XNode element)
             {
                 Node = element;
@@ -220,13 +221,26 @@ namespace ShitLeopard.DataLoader.Parsers
                           .Replace("-", string.Empty)
                           .Replace("\n", string.Empty);
                 var text = sb.ToString().Trim();
+
                 text = Regex.Replace(text, @"(\[(.+)\])+", string.Empty);
-                Text = Regex.Replace(text, @"(\s{1,})", " ").ToUpper();
+                text = Regex.Replace(text, @"(\s{1,})", " ").ToLower();
+                if (text.Length > 1)
+                {
+                    sb = new StringBuilder(text);
+                    sb[0] = char.ToUpper(sb[0]);
+                    Text = sb.ToString();
+                }
+                else
+                {
+                    Text = text;
+                }
+
                 if (!string.IsNullOrEmpty(Text))
                 {
                     EndsWithPunctuation = EndsWith(Text);
                 }
                 EndLocation = e.Attribute("end")?.Value;
+                StartLocation = e.Attribute("begin")?.Value;
             }
 
             public Paragraph(Paragraph paragraph)
