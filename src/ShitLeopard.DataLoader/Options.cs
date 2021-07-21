@@ -8,5 +8,8 @@ namespace ShitLeopard.DataLoader
         public string Action { get; set; }
         [Option('i', "import", Required = false, HelpText = "Import Directory")]
         public string ImportDirectory { get; set; }
+
+        [Option('s', "show", Required = true, HelpText = "trailerParkBoys | eastboundAndDown")]
+        public string ShowName { get; set; }
     }
 }

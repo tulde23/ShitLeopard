@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Autofac.Features.Indexed;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
-using ShitLeopard.DataLayer.Entities;
 using ShitLeopard.DataLoader.Contracts;
 
 namespace ShitLeopard.DataLoader
@@ -15,14 +9,14 @@ namespace ShitLeopard.DataLoader
     internal class ConsoleService : IHostedService
     {
         private readonly ConsoleApplication _consoleApplication;
-        private readonly IIndex<string, ISeasonParser> _index;
-        private readonly IBulkDataImporter _bulkDataImporter;
+        private readonly IIndex<string, IShowBulkDataLoader> _index;
+        private readonly IShowBulkDataImporter _bulkDataImporter;
         private readonly IWikiScraper _wikiScraper;
         private readonly Options _options;
 
         public ConsoleService(ConsoleApplication consoleApplication,
-            IIndex<string, ISeasonParser> index,
-            IBulkDataImporter bulkDataImporter,
+            IIndex<string, IShowBulkDataLoader> index,
+            IShowBulkDataImporter bulkDataImporter,
             IWikiScraper wikiScraper,
             Options options)
         {
@@ -35,52 +29,8 @@ namespace ShitLeopard.DataLoader
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            var episodes = await _wikiScraper.GetEpisodesAsync();
-            Console.WriteLine("Downloading Episode Metadata");
-            await RunImport(episodes);
-        }
-
-        private async Task RunImport(IEnumerable<Episode> episodes)
-        {
-            await _bulkDataImporter.InitAsync();
-            var service = "xdoc";
-            var parser = _index[service];
-
-            bool runFullImport = true;
-
-            IEnumerable<Season> seasons = null;
-            if (System.IO.File.Exists("Data.json"))
-            {
-                var text = System.IO.File.ReadAllText("Data.json");
-                seasons = JsonConvert.DeserializeObject<List<Season>>(text);
-            }
-            else
-            {
-                _options.ImportDirectory = @"C:\Development\ShitLeopard\src\MediaAssets\ClosedCaptions";
-                Console.WriteLine($"Loading ClosedCaption Files....");
-                seasons = await parser.GetSeasonsAsync(new DirectoryInfo(_options.ImportDirectory));
-                var json = JsonConvert.SerializeObject(seasons, Formatting.Indented);
-                System.IO.File.WriteAllText("Data.json", json);
-            }
-
-            var allEpisodes = seasons.SelectMany(x => x.Episode.Select(y => new { Episode = y, Season = x })).ToList();
-            foreach (var e in episodes)
-            {
-                var match = allEpisodes.FirstOrDefault(x => x.Episode.Id == e.Id);
-                if (match != null)
-                {
-                    match.Episode.Title = e.Title;
-                    match.Episode.Synopsis = e.Synopsis;
-                    match.Episode.OffsetId = e.OffsetId;
-                    match.Episode.Season = e.Season;
-                }
-            }
-            Console.WriteLine($"RecycleIndexes");
-            await _bulkDataImporter.RecycleIndexes();
-
-            Console.WriteLine($"ImportAsync");
-            await _bulkDataImporter.ImportAsync(seasons);
-            _consoleApplication.TokenSource.Cancel();
+            var service = _index[_options.ShowName.ToLower()];
+            await service.ImportAsync();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

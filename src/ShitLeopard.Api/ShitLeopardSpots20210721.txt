@@ -1,0 +1,119 @@
+2021-07-21 13:23:00.026 -04:00 [INF] Starting web host
+2021-07-21 13:23:13.107 -04:00 [DBG] Hosting starting
+2021-07-21 13:23:15.878 -04:00 [WRN] Non Production setting connectionString= mongodb://admin:Tulde30#@192.168.86.27:27017
+2021-07-21 13:23:16.559 -04:00 [WRN] Non Production setting database= 
+2021-07-21 13:23:25.581 -04:00 [DBG] Failed to locate the development https certificate at 'null'.
+2021-07-21 13:23:25.622 -04:00 [INF] Now listening on: http://localhost:9000
+2021-07-21 13:23:25.626 -04:00 [DBG] Loaded hosting startup assembly ShitLeopard.Api
+2021-07-21 13:23:25.630 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-07-21 13:23:25.632 -04:00 [INF] Hosting environment: Development
+2021-07-21 13:23:25.635 -04:00 [INF] Content root path: C:\Development\ShitLeopard\src\ShitLeopard.Api
+2021-07-21 13:23:25.638 -04:00 [DBG] Hosting started
+2021-07-21 13:23:25.681 -04:00 [DBG] Connection id "0HMACDGVPF2C4" accepted.
+2021-07-21 13:23:25.686 -04:00 [DBG] Connection id "0HMACDGVPF2C4" started.
+2021-07-21 13:23:25.697 -04:00 [DBG] Connection id "0HMACDGVPF2C4" received FIN.
+2021-07-21 13:23:25.737 -04:00 [DBG] Connection id "0HMACDGVPF2C4" sending FIN because: "The client closed the connection."
+2021-07-21 13:23:25.747 -04:00 [DBG] Connection id "0HMACDGVPF2C4" disconnecting.
+2021-07-21 13:23:25.761 -04:00 [DBG] Connection id "0HMACDGVPF2C4" stopped.
+2021-07-21 13:23:28.547 -04:00 [DBG] Connection id "0HMACDGVPF2C5" accepted.
+2021-07-21 13:23:28.594 -04:00 [DBG] Connection id "0HMACDGVPF2C5" started.
+2021-07-21 13:23:28.595 -04:00 [DBG] Connection id "0HMACDGVPF2C6" accepted.
+2021-07-21 13:23:28.650 -04:00 [DBG] Connection id "0HMACDGVPF2C6" started.
+2021-07-21 13:23:28.811 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/  
+2021-07-21 13:23:28.846 -04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-07-21 13:23:28.987 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:29.134 -04:00 [DBG] No candidates found for the request path '/'
+2021-07-21 13:23:29.141 -04:00 [DBG] Request did not match any endpoints
+2021-07-21 13:23:29.143 -04:00 [DBG] The request path / does not match a supported file type
+2021-07-21 13:23:31.776 -04:00 [INF] HTTP GET / responded 200 in 2773.2396 ms
+2021-07-21 13:23:31.787 -04:00 [DBG] Connection id "0HMACDGVPF2C5" completed keep alive response.
+2021-07-21 13:23:31.809 -04:00 [INF] Request finished in 3006.8743ms 200 text/html; charset=UTF-8
+2021-07-21 13:23:31.810 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/js/chunk-vendors.js  
+2021-07-21 13:23:31.839 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:31.842 -04:00 [DBG] No candidates found for the request path '/js/chunk-vendors.js'
+2021-07-21 13:23:31.844 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/js/app.js  
+2021-07-21 13:23:31.846 -04:00 [DBG] Request did not match any endpoints
+2021-07-21 13:23:31.851 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:31.873 -04:00 [DBG] No candidates found for the request path '/js/app.js'
+2021-07-21 13:23:31.873 -04:00 [DBG] The request path /js/chunk-vendors.js does not match an existing file
+2021-07-21 13:23:31.876 -04:00 [DBG] Request did not match any endpoints
+2021-07-21 13:23:31.885 -04:00 [DBG] The request path /js/app.js does not match an existing file
+2021-07-21 13:23:32.229 -04:00 [INF] HTTP GET /js/chunk-vendors.js responded 200 in 386.7677 ms
+2021-07-21 13:23:32.234 -04:00 [DBG] Connection id "0HMACDGVPF2C6" completed keep alive response.
+2021-07-21 13:23:32.244 -04:00 [INF] Request finished in 433.7347ms 200 application/javascript; charset=UTF-8
+2021-07-21 13:23:34.169 -04:00 [INF] HTTP GET /js/app.js responded 200 in 2295.961 ms
+2021-07-21 13:23:34.183 -04:00 [DBG] Connection id "0HMACDGVPF2C5" completed keep alive response.
+2021-07-21 13:23:34.190 -04:00 [INF] Request finished in 2345.8547ms 200 application/javascript; charset=UTF-8
+2021-07-21 13:23:35.090 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/api/Tags/Popular/DialogSearch/5  
+2021-07-21 13:23:35.090 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/api/Show  
+2021-07-21 13:23:35.096 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:35.099 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:35.117 -04:00 [DBG] 1 candidate(s) found for the request path '/api/Show'
+2021-07-21 13:23:35.117 -04:00 [DBG] 1 candidate(s) found for the request path '/api/Tags/Popular/DialogSearch/5'
+2021-07-21 13:23:35.127 -04:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.ShowController.Shows (ShitLeopard.Api)' with route pattern 'api/Show' is valid for the request path '/api/Show'
+2021-07-21 13:23:35.127 -04:00 [DBG] Endpoint 'ShitLeopard.Api.Controllers.TagsController.GetMostPopularTags (ShitLeopard.Api)' with route pattern 'api/Tags/Popular/{category}/{count}' is valid for the request path '/api/Tags/Popular/DialogSearch/5'
+2021-07-21 13:23:35.135 -04:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.ShowController.Shows (ShitLeopard.Api)'
+2021-07-21 13:23:35.142 -04:00 [DBG] Request matched endpoint 'ShitLeopard.Api.Controllers.TagsController.GetMostPopularTags (ShitLeopard.Api)'
+2021-07-21 13:23:35.148 -04:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.ShowController.Shows (ShitLeopard.Api)'
+2021-07-21 13:23:35.152 -04:00 [INF] Executing endpoint 'ShitLeopard.Api.Controllers.TagsController.GetMostPopularTags (ShitLeopard.Api)'
+2021-07-21 13:23:35.179 -04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2021-07-21 13:23:35.299 -04:00 [INF] Route matched with {action = "Shows", controller = "Show"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Common.Models.ShowModel]] Shows() on controller ShitLeopard.Api.Controllers.ShowController (ShitLeopard.Api).
+2021-07-21 13:23:35.309 -04:00 [INF] Route matched with {action = "GetMostPopularTags", controller = "Tags"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[ShitLeopard.Api.Models.TagsModel]] GetMostPopularTags(System.String, Int32) on controller ShitLeopard.Api.Controllers.TagsController (ShitLeopard.Api).
+2021-07-21 13:23:35.309 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2021-07-21 13:23:35.325 -04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2021-07-21 13:23:35.332 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2021-07-21 13:23:35.337 -04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2021-07-21 13:23:35.342 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2021-07-21 13:23:35.348 -04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2021-07-21 13:23:35.356 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2021-07-21 13:23:35.363 -04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2021-07-21 13:23:35.368 -04:00 [DBG] Execution plan of result filters (in the following order): ["None"]
+2021-07-21 13:23:35.373 -04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2021-07-21 13:23:35.381 -04:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.ShowController (ShitLeopard.Api)
+2021-07-21 13:23:35.385 -04:00 [DBG] Executing controller factory for controller ShitLeopard.Api.Controllers.TagsController (ShitLeopard.Api)
+2021-07-21 13:23:35.493 -04:00 [DBG] Connection id "0HMACDGVPF2C7" accepted.
+2021-07-21 13:23:35.496 -04:00 [DBG] Connection id "0HMACDGVPF2C7" started.
+2021-07-21 13:23:35.501 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:9000/manifest.json  
+2021-07-21 13:23:35.504 -04:00 [DBG] The request path  does not match the path filter
+2021-07-21 13:23:35.507 -04:00 [DBG] No candidates found for the request path '/manifest.json'
+2021-07-21 13:23:35.511 -04:00 [DBG] Request did not match any endpoints
+2021-07-21 13:23:35.525 -04:00 [INF] The file /manifest.json was not modified
+2021-07-21 13:23:35.529 -04:00 [DBG] Handled. Status code: 304 File: /manifest.json
+2021-07-21 13:23:35.535 -04:00 [INF] HTTP GET /manifest.json responded 304 in 27.2922 ms
+2021-07-21 13:23:35.542 -04:00 [DBG] Connection id "0HMACDGVPF2C7" completed keep alive response.
+2021-07-21 13:23:35.547 -04:00 [INF] Request finished in 46.208ms 304 application/json
+2021-07-21 13:23:35.845 -04:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.TagsController (ShitLeopard.Api)
+2021-07-21 13:23:35.845 -04:00 [DBG] Executed controller factory for controller ShitLeopard.Api.Controllers.ShowController (ShitLeopard.Api)
+2021-07-21 13:23:35.863 -04:00 [DBG] Attempting to bind parameter 'category' of type 'System.String' ...
+2021-07-21 13:23:35.875 -04:00 [DBG] Attempting to bind parameter 'category' of type 'System.String' using the name 'category' in request data ...
+2021-07-21 13:23:35.881 -04:00 [DBG] Done attempting to bind parameter 'category' of type 'System.String'.
+2021-07-21 13:23:35.903 -04:00 [DBG] Done attempting to bind parameter 'category' of type 'System.String'.
+2021-07-21 13:23:35.908 -04:00 [DBG] Attempting to validate the bound parameter 'category' of type 'System.String' ...
+2021-07-21 13:23:35.923 -04:00 [DBG] Done attempting to validate the bound parameter 'category' of type 'System.String'.
+2021-07-21 13:23:35.934 -04:00 [DBG] Attempting to bind parameter 'count' of type 'System.Int32' ...
+2021-07-21 13:23:35.938 -04:00 [DBG] Attempting to bind parameter 'count' of type 'System.Int32' using the name 'count' in request data ...
+2021-07-21 13:23:35.945 -04:00 [DBG] Done attempting to bind parameter 'count' of type 'System.Int32'.
+2021-07-21 13:23:35.949 -04:00 [DBG] Done attempting to bind parameter 'count' of type 'System.Int32'.
+2021-07-21 13:23:35.954 -04:00 [DBG] Attempting to validate the bound parameter 'count' of type 'System.Int32' ...
+2021-07-21 13:23:35.963 -04:00 [DBG] Done attempting to validate the bound parameter 'count' of type 'System.Int32'.
+2021-07-21 13:23:36.313 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2021-07-21 13:23:36.327 -04:00 [DBG] No information found on request to perform content negotiation.
+2021-07-21 13:23:36.331 -04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2021-07-21 13:23:36.335 -04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2021-07-21 13:23:36.338 -04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2021-07-21 13:23:36.350 -04:00 [DBG] No information found on request to perform content negotiation.
+2021-07-21 13:23:36.356 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2021-07-21 13:23:36.359 -04:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/json"]'.
+2021-07-21 13:23:36.365 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Common.Models.ShowModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-07-21 13:23:36.371 -04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2021-07-21 13:23:36.383 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShitLeopard.Api.Models.TagsModel, ShitLeopard.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-07-21 13:23:36.690 -04:00 [INF] Executed action ShitLeopard.Api.Controllers.TagsController.GetMostPopularTags (ShitLeopard.Api) in 1294.7332ms
+2021-07-21 13:23:36.690 -04:00 [INF] Executed action ShitLeopard.Api.Controllers.ShowController.Shows (ShitLeopard.Api) in 1300.0281ms
+2021-07-21 13:23:36.697 -04:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.TagsController.GetMostPopularTags (ShitLeopard.Api)'
+2021-07-21 13:23:36.701 -04:00 [INF] Executed endpoint 'ShitLeopard.Api.Controllers.ShowController.Shows (ShitLeopard.Api)'
+2021-07-21 13:23:36.705 -04:00 [INF] HTTP GET /api/Tags/Popular/DialogSearch/5 responded 200 in 1602.0236 ms
+2021-07-21 13:23:36.710 -04:00 [INF] HTTP GET /api/Show responded 200 in 1602.434 ms
+2021-07-21 13:23:36.715 -04:00 [DBG] Connection id "0HMACDGVPF2C6" completed keep alive response.
+2021-07-21 13:23:36.725 -04:00 [DBG] Connection id "0HMACDGVPF2C5" completed keep alive response.
+2021-07-21 13:23:36.729 -04:00 [INF] Request finished in 1639.6495ms 200 application/json; charset=utf-8
+2021-07-21 13:23:36.736 -04:00 [INF] Request finished in 1646.9958ms 200 application/json; charset=utf-8

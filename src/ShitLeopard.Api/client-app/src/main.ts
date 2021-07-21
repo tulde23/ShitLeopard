@@ -6,7 +6,6 @@ import TextHighlight from 'vue-text-highlight';
 import '@babel/polyfill';
 
 import App from './App.vue';
-import RandomQuote from './components/RandomQuote.vue';
 import vuetify from './plugins/vuetify';
 import router from './router';
 import store from './store';
@@ -19,7 +18,6 @@ Vue.prototype.$helper = new Helper();
 Vue.prototype.$http = httpService;
 Vue.prototype.$api = new DataService(store, httpService);
 Vue.use(CustomFilters);
-Vue.component('xquote', RandomQuote);
 new Vue({
   router,
   store,

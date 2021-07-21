@@ -6,24 +6,30 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using ShitLeopard.DataLayer.Entities;
 using ShitLeopard.DataLoader.Contracts;
+using ShitLeopard.DataLoader.Models;
 
 namespace ShitLeopard.DataLoader.Parsers
 {
     internal class WokiScraper : IWikiScraper
     {
-        private static string _address = @"https://en.wikipedia.org/wiki/List_of_Trailer_Park_Boys_episodes";
-
-        public async Task<IEnumerable<Episode>> GetEpisodesAsync()
+      
+        public async Task<IEnumerable<Episode>> GetEpisodesAsync(WikiScrapRequest wikiScrapRequest)
         {
             List<Episode> episodes = new List<Episode>();
             using (var client = new HttpClient())
             {
-                var html = await client.GetAsync(_address);
+                var html = await client.GetAsync($"https://en.wikipedia.org/wiki/{wikiScrapRequest.ShowName}");
                 var content = await html.Content.ReadAsStringAsync();
                 var doc = new HtmlAgilityPack.HtmlDocument();
                 doc.LoadHtml(content);
 
-                var tables = doc.DocumentNode.Descendants("table").Where(x => x.GetAttributeValue("class", "").Equals("wikitable plainrowheaders wikiepisodetable"));
+                var classes = new List<string>()
+                {
+                    "wikitable",
+                    "plainrowheaders"
+                };
+                classes.AddRange(wikiScrapRequest.AdditionalClassNames ?? Enumerable.Empty<string>());
+                var tables = doc.DocumentNode.Descendants("table").Where(x => x.GetAttributeValue("class", "").Equals(string.Join(" ", classes)));
                 foreach (var table in tables)
                 {
                     foreach (var tr in table.Descendants("tr").Where(x => x.GetAttributeValue("class", "").Equals("vevent")))
@@ -38,6 +44,11 @@ namespace ShitLeopard.DataLoader.Parsers
                         HtmlNode synopsisNode = null;
                         while ((synopsisNode = tr.NextSibling) != null)
                         {
+                            if( synopsisNode.Name == "#text")
+                            {
+                                synopsis = synopsisNode.InnerText;
+                                break;
+                            }
                             if (synopsisNode.Name.Equals("tr", StringComparison.OrdinalIgnoreCase) &&
                                 synopsisNode.GetAttributeValue("class", "").Equals("expand-child"))
                             {
@@ -56,10 +67,15 @@ namespace ShitLeopard.DataLoader.Parsers
                                 Id = id,
                                 OffsetId = id2,
                                 Title = summary,
-                                Synopsis = synopsis
+                                Synopsis = synopsis,
+                                Show = new Show
+                                {
+                                    ShowId = wikiScrapRequest.ShowId
+                                }
+                             
                             });
 
-                            if (id == 105)
+                            if (id == wikiScrapRequest.LastEpisodeId)
                             {
                                 Console.WriteLine("Found " + episodes.Count);
                                 return episodes;

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Models
 {
@@ -9,6 +10,8 @@ namespace ShitLeopard.Api.Models
         public string Title { get; set; }
         public string SeasonId { get; set; }
         public string Synopsis { get; set; }
+
+        public ShowModel Show { get; set; }
 
 
       

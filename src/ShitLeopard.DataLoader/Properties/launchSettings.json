@@ -2,7 +2,7 @@
   "profiles": {
     "ShitLeopard.DataLoader": {
       "commandName": "Project",
-      "commandLineArgs": "-a fuckoff"
+      "commandLineArgs": "-a fuckoff -s eastboundAndDown"
     }
   }
 }

@@ -5,11 +5,12 @@ using MongoDB.Driver;
 using MongoDB.Entities;
 using ShitLeopard.Common.Documents;
 using ShitLeopard.DataLayer.Entities;
+using MongoDB.Driver.Linq;
 using ShitLeopard.DataLoader.Contracts;
 
 namespace ShitLeopard.DataLoader.Parsers
 {
-    internal class BulkDataImporter : IBulkDataImporter
+    internal class BulkDataImporter : IShowBulkDataImporter
     {
         public async Task InitAsync()
         {
@@ -21,17 +22,28 @@ namespace ShitLeopard.DataLoader.Parsers
           
             var dialogLines = new List<DialogDocument>();
 
+            var showId = seasons.SelectMany(x => x.Episode.Select(y => y.Show.ShowId)).Distinct().FirstOrDefault();
+
+            var filter = Builders<ShowDocument>.Filter.Eq(x => x.ID, showId);
+
+            var show = await DB.Collection<ShowDocument>().Find(filter).SingleOrDefaultAsync();
+
+
             var episodes = seasons.SelectMany(x => x.Episode.Select(y => new { Season = x, Episode = y }).Select(x => new EpisodeDocument
             {
                 EpisodeNumber = x.Episode.Id,
                 OffsetId = x.Episode.OffsetId,
                 Title = x.Episode.Title,
                 SeasonId = $"{ x.Season.Id}",
-                Synopsis = x.Episode.Synopsis
+                Synopsis = x.Episode.Synopsis,
+                Show = show ?? new ShowDocument
+                {
+                    ID = showId
+                }
             }));
             await DB.Collection<EpisodeDocument>().InsertManyAsync(episodes);
 
-            var allEpisodes = await DB.Find<EpisodeDocument>().ExecuteAsync();
+            var allEpisodes = await DB.Collection<EpisodeDocument>().Find(Builders<EpisodeDocument>.Filter.Eq(x => x.Show.ID, showId)).ToListAsync();
 
             foreach (var season in seasons)
             {

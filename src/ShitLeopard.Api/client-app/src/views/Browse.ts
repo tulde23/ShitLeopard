@@ -3,7 +3,7 @@ import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
 @Component({
-  components: {}
+  components: {},
 })
 export default class Browse extends Vue {
   public episode: any;
@@ -16,10 +16,13 @@ export default class Browse extends Vue {
   created() {}
 
   mounted() {
-    this.$api.getCharacters().then(x => this.$api.getEpisodes());
+    this.$api.getCharacters().then((x) => this.$api.getEpisodes());
   }
   public get busy() {
     return this.$store.getters.isBusy;
+  }
+  public get shows() {
+    return this.$store.getters.shows;
   }
   public upvote(item: any) {
     this.$api.upvote(item.id);

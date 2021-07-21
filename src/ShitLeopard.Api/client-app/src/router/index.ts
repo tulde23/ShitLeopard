@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Browse from '../views/Browse.vue';
+import Details from '../views/Details.vue';
 import Home from '../views/Home.vue';
 import Metrics from '../views/Metrics.vue';
 import TimeLine from '../views/TimeLine.vue';
@@ -26,20 +26,20 @@ const routes = [
     component: TimeLine
   },
   {
-    path: '/browse',
-    name: 'browse',
-    title: 'Browse',
-    icon: 'mdi-find-replace',
-
-    component: Browse
-  },
-  {
     path: '/metrics',
     name: 'metrics',
     title: 'Metrics',
     icon: 'mdi-finance',
 
     component: Metrics
+  },
+  {
+    path: '/details/:id',
+    name: 'details',
+    title: 'details',
+    icon: 'mdi-finance',
+
+    component: Details
   }
 ];
 

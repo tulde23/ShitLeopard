@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ShitLeopard.DataLoader.Models;
 
 namespace ShitLeopard.DataLayer.Entities
 {
@@ -16,6 +17,7 @@ namespace ShitLeopard.DataLayer.Entities
         public long? SeasonId { get; set; }
         public string Synopsis { get; set; }
 
+        public Show Show { get; set; }
         public virtual Season Season { get; set; }
         public virtual ICollection<Script> Script { get; set; }
     }

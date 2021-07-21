@@ -1,3 +1,4 @@
+import { ShowModel } from '@/models';
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
@@ -6,7 +7,7 @@ import {
   EpisodeGroup,
   Quote,
   ScriptLine,
-  Tag
+  Tag,
 } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
@@ -29,7 +30,9 @@ const getters = {
   selectedDialog: (state: State): DialogModel => state.selectedDialog,
   dialogLines: (state: State): DialogModel[] => state.dialogLines,
   highlightedText: (state: State): string[] => state.highlightedText,
-  adjacentText: (state: State): DialogModel[] => state.adjacentText
+  adjacentText: (state: State): DialogModel[] => state.adjacentText,
+  shows: (state: State): ShowModel[] => state.shows,
+  showIndex: (state: State): number => state.showIndex,
 };
 
 export default getters;

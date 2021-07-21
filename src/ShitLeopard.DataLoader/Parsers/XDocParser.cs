@@ -32,7 +32,7 @@ namespace ShitLeopard.DataLoader.Parsers
         public Task<IEnumerable<Season>> GetSeasonsAsync(DirectoryInfo directoryInfo)
         {
             XNamespace tt = "http://www.w3.org/2006/10/ttaf1";
-            var documents = directoryInfo.GetFiles("*.html", SearchOption.AllDirectories);
+            var documents = directoryInfo.GetFiles("*.xml", SearchOption.AllDirectories);
             var seasons = new List<Season>();
             int episodeCount = 1;
             int lineCounter = 1;

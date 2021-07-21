@@ -2,7 +2,7 @@ import { SearchMetricsCommand } from '@/models/SearchMetricsCommand';
 import { SiteMetricGridModel } from '@/models/SiteMetricGridModel';
 import { SiteMetric } from '@/viewModels/SiteMetric';
 import Vue from 'vue';
-import { Component, Watch } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 
 @Component({
   components: {}
@@ -18,6 +18,14 @@ export default class Metrics extends Vue {
   public singleExpand: boolean = true;
   public options: any = {
     itemsPerPage: 50
+  };
+  public footerProperties = {
+    showFirstLastPage: true,
+    firstIcon: 'mdi-arrow-collapse-left',
+    lastIcon: 'mdi-arrow-collapse-right',
+    prevIcon: 'mdi-minus',
+    nextIcon: 'mdi-plus',
+    'items-per-page-options': this.viewModel.rowsPerPageItems
   };
   created() {}
 
@@ -49,12 +57,5 @@ export default class Metrics extends Vue {
     this.searchTimer = setTimeout(() => {
       this.search();
     }, 500); /* 500ms throttle */
-  }
-  @Watch('options') onOptionsChanged(e: any, n: any) {
-    const { sortBy, sortDesc, page, itemsPerPage } = this.options;
-    console.log('opitons changed', this.options);
-    this.searchModel.pageSize = itemsPerPage;
-    this.searchModel.pageNumber = page + 1;
-    this.search();
   }
 }

@@ -51,10 +51,14 @@
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\ShowController.cs" />
+    <Compile Include="Controllers\SiteMetricsController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
     <Compile Include="Services\EntityContext.cs" />
     <Compile Include="Services\EpisodeService.cs" />
     <Compile Include="Services\RequestProfileService.cs" />
     <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\ShowService.cs" />
     <Compile Include="Services\TagService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,8 +77,8 @@
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+  <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" /> 
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>

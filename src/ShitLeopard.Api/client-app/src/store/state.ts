@@ -1,3 +1,4 @@
+import { ShowModel } from '@/models';
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
@@ -7,7 +8,7 @@ import {
   Quote,
   ScriptLine,
   Season,
-  Tag
+  Tag,
 } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
@@ -32,6 +33,8 @@ export interface State {
   siteMetrics: PagedResult<SiteMetric>;
   selectedDialog: DialogModel;
   distance: number;
+  shows: ShowModel[];
+  showIndex: number;
 }
 
 export const InitState = {
@@ -53,5 +56,7 @@ export const InitState = {
   quote: {},
   tags: [],
   siteMetrics: new PagedResult<SiteMetric>(0, []),
-  selectedDialog: {}
+  selectedDialog: {},
+  shows: [],
+  showIndex: 1,
 };

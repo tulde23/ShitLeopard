@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en"
+ xmlns="http://www.w3.org/ns/ttml"
+ xmlns:tts="http://www.w3.org/ns/ttml#styling"
+ xmlns:ttm="http://www.w3.org/ns/ttml#metadata"
+ xmlns:smpte="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt"
+ xmlns:m608="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+ xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+ ttp:timeBase="media" ttp:frameRate="24" ttp:frameRateMultiplier="1000 1001">
+ <head>
+  <metadata>
+   <ttm:desc>CaptionMaker V8.2.1.9229 SMPTE-TT Captions (4x3)</ttm:desc>
+   <smpte:information
+    xmlns:m608="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+    origin="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+    mode="Preserved" m608:channel="CC1" m608:programName="Demo" m608:captionService="F1C1CC"
+   />
+  </metadata>
+  <styling>
+   <style xml:id='basic' tts:color='white' tts:backgroundColor='black' tts:fontFamily='monospace' tts:fontSize='80%'/>
+  </styling>
+  <layout>
+   <region xml:id='pop1' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+  </layout>
+ </head>
+ <body>
+  <div>
+   <p region='pop1' style='basic' begin='00:00:06:12' end='00:00:10:08' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>[classical music playing]</p>
+   <p region='pop1' style='basic' begin='00:00:24:12' end='00:00:26:20' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>[humming along]</p>
+   <p region='pop1' style='basic' begin='00:00:26:22' end='00:00:29:02' tts:origin='35% 84.66%' tts:extent='27.5% 5.33%'>I love NPR.</p>
+   <p region='pop1' style='basic' begin='00:00:31:06' end='00:00:34:23' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>[hip hop music playing]</p>
+   <p region='pop1' style='basic' begin='00:00:37:10' end='00:00:39:19' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>Look at this guy.</p>
+   <p region='pop2' style='basic' begin='00:00:37:10' end='00:00:39:19' tts:origin='47.5% 84.66%' tts:extent='27.5% 5.33%'>Hey, buddy.</p>
+   <p region='pop1' style='basic' begin='00:00:39:21' end='00:00:42:13' tts:origin='12.5% 79.33%' tts:extent='30% 5.33%'>- [chuckles]</p>
+   <p region='pop2' style='basic' begin='00:00:39:21' end='00:00:42:13' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>- That's not really called for.</p>
+   <p region='pop1' style='basic' begin='00:00:42:15' end='00:00:44:19' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>[revs engine]</p>
+   <p region='pop1' style='basic' begin='00:00:44:21' end='00:00:46:23' tts:origin='57.5% 79.33%' tts:extent='32.5% 5.33%'>I'm not gonna</p>
+   <p region='pop2' style='basic' begin='00:00:44:21' end='00:00:46:23' tts:origin='55% 84.66%' tts:extent='35% 5.33%'>race you, bro.</p>
+   <p region='pop1' style='basic' begin='00:00:47:01' end='00:00:49:03' tts:origin='42.5% 79.33%' tts:extent='47.5% 5.33%'>What? Come on, bro,</p>
+   <p region='pop2' style='basic' begin='00:00:47:01' end='00:00:49:03' tts:origin='42.5% 84.66%' tts:extent='37.5% 5.33%'>are you scared?</p>
+   <p region='pop1' style='basic' begin='00:00:49:05' end='00:00:50:23' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>Nope. I have no intentions upon</p>
+   <p region='pop2' style='basic' begin='00:00:49:05' end='00:00:50:23' tts:origin='12.5% 84.66%' tts:extent='57.5% 5.33%'>breaking the law today.</p>
+   <p region='pop1' style='basic' begin='00:00:51:01' end='00:00:53:11' tts:origin='22.5% 79.33%' tts:extent='67.5% 5.33%'>[both] Aw, you're not gonna</p>
+   <p region='pop2' style='basic' begin='00:00:51:01' end='00:00:53:11' tts:origin='22.5% 84.66%' tts:extent='35% 5.33%'>break the law?</p>
+   <p region='pop1' style='basic' begin='00:00:53:13' end='00:00:56:08' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>[man] Aww. Hey, buddy.</p>
+   <p region='pop2' style='basic' begin='00:00:53:13' end='00:00:56:08' tts:origin='35% 84.66%' tts:extent='32.5% 5.33%'>Check it out.</p>
+   <p region='pop1' style='basic' begin='00:00:56:10' end='00:00:58:20' tts:origin='17.5% 79.33%' tts:extent='35% 5.33%'>Oh, real nice.</p>
+   <p region='pop2' style='basic' begin='00:00:56:10' end='00:00:58:20' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>Put that badonkadonk away.</p>
+   <p region='pop1' style='basic' begin='00:00:58:22' end='00:01:00:21' tts:origin='25% 79.33%' tts:extent='52.5% 5.33%'>That does not make me</p>
+   <p region='pop2' style='basic' begin='00:00:58:22' end='00:01:00:21' tts:origin='25% 84.66%' tts:extent='37.5% 5.33%'>wanna race you.</p>
+   <p region='pop1' style='basic' begin='00:01:00:23' end='00:01:02:06' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>[revving engine]</p>
+   <p region='pop1' style='basic' begin='00:01:08:02' end='00:01:09:17' tts:origin='40% 84.66%' tts:extent='17.5% 5.33%'>Faggot!</p>
+   <p region='pop1' style='basic' begin='00:01:13:16' end='00:01:16:20' tts:origin='25% 79.33%' tts:extent='25% 5.33%'>I'm not...</p>
+   <p region='pop2' style='basic' begin='00:01:13:16' end='00:01:16:20' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>a homosexual person.</p>
+   <p region='pop1' style='basic' begin='00:01:16:22' end='00:01:18:22' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>You are.</p>
+   <p region='pop1' style='basic' begin='00:01:19:00' end='00:01:22:12' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>[theme music plays]</p>
+   <p region='pop1' style='basic' begin='00:01:26:06' end='00:01:27:19' tts:origin='20% 79.33%' tts:extent='37.5% 5.33%'>All right, sir.</p>
+   <p region='pop2' style='basic' begin='00:01:26:06' end='00:01:27:19' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>Well, this here is saying</p>
+   <p region='pop1' style='basic' begin='00:01:27:21' end='00:01:29:16' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>that you are declining</p>
+   <p region='pop2' style='basic' begin='00:01:27:21' end='00:01:29:16' tts:origin='22.5% 84.66%' tts:extent='35% 5.33%'>the insurance.</p>
+   <p region='pop1' style='basic' begin='00:01:29:18' end='00:01:30:22' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>Not interested in GPS,</p>
+   <p region='pop1' style='basic' begin='00:01:31:00' end='00:01:32:23' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>you obviously know where</p>
+   <p region='pop2' style='basic' begin='00:01:31:00' end='00:01:32:23' tts:origin='20% 84.66%' tts:extent='55% 5.33%'>you're going. [laughs]</p>
+   <p region='pop1' style='basic' begin='00:01:33:01' end='00:01:35:04' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>Just sign right there.</p>
+   <p region='pop2' style='basic' begin='00:01:33:01' end='00:01:35:04' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>You will be good to go.</p>
+   <p region='pop1' style='basic' begin='00:01:35:06' end='00:01:37:21' tts:origin='15% 79.33%' tts:extent='42.5% 5.33%'>I gotta ask, man.</p>
+   <p region='pop2' style='basic' begin='00:01:35:06' end='00:01:37:21' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>You look real familiar to me.</p>
+   <p region='pop1' style='basic' begin='00:01:37:23' end='00:01:39:08' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>We don't know each other.</p>
+   <p region='pop2' style='basic' begin='00:01:37:23' end='00:01:39:08' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>Just go ahead and...</p>
+   <p region='pop1' style='basic' begin='00:01:39:10' end='00:01:41:04' tts:origin='25% 79.33%' tts:extent='65% 5.33%'>You used to play baseball,</p>
+   <p region='pop2' style='basic' begin='00:01:39:10' end='00:01:41:04' tts:origin='25% 84.66%' tts:extent='27.5% 5.33%'>didn't you?</p>
+   <p region='pop1' style='basic' begin='00:01:41:06' end='00:01:43:00' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>Once upon a time,</p>
+   <p region='pop2' style='basic' begin='00:01:41:06' end='00:01:43:00' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>yes, I did.</p>
+   <p region='pop1' style='basic' begin='00:01:43:02' end='00:01:44:20' tts:origin='27.5% 79.33%' tts:extent='25% 5.33%'>Yeah, man.</p>
+   <p region='pop2' style='basic' begin='00:01:43:02' end='00:01:44:20' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>Ah... hey, baby...</p>
+   <p region='pop1' style='basic' begin='00:01:44:22' end='00:01:45:23' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>Can I get a picture?</p>
+   <p region='pop1' style='basic' begin='00:01:46:01' end='00:01:47:02' tts:origin='10% 79.33%' tts:extent='22.5% 5.33%'>Actually,</p>
+   <p region='pop2' style='basic' begin='00:01:46:01' end='00:01:47:02' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>you know what, sir,</p>
+   <p region='pop1' style='basic' begin='00:01:47:04' end='00:01:48:19' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>I don't do that kind</p>
+   <p region='pop2' style='basic' begin='00:01:47:04' end='00:01:48:19' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>of stuff anymore.</p>
+   <p region='pop1' style='basic' begin='00:01:48:21' end='00:01:50:18' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>I walked away from celebrity</p>
+   <p region='pop2' style='basic' begin='00:01:48:21' end='00:01:50:18' tts:origin='10% 84.66%' tts:extent='37.5% 5.33%'>a long time ago</p>
+   <p region='pop1' style='basic' begin='00:01:50:20' end='00:01:52:15' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>and I no longer take pictures,</p>
+   <p region='pop2' style='basic' begin='00:01:50:20' end='00:01:52:15' tts:origin='10% 84.66%' tts:extent='12.5% 5.33%'>so...</p>
+   <p region='pop1' style='basic' begin='00:01:52:17' end='00:01:53:23' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>Part of my life is over.</p>
+   <p region='pop1' style='basic' begin='00:01:54:01' end='00:01:55:15' tts:origin='17.5% 84.66%' tts:extent='72.5% 5.33%'>So you gonna big time us now?</p>
+   <p region='pop1' style='basic' begin='00:01:55:17' end='00:01:58:02' tts:origin='15% 79.33%' tts:extent='75% 5.33%'>We just rented a car from you.</p>
+   <p region='pop2' style='basic' begin='00:01:55:17' end='00:01:58:02' tts:origin='15% 84.66%' tts:extent='57.5% 5.33%'>We're paying customers.</p>
+   <p region='pop1' style='basic' begin='00:01:58:04' end='00:02:00:21' tts:origin='12.5% 79.33%' tts:extent='67.5% 5.33%'>Yeah, I know. You're paying</p>
+   <p region='pop2' style='basic' begin='00:01:58:04' end='00:02:00:21' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>for the rental of a Ford Focus,</p>
+   <p region='pop1' style='basic' begin='00:02:00:23' end='00:02:01:23' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>Not for a picture of a man.</p>
+   <p region='pop1' style='basic' begin='00:02:02:01' end='00:02:03:09' tts:origin='42.5% 79.33%' tts:extent='32.5% 5.33%'>Oh, whatever.</p>
+   <p region='pop2' style='basic' begin='00:02:02:01' end='00:02:03:09' tts:origin='42.5% 84.66%' tts:extent='47.5% 5.33%'>Be a dick about it.</p>
+   <p region='pop1' style='basic' begin='00:02:03:11' end='00:02:04:22' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>You should be glad somebody</p>
+   <p region='pop2' style='basic' begin='00:02:03:11' end='00:02:04:22' tts:origin='17.5% 84.66%' tts:extent='50% 5.33%'>wanna take a picture</p>
+   <p region='pop1' style='basic' begin='00:02:05:00' end='00:02:07:21' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>- with your washed up ass.</p>
+   <p region='pop2' style='basic' begin='00:02:05:00' end='00:02:07:21' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>- Hey, Ken. How we doing?</p>
+   <p region='pop1' style='basic' begin='00:02:07:23' end='00:02:09:02' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>- Everything cool here?</p>
+   <p region='pop2' style='basic' begin='00:02:07:23' end='00:02:09:02' tts:origin='32.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:02:09:04' end='00:02:10:16' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>No. I just asked him</p>
+   <p region='pop2' style='basic' begin='00:02:09:04' end='00:02:10:16' tts:origin='40% 84.66%' tts:extent='32.5% 5.33%'>for a picture</p>
+   <p region='pop1' style='basic' begin='00:02:10:18' end='00:02:11:21' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>and he got all weird</p>
+   <p region='pop2' style='basic' begin='00:02:10:18' end='00:02:11:21' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>and uppity and shit.</p>
+   <p region='pop1' style='basic' begin='00:02:11:23' end='00:02:13:16' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>I wasn't being uppity.</p>
+   <p region='pop1' style='basic' begin='00:02:13:18' end='00:02:15:10' tts:origin='37.5% 84.66%' tts:extent='22.5% 5.33%'>Ooh, Ken.</p>
+   <p region='pop1' style='basic' begin='00:02:15:12' end='00:02:17:21' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>Ken would be happy to give you</p>
+   <p region='pop2' style='basic' begin='00:02:15:12' end='00:02:17:21' tts:origin='12.5% 84.66%' tts:extent='45% 5.33%'>a photograph, sir.</p>
+   <p region='pop1' style='basic' begin='00:02:17:23' end='00:02:19:12' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>Just let me see your phone</p>
+   <p region='pop2' style='basic' begin='00:02:17:23' end='00:02:19:12' tts:origin='17.5% 84.66%' tts:extent='60% 5.33%'>and I'll take a picture.</p>
+   <p region='pop1' style='basic' begin='00:02:19:14' end='00:02:21:08' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>Yeah, I mean, he made it</p>
+   <p region='pop2' style='basic' begin='00:02:19:14' end='00:02:21:08' tts:origin='30% 84.66%' tts:extent='55% 5.33%'>like it was a big deal</p>
+   <p region='pop1' style='basic' begin='00:02:21:10' end='00:02:22:22' tts:origin='20% 79.33%' tts:extent='42.5% 5.33%'>- and everything.</p>
+   <p region='pop2' style='basic' begin='00:02:21:10' end='00:02:22:22' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- [man] I'll bet he did.</p>
+   <p region='pop1' style='basic' begin='00:02:23:00' end='00:02:24:16' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>That's our Ken. [chuckles]</p>
+   <p region='pop1' style='basic' begin='00:02:24:18' end='00:02:27:16' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>Come on around, Ken.</p>
+   <p region='pop2' style='basic' begin='00:02:24:18' end='00:02:27:16' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>Step on in. Scooch in there.</p>
+   <p region='pop1' style='basic' begin='00:02:27:18' end='00:02:30:00' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>Get in there. Why don't</p>
+   <p region='pop2' style='basic' begin='00:02:27:18' end='00:02:30:00' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>everybody squeeze in there</p>
+   <p region='pop1' style='basic' begin='00:02:30:02' end='00:02:31:04' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>and make a Ken sammich.</p>
+   <p region='pop1' style='basic' begin='00:02:31:06' end='00:02:32:20' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>Good composition.</p>
+   <p region='pop2' style='basic' begin='00:02:31:06' end='00:02:32:20' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>Now let's see a smile.</p>
+   <p region='pop1' style='basic' begin='00:02:32:22' end='00:02:34:16' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>- Just take the picture, Mark.</p>
+   <p region='pop2' style='basic' begin='00:02:32:22' end='00:02:34:16' tts:origin='12.5% 84.66%' tts:extent='32.5% 5.33%'>- Just smile.</p>
+   <p region='pop1' style='basic' begin='00:02:34:18' end='00:02:37:04' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>OK. You're doing something weird</p>
+   <p region='pop2' style='basic' begin='00:02:34:18' end='00:02:37:04' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>with your eyebrows.</p>
+   <p region='pop1' style='basic' begin='00:02:37:06' end='00:02:38:09' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>I don't even know.</p>
+   <p region='pop1' style='basic' begin='00:02:38:11' end='00:02:39:20' tts:origin='10% 84.66%' tts:extent='45% 5.33%'>Right. That'll do.</p>
+   <p region='pop1' style='basic' begin='00:02:39:22' end='00:02:41:20' tts:origin='15% 79.33%' tts:extent='42.5% 5.33%'>- [camera clicks]</p>
+   <p region='pop2' style='basic' begin='00:02:39:22' end='00:02:41:20' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>- That's it. That's the one.</p>
+   <p region='pop1' style='basic' begin='00:02:41:22' end='00:02:44:04' tts:origin='12.5% 79.33%' tts:extent='32.5% 5.33%'>There you go.</p>
+   <p region='pop2' style='basic' begin='00:02:41:22' end='00:02:44:04' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>There's your happy memory, sir.</p>
+   <p region='pop1' style='basic' begin='00:02:44:06' end='00:02:46:01' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>Thank you for choosing</p>
+   <p region='pop2' style='basic' begin='00:02:44:06' end='00:02:46:01' tts:origin='37.5% 84.66%' tts:extent='52.5% 5.33%'>Millenial Rent-A-Car.</p>
+   <p region='pop1' style='basic' begin='00:02:46:03' end='00:02:48:23' tts:origin='20% 79.33%' tts:extent='52.5% 5.33%'>- [man] I'll be back.</p>
+   <p region='pop2' style='basic' begin='00:02:46:03' end='00:02:48:23' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- [Mark] Yeah, you will.</p>
+   <p region='pop1' style='basic' begin='00:02:49:01' end='00:02:50:17' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>Ken, let me talk to you</p>
+   <p region='pop2' style='basic' begin='00:02:49:01' end='00:02:50:17' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>for a second.</p>
+   <p region='pop1' style='basic' begin='00:02:50:19' end='00:02:54:06' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>You gotta do the dance</p>
+   <p region='pop2' style='basic' begin='00:02:50:19' end='00:02:54:06' tts:origin='35% 84.66%' tts:extent='42.5% 5.33%'>for the customer.</p>
+   <p region='pop1' style='basic' begin='00:02:54:08' end='00:02:56:21' tts:origin='30% 79.33%' tts:extent='40% 5.33%'>All right, cool?</p>
+   <p region='pop2' style='basic' begin='00:02:54:08' end='00:02:56:21' tts:origin='30% 84.66%' tts:extent='60% 5.33%'>[mimics punching sounds]</p>
+   <p region='pop1' style='basic' begin='00:02:58:08' end='00:02:59:22' tts:origin='10% 79.33%' tts:extent='37.5% 5.33%'>Mark, please...</p>
+   <p region='pop2' style='basic' begin='00:02:58:08' end='00:02:59:22' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>Mark, stop.</p>
+   <p region='pop1' style='basic' begin='00:03:00:00' end='00:03:02:09' tts:origin='12.5% 79.33%' tts:extent='37.5% 5.33%'>OK. You got me,</p>
+   <p region='pop2' style='basic' begin='00:03:00:00' end='00:03:02:09' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>I'm knocked out.</p>
+   <p region='pop1' style='basic' begin='00:03:02:11' end='00:03:04:02' tts:origin='27.5% 79.33%' tts:extent='47.5% 5.33%'>- [sounds continue]</p>
+   <p region='pop2' style='basic' begin='00:03:02:11' end='00:03:04:02' tts:origin='27.5% 84.66%' tts:extent='40% 5.33%'>- Mark, stop it.</p>
+   <p region='pop1' style='basic' begin='00:03:04:04' end='00:03:05:17' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>Mark. OK, boom, you got me.</p>
+   <p region='pop1' style='basic' begin='00:03:05:19' end='00:03:07:22' tts:origin='20% 79.33%' tts:extent='50% 5.33%'>- I got beat up, OK.</p>
+   <p region='pop2' style='basic' begin='00:03:05:19' end='00:03:07:22' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>- [sounds in slow motion]</p>
+   <p region='pop1' style='basic' begin='00:03:08:00' end='00:03:09:21' tts:origin='27.5% 79.33%' tts:extent='47.5% 5.33%'>Mark, I'm not doing</p>
+   <p region='pop2' style='basic' begin='00:03:08:00' end='00:03:09:21' tts:origin='27.5% 84.66%' tts:extent='35% 5.33%'>the &quot;ror-ros&quot;.</p>
+   <p region='pop1' style='basic' begin='00:03:09:23' end='00:03:13:11' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>- Come on, rrrr...</p>
+   <p region='pop2' style='basic' begin='00:03:09:23' end='00:03:13:11' tts:origin='27.5% 84.66%' tts:extent='27.5% 5.33%'>- Rrrr. OK.</p>
+   <p region='pop1' style='basic' begin='00:03:13:13' end='00:03:14:20' tts:origin='10% 79.33%' tts:extent='45% 5.33%'>Seriously, can you</p>
+   <p region='pop2' style='basic' begin='00:03:13:13' end='00:03:14:20' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>please stop punching me?</p>
+   <p region='pop1' style='basic' begin='00:03:14:22' end='00:03:17:06' tts:origin='37.5% 79.33%' tts:extent='52.5% 5.33%'>All right, all right.</p>
+   <p region='pop2' style='basic' begin='00:03:14:22' end='00:03:17:06' tts:origin='37.5% 84.66%' tts:extent='47.5% 5.33%'>I'll tell you what.</p>
+   <p region='pop1' style='basic' begin='00:03:17:08' end='00:03:18:20' tts:origin='27.5% 79.33%' tts:extent='62.5% 5.33%'>I'm gonna take over here,</p>
+   <p region='pop2' style='basic' begin='00:03:17:08' end='00:03:18:20' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>what I'm gonna have you do</p>
+   <p region='pop1' style='basic' begin='00:03:18:22' end='00:03:20:20' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>is go ahead and wash down</p>
+   <p region='pop2' style='basic' begin='00:03:18:22' end='00:03:20:20' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>a few of the fleet just come in.</p>
+   <p region='pop1' style='basic' begin='00:03:20:22' end='00:03:22:12' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>You know I've had a full</p>
+   <p region='pop2' style='basic' begin='00:03:20:22' end='00:03:22:12' tts:origin='12.5% 84.66%' tts:extent='57.5% 5.33%'>dance card all morning.</p>
+   <p region='pop1' style='basic' begin='00:03:22:14' end='00:03:23:21' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>I mean, this shit can't wait</p>
+   <p region='pop2' style='basic' begin='00:03:22:14' end='00:03:23:21' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>till after lunch?</p>
+   <p region='pop1' style='basic' begin='00:03:23:23' end='00:03:27:09' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>No. No, better go ahead</p>
+   <p region='pop2' style='basic' begin='00:03:23:23' end='00:03:27:09' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>and do it now.</p>
+   <p region='pop1' style='basic' begin='00:03:27:11' end='00:03:30:12' tts:origin='10% 79.33%' tts:extent='67.5% 5.33%'>Just, I had made a sandwich</p>
+   <p region='pop2' style='basic' begin='00:03:27:11' end='00:03:30:12' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>that I enj... was hoping to...</p>
+   <p region='pop1' style='basic' begin='00:03:30:14' end='00:03:33:03' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>Forget it. I'll wash the cars.</p>
+   <p region='pop2' style='basic' begin='00:03:30:14' end='00:03:33:03' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>Thank you, Mark.</p>
+   <p region='pop1' style='basic' begin='00:03:34:05' end='00:03:36:23' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'><span tts:fontStyle='italic'>[Kenny] This is a story</span></p>
+   <p region='pop2' style='basic' begin='00:03:34:05' end='00:03:36:23' tts:origin='22.5% 84.66%' tts:extent='42.5% 5.33%'><span tts:fontStyle='italic'>of a man who won.</span></p>
+   <p region='pop1' style='basic' begin='00:03:37:01' end='00:03:40:11' tts:origin='27.5% 79.33%' tts:extent='40% 5.33%'><span tts:fontStyle='italic'>By choosing love</span></p>
+   <p region='pop2' style='basic' begin='00:03:37:01' end='00:03:40:11' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'><span tts:fontStyle='italic'>over fame, fortune</span></p>
+   <p region='pop1' style='basic' begin='00:03:40:13' end='00:03:42:19' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'><span tts:fontStyle='italic'>and countless adventures...</span></p>
+   <p region='pop1' style='basic' begin='00:03:42:21' end='00:03:45:11' tts:origin='22.5% 79.33%' tts:extent='37.5% 5.33%'><span tts:fontStyle='italic'>...I had proven</span></p>
+   <p region='pop2' style='basic' begin='00:03:42:21' end='00:03:45:11' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'><span tts:fontStyle='italic'>that my heart was true.</span></p>
+   <p region='pop1' style='basic' begin='00:03:45:13' end='00:03:47:08' tts:origin='17.5% 84.66%' tts:extent='72.5% 5.33%'><span tts:fontStyle='italic'>I had proven that I was a man</span></p>
+   <p region='pop1' style='basic' begin='00:03:47:10' end='00:03:49:03' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'><span tts:fontStyle='italic'>- who could face any peril.</span></p>
+   <p region='pop2' style='basic' begin='00:03:47:10' end='00:03:49:03' tts:origin='17.5% 84.66%' tts:extent='42.5% 5.33%'>- [engine starts]</p>
+   <p region='pop1' style='basic' begin='00:03:49:05' end='00:03:52:10' tts:origin='30% 79.33%' tts:extent='40% 5.33%'>- Hey! Hey! Hey!</p>
+   <p region='pop2' style='basic' begin='00:03:49:05' end='00:03:52:10' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>- [tires squeal]</p>
+   <p region='pop1' style='basic' begin='00:03:52:12' end='00:03:54:08' tts:origin='15% 79.33%' tts:extent='70% 5.33%'><span tts:fontStyle='italic'>[Kenny] And fucking crush it</span></p>
+   <p region='pop2' style='basic' begin='00:03:52:12' end='00:03:54:08' tts:origin='15% 84.66%' tts:extent='50% 5.33%'><span tts:fontStyle='italic'>in the name of love.</span></p>
+   <p region='pop1' style='basic' begin='00:03:54:10' end='00:03:56:02' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>You fucking son of a bitch!</p>
+   <p region='pop1' style='basic' begin='00:03:56:04' end='00:03:57:17' tts:origin='25% 79.33%' tts:extent='52.5% 5.33%'><span tts:fontStyle='italic'>[Kenny] When I rolled</span></p>
+   <p region='pop2' style='basic' begin='00:03:56:04' end='00:03:57:17' tts:origin='25% 84.66%' tts:extent='35% 5.33%'><span tts:fontStyle='italic'>back the stone</span></p>
+   <p region='pop1' style='basic' begin='00:03:57:19' end='00:04:00:03' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'><span tts:fontStyle='italic'>and rose like the</span></p>
+   <p region='pop2' style='basic' begin='00:03:57:19' end='00:04:00:03' tts:origin='27.5% 84.66%' tts:extent='42.5% 5.33%'><span tts:fontStyle='italic'>mighty phoenix...</span></p>
+   <p region='pop1' style='basic' begin='00:04:00:05' end='00:04:01:19' tts:origin='37.5% 84.66%' tts:extent='22.5% 5.33%'>[screams]</p>
+   <p region='pop1' style='basic' begin='00:04:01:21' end='00:04:03:07' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'><span tts:fontStyle='italic'>[Kenny] ...there were some</span></p>
+   <p region='pop2' style='basic' begin='00:04:01:21' end='00:04:03:07' tts:origin='17.5% 84.66%' tts:extent='50% 5.33%'><span tts:fontStyle='italic'>who couldn't process</span></p>
+   <p region='pop1' style='basic' begin='00:04:03:09' end='00:04:05:17' tts:origin='35% 79.33%' tts:extent='27.5% 5.33%'><span tts:fontStyle='italic'>the majesty</span></p>
+   <p region='pop2' style='basic' begin='00:04:03:09' end='00:04:05:17' tts:origin='35% 84.66%' tts:extent='32.5% 5.33%'><span tts:fontStyle='italic'>of the event.</span></p>
+   <p region='pop1' style='basic' begin='00:04:05:19' end='00:04:07:13' tts:origin='40% 84.66%' tts:extent='17.5% 5.33%'>[gasps]</p>
+   <p region='pop1' style='basic' begin='00:04:07:15' end='00:04:09:14' tts:origin='20% 79.33%' tts:extent='47.5% 5.33%'><span tts:fontStyle='italic'>And there were some</span></p>
+   <p region='pop2' style='basic' begin='00:04:07:15' end='00:04:09:14' tts:origin='20% 84.66%' tts:extent='60% 5.33%'><span tts:fontStyle='italic'>that decided to trump up</span></p>
+   <p region='pop1' style='basic' begin='00:04:09:16' end='00:04:11:15' tts:origin='25% 79.33%' tts:extent='47.5% 5.33%'><span tts:fontStyle='italic'>bullshit fraudulent</span></p>
+   <p region='pop2' style='basic' begin='00:04:09:16' end='00:04:11:15' tts:origin='25% 84.66%' tts:extent='50% 5.33%'><span tts:fontStyle='italic'>life insurance claim</span></p>
+   <p region='pop1' style='basic' begin='00:04:11:17' end='00:04:14:07' tts:origin='20% 79.33%' tts:extent='47.5% 5.33%'><span tts:fontStyle='italic'>charges against me.</span></p>
+   <p region='pop2' style='basic' begin='00:04:11:17' end='00:04:14:07' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'><span tts:fontStyle='italic'>But I couldn't be phased.</span></p>
+   <p region='pop1' style='basic' begin='00:04:14:09' end='00:04:16:08' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'><span tts:fontStyle='italic'>And, ultimately, I was rewardd</span></p>
+   <p region='pop1' style='basic' begin='00:04:16:10' end='00:04:19:14' tts:origin='17.5% 79.33%' tts:extent='72.5% 5.33%'><span tts:fontStyle='italic'>with the hand of my true love</span></p>
+   <p region='pop2' style='basic' begin='00:04:16:10' end='00:04:19:14' tts:origin='17.5% 84.66%' tts:extent='32.5% 5.33%'><span tts:fontStyle='italic'>in matrimony.</span></p>
+   <p region='pop1' style='basic' begin='00:04:19:16' end='00:04:23:20' tts:origin='17.5% 79.33%' tts:extent='72.5% 5.33%'><span tts:fontStyle='italic'>I was rewarded with the birth</span></p>
+   <p region='pop2' style='basic' begin='00:04:19:16' end='00:04:23:20' tts:origin='17.5% 84.66%' tts:extent='57.5% 5.33%'><span tts:fontStyle='italic'>of a gorgeous daughter.</span></p>
+   <p region='pop1' style='basic' begin='00:04:23:22' end='00:04:27:13' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'><span tts:fontStyle='italic'>And life began to take on</span></p>
+   <p region='pop2' style='basic' begin='00:04:23:22' end='00:04:27:13' tts:origin='20% 84.66%' tts:extent='47.5% 5.33%'><span tts:fontStyle='italic'>a beautiful rhythm.</span></p>
+   <p region='pop1' style='basic' begin='00:04:29:06' end='00:04:32:19' tts:origin='17.5% 79.33%' tts:extent='60% 5.33%'><span tts:fontStyle='italic'>In the end, Kenny Powers</span></p>
+   <p region='pop2' style='basic' begin='00:04:29:06' end='00:04:32:19' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'><span tts:fontStyle='italic'>didn't get what he wanted.</span></p>
+   <p region='pop1' style='basic' begin='00:04:32:21' end='00:04:34:19' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'><span tts:fontStyle='italic'>But he got what he needed.</span></p>
+   <p region='pop1' style='basic' begin='00:04:34:21' end='00:04:39:17' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'><span tts:fontStyle='italic'>He didn't win baseball,</span></p>
+   <p region='pop2' style='basic' begin='00:04:34:21' end='00:04:39:17' tts:origin='22.5% 84.66%' tts:extent='50% 5.33%'><span tts:fontStyle='italic'>but he did win life.</span></p>
+   <p region='pop1' style='basic' begin='00:04:41:05' end='00:04:43:02' tts:origin='40% 84.66%' tts:extent='20% 5.33%'><span tts:fontStyle='italic'>The end.</span></p>
+   <p region='pop1' style='basic' begin='00:04:44:14' end='00:04:45:23' tts:origin='40% 84.66%' tts:extent='17.5% 5.33%'>[sighs]</p>
+   <p region='pop1' style='basic' begin='00:04:47:12' end='00:04:52:08' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'><span tts:fontStyle='italic'>Credits roll. Besides them,</span></p>
+   <p region='pop2' style='basic' begin='00:04:47:12' end='00:04:52:08' tts:origin='17.5% 84.66%' tts:extent='50% 5.33%'><span tts:fontStyle='italic'>on-set bloopers play</span></p>
+   <p region='pop1' style='basic' begin='00:04:52:10' end='00:04:54:18' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'><span tts:fontStyle='italic'>in a small box.</span></p>
+   <p region='pop1' style='basic' begin='00:04:55:15' end='00:04:57:05' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'><span tts:fontStyle='italic'>Hilarious.</span></p>
+   <p region='pop1' style='basic' begin='00:05:00:19' end='00:05:03:10' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>- Please finish your juice.</p>
+   <p region='pop2' style='basic' begin='00:05:00:19' end='00:05:03:10' tts:origin='17.5% 84.66%' tts:extent='22.5% 5.33%'>- [sighs]</p>
+   <p region='pop1' style='basic' begin='00:05:03:12' end='00:05:05:02' tts:origin='27.5% 84.66%' tts:extent='62.5% 5.33%'>Just finished my feature.</p>
+   <p region='pop1' style='basic' begin='00:05:05:04' end='00:05:06:22' tts:origin='30% 84.66%' tts:extent='60% 5.33%'>What's a feature, Daddy?</p>
+   <p region='pop1' style='basic' begin='00:05:07:00' end='00:05:10:06' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>A feature is Hollywood industry</p>
+   <p region='pop2' style='basic' begin='00:05:07:00' end='00:05:10:06' tts:origin='12.5% 84.66%' tts:extent='60% 5.33%'>jargon for a screenplay.</p>
+   <p region='pop1' style='basic' begin='00:05:10:08' end='00:05:11:21' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>You know what motion</p>
+   <p region='pop2' style='basic' begin='00:05:10:08' end='00:05:11:21' tts:origin='10% 84.66%' tts:extent='32.5% 5.33%'>pictures are?</p>
+   <p region='pop1' style='basic' begin='00:05:11:23' end='00:05:14:20' tts:origin='12.5% 79.33%' tts:extent='45% 5.33%'><span tts:fontStyle='italic'>- Human Centipede.</span></p>
+   <p region='pop2' style='basic' begin='00:05:11:23' end='00:05:14:20' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'><span tts:fontStyle='italic'>- Human Centipede.</span><span> Yes, Shayn.</span></p>
+   <p region='pop1' style='basic' begin='00:05:14:22' end='00:05:15:20' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>You remember when</p>
+   <p region='pop2' style='basic' begin='00:05:14:22' end='00:05:15:20' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>we watched that film?</p>
+   <p region='pop1' style='basic' begin='00:05:15:22' end='00:05:17:04' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>They ate the poo-poo.</p>
+   <p region='pop1' style='basic' begin='00:05:17:06' end='00:05:18:20' tts:origin='10% 79.33%' tts:extent='32.5% 5.33%'>That's right,</p>
+   <p region='pop2' style='basic' begin='00:05:17:06' end='00:05:18:20' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>they did eat the poo-poo.</p>
+   <p region='pop1' style='basic' begin='00:05:18:22' end='00:05:20:14' tts:origin='10% 79.33%' tts:extent='45% 5.33%'>And you know what?</p>
+   <p region='pop2' style='basic' begin='00:05:18:22' end='00:05:20:14' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>Those people didn't just</p>
+   <p region='pop1' style='basic' begin='00:05:20:16' end='00:05:21:18' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>make that up on their own.</p>
+   <p region='pop1' style='basic' begin='00:05:21:20' end='00:05:23:15' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>Someone had to write</p>
+   <p region='pop2' style='basic' begin='00:05:21:20' end='00:05:23:15' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>that they ate poo-poo.</p>
+   <p region='pop1' style='basic' begin='00:05:23:17' end='00:05:25:16' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>That's what a feature is.</p>
+   <p region='pop2' style='basic' begin='00:05:23:17' end='00:05:25:16' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>That's what a screenplay is.</p>
+   <p region='pop1' style='basic' begin='00:05:25:18' end='00:05:26:22' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>That's what your dad just did.</p>
+   <p region='pop1' style='basic' begin='00:05:27:00' end='00:05:29:05' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>- That movie's gross.</p>
+   <p region='pop2' style='basic' begin='00:05:27:00' end='00:05:29:05' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>- Whoa, big surprise.</p>
+   <p region='pop1' style='basic' begin='00:05:29:07' end='00:05:30:17' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>My son got scared</p>
+   <p region='pop2' style='basic' begin='00:05:29:07' end='00:05:30:17' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>by a horror film.</p>
+   <p region='pop1' style='basic' begin='00:05:30:19' end='00:05:32:17' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>Shayna didn't have a problem</p>
+   <p region='pop2' style='basic' begin='00:05:30:19' end='00:05:32:17' tts:origin='10% 84.66%' tts:extent='20% 5.33%'>with it.</p>
+   <p region='pop1' style='basic' begin='00:05:32:19' end='00:05:34:05' tts:origin='10% 79.33%' tts:extent='65% 5.33%'>Shayna, you like when they</p>
+   <p region='pop2' style='basic' begin='00:05:32:19' end='00:05:34:05' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>eat the<span tts:fontStyle='italic'> caca,</span><span> right?</span></p>
+   <p region='pop1' style='basic' begin='00:05:34:07' end='00:05:36:15' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>I love you. Look at you.</p>
+   <p region='pop2' style='basic' begin='00:05:34:07' end='00:05:36:15' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>Eating all your carrots. Gone.</p>
+   <p region='pop1' style='basic' begin='00:05:36:17' end='00:05:38:23' tts:origin='12.5% 79.33%' tts:extent='72.5% 5.33%'>Toby's got a goddamn farmer's</p>
+   <p region='pop2' style='basic' begin='00:05:36:17' end='00:05:38:23' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>market on his plate over there.</p>
+   <p region='pop1' style='basic' begin='00:05:39:01' end='00:05:40:04' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>Toby, eat your fucking carrots.</p>
+   <p region='pop1' style='basic' begin='00:05:40:06' end='00:05:43:22' tts:origin='10% 79.33%' tts:extent='35% 5.33%'>OK, OK. Kenny,</p>
+   <p region='pop2' style='basic' begin='00:05:40:06' end='00:05:43:22' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>what is this from the bank?</p>
+   <p region='pop1' style='basic' begin='00:05:44:00' end='00:05:48:01' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>- Did you apply for a loan?</p>
+   <p region='pop2' style='basic' begin='00:05:44:00' end='00:05:48:01' tts:origin='17.5% 84.66%' tts:extent='42.5% 5.33%'>- Oh. Yeah, word.</p>
+   <p region='pop1' style='basic' begin='00:05:48:03' end='00:05:49:22' tts:origin='12.5% 79.33%' tts:extent='27.5% 5.33%'>Yeah, yeah.</p>
+   <p region='pop2' style='basic' begin='00:05:48:03' end='00:05:49:22' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>This is the loan I applied for.</p>
+   <p region='pop1' style='basic' begin='00:05:50:00' end='00:05:52:22' tts:origin='32.5% 79.33%' tts:extent='30% 5.33%'>For the, uh,</p>
+   <p region='pop2' style='basic' begin='00:05:50:00' end='00:05:52:22' tts:origin='32.5% 84.66%' tts:extent='57.5% 5.33%'>backyard swimming pool.</p>
+   <p region='pop1' style='basic' begin='00:05:53:00' end='00:05:54:18' tts:origin='10% 79.33%' tts:extent='47.5% 5.33%'>We don't have money</p>
+   <p region='pop2' style='basic' begin='00:05:53:00' end='00:05:54:18' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>for a pool.</p>
+   <p region='pop1' style='basic' begin='00:05:54:20' end='00:05:56:11' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>That's why I applied</p>
+   <p region='pop2' style='basic' begin='00:05:54:20' end='00:05:56:11' tts:origin='40% 84.66%' tts:extent='27.5% 5.33%'>for a loan.</p>
+   <p region='pop1' style='basic' begin='00:05:56:13' end='00:05:59:21' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>OK. You know what, I have been</p>
+   <p region='pop2' style='basic' begin='00:05:56:13' end='00:05:59:21' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>running around all day</p>
+   <p region='pop1' style='basic' begin='00:05:59:23' end='00:06:02:18' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>and we have our friends coming</p>
+   <p region='pop2' style='basic' begin='00:05:59:23' end='00:06:02:18' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>in just a little bit.</p>
+   <p region='pop1' style='basic' begin='00:06:02:20' end='00:06:04:17' tts:origin='10% 79.33%' tts:extent='40% 5.33%'>Could you please</p>
+   <p region='pop2' style='basic' begin='00:06:02:20' end='00:06:04:17' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>put them to bed?</p>
+   <p region='pop1' style='basic' begin='00:06:04:19' end='00:06:06:13' tts:origin='32.5% 79.33%' tts:extent='47.5% 5.33%'>You know, actually,</p>
+   <p region='pop2' style='basic' begin='00:06:04:19' end='00:06:06:13' tts:origin='32.5% 84.66%' tts:extent='57.5% 5.33%'>I was gonna go upstairs</p>
+   <p region='pop1' style='basic' begin='00:06:06:15' end='00:06:08:08' tts:origin='17.5% 79.33%' tts:extent='72.5% 5.33%'>and try to put a really tight</p>
+   <p region='pop2' style='basic' begin='00:06:06:15' end='00:06:08:08' tts:origin='17.5% 84.66%' tts:extent='42.5% 5.33%'>playlist together</p>
+   <p region='pop1' style='basic' begin='00:06:08:10' end='00:06:10:10' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>for us to like, chill to tonight</p>
+   <p region='pop2' style='basic' begin='00:06:08:10' end='00:06:10:10' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>when we have this dinner party.</p>
+   <p region='pop1' style='basic' begin='00:06:10:12' end='00:06:13:06' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>Right. I-I... yeah.</p>
+   <p region='pop1' style='basic' begin='00:06:13:08' end='00:06:14:21' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>Um, they're the priority.</p>
+   <p region='pop1' style='basic' begin='00:06:14:23' end='00:06:17:22' tts:origin='12.5% 79.33%' tts:extent='72.5% 5.33%'>- So I really need your help.</p>
+   <p region='pop2' style='basic' begin='00:06:14:23' end='00:06:17:22' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>- [Kenny] I know. Just, like...</p>
+   <p region='pop1' style='basic' begin='00:06:18:00' end='00:06:21:02' tts:origin='10% 79.33%' tts:extent='77.5% 5.33%'>Super tight playlist could just</p>
+   <p region='pop2' style='basic' begin='00:06:18:00' end='00:06:21:02' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>really set the night off right.</p>
+   <p region='pop1' style='basic' begin='00:06:23:15' end='00:06:25:23' tts:origin='27.5% 79.33%' tts:extent='37.5% 5.33%'>OK. Yeah, cool.</p>
+   <p region='pop2' style='basic' begin='00:06:23:15' end='00:06:25:23' tts:origin='27.5% 84.66%' tts:extent='62.5% 5.33%'>We don't need a playlist.</p>
+   <p region='pop1' style='basic' begin='00:06:26:01' end='00:06:29:14' tts:origin='25% 79.33%' tts:extent='65% 5.33%'>I'll just put the Saturday</p>
+   <p region='pop2' style='basic' begin='00:06:26:01' end='00:06:29:14' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>chillax-relaxation mix on.</p>
+   <p region='pop1' style='basic' begin='00:06:29:16' end='00:06:33:08' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>That should probably</p>
+   <p region='pop2' style='basic' begin='00:06:29:16' end='00:06:33:08' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>translate nicely. Perfect.</p>
+   <p region='pop1' style='basic' begin='00:06:33:10' end='00:06:36:01' tts:origin='42.5% 79.33%' tts:extent='27.5% 5.33%'>I love you.</p>
+   <p region='pop2' style='basic' begin='00:06:33:10' end='00:06:36:01' tts:origin='42.5% 84.66%' tts:extent='47.5% 5.33%'>I love you so much.</p>
+   <p region='pop1' style='basic' begin='00:06:36:03' end='00:06:37:09' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>I love you.</p>
+   <p region='pop1' style='basic' begin='00:06:40:16' end='00:06:42:19' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>I need you to finish up</p>
+   <p region='pop2' style='basic' begin='00:06:40:16' end='00:06:42:19' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>your juice.</p>
+   <p region='pop1' style='basic' begin='00:06:42:21' end='00:06:45:20' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>[glass breaks]</p>
+   <p region='pop1' style='basic' begin='00:06:48:20' end='00:06:51:16' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>- Wha... What happened?</p>
+   <p region='pop2' style='basic' begin='00:06:48:20' end='00:06:51:16' tts:origin='22.5% 84.66%' tts:extent='12.5% 5.33%'>- Hm?</p>
+   <p region='pop1' style='basic' begin='00:06:51:18' end='00:06:56:03' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>Oh, that vase fell. Now I'm just</p>
+   <p region='pop2' style='basic' begin='00:06:51:18' end='00:06:56:03' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>trying to find the nightly news.</p>
+   <p region='pop1' style='basic' begin='00:07:03:03' end='00:07:04:13' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>[scoffs]</p>
+   <p region='pop1' style='basic' begin='00:07:04:15' end='00:07:07:02' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>[man] So I had my testosterone</p>
+   <p region='pop2' style='basic' begin='00:07:04:15' end='00:07:07:02' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>levels checked the other day,</p>
+   <p region='pop1' style='basic' begin='00:07:07:04' end='00:07:09:14' tts:origin='22.5% 79.33%' tts:extent='45% 5.33%'>a couple weeks ago</p>
+   <p region='pop2' style='basic' begin='00:07:07:04' end='00:07:09:14' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'>and they were very low.</p>
+   <p region='pop1' style='basic' begin='00:07:09:16' end='00:07:10:21' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>As I kind of figured they were.</p>
+   <p region='pop1' style='basic' begin='00:07:10:23' end='00:07:13:21' tts:origin='37.5% 79.33%' tts:extent='52.5% 5.33%'>But the doctor got me</p>
+   <p region='pop2' style='basic' begin='00:07:10:23' end='00:07:13:21' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>on this application.</p>
+   <p region='pop1' style='basic' begin='00:07:13:23' end='00:07:15:22' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>- It's like a deodorant.</p>
+   <p region='pop2' style='basic' begin='00:07:13:23' end='00:07:15:22' tts:origin='30% 84.66%' tts:extent='45% 5.33%'>- That's terrific.</p>
+   <p region='pop1' style='basic' begin='00:07:16:00' end='00:07:17:08' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>- You just roll it on?</p>
+   <p region='pop2' style='basic' begin='00:07:16:00' end='00:07:17:08' tts:origin='22.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:07:17:10' end='00:07:20:11' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>It gets me into a position</p>
+   <p region='pop2' style='basic' begin='00:07:17:10' end='00:07:20:11' tts:origin='17.5% 84.66%' tts:extent='57.5% 5.33%'>mentally and hormonally</p>
+   <p region='pop1' style='basic' begin='00:07:20:13' end='00:07:23:03' tts:origin='22.5% 79.33%' tts:extent='52.5% 5.33%'>to a place where I am</p>
+   <p region='pop2' style='basic' begin='00:07:20:13' end='00:07:23:03' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>attracted to my wife.</p>
+   <p region='pop1' style='basic' begin='00:07:23:05' end='00:07:24:23' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>[woman] Before it was like I</p>
+   <p region='pop2' style='basic' begin='00:07:23:05' end='00:07:24:23' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>couldn't even get near him.</p>
+   <p region='pop1' style='basic' begin='00:07:25:01' end='00:07:26:23' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>I would wear basically nothing.</p>
+   <p region='pop1' style='basic' begin='00:07:27:01' end='00:07:28:09' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>And he wouldn't even</p>
+   <p region='pop2' style='basic' begin='00:07:27:01' end='00:07:28:09' tts:origin='40% 84.66%' tts:extent='30% 5.33%'>look my way.</p>
+   <p region='pop1' style='basic' begin='00:07:28:11' end='00:07:31:08' tts:origin='15% 79.33%' tts:extent='47.5% 5.33%'>And now it's great.</p>
+   <p region='pop2' style='basic' begin='00:07:28:11' end='00:07:31:08' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>We're very healthy, sexually,</p>
+   <p region='pop1' style='basic' begin='00:07:31:10' end='00:07:33:18' tts:origin='12.5% 79.33%' tts:extent='57.5% 5.33%'>- and, yeah, wonderful.</p>
+   <p region='pop2' style='basic' begin='00:07:31:10' end='00:07:33:18' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>- [woman] A little too healthy.</p>
+   <p region='pop1' style='basic' begin='00:07:33:20' end='00:07:35:15' tts:origin='32.5% 79.33%' tts:extent='25% 5.33%'>- [laughs]</p>
+   <p region='pop2' style='basic' begin='00:07:33:20' end='00:07:35:15' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>- Fascinating.</p>
+   <p region='pop1' style='basic' begin='00:07:35:17' end='00:07:37:07' tts:origin='30% 79.33%' tts:extent='37.5% 5.33%'>- [man] Mm-hmm.</p>
+   <p region='pop2' style='basic' begin='00:07:35:17' end='00:07:37:07' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>- April, I heard</p>
+   <p region='pop1' style='basic' begin='00:07:37:09' end='00:07:39:08' tts:origin='25% 79.33%' tts:extent='52.5% 5.33%'>you're being honored.</p>
+   <p region='pop2' style='basic' begin='00:07:37:09' end='00:07:39:08' tts:origin='25% 84.66%' tts:extent='32.5% 5.33%'>Is that true?</p>
+   <p region='pop1' style='basic' begin='00:07:39:10' end='00:07:41:21' tts:origin='12.5% 79.33%' tts:extent='55% 5.33%'>- It's really nothing.</p>
+   <p region='pop2' style='basic' begin='00:07:39:10' end='00:07:41:21' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>- What is it? Tell us about it.</p>
+   <p region='pop1' style='basic' begin='00:07:41:23' end='00:07:43:22' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>It's... it's this silly award</p>
+   <p region='pop1' style='basic' begin='00:07:44:00' end='00:07:47:02' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>because I just sold the most</p>
+   <p region='pop2' style='basic' begin='00:07:44:00' end='00:07:47:02' tts:origin='15% 84.66%' tts:extent='55% 5.33%'>houses, um, this year.</p>
+   <p region='pop1' style='basic' begin='00:07:47:04' end='00:07:49:14' tts:origin='12.5% 79.33%' tts:extent='15% 5.33%'>- Wow.</p>
+   <p region='pop2' style='basic' begin='00:07:47:04' end='00:07:49:14' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>- That's amazing. That's huge.</p>
+   <p region='pop1' style='basic' begin='00:07:49:16' end='00:07:51:17' tts:origin='35% 79.33%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop2' style='basic' begin='00:07:49:16' end='00:07:51:17' tts:origin='35% 84.66%' tts:extent='32.5% 5.33%'>- [April] No.</p>
+   <p region='pop1' style='basic' begin='00:07:51:19' end='00:07:53:10' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>Well, I mean, it's not like</p>
+   <p region='pop2' style='basic' begin='00:07:51:19' end='00:07:53:10' tts:origin='17.5% 84.66%' tts:extent='60% 5.33%'>she sold the most houses</p>
+   <p region='pop1' style='basic' begin='00:07:53:12' end='00:07:55:15' tts:origin='22.5% 79.33%' tts:extent='52.5% 5.33%'>in the whole country,</p>
+   <p region='pop2' style='basic' begin='00:07:53:12' end='00:07:55:15' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'>it's just in the region</p>
+   <p region='pop1' style='basic' begin='00:07:55:17' end='00:07:59:20' tts:origin='15% 79.33%' tts:extent='72.5% 5.33%'>or at her job in this office,</p>
+   <p region='pop2' style='basic' begin='00:07:55:17' end='00:07:59:20' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>not really all the offices.</p>
+   <p region='pop1' style='basic' begin='00:07:59:22' end='00:08:01:04' tts:origin='10% 79.33%' tts:extent='32.5% 5.33%'>Yeah, I mean,</p>
+   <p region='pop2' style='basic' begin='00:07:59:22' end='00:08:01:04' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>just the region.</p>
+   <p region='pop1' style='basic' begin='00:08:01:06' end='00:08:03:12' tts:origin='15% 79.33%' tts:extent='42.5% 5.33%'>[man] Big region.</p>
+   <p region='pop2' style='basic' begin='00:08:01:06' end='00:08:03:12' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>It's a buyers market, though.</p>
+   <p region='pop1' style='basic' begin='00:08:03:14' end='00:08:05:00' tts:origin='30% 79.33%' tts:extent='32.5% 5.33%'>- Yeah. True.</p>
+   <p region='pop2' style='basic' begin='00:08:03:14' end='00:08:05:00' tts:origin='30% 84.66%' tts:extent='42.5% 5.33%'>- Well, some say.</p>
+   <p region='pop1' style='basic' begin='00:08:05:02' end='00:08:06:20' tts:origin='25% 79.33%' tts:extent='65% 5.33%'>Some say that the bubble's</p>
+   <p region='pop2' style='basic' begin='00:08:05:02' end='00:08:06:20' tts:origin='25% 84.66%' tts:extent='32.5% 5.33%'>already burst</p>
+   <p region='pop1' style='basic' begin='00:08:06:22' end='00:08:08:22' tts:origin='17.5% 79.33%' tts:extent='57.5% 5.33%'>and that it's going the</p>
+   <p region='pop2' style='basic' begin='00:08:06:22' end='00:08:08:22' tts:origin='17.5% 84.66%' tts:extent='72.5% 5.33%'>other way, too, so who knows.</p>
+   <p region='pop1' style='basic' begin='00:08:09:00' end='00:08:10:10' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>[April] Who says that?</p>
+   <p region='pop1' style='basic' begin='00:08:10:12' end='00:08:12:04' tts:origin='12.5% 79.33%' tts:extent='62.5% 5.33%'>[Kenny] Just the economic</p>
+   <p region='pop2' style='basic' begin='00:08:10:12' end='00:08:12:04' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>reports that I've been reading.</p>
+   <p region='pop1' style='basic' begin='00:08:12:06' end='00:08:13:19' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>Happen to be talking about...</p>
+   <p region='pop1' style='basic' begin='00:08:13:21' end='00:08:15:09' tts:origin='25% 74%' tts:extent='50% 5.33%'>- That... just don't</p>
+   <p region='pop2' style='basic' begin='00:08:13:21' end='00:08:15:09' tts:origin='25% 79.33%' tts:extent='35% 5.33%'>be so cocky...</p>
+   <p region='pop3' style='basic' begin='00:08:13:21' end='00:08:15:09' tts:origin='25% 84.66%' tts:extent='12.5% 5.33%'>- OK.</p>
+   <p region='pop1' style='basic' begin='00:08:15:11' end='00:08:18:12' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>...with houses, because it could</p>
+   <p region='pop2' style='basic' begin='00:08:15:11' end='00:08:18:12' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>all turn around at any moment.</p>
+   <p region='pop1' style='basic' begin='00:08:18:14' end='00:08:19:21' tts:origin='17.5% 79.33%' tts:extent='32.5% 5.33%'>- [man] Yeah.</p>
+   <p region='pop2' style='basic' begin='00:08:18:14' end='00:08:19:21' tts:origin='17.5% 84.66%' tts:extent='67.5% 5.33%'>- That's what I've learned.</p>
+   <p region='pop1' style='basic' begin='00:08:19:23' end='00:08:22:20' tts:origin='10% 79.33%' tts:extent='65% 5.33%'>Oh, my gosh. Having a wife</p>
+   <p region='pop2' style='basic' begin='00:08:19:23' end='00:08:22:20' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>that's so successful...</p>
+   <p region='pop1' style='basic' begin='00:08:22:22' end='00:08:26:01' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>I mean, most men would be like,</p>
+   <p region='pop2' style='basic' begin='00:08:22:22' end='00:08:26:01' tts:origin='12.5% 84.66%' tts:extent='50% 5.33%'>&quot;I can't handle it.&quot;</p>
+   <p region='pop1' style='basic' begin='00:08:26:03' end='00:08:27:19' tts:origin='27.5% 79.33%' tts:extent='37.5% 5.33%'>I know this one</p>
+   <p region='pop2' style='basic' begin='00:08:26:03' end='00:08:27:19' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>would be terrible.</p>
+   <p region='pop1' style='basic' begin='00:08:27:21' end='00:08:29:13' tts:origin='17.5% 79.33%' tts:extent='72.5% 5.33%'>Look at the look in his eyes.</p>
+   <p region='pop2' style='basic' begin='00:08:27:21' end='00:08:29:13' tts:origin='17.5% 84.66%' tts:extent='42.5% 5.33%'>Look in his eyes.</p>
+   <p region='pop1' style='basic' begin='00:08:29:15' end='00:08:33:14' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>Yeah, I'll do the work,</p>
+   <p region='pop2' style='basic' begin='00:08:29:15' end='00:08:33:14' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>you, you know, clean up.</p>
+   <p region='pop1' style='basic' begin='00:08:33:16' end='00:08:36:10' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>Oh, he's so supportive.</p>
+   <p region='pop2' style='basic' begin='00:08:33:16' end='00:08:36:10' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>I mean, he really is.</p>
+   <p region='pop1' style='basic' begin='00:08:36:12' end='00:08:38:21' tts:origin='15% 79.33%' tts:extent='55% 5.33%'>- Oh, so sweet, Kenny.</p>
+   <p region='pop2' style='basic' begin='00:08:36:12' end='00:08:38:21' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>- You're like a nice big bra.</p>
+   <p region='pop1' style='basic' begin='00:08:38:23' end='00:08:39:21' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[laughter]</p>
+   <p region='pop1' style='basic' begin='00:08:39:23' end='00:08:41:18' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>[woman] You are not.</p>
+   <p region='pop1' style='basic' begin='00:08:41:20' end='00:08:43:13' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>I shouldn't tell jokes,</p>
+   <p region='pop2' style='basic' begin='00:08:41:20' end='00:08:43:13' tts:origin='32.5% 84.66%' tts:extent='52.5% 5.33%'>I'm not the jokester.</p>
+   <p region='pop1' style='basic' begin='00:08:43:15' end='00:08:44:23' tts:origin='27.5% 79.33%' tts:extent='20% 5.33%'>- He is.</p>
+   <p region='pop2' style='basic' begin='00:08:43:15' end='00:08:44:23' tts:origin='27.5% 84.66%' tts:extent='47.5% 5.33%'>- I'm the joke man.</p>
+   <p region='pop1' style='basic' begin='00:08:45:01' end='00:08:47:17' tts:origin='12.5% 79.33%' tts:extent='55% 5.33%'>- He does impressions.</p>
+   <p region='pop2' style='basic' begin='00:08:45:01' end='00:08:47:17' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>- Oh, I love your impressions.</p>
+   <p region='pop1' style='basic' begin='00:08:47:19' end='00:08:50:04' tts:origin='15% 79.33%' tts:extent='40% 5.33%'>- Do one for us.</p>
+   <p region='pop2' style='basic' begin='00:08:47:19' end='00:08:50:04' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>- Do my mother. Do my mother.</p>
+   <p region='pop1' style='basic' begin='00:08:50:06' end='00:08:51:17' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>Oh, it's so funny</p>
+   <p region='pop2' style='basic' begin='00:08:50:06' end='00:08:51:17' tts:origin='50% 84.66%' tts:extent='40% 5.33%'>if you know her.</p>
+   <p region='pop1' style='basic' begin='00:08:51:19' end='00:08:53:22' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>[high pitched voice]</p>
+   <p region='pop2' style='basic' begin='00:08:51:19' end='00:08:53:22' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>You better watch yourself.</p>
+   <p region='pop1' style='basic' begin='00:08:54:00' end='00:08:56:20' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[laughter]</p>
+   <p region='pop1' style='basic' begin='00:08:56:22' end='00:08:59:12' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>You're spending too much money</p>
+   <p region='pop2' style='basic' begin='00:08:56:22' end='00:08:59:12' tts:origin='12.5% 84.66%' tts:extent='35% 5.33%'>on that house.</p>
+   <p region='pop1' style='basic' begin='00:08:59:14' end='00:09:01:23' tts:origin='35% 79.33%' tts:extent='27.5% 5.33%'>- [chatter]</p>
+   <p region='pop2' style='basic' begin='00:08:59:14' end='00:09:01:23' tts:origin='35% 84.66%' tts:extent='32.5% 5.33%'>- It's exact.</p>
+   <p region='pop1' style='basic' begin='00:09:02:01' end='00:09:03:10' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>[Kenny] Well, you know what?</p>
+   <p region='pop2' style='basic' begin='00:09:02:01' end='00:09:03:10' tts:origin='15% 84.66%' tts:extent='62.5% 5.33%'>I can do impressions too.</p>
+   <p region='pop1' style='basic' begin='00:09:03:12' end='00:09:05:08' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>This is your guys kid,</p>
+   <p region='pop2' style='basic' begin='00:09:03:12' end='00:09:05:08' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>the one you guys adopted.</p>
+   <p region='pop1' style='basic' begin='00:09:05:10' end='00:09:06:22' tts:origin='10% 84.66%' tts:extent='30% 5.33%'>This is him.</p>
+   <p region='pop1' style='basic' begin='00:09:07:21' end='00:09:09:17' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>Hey, you guys don't look like</p>
+   <p region='pop2' style='basic' begin='00:09:07:21' end='00:09:09:17' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>my parents.</p>
+   <p region='pop1' style='basic' begin='00:09:09:19' end='00:09:12:12' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>Where are my parents?</p>
+   <p region='pop2' style='basic' begin='00:09:09:19' end='00:09:12:12' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Where'd my mom and dad go?</p>
+   <p region='pop1' style='basic' begin='00:09:12:14' end='00:09:14:11' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>[laughs] Right? This is funny.</p>
+   <p region='pop2' style='basic' begin='00:09:12:14' end='00:09:14:11' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>This is your guys' kid.</p>
+   <p region='pop1' style='basic' begin='00:09:14:13' end='00:09:17:07' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>I wish you guys woulda left me</p>
+   <p region='pop2' style='basic' begin='00:09:14:13' end='00:09:17:07' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>in Vietnam in the foxhole</p>
+   <p region='pop1' style='basic' begin='00:09:17:09' end='00:09:18:22' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>- instead of taking me here</p>
+   <p region='pop2' style='basic' begin='00:09:17:09' end='00:09:18:22' tts:origin='17.5% 84.66%' tts:extent='40% 5.33%'>- That's enough.</p>
+   <p region='pop1' style='basic' begin='00:09:19:00' end='00:09:21:09' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>- to be around everyone else...</p>
+   <p region='pop2' style='basic' begin='00:09:19:00' end='00:09:21:09' tts:origin='12.5% 84.66%' tts:extent='57.5% 5.33%'>- Kenny, that's enough.</p>
+   <p region='pop1' style='basic' begin='00:09:21:11' end='00:09:22:15' tts:origin='30% 79.33%' tts:extent='15% 5.33%'>- Yes.</p>
+   <p region='pop2' style='basic' begin='00:09:21:11' end='00:09:22:15' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>- That's enough.</p>
+   <p region='pop1' style='basic' begin='00:09:22:17' end='00:09:24:14' tts:origin='10% 84.66%' tts:extent='17.5% 5.33%'>[sighs]</p>
+   <p region='pop1' style='basic' begin='00:09:46:22' end='00:09:49:00' tts:origin='72.5% 84.66%' tts:extent='17.5% 5.33%'>[spits]</p>
+   <p region='pop1' style='basic' begin='00:09:57:02' end='00:09:58:15' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>[vacuum shuts off]</p>
+   <p region='pop1' style='basic' begin='00:09:58:17' end='00:10:00:11' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>Muggy out, isn't it?</p>
+   <p region='pop1' style='basic' begin='00:10:00:13' end='00:10:02:12' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>Hey, once you're done in here,</p>
+   <p region='pop1' style='basic' begin='00:10:02:14' end='00:10:04:09' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>I need you to drop a Benz</p>
+   <p region='pop2' style='basic' begin='00:10:02:14' end='00:10:04:09' tts:origin='20% 84.66%' tts:extent='32.5% 5.33%'>in Charlotte.</p>
+   <p region='pop1' style='basic' begin='00:10:04:11' end='00:10:06:16' tts:origin='15% 79.33%' tts:extent='55% 5.33%'>Oh, man. I'm gonna get</p>
+   <p region='pop2' style='basic' begin='00:10:04:11' end='00:10:06:16' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>butt-fucked in traffic, dude.</p>
+   <p region='pop1' style='basic' begin='00:10:06:18' end='00:10:08:16' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>Charlotte on rush hour</p>
+   <p region='pop2' style='basic' begin='00:10:06:18' end='00:10:08:16' tts:origin='22.5% 84.66%' tts:extent='37.5% 5.33%'>on a Wednesday?</p>
+   <p region='pop1' style='basic' begin='00:10:08:18' end='00:10:09:23' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>Ask Derrick to do it.</p>
+   <p region='pop1' style='basic' begin='00:10:10:01' end='00:10:12:00' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>I ain't asking anybody.</p>
+   <p region='pop2' style='basic' begin='00:10:10:01' end='00:10:12:00' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>I'm telling you, Ken.</p>
+   <p region='pop1' style='basic' begin='00:10:12:02' end='00:10:13:23' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>Man, I was hoping to get off</p>
+   <p region='pop2' style='basic' begin='00:10:12:02' end='00:10:13:23' tts:origin='15% 84.66%' tts:extent='35% 5.33%'>early tonight,</p>
+   <p region='pop1' style='basic' begin='00:10:14:01' end='00:10:15:08' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>my wife's getting honored</p>
+   <p region='pop2' style='basic' begin='00:10:14:01' end='00:10:15:08' tts:origin='20% 84.66%' tts:extent='30% 5.33%'>at an event.</p>
+   <p region='pop1' style='basic' begin='00:10:15:10' end='00:10:17:02' tts:origin='27.5% 84.66%' tts:extent='42.5% 5.33%'>[vacuum turns on]</p>
+   <p region='pop1' style='basic' begin='00:10:20:13' end='00:10:22:16' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>- [vacuum shuts off]</p>
+   <p region='pop2' style='basic' begin='00:10:20:13' end='00:10:22:16' tts:origin='25% 84.66%' tts:extent='32.5% 5.33%'>- [Mark] Ken.</p>
+   <p region='pop1' style='basic' begin='00:10:22:18' end='00:10:23:21' tts:origin='35% 79.33%' tts:extent='30% 5.33%'>- Yes, Mark.</p>
+   <p region='pop2' style='basic' begin='00:10:22:18' end='00:10:23:21' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>- [Mark] Ken.</p>
+   <p region='pop1' style='basic' begin='00:10:23:23' end='00:10:25:15' tts:origin='25% 79.33%' tts:extent='17.5% 5.33%'>- What?</p>
+   <p region='pop2' style='basic' begin='00:10:23:23' end='00:10:25:15' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>- You happen to know</p>
+   <p region='pop1' style='basic' begin='00:10:25:17' end='00:10:28:00' tts:origin='37.5% 79.33%' tts:extent='52.5% 5.33%'>who mushed the donuts</p>
+   <p region='pop2' style='basic' begin='00:10:25:17' end='00:10:28:00' tts:origin='37.5% 84.66%' tts:extent='47.5% 5.33%'>I brought in today?</p>
+   <p region='pop1' style='basic' begin='00:10:28:02' end='00:10:29:13' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>I mean, I broke a piece off.</p>
+   <p region='pop1' style='basic' begin='00:10:29:15' end='00:10:31:00' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>I wasn't trying to eat</p>
+   <p region='pop2' style='basic' begin='00:10:29:15' end='00:10:31:00' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>the whole thing.</p>
+   <p region='pop1' style='basic' begin='00:10:31:02' end='00:10:33:18' tts:origin='27.5% 79.33%' tts:extent='62.5% 5.33%'>No. I'm not talking about</p>
+   <p region='pop2' style='basic' begin='00:10:31:02' end='00:10:33:18' tts:origin='27.5% 84.66%' tts:extent='52.5% 5.33%'>breaking a piece off.</p>
+   <p region='pop1' style='basic' begin='00:10:33:20' end='00:10:37:01' tts:origin='20% 79.33%' tts:extent='65% 5.33%'>I'm talking about somebody</p>
+   <p region='pop2' style='basic' begin='00:10:33:20' end='00:10:37:01' tts:origin='20% 84.66%' tts:extent='70% 5.33%'>who went in and methodically</p>
+   <p region='pop1' style='basic' begin='00:10:37:03' end='00:10:38:19' tts:origin='45% 84.66%' tts:extent='45% 5.33%'>mushed the donuts.</p>
+   <p region='pop1' style='basic' begin='00:10:38:21' end='00:10:42:01' tts:origin='37.5% 79.33%' tts:extent='52.5% 5.33%'>It's not like a donut</p>
+   <p region='pop2' style='basic' begin='00:10:38:21' end='00:10:42:01' tts:origin='35% 84.66%' tts:extent='55% 5.33%'>got mushed accidental.</p>
+   <p region='pop1' style='basic' begin='00:10:42:03' end='00:10:44:16' tts:origin='12.5% 79.33%' tts:extent='42.5% 5.33%'>It was definitely</p>
+   <p region='pop2' style='basic' begin='00:10:42:03' end='00:10:44:16' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>intentional mushing the donuts.</p>
+   <p region='pop1' style='basic' begin='00:10:44:18' end='00:10:46:23' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>Well, no. I didn't...</p>
+   <p region='pop2' style='basic' begin='00:10:44:18' end='00:10:46:23' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>Why am I gonna mush donuts?</p>
+   <p region='pop1' style='basic' begin='00:10:47:01' end='00:10:48:00' tts:origin='10% 79.33%' tts:extent='47.5% 5.33%'>I don't give a shit</p>
+   <p region='pop2' style='basic' begin='00:10:47:01' end='00:10:48:00' tts:origin='10% 84.66%' tts:extent='32.5% 5.33%'>about donuts.</p>
+   <p region='pop1' style='basic' begin='00:10:48:02' end='00:10:49:18' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>Well, you broke a piece off.</p>
+   <p region='pop1' style='basic' begin='00:10:49:20' end='00:10:51:01' tts:origin='12.5% 79.33%' tts:extent='72.5% 5.33%'>Well, but that's just because</p>
+   <p region='pop2' style='basic' begin='00:10:49:20' end='00:10:51:01' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>I'm trying to watch my weight</p>
+   <p region='pop1' style='basic' begin='00:10:51:03' end='00:10:52:16' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>I wasn't trying to eat</p>
+   <p region='pop2' style='basic' begin='00:10:51:03' end='00:10:52:16' tts:origin='22.5% 84.66%' tts:extent='40% 5.33%'>the whole thing.</p>
+   <p region='pop1' style='basic' begin='00:10:52:18' end='00:10:54:12' tts:origin='12.5% 79.33%' tts:extent='72.5% 5.33%'>Maybe some people in this job</p>
+   <p region='pop2' style='basic' begin='00:10:52:18' end='00:10:54:12' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>just don't wanna come in here</p>
+   <p region='pop1' style='basic' begin='00:10:54:14' end='00:10:57:04' tts:origin='15% 79.33%' tts:extent='65% 5.33%'>and be seeing little gifts</p>
+   <p region='pop2' style='basic' begin='00:10:54:14' end='00:10:57:04' tts:origin='15% 84.66%' tts:extent='72.5% 5.33%'>just that don't mean nothing.</p>
+   <p region='pop1' style='basic' begin='00:10:57:06' end='00:10:59:08' tts:origin='20% 84.66%' tts:extent='70% 5.33%'>That's peace offerings, man.</p>
+   <p region='pop1' style='basic' begin='00:10:59:10' end='00:11:00:18' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>Why... why does there have to</p>
+   <p region='pop2' style='basic' begin='00:10:59:10' end='00:11:00:18' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>even be a peace offering?</p>
+   <p region='pop1' style='basic' begin='00:11:00:20' end='00:11:02:08' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>Maybe if people just treated</p>
+   <p region='pop2' style='basic' begin='00:11:00:20' end='00:11:02:08' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>people right around here</p>
+   <p region='pop1' style='basic' begin='00:11:02:10' end='00:11:04:16' tts:origin='12.5% 79.33%' tts:extent='70% 5.33%'>people wouldn't be trying to</p>
+   <p region='pop2' style='basic' begin='00:11:02:10' end='00:11:04:16' tts:origin='10% 84.66%' tts:extent='72.5% 5.33%'>have to give peace offerings.</p>
+   <p region='pop1' style='basic' begin='00:11:04:18' end='00:11:06:03' tts:origin='32.5% 79.33%' tts:extent='30% 5.33%'>What are you</p>
+   <p region='pop2' style='basic' begin='00:11:04:18' end='00:11:06:03' tts:origin='32.5% 84.66%' tts:extent='57.5% 5.33%'>trying to tell me, Ken?</p>
+   <p region='pop1' style='basic' begin='00:11:06:05' end='00:11:07:10' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>What are you trying to ask me?</p>
+   <p region='pop1' style='basic' begin='00:11:07:12' end='00:11:08:20' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>I'm asking if you know</p>
+   <p region='pop2' style='basic' begin='00:11:07:12' end='00:11:08:20' tts:origin='37.5% 84.66%' tts:extent='52.5% 5.33%'>who mushed the donuts</p>
+   <p region='pop1' style='basic' begin='00:11:08:22' end='00:11:10:02' tts:origin='20% 79.33%' tts:extent='37.5% 5.33%'>- I brought in.</p>
+   <p region='pop2' style='basic' begin='00:11:08:22' end='00:11:10:02' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- And what'd I tell you?</p>
+   <p region='pop1' style='basic' begin='00:11:10:04' end='00:11:11:20' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>I said no. I said</p>
+   <p region='pop2' style='basic' begin='00:11:10:04' end='00:11:11:20' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>I broke a piece off.</p>
+   <p region='pop1' style='basic' begin='00:11:11:22' end='00:11:13:06' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>I'm trying to watch my figure.</p>
+   <p region='pop1' style='basic' begin='00:11:14:13' end='00:11:16:18' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>If you do hear anything,</p>
+   <p region='pop2' style='basic' begin='00:11:14:13' end='00:11:16:18' tts:origin='30% 84.66%' tts:extent='30% 5.33%'>let me know.</p>
+   <p region='pop1' style='basic' begin='00:11:16:20' end='00:11:19:15' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>Yeah. Good luck with your</p>
+   <p region='pop2' style='basic' begin='00:11:16:20' end='00:11:19:15' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>investigation, inspector.</p>
+   <p region='pop1' style='basic' begin='00:11:19:17' end='00:11:21:20' tts:origin='27.5% 84.66%' tts:extent='42.5% 5.33%'>[vacuum turns on]</p>
+   <p region='pop1' style='basic' begin='00:11:41:11' end='00:11:42:17' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>You know I'm not gonna</p>
+   <p region='pop2' style='basic' begin='00:11:41:11' end='00:11:42:17' tts:origin='10% 84.66%' tts:extent='37.5% 5.33%'>steal anything.</p>
+   <p region='pop1' style='basic' begin='00:11:42:19' end='00:11:44:02' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>You don't really have to</p>
+   <p region='pop2' style='basic' begin='00:11:42:19' end='00:11:44:02' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>wait out here with me.</p>
+   <p region='pop1' style='basic' begin='00:11:44:04' end='00:11:45:04' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>I'll be the judge of that.</p>
+   <p region='pop1' style='basic' begin='00:11:45:06' end='00:11:48:17' tts:origin='30% 79.33%' tts:extent='30% 5.33%'>- All right.</p>
+   <p region='pop2' style='basic' begin='00:11:45:06' end='00:11:48:17' tts:origin='30% 84.66%' tts:extent='42.5% 5.33%'>- [all clamoring]</p>
+   <p region='pop1' style='basic' begin='00:11:51:17' end='00:11:53:00' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>[woman] There he is, come on.</p>
+   <p region='pop1' style='basic' begin='00:11:53:02' end='00:11:54:03' tts:origin='10% 84.66%' tts:extent='10% 5.33%'>Hey.</p>
+   <p region='pop1' style='basic' begin='00:11:54:05' end='00:11:55:19' tts:origin='20% 79.33%' tts:extent='27.5% 5.33%'>- Ah, shit.</p>
+   <p region='pop2' style='basic' begin='00:11:54:05' end='00:11:55:19' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>- [man] Hey, how are you?</p>
+   <p region='pop1' style='basic' begin='00:11:55:21' end='00:11:57:19' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>Is there any way we can just</p>
+   <p region='pop2' style='basic' begin='00:11:55:21' end='00:11:57:19' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>sign this back here?</p>
+   <p region='pop1' style='basic' begin='00:11:57:21' end='00:11:59:08' tts:origin='60% 84.66%' tts:extent='30% 5.33%'>No. Come on.</p>
+   <p region='pop1' style='basic' begin='00:11:59:10' end='00:12:02:00' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>Anna, what a pretty name.</p>
+   <p region='pop1' style='basic' begin='00:12:03:00' end='00:12:04:09' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>Kenny Powers.</p>
+   <p region='pop1' style='basic' begin='00:12:04:11' end='00:12:05:13' tts:origin='10% 84.66%' tts:extent='25% 5.33%'>Guy Young.</p>
+   <p region='pop1' style='basic' begin='00:12:05:15' end='00:12:07:07' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>- Kenny fucking Powers.</p>
+   <p region='pop2' style='basic' begin='00:12:05:15' end='00:12:07:07' tts:origin='22.5% 84.66%' tts:extent='15% 5.33%'>- Hey.</p>
+   <p region='pop1' style='basic' begin='00:12:07:09' end='00:12:09:11' tts:origin='20% 79.33%' tts:extent='55% 5.33%'>- What's up, champion?</p>
+   <p region='pop2' style='basic' begin='00:12:07:09' end='00:12:09:11' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- What's happening, man?</p>
+   <p region='pop1' style='basic' begin='00:12:09:13' end='00:12:10:19' tts:origin='17.5% 79.33%' tts:extent='40% 5.33%'>- How you doing?</p>
+   <p region='pop2' style='basic' begin='00:12:09:13' end='00:12:10:19' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>- My old teammate, my God.</p>
+   <p region='pop1' style='basic' begin='00:12:10:21' end='00:12:12:01' tts:origin='30% 79.33%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop2' style='basic' begin='00:12:10:21' end='00:12:12:01' tts:origin='30% 84.66%' tts:extent='42.5% 5.33%'>- What's it been,</p>
+   <p region='pop1' style='basic' begin='00:12:12:03' end='00:12:13:22' tts:origin='25% 79.33%' tts:extent='42.5% 5.33%'>- like, 15 years?</p>
+   <p region='pop2' style='basic' begin='00:12:12:03' end='00:12:13:22' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>- Yeah, at least 15.</p>
+   <p region='pop1' style='basic' begin='00:12:14:00' end='00:12:15:22' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>- Not since Atlanta.</p>
+   <p region='pop2' style='basic' begin='00:12:14:00' end='00:12:15:22' tts:origin='25% 84.66%' tts:extent='45% 5.33%'>- Hotlanta, right?</p>
+   <p region='pop1' style='basic' begin='00:12:16:00' end='00:12:17:23' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>Mos def, mos def.</p>
+   <p region='pop1' style='basic' begin='00:12:18:01' end='00:12:20:01' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>I saw this guy fucking</p>
+   <p region='pop2' style='basic' begin='00:12:18:01' end='00:12:20:01' tts:origin='35% 84.66%' tts:extent='37.5% 5.33%'>drink firewater</p>
+   <p region='pop1' style='basic' begin='00:12:20:03' end='00:12:21:22' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>- out of a hooker's pussy.</p>
+   <p region='pop2' style='basic' begin='00:12:20:03' end='00:12:21:22' tts:origin='17.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:12:22:00' end='00:12:23:06' tts:origin='32.5% 79.33%' tts:extent='37.5% 5.33%'>- That's right.</p>
+   <p region='pop2' style='basic' begin='00:12:22:00' end='00:12:23:06' tts:origin='32.5% 84.66%' tts:extent='25% 5.33%'>- No joke.</p>
+   <p region='pop1' style='basic' begin='00:12:23:08' end='00:12:24:19' tts:origin='20% 79.33%' tts:extent='55% 5.33%'>- I forgot about that.</p>
+   <p region='pop2' style='basic' begin='00:12:23:08' end='00:12:24:19' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>- Right out of her pussy.</p>
+   <p region='pop1' style='basic' begin='00:12:24:21' end='00:12:25:21' tts:origin='12.5% 79.33%' tts:extent='65% 5.33%'>- And then you fucked her.</p>
+   <p region='pop2' style='basic' begin='00:12:24:21' end='00:12:25:21' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>- And then I fucked her, yeah.</p>
+   <p region='pop1' style='basic' begin='00:12:25:23' end='00:12:27:02' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>Made my dick sting a little,</p>
+   <p region='pop1' style='basic' begin='00:12:27:04' end='00:12:28:23' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>- because of the firewater.</p>
+   <p region='pop2' style='basic' begin='00:12:27:04' end='00:12:28:23' tts:origin='17.5% 84.66%' tts:extent='25% 5.33%'>- [laughs]</p>
+   <p region='pop1' style='basic' begin='00:12:29:01' end='00:12:30:21' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>- We were crazy back then, huh?</p>
+   <p region='pop2' style='basic' begin='00:12:29:01' end='00:12:30:21' tts:origin='12.5% 84.66%' tts:extent='22.5% 5.33%'>- I know.</p>
+   <p region='pop1' style='basic' begin='00:12:31:00' end='00:12:32:02' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>So what's happening here?</p>
+   <p region='pop1' style='basic' begin='00:12:32:04' end='00:12:33:06' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>You guys making a movie</p>
+   <p region='pop2' style='basic' begin='00:12:32:04' end='00:12:33:06' tts:origin='10% 84.66%' tts:extent='32.5% 5.33%'>or something?</p>
+   <p region='pop1' style='basic' begin='00:12:33:08' end='00:12:34:17' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>No, no. We're not</p>
+   <p region='pop2' style='basic' begin='00:12:33:08' end='00:12:34:17' tts:origin='47.5% 84.66%' tts:extent='37.5% 5.33%'>making a movie.</p>
+   <p region='pop1' style='basic' begin='00:12:34:19' end='00:12:36:13' tts:origin='32.5% 79.33%' tts:extent='52.5% 5.33%'>I'm not a movie star.</p>
+   <p region='pop2' style='basic' begin='00:12:34:19' end='00:12:36:13' tts:origin='32.5% 84.66%' tts:extent='57.5% 5.33%'>We're making a TV show.</p>
+   <p region='pop1' style='basic' begin='00:12:36:15' end='00:12:37:22' tts:origin='55% 84.66%' tts:extent='35% 5.33%'>I'm a TV star.</p>
+   <p region='pop1' style='basic' begin='00:12:38:00' end='00:12:40:00' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>- I do<span tts:fontStyle='italic'> Sports Sesh</span><span> over here.</span></p>
+   <p region='pop2' style='basic' begin='00:12:38:00' end='00:12:40:00' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>- Oh, yeah. There's...</p>
+   <p region='pop1' style='basic' begin='00:12:40:02' end='00:12:42:08' tts:origin='25% 79.33%' tts:extent='47.5% 5.33%'>- Wow. That's cool.</p>
+   <p region='pop2' style='basic' begin='00:12:40:02' end='00:12:42:08' tts:origin='25% 84.66%' tts:extent='52.5% 5.33%'>- It's a sports show.</p>
+   <p region='pop1' style='basic' begin='00:12:42:10' end='00:12:43:19' tts:origin='12.5% 79.33%' tts:extent='40% 5.33%'>I'm not familiar</p>
+   <p region='pop2' style='basic' begin='00:12:42:10' end='00:12:43:19' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>with the program.</p>
+   <p region='pop1' style='basic' begin='00:12:43:21' end='00:12:45:18' tts:origin='10% 79.33%' tts:extent='67.5% 5.33%'>I don't really keep up with</p>
+   <p region='pop2' style='basic' begin='00:12:43:21' end='00:12:45:18' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>the sporting world anymore.</p>
+   <p region='pop1' style='basic' begin='00:12:45:20' end='00:12:46:21' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>Hey. You got five minutes?</p>
+   <p region='pop1' style='basic' begin='00:12:46:23' end='00:12:48:13' tts:origin='37.5% 79.33%' tts:extent='35% 5.33%'>I can give you</p>
+   <p region='pop2' style='basic' begin='00:12:46:23' end='00:12:48:13' tts:origin='37.5% 84.66%' tts:extent='52.5% 5.33%'>a Guy Young VIP tour.</p>
+   <p region='pop1' style='basic' begin='00:12:48:15' end='00:12:50:07' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>- Actually, I gotta...</p>
+   <p region='pop2' style='basic' begin='00:12:48:15' end='00:12:50:07' tts:origin='22.5% 84.66%' tts:extent='47.5% 5.33%'>- He's dropping off</p>
+   <p region='pop1' style='basic' begin='00:12:50:09' end='00:12:51:11' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>your rental car, Mr. Guy Young.</p>
+   <p region='pop1' style='basic' begin='00:12:51:13' end='00:12:53:04' tts:origin='55% 79.33%' tts:extent='35% 5.33%'>What do you...</p>
+   <p region='pop2' style='basic' begin='00:12:51:13' end='00:12:53:04' tts:origin='52.5% 84.66%' tts:extent='37.5% 5.33%'>what are you...</p>
+   <p region='pop1' style='basic' begin='00:12:53:06' end='00:12:54:11' tts:origin='32.5% 84.66%' tts:extent='57.5% 5.33%'>Why? You rent cars now?</p>
+   <p region='pop1' style='basic' begin='00:12:54:13' end='00:12:57:07' tts:origin='10% 79.33%' tts:extent='47.5% 5.33%'>Uh, well, actually,</p>
+   <p region='pop2' style='basic' begin='00:12:54:13' end='00:12:57:07' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>kind of more or less the CEO</p>
+   <p region='pop1' style='basic' begin='00:12:57:09' end='00:12:58:19' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>of like a rental car</p>
+   <p region='pop2' style='basic' begin='00:12:57:09' end='00:12:58:19' tts:origin='10% 84.66%' tts:extent='30% 5.33%'>corporation.</p>
+   <p region='pop1' style='basic' begin='00:12:58:21' end='00:13:00:23' tts:origin='15% 79.33%' tts:extent='72.5% 5.33%'>Don't you have some paperwork</p>
+   <p region='pop2' style='basic' begin='00:12:58:21' end='00:13:00:23' tts:origin='15% 84.66%' tts:extent='40% 5.33%'>for him to sign?</p>
+   <p region='pop1' style='basic' begin='00:13:01:21' end='00:13:04:02' tts:origin='10% 79.33%' tts:extent='20% 5.33%'>Uh, yes,</p>
+   <p region='pop2' style='basic' begin='00:13:01:21' end='00:13:04:02' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>Miss Pleasant, I do.</p>
+   <p region='pop1' style='basic' begin='00:13:04:04' end='00:13:06:23' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Uh... so here's the forms.</p>
+   <p region='pop1' style='basic' begin='00:13:07:01' end='00:13:09:15' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>This is the other Kenny,</p>
+   <p region='pop2' style='basic' begin='00:13:07:01' end='00:13:09:15' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>he's my assistant manager.</p>
+   <p region='pop1' style='basic' begin='00:13:09:17' end='00:13:11:05' tts:origin='10% 79.33%' tts:extent='32.5% 5.33%'>So sign that,</p>
+   <p region='pop2' style='basic' begin='00:13:09:17' end='00:13:11:05' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>right there's cool.</p>
+   <p region='pop1' style='basic' begin='00:13:11:07' end='00:13:13:11' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>- You also are gonna sign there.</p>
+   <p region='pop2' style='basic' begin='00:13:11:07' end='00:13:13:11' tts:origin='10% 84.66%' tts:extent='32.5% 5.33%'>- Right here?</p>
+   <p region='pop1' style='basic' begin='00:13:13:13' end='00:13:15:11' tts:origin='10% 79.33%' tts:extent='45% 5.33%'>You gotta say that</p>
+   <p region='pop2' style='basic' begin='00:13:13:13' end='00:13:15:11' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>the gas tank is full</p>
+   <p region='pop1' style='basic' begin='00:13:15:13' end='00:13:16:17' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>and if you don't bring it back</p>
+   <p region='pop2' style='basic' begin='00:13:15:13' end='00:13:16:17' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>full then we will</p>
+   <p region='pop1' style='basic' begin='00:13:16:19' end='00:13:18:17' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>- charge you for it.</p>
+   <p region='pop2' style='basic' begin='00:13:16:19' end='00:13:18:17' tts:origin='25% 84.66%' tts:extent='42.5% 5.33%'>- Yeah, I usually</p>
+   <p region='pop1' style='basic' begin='00:13:18:19' end='00:13:20:21' tts:origin='25% 79.33%' tts:extent='45% 5.33%'>- return it empty.</p>
+   <p region='pop2' style='basic' begin='00:13:18:19' end='00:13:20:21' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>- OK. Suit yourself.</p>
+   <p region='pop1' style='basic' begin='00:13:20:23' end='00:13:22:21' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>TV star. Doesn't have</p>
+   <p region='pop2' style='basic' begin='00:13:20:23' end='00:13:22:21' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>to worry about gas.</p>
+   <p region='pop1' style='basic' begin='00:13:22:23' end='00:13:24:19' tts:origin='27.5% 79.33%' tts:extent='30% 5.33%'>- [laughter]</p>
+   <p region='pop2' style='basic' begin='00:13:22:23' end='00:13:24:19' tts:origin='27.5% 84.66%' tts:extent='47.5% 5.33%'>- There's your car.</p>
+   <p region='pop1' style='basic' begin='00:13:24:21' end='00:13:26:09' tts:origin='25% 79.33%' tts:extent='42.5% 5.33%'>Thank you, buddy.</p>
+   <p region='pop2' style='basic' begin='00:13:24:21' end='00:13:26:09' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>Hey, Kenny, before you go,</p>
+   <p region='pop1' style='basic' begin='00:13:26:11' end='00:13:29:09' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>I'm hosting this, um...</p>
+   <p region='pop2' style='basic' begin='00:13:26:11' end='00:13:29:09' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>charity event</p>
+   <p region='pop1' style='basic' begin='00:13:29:11' end='00:13:31:05' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>at the Ballantyne Hotel</p>
+   <p region='pop2' style='basic' begin='00:13:29:11' end='00:13:31:05' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>Friday night.</p>
+   <p region='pop1' style='basic' begin='00:13:31:07' end='00:13:32:21' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>It's a little upscale,</p>
+   <p region='pop2' style='basic' begin='00:13:31:07' end='00:13:32:21' tts:origin='35% 84.66%' tts:extent='37.5% 5.33%'>a little fancy.</p>
+   <p region='pop1' style='basic' begin='00:13:32:23' end='00:13:34:11' tts:origin='42.5% 79.33%' tts:extent='47.5% 5.33%'>Not your cup of tea</p>
+   <p region='pop2' style='basic' begin='00:13:32:23' end='00:13:34:11' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>but right afterwards</p>
+   <p region='pop1' style='basic' begin='00:13:34:13' end='00:13:36:20' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>there's an after-party. It's</p>
+   <p region='pop2' style='basic' begin='00:13:34:13' end='00:13:36:20' tts:origin='15% 84.66%' tts:extent='75% 5.33%'>gonna be off the fucking hook.</p>
+   <p region='pop1' style='basic' begin='00:13:36:22' end='00:13:38:16' tts:origin='27.5% 79.33%' tts:extent='50% 5.33%'>I'm gonna bring some</p>
+   <p region='pop2' style='basic' begin='00:13:36:22' end='00:13:38:16' tts:origin='27.5% 84.66%' tts:extent='62.5% 5.33%'>of my guys from the show.</p>
+   <p region='pop1' style='basic' begin='00:13:38:18' end='00:13:40:08' tts:origin='37.5% 79.33%' tts:extent='52.5% 5.33%'>We hit a little pinch</p>
+   <p region='pop2' style='basic' begin='00:13:38:18' end='00:13:40:08' tts:origin='37.5% 84.66%' tts:extent='47.5% 5.33%'>of vintage Kenny P.</p>
+   <p region='pop1' style='basic' begin='00:13:40:10' end='00:13:42:15' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>and it'll be 1998</p>
+   <p region='pop2' style='basic' begin='00:13:40:10' end='00:13:42:15' tts:origin='47.5% 84.66%' tts:extent='37.5% 5.33%'>all over again.</p>
+   <p region='pop1' style='basic' begin='00:13:42:17' end='00:13:43:20' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>- What do you say?</p>
+   <p region='pop2' style='basic' begin='00:13:42:17' end='00:13:43:20' tts:origin='27.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:13:43:22' end='00:13:45:08' tts:origin='10% 79.33%' tts:extent='50% 5.33%'>That does sound like</p>
+   <p region='pop2' style='basic' begin='00:13:43:22' end='00:13:45:08' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>a good time, Guy,</p>
+   <p region='pop1' style='basic' begin='00:13:45:10' end='00:13:48:01' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>but, uh, walked away from the</p>
+   <p region='pop2' style='basic' begin='00:13:45:10' end='00:13:48:01' tts:origin='12.5% 84.66%' tts:extent='70% 5.33%'>party scene a few years ago.</p>
+   <p region='pop1' style='basic' begin='00:13:48:03' end='00:13:50:07' tts:origin='17.5% 79.33%' tts:extent='57.5% 5.33%'>- I'm a family man now.</p>
+   <p region='pop2' style='basic' begin='00:13:48:03' end='00:13:50:07' tts:origin='17.5% 84.66%' tts:extent='67.5% 5.33%'>- Get the fuck out of here.</p>
+   <p region='pop1' style='basic' begin='00:13:50:09' end='00:13:51:14' tts:origin='30% 79.33%' tts:extent='25% 5.33%'>- Back up.</p>
+   <p region='pop2' style='basic' begin='00:13:50:09' end='00:13:51:14' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>- No, it's true.</p>
+   <p region='pop1' style='basic' begin='00:13:51:16' end='00:13:53:17' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>I'm... love my family.</p>
+   <p region='pop2' style='basic' begin='00:13:51:16' end='00:13:53:17' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>I don't party anymore.</p>
+   <p region='pop1' style='basic' begin='00:13:53:19' end='00:13:55:17' tts:origin='50% 79.33%' tts:extent='40% 5.33%'>Get out of here.</p>
+   <p region='pop2' style='basic' begin='00:13:53:19' end='00:13:55:17' tts:origin='50% 84.66%' tts:extent='20% 5.33%'>Shut up.</p>
+   <p region='pop1' style='basic' begin='00:13:55:19' end='00:13:57:12' tts:origin='10% 79.33%' tts:extent='65% 5.33%'>The only drug I get off on</p>
+   <p region='pop2' style='basic' begin='00:13:55:19' end='00:13:57:12' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>is my wife and kids</p>
+   <p region='pop1' style='basic' begin='00:13:57:14' end='00:13:59:21' tts:origin='10% 79.33%' tts:extent='67.5% 5.33%'>and I get fucked up on them</p>
+   <p region='pop2' style='basic' begin='00:13:57:14' end='00:13:59:21' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>every single night.</p>
+   <p region='pop1' style='basic' begin='00:13:59:23' end='00:14:02:12' tts:origin='25% 79.33%' tts:extent='65% 5.33%'>[laughs] What? I feel like</p>
+   <p region='pop2' style='basic' begin='00:13:59:23' end='00:14:02:12' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>I'm looking at a dead man.</p>
+   <p region='pop1' style='basic' begin='00:14:02:14' end='00:14:05:06' tts:origin='10% 79.33%' tts:extent='47.5% 5.33%'>I did die, and then</p>
+   <p region='pop2' style='basic' begin='00:14:02:14' end='00:14:05:06' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>I was born again</p>
+   <p region='pop1' style='basic' begin='00:14:05:08' end='00:14:06:22' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>as a family man.</p>
+   <p region='pop1' style='basic' begin='00:14:07:00' end='00:14:08:14' tts:origin='40% 79.33%' tts:extent='40% 5.33%'>Well, as long as</p>
+   <p region='pop2' style='basic' begin='00:14:07:00' end='00:14:08:14' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>you're happy, Kenny.</p>
+   <p region='pop1' style='basic' begin='00:14:08:16' end='00:14:10:19' tts:origin='10% 79.33%' tts:extent='22.5% 5.33%'>Thrilled.</p>
+   <p region='pop2' style='basic' begin='00:14:08:16' end='00:14:10:19' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>Never been happier.</p>
+   <p region='pop1' style='basic' begin='00:14:10:21' end='00:14:11:23' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>Hey, get back to work,</p>
+   <p region='pop2' style='basic' begin='00:14:10:21' end='00:14:11:23' tts:origin='35% 84.66%' tts:extent='25% 5.33%'>all right?</p>
+   <p region='pop1' style='basic' begin='00:14:12:01' end='00:14:13:06' tts:origin='37.5% 79.33%' tts:extent='25% 5.33%'>- You too.</p>
+   <p region='pop2' style='basic' begin='00:14:12:01' end='00:14:13:06' tts:origin='37.5% 84.66%' tts:extent='22.5% 5.33%'>- Listen,</p>
+   <p region='pop1' style='basic' begin='00:14:13:08' end='00:14:14:18' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>maybe I'll put you on the list,</p>
+   <p region='pop1' style='basic' begin='00:14:14:20' end='00:14:15:23' tts:origin='37.5% 79.33%' tts:extent='30% 5.33%'>just in case</p>
+   <p region='pop2' style='basic' begin='00:14:14:20' end='00:14:15:23' tts:origin='37.5% 84.66%' tts:extent='52.5% 5.33%'>you change your mind.</p>
+   <p region='pop1' style='basic' begin='00:14:16:01' end='00:14:17:16' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>I wouldn't bother. I got</p>
+   <p region='pop2' style='basic' begin='00:14:16:01' end='00:14:17:16' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>a corporate takeover</p>
+   <p region='pop1' style='basic' begin='00:14:17:18' end='00:14:19:18' tts:origin='10% 79.33%' tts:extent='45% 5.33%'>I have to oversee,</p>
+   <p region='pop2' style='basic' begin='00:14:17:18' end='00:14:19:18' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>so I'm not gonna be able to...</p>
+   <p region='pop1' style='basic' begin='00:14:19:20' end='00:14:21:08' tts:origin='42.5% 79.33%' tts:extent='42.5% 5.33%'>I'm gonna put you</p>
+   <p region='pop2' style='basic' begin='00:14:19:20' end='00:14:21:08' tts:origin='42.5% 84.66%' tts:extent='47.5% 5.33%'>on the list anyway.</p>
+   <p region='pop1' style='basic' begin='00:14:21:10' end='00:14:23:02' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>- Good to see you, Guy.</p>
+   <p region='pop2' style='basic' begin='00:14:21:10' end='00:14:23:02' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- [Guy] Good seeing you.</p>
+   <p region='pop1' style='basic' begin='00:14:23:04' end='00:14:24:21' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>- Take care of yourself.</p>
+   <p region='pop2' style='basic' begin='00:14:23:04' end='00:14:24:21' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>- Who wants an autograph?</p>
+   <p region='pop1' style='basic' begin='00:14:24:23' end='00:14:25:23' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>[children clamoring]</p>
+   <p region='pop1' style='basic' begin='00:14:26:01' end='00:14:28:04' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>[woman] Her charm,</p>
+   <p region='pop2' style='basic' begin='00:14:26:01' end='00:14:28:04' tts:origin='27.5% 84.66%' tts:extent='35% 5.33%'>her work ethic</p>
+   <p region='pop1' style='basic' begin='00:14:28:06' end='00:14:31:15' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>and her tireless spirit</p>
+   <p region='pop2' style='basic' begin='00:14:28:06' end='00:14:31:15' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>make April the best agent</p>
+   <p region='pop1' style='basic' begin='00:14:31:17' end='00:14:34:15' tts:origin='12.5% 79.33%' tts:extent='55% 5.33%'>I've ever worked with.</p>
+   <p region='pop2' style='basic' begin='00:14:31:17' end='00:14:34:15' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>I'd truly be lost without her.</p>
+   <p region='pop1' style='basic' begin='00:14:34:17' end='00:14:37:10' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>So, without further ado,</p>
+   <p region='pop1' style='basic' begin='00:14:37:12' end='00:14:41:22' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>- our MVP, the one and only...</p>
+   <p region='pop2' style='basic' begin='00:14:37:12' end='00:14:41:22' tts:origin='12.5% 84.66%' tts:extent='32.5% 5.33%'>- [chuckling]</p>
+   <p region='pop1' style='basic' begin='00:14:42:00' end='00:14:42:20' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>...April Powers.</p>
+   <p region='pop1' style='basic' begin='00:14:42:22' end='00:14:45:22' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[applause]</p>
+   <p region='pop1' style='basic' begin='00:14:46:00' end='00:14:48:23' tts:origin='27.5% 79.33%' tts:extent='30% 5.33%'>You like me,</p>
+   <p region='pop2' style='basic' begin='00:14:46:00' end='00:14:48:23' tts:origin='27.5% 84.66%' tts:extent='47.5% 5.33%'>you really like me.</p>
+   <p region='pop1' style='basic' begin='00:14:49:01' end='00:14:50:11' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[laughter]</p>
+   <p region='pop1' style='basic' begin='00:14:50:13' end='00:14:53:17' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>Well, first off, I just wanna</p>
+   <p region='pop2' style='basic' begin='00:14:50:13' end='00:14:53:17' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>thank everyone that I work with.</p>
+   <p region='pop1' style='basic' begin='00:14:53:19' end='00:14:56:03' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>You have been so good to me.</p>
+   <p region='pop1' style='basic' begin='00:14:56:05' end='00:14:59:12' tts:origin='12.5% 79.33%' tts:extent='70% 5.33%'>You have taught me the tools</p>
+   <p region='pop2' style='basic' begin='00:14:56:05' end='00:14:59:12' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>that I have needed to succeed.</p>
+   <p region='pop1' style='basic' begin='00:14:59:14' end='00:15:04:04' tts:origin='10% 79.33%' tts:extent='40% 5.33%'>But most of all,</p>
+   <p region='pop2' style='basic' begin='00:14:59:14' end='00:15:04:04' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>I wanna thank my husband, Kenny,</p>
+   <p region='pop1' style='basic' begin='00:15:04:06' end='00:15:08:14' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>who has always been so</p>
+   <p region='pop2' style='basic' begin='00:15:04:06' end='00:15:08:14' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>supportive of me no matter what.</p>
+   <p region='pop1' style='basic' begin='00:15:08:16' end='00:15:11:04' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[applause]</p>
+   <p region='pop1' style='basic' begin='00:15:12:19' end='00:15:15:18' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>When I've been working late, you</p>
+   <p region='pop2' style='basic' begin='00:15:12:19' end='00:15:15:18' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>know, he takes care of the kids,</p>
+   <p region='pop1' style='basic' begin='00:15:15:20' end='00:15:18:04' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>- cleaning the poopy diapers...</p>
+   <p region='pop2' style='basic' begin='00:15:15:20' end='00:15:18:04' tts:origin='12.5% 84.66%' tts:extent='30% 5.33%'>- [laughter]</p>
+   <p region='pop1' style='basic' begin='00:15:18:06' end='00:15:20:00' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>...singing lullabies.</p>
+   <p region='pop1' style='basic' begin='00:15:20:02' end='00:15:24:05' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>Cooking for them. He has become</p>
+   <p region='pop2' style='basic' begin='00:15:20:02' end='00:15:24:05' tts:origin='12.5% 84.66%' tts:extent='55% 5.33%'>quite the little cook.</p>
+   <p region='pop1' style='basic' begin='00:15:24:07' end='00:15:25:20' tts:origin='37.5% 84.66%' tts:extent='22.5% 5.33%'>[chatter]</p>
+   <p region='pop1' style='basic' begin='00:15:25:22' end='00:15:28:02' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>Also, when it's just been</p>
+   <p region='pop2' style='basic' begin='00:15:25:22' end='00:15:28:02' tts:origin='20% 84.66%' tts:extent='30% 5.33%'>a rough day,</p>
+   <p region='pop1' style='basic' begin='00:15:28:04' end='00:15:31:09' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>I'm excited to go home because</p>
+   <p region='pop2' style='basic' begin='00:15:28:04' end='00:15:31:09' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>I know that there is a back rub</p>
+   <p region='pop1' style='basic' begin='00:15:31:11' end='00:15:33:12' tts:origin='30% 79.33%' tts:extent='42.5% 5.33%'>and a bubble bath</p>
+   <p region='pop2' style='basic' begin='00:15:31:11' end='00:15:33:12' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>waiting for me.</p>
+   <p region='pop1' style='basic' begin='00:15:33:14' end='00:15:36:12' tts:origin='27.5% 79.33%' tts:extent='30% 5.33%'>- [all] Aww.</p>
+   <p region='pop2' style='basic' begin='00:15:33:14' end='00:15:36:12' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>- [April chuckles]</p>
+   <p region='pop1' style='basic' begin='00:15:36:14' end='00:15:41:09' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>So thank you for standing</p>
+   <p region='pop2' style='basic' begin='00:15:36:14' end='00:15:41:09' tts:origin='20% 84.66%' tts:extent='40% 5.33%'>right behind me.</p>
+   <p region='pop1' style='basic' begin='00:15:42:13' end='00:15:45:19' tts:origin='25% 79.33%' tts:extent='32.5% 5.33%'>You truly are</p>
+   <p region='pop2' style='basic' begin='00:15:42:13' end='00:15:45:19' tts:origin='25% 84.66%' tts:extent='52.5% 5.33%'>my wonderful husband.</p>
+   <p region='pop1' style='basic' begin='00:15:45:21' end='00:15:48:09' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[applause]</p>
+   <p region='pop1' style='basic' begin='00:15:59:20' end='00:16:02:03' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>[breathing heavily]</p>
+   <p region='pop1' style='basic' begin='00:16:03:01' end='00:16:04:03' tts:origin='42.5% 84.66%' tts:extent='12.5% 5.33%'>Fuck!</p>
+   <p region='pop1' style='basic' begin='00:16:05:12' end='00:16:07:04' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>Shit! Fuck you!</p>
+   <p region='pop1' style='basic' begin='00:16:07:06' end='00:16:09:06' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>[grunts] Cunt! Shit!</p>
+   <p region='pop1' style='basic' begin='00:16:09:08' end='00:16:11:17' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>Shit! Crap fucking shit!</p>
+   <p region='pop1' style='basic' begin='00:16:11:19' end='00:16:13:03' tts:origin='30% 79.33%' tts:extent='32.5% 5.33%'>- Goddamn it!</p>
+   <p region='pop2' style='basic' begin='00:16:11:19' end='00:16:13:03' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>- There you are.</p>
+   <p region='pop1' style='basic' begin='00:16:13:05' end='00:16:15:14' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>I was looking for you.</p>
+   <p region='pop2' style='basic' begin='00:16:13:05' end='00:16:15:14' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>What is wrong?</p>
+   <p region='pop1' style='basic' begin='00:16:15:16' end='00:16:17:22' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>Nothing. Just that place</p>
+   <p region='pop2' style='basic' begin='00:16:15:16' end='00:16:17:22' tts:origin='30% 84.66%' tts:extent='45% 5.33%'>smells bad inside.</p>
+   <p region='pop1' style='basic' begin='00:16:18:00' end='00:16:19:17' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>Smells like dog shit</p>
+   <p region='pop2' style='basic' begin='00:16:18:00' end='00:16:19:17' tts:origin='40% 84.66%' tts:extent='40% 5.33%'>and potstickers.</p>
+   <p region='pop1' style='basic' begin='00:16:19:19' end='00:16:21:05' tts:origin='10% 79.33%' tts:extent='32.5% 5.33%'>Trying to get</p>
+   <p region='pop2' style='basic' begin='00:16:19:19' end='00:16:21:05' tts:origin='10% 84.66%' tts:extent='37.5% 5.33%'>some fresh air.</p>
+   <p region='pop1' style='basic' begin='00:16:21:07' end='00:16:23:12' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>Kenny, what is going on?</p>
+   <p region='pop2' style='basic' begin='00:16:21:07' end='00:16:23:12' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>You can tell me.</p>
+   <p region='pop1' style='basic' begin='00:16:23:14' end='00:16:25:16' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>[sighs] I don't know.</p>
+   <p region='pop1' style='basic' begin='00:16:25:18' end='00:16:29:06' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>Just sitting in there and</p>
+   <p region='pop2' style='basic' begin='00:16:25:18' end='00:16:29:06' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>everyone's clapping for you.</p>
+   <p region='pop1' style='basic' begin='00:16:29:08' end='00:16:31:04' tts:origin='10% 79.33%' tts:extent='40% 5.33%'>Must think of me</p>
+   <p region='pop2' style='basic' begin='00:16:29:08' end='00:16:31:04' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>like some kind of dipshit.</p>
+   <p region='pop1' style='basic' begin='00:16:31:06' end='00:16:33:08' tts:origin='10% 79.33%' tts:extent='27.5% 5.33%'>I feel like</p>
+   <p region='pop2' style='basic' begin='00:16:31:06' end='00:16:33:08' tts:origin='10% 84.66%' tts:extent='72.5% 5.33%'>fucking Tim Robbins in there.</p>
+   <p region='pop1' style='basic' begin='00:16:33:10' end='00:16:35:19' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>Everyone's smiling at me,</p>
+   <p region='pop2' style='basic' begin='00:16:33:10' end='00:16:35:19' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>bitching me out.</p>
+   <p region='pop1' style='basic' begin='00:16:35:21' end='00:16:37:08' tts:origin='42.5% 79.33%' tts:extent='35% 5.33%'>So because I'm</p>
+   <p region='pop2' style='basic' begin='00:16:35:21' end='00:16:37:08' tts:origin='42.5% 84.66%' tts:extent='47.5% 5.33%'>achieving something</p>
+   <p region='pop1' style='basic' begin='00:16:37:10' end='00:16:39:00' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>- that makes you a bitch?</p>
+   <p region='pop2' style='basic' begin='00:16:37:10' end='00:16:39:00' tts:origin='20% 84.66%' tts:extent='32.5% 5.33%'>- Yes, April.</p>
+   <p region='pop1' style='basic' begin='00:16:39:02' end='00:16:41:08' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>Every single morning I wake up,</p>
+   <p region='pop2' style='basic' begin='00:16:39:02' end='00:16:41:08' tts:origin='12.5% 84.66%' tts:extent='55% 5.33%'>I think about the fact</p>
+   <p region='pop1' style='basic' begin='00:16:41:10' end='00:16:43:07' tts:origin='10% 79.33%' tts:extent='65% 5.33%'>that I fucking walked away</p>
+   <p region='pop2' style='basic' begin='00:16:41:10' end='00:16:43:07' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>from baseball.</p>
+   <p region='pop1' style='basic' begin='00:16:43:09' end='00:16:46:11' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>I gotta suck my fucking soul in,</p>
+   <p region='pop2' style='basic' begin='00:16:43:09' end='00:16:46:11' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>put a smile on my face.</p>
+   <p region='pop1' style='basic' begin='00:16:46:13' end='00:16:48:21' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>Go about my day.</p>
+   <p region='pop1' style='basic' begin='00:16:51:20' end='00:16:54:04' tts:origin='50% 79.33%' tts:extent='40% 5.33%'>You have so much</p>
+   <p region='pop2' style='basic' begin='00:16:51:20' end='00:16:54:04' tts:origin='52.5% 84.66%' tts:extent='37.5% 5.33%'>to be proud of.</p>
+   <p region='pop1' style='basic' begin='00:16:54:06' end='00:16:56:03' tts:origin='10% 79.33%' tts:extent='25% 5.33%'>Like what?</p>
+   <p region='pop2' style='basic' begin='00:16:54:06' end='00:16:56:03' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>My shitty job?</p>
+   <p region='pop1' style='basic' begin='00:16:56:05' end='00:16:59:00' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>- Our lame ass friends?</p>
+   <p region='pop2' style='basic' begin='00:16:56:05' end='00:16:59:00' tts:origin='22.5% 84.66%' tts:extent='30% 5.33%'>- Your kids.</p>
+   <p region='pop1' style='basic' begin='00:16:59:02' end='00:17:00:10' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Well, Shayna's pretty cool</p>
+   <p region='pop1' style='basic' begin='00:17:00:12' end='00:17:02:03' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>but she's never gonna be</p>
+   <p region='pop2' style='basic' begin='00:17:00:12' end='00:17:02:03' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>a ball player.</p>
+   <p region='pop1' style='basic' begin='00:17:02:05' end='00:17:04:15' tts:origin='12.5% 79.33%' tts:extent='55% 5.33%'>Toby. Always trying to</p>
+   <p region='pop2' style='basic' begin='00:17:02:05' end='00:17:04:15' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>challenge my authority.</p>
+   <p region='pop1' style='basic' begin='00:17:04:17' end='00:17:06:12' tts:origin='12.5% 79.33%' tts:extent='65% 5.33%'>Little motherfucker thinks</p>
+   <p region='pop2' style='basic' begin='00:17:04:17' end='00:17:06:12' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>he's the head of the household.</p>
+   <p region='pop1' style='basic' begin='00:17:06:14' end='00:17:07:12' tts:origin='10% 84.66%' tts:extent='22.5% 5.33%'>Fuck him.</p>
+   <p region='pop1' style='basic' begin='00:17:07:14' end='00:17:09:17' tts:origin='22.5% 84.66%' tts:extent='67.5% 5.33%'>You think it's easy for me?</p>
+   <p region='pop1' style='basic' begin='00:17:09:19' end='00:17:11:10' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>Watching you mope</p>
+   <p region='pop2' style='basic' begin='00:17:09:19' end='00:17:11:10' tts:origin='47.5% 84.66%' tts:extent='42.5% 5.33%'>around the house.</p>
+   <p region='pop1' style='basic' begin='00:17:11:12' end='00:17:13:11' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Mope. Ain't nobody moping.</p>
+   <p region='pop1' style='basic' begin='00:17:13:13' end='00:17:15:13' tts:origin='55% 84.66%' tts:extent='35% 5.33%'>You know what?</p>
+   <p region='pop1' style='basic' begin='00:17:15:15' end='00:17:17:11' tts:origin='35% 84.66%' tts:extent='55% 5.33%'>I'm gonna go in there.</p>
+   <p region='pop1' style='basic' begin='00:17:17:13' end='00:17:20:10' tts:origin='47.5% 79.33%' tts:extent='42.5% 5.33%'>And I'm gonna try</p>
+   <p region='pop2' style='basic' begin='00:17:17:13' end='00:17:20:10' tts:origin='50% 84.66%' tts:extent='40% 5.33%'>to enjoy myself.</p>
+   <p region='pop1' style='basic' begin='00:17:20:12' end='00:17:23:10' tts:origin='20% 84.66%' tts:extent='70% 5.33%'>And I hope you will join me.</p>
+   <p region='pop1' style='basic' begin='00:17:29:19' end='00:17:31:19' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>[Kenny] April.</p>
+   <p region='pop1' style='basic' begin='00:17:31:21' end='00:17:34:01' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>I'm gonna stay out here</p>
+   <p region='pop2' style='basic' begin='00:17:31:21' end='00:17:34:01' tts:origin='10% 84.66%' tts:extent='45% 5.33%'>in silent protest.</p>
+   <p region='pop1' style='basic' begin='00:17:34:03' end='00:17:37:01' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>But perhaps you could grab me</p>
+   <p region='pop2' style='basic' begin='00:17:34:03' end='00:17:37:01' tts:origin='12.5% 84.66%' tts:extent='70% 5.33%'>some of those chili sliders,</p>
+   <p region='pop1' style='basic' begin='00:17:37:03' end='00:17:40:07' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>that'd be very baller.</p>
+   <p region='pop2' style='basic' begin='00:17:37:03' end='00:17:40:07' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>Maybe some napkins.</p>
+   <p region='pop1' style='basic' begin='00:17:40:09' end='00:17:41:18' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>Arnold Palmer.</p>
+   <p region='pop1' style='basic' begin='00:17:43:07' end='00:17:45:14' tts:origin='10% 84.66%' tts:extent='40% 5.33%'>Actually, April.</p>
+   <p region='pop1' style='basic' begin='00:17:45:16' end='00:17:47:12' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>You know what, scratch</p>
+   <p region='pop2' style='basic' begin='00:17:45:16' end='00:17:47:12' tts:origin='10% 84.66%' tts:extent='45% 5.33%'>the Arnold Palmer.</p>
+   <p region='pop1' style='basic' begin='00:17:47:14' end='00:17:49:03' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>Just make it a lemonade.</p>
+   <p region='pop1' style='basic' begin='00:17:52:19' end='00:17:54:00' tts:origin='37.5% 84.66%' tts:extent='22.5% 5.33%'>[exhales]</p>
+   <p region='pop1' style='basic' begin='00:17:54:02' end='00:17:56:08' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>[country music]</p>
+   <p region='pop1' style='basic' begin='00:18:21:06' end='00:18:23:04' tts:origin='17.5% 79.33%' tts:extent='60% 5.33%'><span tts:fontStyle='italic'>[Guy] That's ridiculous,</span></p>
+   <p region='pop2' style='basic' begin='00:18:21:06' end='00:18:23:04' tts:origin='17.5% 84.66%' tts:extent='67.5% 5.33%'><span tts:fontStyle='italic'>all right. Let's be honest,</span></p>
+   <p region='pop1' style='basic' begin='00:18:23:06' end='00:18:25:12' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'><span tts:fontStyle='italic'>I mean, there are already</span></p>
+   <p region='pop2' style='basic' begin='00:18:23:06' end='00:18:25:12' tts:origin='17.5% 84.66%' tts:extent='67.5% 5.33%'><span tts:fontStyle='italic'>gay athletes in the league.</span></p>
+   <p region='pop1' style='basic' begin='00:18:25:14' end='00:18:27:20' tts:origin='12.5% 10%' tts:extent='72.5% 5.33%'><span tts:fontStyle='italic'>Just 'cause they're not vocal</span></p>
+   <p region='pop2' style='basic' begin='00:18:25:14' end='00:18:27:20' tts:origin='12.5% 15.33%' tts:extent='75% 5.33%'><span tts:fontStyle='italic'>doesn't mean they're not ther.</span></p>
+   <p region='pop1' style='basic' begin='00:18:27:22' end='00:18:29:11' tts:origin='22.5% 79.33%' tts:extent='32.5% 5.33%'><span tts:fontStyle='italic'>I know Dontel</span></p>
+   <p region='pop2' style='basic' begin='00:18:27:22' end='00:18:29:11' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'><span tts:fontStyle='italic'>ain't about that life.</span></p>
+   <p region='pop1' style='basic' begin='00:18:29:13' end='00:18:30:19' tts:origin='12.5% 79.33%' tts:extent='12.5% 5.33%'><span tts:fontStyle='italic'>[Guy]</span></p>
+   <p region='pop2' style='basic' begin='00:18:29:13' end='00:18:30:19' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'><span tts:fontStyle='italic'>Are you afraid it's contagiou?</span></p>
+   <p region='pop1' style='basic' begin='00:18:30:21' end='00:18:32:14' tts:origin='25% 79.33%' tts:extent='27.5% 5.33%'><span tts:fontStyle='italic'>I damn sure</span></p>
+   <p region='pop2' style='basic' begin='00:18:30:21' end='00:18:32:14' tts:origin='25% 84.66%' tts:extent='52.5% 5.33%'><span tts:fontStyle='italic'>ain't gonna find out.</span></p>
+   <p region='pop1' style='basic' begin='00:18:32:16' end='00:18:34:13' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'><span tts:fontStyle='italic'>No. Way. Boy.</span></p>
+   <p region='pop1' style='basic' begin='00:18:34:15' end='00:18:39:21' tts:origin='35% 79.33%' tts:extent='30% 5.33%'><span tts:fontStyle='italic'>- [laughter]</span></p>
+   <p region='pop2' style='basic' begin='00:18:34:15' end='00:18:39:21' tts:origin='35% 84.66%' tts:extent='30% 5.33%'><span tts:fontStyle='italic'>- [applause]</span></p>
+   <p region='pop1' style='basic' begin='00:18:39:23' end='00:18:41:19' tts:origin='22.5% 79.33%' tts:extent='52.5% 5.33%'>[Guy] I just want you</p>
+   <p region='pop2' style='basic' begin='00:18:39:23' end='00:18:41:19' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>to take a second, OK,</p>
+   <p region='pop1' style='basic' begin='00:18:41:21' end='00:18:45:11' tts:origin='17.5% 79.33%' tts:extent='52.5% 5.33%'>and just imagine that</p>
+   <p region='pop2' style='basic' begin='00:18:41:21' end='00:18:45:11' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>you're sitting in a dugout</p>
+   <p region='pop1' style='basic' begin='00:18:45:13' end='00:18:47:04' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>and you're looking</p>
+   <p region='pop2' style='basic' begin='00:18:45:13' end='00:18:47:04' tts:origin='27.5% 84.66%' tts:extent='40% 5.33%'>across the field</p>
+   <p region='pop1' style='basic' begin='00:18:47:06' end='00:18:49:09' tts:origin='25% 79.33%' tts:extent='40% 5.33%'>and who's there,</p>
+   <p region='pop2' style='basic' begin='00:18:47:06' end='00:18:49:09' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>in the other dugout,</p>
+   <p region='pop1' style='basic' begin='00:18:49:11' end='00:18:51:21' tts:origin='32.5% 79.33%' tts:extent='20% 5.33%'>is AIDS.</p>
+   <p region='pop2' style='basic' begin='00:18:49:11' end='00:18:51:21' tts:origin='32.5% 84.66%' tts:extent='37.5% 5.33%'>A team of AIDS.</p>
+   <p region='pop1' style='basic' begin='00:18:51:23' end='00:18:56:10' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>Baseball cap on and a uniform.</p>
+   <p region='pop2' style='basic' begin='00:18:51:23' end='00:18:56:10' tts:origin='12.5% 84.66%' tts:extent='60% 5.33%'>All skinny with lesions.</p>
+   <p region='pop1' style='basic' begin='00:18:56:12' end='00:18:58:09' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>Saying I wanna get in you.</p>
+   <p region='pop1' style='basic' begin='00:18:58:11' end='00:19:01:12' tts:origin='27.5% 79.33%' tts:extent='47.5% 5.33%'>I wanna get my AIDS</p>
+   <p region='pop2' style='basic' begin='00:18:58:11' end='00:19:01:12' tts:origin='27.5% 84.66%' tts:extent='40% 5.33%'>right up in you.</p>
+   <p region='pop1' style='basic' begin='00:19:01:14' end='00:19:02:21' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>I wanna give this man AIDS.</p>
+   <p region='pop1' style='basic' begin='00:19:02:23' end='00:19:04:09' tts:origin='17.5% 79.33%' tts:extent='30% 5.33%'>I wanna give</p>
+   <p region='pop2' style='basic' begin='00:19:02:23' end='00:19:04:09' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>this beautiful woman AIDS.</p>
+   <p region='pop1' style='basic' begin='00:19:04:11' end='00:19:05:17' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'>I wanna give this</p>
+   <p region='pop2' style='basic' begin='00:19:04:11' end='00:19:05:17' tts:origin='27.5% 84.66%' tts:extent='42.5% 5.33%'>whole table AIDS.</p>
+   <p region='pop1' style='basic' begin='00:19:05:19' end='00:19:08:19' tts:origin='20% 79.33%' tts:extent='55% 5.33%'>Well, not on my watch.</p>
+   <p region='pop2' style='basic' begin='00:19:05:19' end='00:19:08:19' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>Not on Guy Young's watch.</p>
+   <p region='pop1' style='basic' begin='00:19:08:21' end='00:19:12:20' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>We're not gonna let AIDS</p>
+   <p region='pop2' style='basic' begin='00:19:08:21' end='00:19:12:20' tts:origin='20% 84.66%' tts:extent='55% 5.33%'>get more hits than us.</p>
+   <p region='pop1' style='basic' begin='00:19:12:22' end='00:19:15:19' tts:origin='12.5% 79.33%' tts:extent='60% 5.33%'>We're not gonna let AIDS</p>
+   <p region='pop2' style='basic' begin='00:19:12:22' end='00:19:15:19' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>strike out more people than us.</p>
+   <p region='pop1' style='basic' begin='00:19:15:21' end='00:19:17:08' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>No, sir. Not on my watch.</p>
+   <p region='pop1' style='basic' begin='00:19:17:10' end='00:19:20:21' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>Let's take out our checkbooks.</p>
+   <p region='pop2' style='basic' begin='00:19:17:10' end='00:19:20:21' tts:origin='12.5% 84.66%' tts:extent='67.5% 5.33%'>Let's take out our wallets.</p>
+   <p region='pop1' style='basic' begin='00:19:20:23' end='00:19:22:03' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>And let's all be heroes together</p>
+   <p region='pop1' style='basic' begin='00:19:22:05' end='00:19:25:06' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>and win the World Series</p>
+   <p region='pop2' style='basic' begin='00:19:22:05' end='00:19:25:06' tts:origin='20% 84.66%' tts:extent='32.5% 5.33%'>against AIDS.</p>
+   <p region='pop1' style='basic' begin='00:19:25:08' end='00:19:26:20' tts:origin='35% 79.33%' tts:extent='12.5% 5.33%'>- OK?</p>
+   <p region='pop2' style='basic' begin='00:19:25:08' end='00:19:26:20' tts:origin='35% 84.66%' tts:extent='30% 5.33%'>- [applause]</p>
+   <p region='pop1' style='basic' begin='00:19:26:22' end='00:19:28:07' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>Let's find a cure.</p>
+   <p region='pop1' style='basic' begin='00:19:31:14' end='00:19:34:12' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>Let's find a cure for AIDS.</p>
+   <p region='pop1' style='basic' begin='00:19:37:00' end='00:19:38:02' tts:origin='20% 84.66%' tts:extent='70% 5.33%'>Shit, dude. An AIDS charity.</p>
+   <p region='pop1' style='basic' begin='00:19:38:04' end='00:19:40:02' tts:origin='30% 79.33%' tts:extent='60% 5.33%'>I mean, that's a fucking</p>
+   <p region='pop2' style='basic' begin='00:19:38:04' end='00:19:40:02' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>pretty big deal.</p>
+   <p region='pop1' style='basic' begin='00:19:40:04' end='00:19:43:01' tts:origin='10% 79.33%' tts:extent='67.5% 5.33%'>Yeah, man. All the top dogs</p>
+   <p region='pop2' style='basic' begin='00:19:40:04' end='00:19:43:01' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>have their own AIDS charities.</p>
+   <p region='pop1' style='basic' begin='00:19:43:03' end='00:19:45:19' tts:origin='10% 79.33%' tts:extent='65% 5.33%'>I mean, war torn countries</p>
+   <p region='pop2' style='basic' begin='00:19:43:03' end='00:19:45:19' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>and natural disasters,</p>
+   <p region='pop1' style='basic' begin='00:19:45:21' end='00:19:48:22' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>they come and go but the AID</p>
+   <p region='pop2' style='basic' begin='00:19:45:21' end='00:19:48:22' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>train keeps on rollin'.</p>
+   <p region='pop1' style='basic' begin='00:19:49:00' end='00:19:50:11' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>You're a good fit for AIDS, man.</p>
+   <p region='pop2' style='basic' begin='00:19:49:00' end='00:19:50:11' tts:origin='10% 84.66%' tts:extent='45% 5.33%'>I'm happy for you.</p>
+   <p region='pop1' style='basic' begin='00:19:50:13' end='00:19:52:01' tts:origin='22.5% 79.33%' tts:extent='42.5% 5.33%'>- That's awesome.</p>
+   <p region='pop2' style='basic' begin='00:19:50:13' end='00:19:52:01' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>- Thank you. Hey, Jed.</p>
+   <p region='pop1' style='basic' begin='00:19:52:03' end='00:19:53:17' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>Bring the boys over.</p>
+   <p region='pop1' style='basic' begin='00:19:53:19' end='00:19:56:19' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>Kenny Powers, I want you to meet</p>
+   <p region='pop2' style='basic' begin='00:19:53:19' end='00:19:56:19' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>my<span tts:fontStyle='italic'> Sports Sesh</span><span> cohorts.</span></p>
+   <p region='pop1' style='basic' begin='00:19:56:21' end='00:19:59:14' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>Three time Winston Cup champion,</p>
+   <p region='pop2' style='basic' begin='00:19:56:21' end='00:19:59:14' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>Jed Forney.</p>
+   <p region='pop1' style='basic' begin='00:19:59:16' end='00:20:00:17' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>Hall of Fame linebacker,</p>
+   <p region='pop2' style='basic' begin='00:19:59:16' end='00:20:00:17' tts:origin='10% 84.66%' tts:extent='27.5% 5.33%'>Jimmy Clay.</p>
+   <p region='pop1' style='basic' begin='00:20:00:19' end='00:20:02:08' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>And last but not least,</p>
+   <p region='pop1' style='basic' begin='00:20:02:10' end='00:20:04:13' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>former heavyweight champion</p>
+   <p region='pop2' style='basic' begin='00:20:02:10' end='00:20:04:13' tts:origin='17.5% 84.66%' tts:extent='32.5% 5.33%'>of the world,</p>
+   <p region='pop1' style='basic' begin='00:20:04:15' end='00:20:06:18' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>- Ronny &quot;The Hammer&quot; Garcia.</p>
+   <p region='pop2' style='basic' begin='00:20:04:15' end='00:20:06:18' tts:origin='15% 84.66%' tts:extent='47.5% 5.33%'>- Nice to meet you.</p>
+   <p region='pop1' style='basic' begin='00:20:06:20' end='00:20:08:03' tts:origin='15% 79.33%' tts:extent='25% 5.33%'>Holy shit.</p>
+   <p region='pop2' style='basic' begin='00:20:06:20' end='00:20:08:03' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>Well, you boys didn't forget</p>
+   <p region='pop1' style='basic' begin='00:20:08:05' end='00:20:10:23' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>- to eat your Wheaties, huh?</p>
+   <p region='pop2' style='basic' begin='00:20:08:05' end='00:20:10:23' tts:origin='15% 84.66%' tts:extent='30% 5.33%'>- [laughter]</p>
+   <p region='pop1' style='basic' begin='00:20:11:01' end='00:20:12:10' tts:origin='42.5% 79.33%' tts:extent='47.5% 5.33%'>Hey, you boys ready</p>
+   <p region='pop2' style='basic' begin='00:20:11:01' end='00:20:12:10' tts:origin='45% 84.66%' tts:extent='45% 5.33%'>to pop some champ?</p>
+   <p region='pop1' style='basic' begin='00:20:12:12' end='00:20:13:14' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>- Yeah. Hell yeah.</p>
+   <p region='pop2' style='basic' begin='00:20:12:12' end='00:20:13:14' tts:origin='27.5% 84.66%' tts:extent='17.5% 5.33%'>- Sure.</p>
+   <p region='pop1' style='basic' begin='00:20:13:16' end='00:20:14:19' tts:origin='27.5% 79.33%' tts:extent='40% 5.33%'>Because I put in</p>
+   <p region='pop2' style='basic' begin='00:20:13:16' end='00:20:14:19' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>my brownie points,</p>
+   <p region='pop1' style='basic' begin='00:20:14:21' end='00:20:16:12' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>now I'm ready to point</p>
+   <p region='pop2' style='basic' begin='00:20:14:21' end='00:20:16:12' tts:origin='35% 84.66%' tts:extent='35% 5.33%'>some brownies.</p>
+   <p region='pop1' style='basic' begin='00:20:16:14' end='00:20:17:17' tts:origin='37.5% 84.66%' tts:extent='25% 5.33%'>[laughter]</p>
+   <p region='pop1' style='basic' begin='00:20:17:19' end='00:20:19:23' tts:origin='10% 79.33%' tts:extent='42.5% 5.33%'>Wha-wha-what does</p>
+   <p region='pop2' style='basic' begin='00:20:17:19' end='00:20:19:23' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>point some brownies mean?</p>
+   <p region='pop1' style='basic' begin='00:20:20:01' end='00:20:22:00' tts:origin='15% 79.33%' tts:extent='75% 5.33%'>- Fuck some ladies in the ass.</p>
+   <p region='pop2' style='basic' begin='00:20:20:01' end='00:20:22:00' tts:origin='15% 84.66%' tts:extent='30% 5.33%'>- [Jed] Hey!</p>
+   <p region='pop1' style='basic' begin='00:20:22:02' end='00:20:24:17' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>[dance music playing]</p>
+   <p region='pop1' style='basic' begin='00:20:46:06' end='00:20:48:11' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>Hey, another round of shots.</p>
+   <p region='pop1' style='basic' begin='00:20:48:13' end='00:20:50:17' tts:origin='15% 79.33%' tts:extent='70% 5.33%'>- Coconut Ciroc, all around.</p>
+   <p region='pop2' style='basic' begin='00:20:48:13' end='00:20:50:17' tts:origin='15% 84.66%' tts:extent='30% 5.33%'>- Whoo! Man.</p>
+   <p region='pop1' style='basic' begin='00:20:50:19' end='00:20:53:05' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>- Big fucking spender.</p>
+   <p region='pop2' style='basic' begin='00:20:50:19' end='00:20:53:05' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>- That's so much money.</p>
+   <p region='pop1' style='basic' begin='00:20:53:07' end='00:20:55:20' tts:origin='12.5% 84.66%' tts:extent='72.5% 5.33%'>Shit, man. I'm bippin' daily.</p>
+   <p region='pop1' style='basic' begin='00:20:55:22' end='00:20:59:03' tts:origin='12.5% 79.33%' tts:extent='70% 5.33%'>Man, I haven't been to a VIP</p>
+   <p region='pop2' style='basic' begin='00:20:55:22' end='00:20:59:03' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>joint like this in a long time.</p>
+   <p region='pop1' style='basic' begin='00:20:59:05' end='00:21:00:14' tts:origin='10% 79.33%' tts:extent='45% 5.33%'>It's been a while.</p>
+   <p region='pop2' style='basic' begin='00:20:59:05' end='00:21:00:14' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>Thank you very much.</p>
+   <p region='pop1' style='basic' begin='00:21:00:16' end='00:21:03:09' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>Hey, don't get it twisted.</p>
+   <p region='pop2' style='basic' begin='00:21:00:16' end='00:21:03:09' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>We splittin' the check now.</p>
+   <p region='pop1' style='basic' begin='00:21:03:11' end='00:21:05:20' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>I actually only had two</p>
+   <p region='pop2' style='basic' begin='00:21:03:11' end='00:21:05:20' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>sexes on beaches.</p>
+   <p region='pop1' style='basic' begin='00:21:05:22' end='00:21:08:03' tts:origin='10% 79.33%' tts:extent='80% 5.33%'>Stop actin' like a little bitch,</p>
+   <p region='pop2' style='basic' begin='00:21:05:22' end='00:21:08:03' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>Kenny. You know you rich.</p>
+   <p region='pop1' style='basic' begin='00:21:08:05' end='00:21:09:16' tts:origin='32.5% 79.33%' tts:extent='25% 5.33%'>[laughter]</p>
+   <p region='pop2' style='basic' begin='00:21:08:05' end='00:21:09:16' tts:origin='32.5% 84.66%' tts:extent='37.5% 5.33%'>Yeah, I'm rich.</p>
+   <p region='pop1' style='basic' begin='00:21:09:18' end='00:21:12:02' tts:origin='12.5% 79.33%' tts:extent='60% 5.33%'>Hey, I'll pay for Kenny.</p>
+   <p region='pop2' style='basic' begin='00:21:09:18' end='00:21:12:02' tts:origin='10% 84.66%' tts:extent='62.5% 5.33%'>Hell, I got so much money</p>
+   <p region='pop1' style='basic' begin='00:21:12:04' end='00:21:13:06' tts:origin='10% 79.33%' tts:extent='30% 5.33%'>I don't even</p>
+   <p region='pop2' style='basic' begin='00:21:12:04' end='00:21:13:06' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>know what to do with it.</p>
+   <p region='pop1' style='basic' begin='00:21:13:08' end='00:21:14:20' tts:origin='40% 79.33%' tts:extent='42.5% 5.33%'>Hey, this bastard</p>
+   <p region='pop2' style='basic' begin='00:21:13:08' end='00:21:14:20' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>making all that bank</p>
+   <p region='pop1' style='basic' begin='00:21:14:22' end='00:21:17:01' tts:origin='32.5% 79.33%' tts:extent='57.5% 5.33%'>selling doo-doo chicken</p>
+   <p region='pop2' style='basic' begin='00:21:14:22' end='00:21:17:01' tts:origin='32.5% 84.66%' tts:extent='42.5% 5.33%'>to the poor folk.</p>
+   <p region='pop1' style='basic' begin='00:21:17:03' end='00:21:19:16' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>Hey, don't be jealous</p>
+   <p region='pop2' style='basic' begin='00:21:17:03' end='00:21:19:16' tts:origin='12.5% 84.66%' tts:extent='50% 5.33%'>of my chicken chain.</p>
+   <p region='pop1' style='basic' begin='00:21:19:18' end='00:21:21:13' tts:origin='20% 79.33%' tts:extent='70% 5.33%'>Ain't nobody jealous of your</p>
+   <p region='pop2' style='basic' begin='00:21:19:18' end='00:21:21:13' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>wack-ass chicken chain.</p>
+   <p region='pop1' style='basic' begin='00:21:21:15' end='00:21:23:06' tts:origin='22.5% 79.33%' tts:extent='67.5% 5.33%'>Shit, you know that chicken</p>
+   <p region='pop2' style='basic' begin='00:21:21:15' end='00:21:23:06' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'>nasty as a motherfucker</p>
+   <p region='pop1' style='basic' begin='00:21:23:08' end='00:21:25:00' tts:origin='27.5% 79.33%' tts:extent='37.5% 5.33%'>if my black ass</p>
+   <p region='pop2' style='basic' begin='00:21:23:08' end='00:21:25:00' tts:origin='27.5% 84.66%' tts:extent='62.5% 5.33%'>won't even eat that shit.</p>
+   <p region='pop1' style='basic' begin='00:21:25:02' end='00:21:26:06' tts:origin='30% 79.33%' tts:extent='30% 5.33%'>- [laughter]</p>
+   <p region='pop2' style='basic' begin='00:21:25:02' end='00:21:26:06' tts:origin='30% 84.66%' tts:extent='42.5% 5.33%'>- [Guy] Ah, shit!</p>
+   <p region='pop1' style='basic' begin='00:21:26:08' end='00:21:28:02' tts:origin='22.5% 79.33%' tts:extent='57.5% 5.33%'>He's black and he won't</p>
+   <p region='pop2' style='basic' begin='00:21:26:08' end='00:21:28:02' tts:origin='22.5% 84.66%' tts:extent='40% 5.33%'>eat the chicken.</p>
+   <p region='pop1' style='basic' begin='00:21:28:04' end='00:21:29:15' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>Somebody's buying it.</p>
+   <p region='pop1' style='basic' begin='00:21:29:17' end='00:21:32:18' tts:origin='22.5% 74%' tts:extent='30% 5.33%'>- [laughter]</p>
+   <p region='pop2' style='basic' begin='00:21:29:17' end='00:21:32:18' tts:origin='22.5% 79.33%' tts:extent='27.5% 5.33%'>- Hey, Guy,</p>
+   <p region='pop3' style='basic' begin='00:21:29:17' end='00:21:32:18' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>tell him what you got.</p>
+   <p region='pop1' style='basic' begin='00:21:32:20' end='00:21:33:22' tts:origin='15% 84.66%' tts:extent='75% 5.33%'>Oh, you wanna know what I got?</p>
+   <p region='pop1' style='basic' begin='00:21:34:00' end='00:21:34:22' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>I'll tell you what I got.</p>
+   <p region='pop1' style='basic' begin='00:21:35:00' end='00:21:37:03' tts:origin='20% 79.33%' tts:extent='20% 5.33%'>I got...</p>
+   <p region='pop2' style='basic' begin='00:21:35:00' end='00:21:37:03' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>I got two Regal Cinemas.</p>
+   <p region='pop1' style='basic' begin='00:21:37:05' end='00:21:39:17' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>I got a Napa Auto Parts.</p>
+   <p region='pop2' style='basic' begin='00:21:37:05' end='00:21:39:17' tts:origin='20% 84.66%' tts:extent='50% 5.33%'>I got eight Sbarros.</p>
+   <p region='pop1' style='basic' begin='00:21:39:19' end='00:21:41:17' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>I got I don't know</p>
+   <p region='pop2' style='basic' begin='00:21:39:19' end='00:21:41:17' tts:origin='27.5% 84.66%' tts:extent='42.5% 5.33%'>how many Subways.</p>
+   <p region='pop1' style='basic' begin='00:21:41:19' end='00:21:43:20' tts:origin='15% 79.33%' tts:extent='72.5% 5.33%'>Hey, Kenny, tell 'em what you</p>
+   <p region='pop2' style='basic' begin='00:21:41:19' end='00:21:43:20' tts:origin='15% 84.66%' tts:extent='67.5% 5.33%'>got. Tell 'em what you got.</p>
+   <p region='pop1' style='basic' begin='00:21:43:22' end='00:21:46:09' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>- Don't hold back now.</p>
+   <p region='pop2' style='basic' begin='00:21:43:22' end='00:21:46:09' tts:origin='22.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:21:46:11' end='00:21:50:10' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>I got a modest priced home.</p>
+   <p region='pop2' style='basic' begin='00:21:46:11' end='00:21:50:10' tts:origin='17.5% 84.66%' tts:extent='60% 5.33%'>I got a good deal on it.</p>
+   <p region='pop1' style='basic' begin='00:21:50:12' end='00:21:52:00' tts:origin='32.5% 79.33%' tts:extent='35% 5.33%'>- That's nice.</p>
+   <p region='pop2' style='basic' begin='00:21:50:12' end='00:21:52:00' tts:origin='32.5% 84.66%' tts:extent='17.5% 5.33%'>- Yeah.</p>
+   <p region='pop1' style='basic' begin='00:21:52:02' end='00:21:53:18' tts:origin='12.5% 79.33%' tts:extent='52.5% 5.33%'>What else, what else?</p>
+   <p region='pop2' style='basic' begin='00:21:52:02' end='00:21:53:18' tts:origin='12.5% 84.66%' tts:extent='77.5% 5.33%'>What else you got? Come on now.</p>
+   <p region='pop1' style='basic' begin='00:21:53:20' end='00:21:57:17' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>Oh... I got a family</p>
+   <p region='pop2' style='basic' begin='00:21:53:20' end='00:21:57:17' tts:origin='40% 84.66%' tts:extent='35% 5.33%'>that loves me.</p>
+   <p region='pop1' style='basic' begin='00:21:57:19' end='00:21:59:07' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>Loves the fuck outta me.</p>
+   <p region='pop1' style='basic' begin='00:21:59:09' end='00:22:01:08' tts:origin='17.5% 79.33%' tts:extent='40% 5.33%'>Like, they like,</p>
+   <p region='pop2' style='basic' begin='00:21:59:09' end='00:22:01:08' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>they really like me a lot.</p>
+   <p region='pop1' style='basic' begin='00:22:01:10' end='00:22:02:22' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>- [Jed] Seriously though,</p>
+   <p region='pop2' style='basic' begin='00:22:01:10' end='00:22:02:22' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>- What the fuck is that?</p>
+   <p region='pop1' style='basic' begin='00:22:03:00' end='00:22:04:08' tts:origin='17.5% 79.33%' tts:extent='67.5% 5.33%'>[Jed] like, something real.</p>
+   <p region='pop2' style='basic' begin='00:22:03:00' end='00:22:04:08' tts:origin='17.5% 84.66%' tts:extent='32.5% 5.33%'>What you got?</p>
+   <p region='pop1' style='basic' begin='00:22:04:10' end='00:22:08:08' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>- I'm about to get a pool.</p>
+   <p region='pop2' style='basic' begin='00:22:04:10' end='00:22:08:08' tts:origin='17.5% 84.66%' tts:extent='30% 5.33%'>- [cheering]</p>
+   <p region='pop1' style='basic' begin='00:22:08:10' end='00:22:09:13' tts:origin='10% 84.66%' tts:extent='32.5% 5.33%'>I love pools!</p>
+   <p region='pop1' style='basic' begin='00:22:09:15' end='00:22:11:11' tts:origin='20% 79.33%' tts:extent='55% 5.33%'>Hey, I swim in my pool</p>
+   <p region='pop2' style='basic' begin='00:22:09:15' end='00:22:11:11' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>every motherfucking day.</p>
+   <p region='pop1' style='basic' begin='00:22:11:13' end='00:22:14:10' tts:origin='12.5% 79.33%' tts:extent='50% 5.33%'>- Whoo! Pool! Pools!</p>
+   <p region='pop2' style='basic' begin='00:22:11:13' end='00:22:14:10' tts:origin='12.5% 84.66%' tts:extent='75% 5.33%'>- [all chanting] Pools! Pools!</p>
+   <p region='pop1' style='basic' begin='00:22:19:09' end='00:22:21:02' tts:origin='25% 79.33%' tts:extent='47.5% 5.33%'>I'm gonna get a big</p>
+   <p region='pop2' style='basic' begin='00:22:19:09' end='00:22:21:02' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>motherfucking pool!</p>
+   <p region='pop1' style='basic' begin='00:22:21:04' end='00:22:23:10' tts:origin='22.5% 79.33%' tts:extent='30% 5.33%'>- [cheering]</p>
+   <p region='pop2' style='basic' begin='00:22:21:04' end='00:22:23:10' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'>- Hey, let's all dance!</p>
+   <p region='pop1' style='basic' begin='00:22:23:12' end='00:22:26:01' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>[dance music playing]</p>
+   <p region='pop1' style='basic' begin='00:22:44:08' end='00:22:46:21' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>[alarm buzzing]</p>
+   <p region='pop1' style='basic' begin='00:23:00:14' end='00:23:02:23' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>[April] Please eat your cereal,</p>
+   <p region='pop2' style='basic' begin='00:23:00:14' end='00:23:02:23' tts:origin='12.5% 84.66%' tts:extent='57.5% 5.33%'>I'm not playing around.</p>
+   <p region='pop1' style='basic' begin='00:23:03:01' end='00:23:04:06' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>I need you to eat it right now.</p>
+   <p region='pop1' style='basic' begin='00:23:04:08' end='00:23:05:22' tts:origin='20% 79.33%' tts:extent='47.5% 5.33%'>- Hey, that's mine!</p>
+   <p region='pop2' style='basic' begin='00:23:04:08' end='00:23:05:22' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>- No, we're not gonna run</p>
+   <p region='pop1' style='basic' begin='00:23:06:00' end='00:23:07:04' tts:origin='10% 84.66%' tts:extent='52.5% 5.33%'>in the house, please.</p>
+   <p region='pop1' style='basic' begin='00:23:07:06' end='00:23:09:15' tts:origin='10% 79.33%' tts:extent='70% 5.33%'>Toby, I need you to give her</p>
+   <p region='pop2' style='basic' begin='00:23:07:06' end='00:23:09:15' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>her iPad back, please.</p>
+   <p region='pop1' style='basic' begin='00:23:09:17' end='00:23:12:02' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>Let's bring the sound down</p>
+   <p region='pop2' style='basic' begin='00:23:09:17' end='00:23:12:02' tts:origin='17.5% 84.66%' tts:extent='57.5% 5.33%'>just a decibel, please.</p>
+   <p region='pop1' style='basic' begin='00:23:12:04' end='00:23:14:23' tts:origin='25% 79.33%' tts:extent='37.5% 5.33%'>- Good morning.</p>
+   <p region='pop2' style='basic' begin='00:23:12:04' end='00:23:14:23' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>- Hey, good morning.</p>
+   <p region='pop1' style='basic' begin='00:23:15:01' end='00:23:16:09' tts:origin='27.5% 79.33%' tts:extent='45% 5.33%'>- Late night, huh?</p>
+   <p region='pop2' style='basic' begin='00:23:15:01' end='00:23:16:09' tts:origin='27.5% 84.66%' tts:extent='25% 5.33%'>- I guess.</p>
+   <p region='pop1' style='basic' begin='00:23:16:11' end='00:23:18:15' tts:origin='12.5% 79.33%' tts:extent='75% 5.33%'>- Hey, where's the aspirin at?</p>
+   <p region='pop2' style='basic' begin='00:23:16:11' end='00:23:18:15' tts:origin='12.5% 84.66%' tts:extent='35% 5.33%'>- Right there.</p>
+   <p region='pop1' style='basic' begin='00:23:18:17' end='00:23:21:01' tts:origin='20% 79.33%' tts:extent='17.5% 5.33%'>- Here?</p>
+   <p region='pop2' style='basic' begin='00:23:18:17' end='00:23:21:01' tts:origin='20% 84.66%' tts:extent='62.5% 5.33%'>- Mm-hmm. In that drawer.</p>
+   <p region='pop1' style='basic' begin='00:23:21:03' end='00:23:23:10' tts:origin='25% 79.33%' tts:extent='52.5% 5.33%'>- The coffee's ready.</p>
+   <p region='pop2' style='basic' begin='00:23:21:03' end='00:23:23:10' tts:origin='25% 84.66%' tts:extent='17.5% 5.33%'>- Nice.</p>
+   <p region='pop1' style='basic' begin='00:23:23:12' end='00:23:26:05' tts:origin='27.5% 79.33%' tts:extent='47.5% 5.33%'>- And you got this.</p>
+   <p region='pop2' style='basic' begin='00:23:23:12' end='00:23:26:05' tts:origin='27.5% 84.66%' tts:extent='15% 5.33%'>- Hmm?</p>
+   <p region='pop1' style='basic' begin='00:23:28:07' end='00:23:29:18' tts:origin='35% 79.33%' tts:extent='55% 5.33%'>Toby, please get ready</p>
+   <p region='pop2' style='basic' begin='00:23:28:07' end='00:23:29:18' tts:origin='35% 84.66%' tts:extent='27.5% 5.33%'>for school.</p>
+   <p region='pop1' style='basic' begin='00:23:29:20' end='00:23:31:09' tts:origin='22.5% 84.66%' tts:extent='67.5% 5.33%'>I'm not gonna say it again.</p>
+   <p region='pop1' style='basic' begin='00:23:37:18' end='00:23:39:20' tts:origin='40% 84.66%' tts:extent='17.5% 5.33%'>[sighs]</p>
+   <p region='pop1' style='basic' begin='00:23:40:14' end='00:23:42:09' tts:origin='35% 84.66%' tts:extent='27.5% 5.33%'>Goddamn it.</p>
+   <p region='pop1' style='basic' begin='00:23:46:10' end='00:23:48:17' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>[vehicle approaching]</p>
+   <p region='pop1' style='basic' begin='00:23:48:19' end='00:23:50:15' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>[hip hop music playing]</p>
+   <p region='pop1' style='basic' begin='00:23:51:11' end='00:23:53:01' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>[revs engine]</p>
+   <p region='pop1' style='basic' begin='00:23:55:00' end='00:23:56:21' tts:origin='20% 79.33%' tts:extent='42.5% 5.33%'>Look at this guy.</p>
+   <p region='pop2' style='basic' begin='00:23:55:00' end='00:23:56:21' tts:origin='20% 84.66%' tts:extent='70% 5.33%'>This is the guy from before.</p>
+   <p region='pop1' style='basic' begin='00:23:56:23' end='00:23:59:19' tts:origin='10% 79.33%' tts:extent='20% 5.33%'>[laughs]</p>
+   <p region='pop2' style='basic' begin='00:23:56:23' end='00:23:59:19' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>Look at his little Sebring.</p>
+   <p region='pop1' style='basic' begin='00:23:59:21' end='00:24:01:06' tts:origin='15% 84.66%' tts:extent='75% 5.33%'>Hey, I like that Sebring, bro.</p>
+   <p region='pop1' style='basic' begin='00:24:01:08' end='00:24:03:19' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>Oh, my God. [woman laughs]</p>
+   <p region='pop1' style='basic' begin='00:24:03:21' end='00:24:05:22' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>He is a real loser.</p>
+   <p region='pop1' style='basic' begin='00:24:06:00' end='00:24:08:03' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>[revs engine]</p>
+   <p region='pop1' style='basic' begin='00:24:10:11' end='00:24:12:13' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>[laugh echoing]</p>
+   <p region='pop1' style='basic' begin='00:24:17:11' end='00:24:21:03' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>[slow, deep laughter]</p>
+   <p region='pop1' style='basic' begin='00:24:37:12' end='00:24:39:23' tts:origin='22.5% 79.33%' tts:extent='32.5% 5.33%'>It's not nice</p>
+   <p region='pop2' style='basic' begin='00:24:37:12' end='00:24:39:23' tts:origin='22.5% 84.66%' tts:extent='57.5% 5.33%'>to call people faggots.</p>
+   <p region='pop1' style='basic' begin='00:24:41:00' end='00:24:42:19' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>Faggots.</p>
+   <p region='pop1' style='basic' begin='00:24:45:05' end='00:24:47:13' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>[engines rev]</p>
+   <p region='pop1' style='basic' begin='00:24:52:11' end='00:24:54:00' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>- [theme song plays]</p>
+   <p region='pop2' style='basic' begin='00:24:52:11' end='00:24:54:00' tts:origin='25% 84.66%' tts:extent='40% 5.33%'>- [tires squeal]</p>
+   <p region='pop1' style='basic' begin='00:25:01:03' end='00:25:03:03' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>[honking horn]</p>
+   <p region='pop1' style='basic' begin='00:25:24:00' end='00:25:26:01' tts:origin='30% 84.66%' tts:extent='40% 5.33%'>[car horn honks]</p>
+   <p region='pop1' style='basic' begin='00:25:32:22' end='00:25:34:06' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>[laughs]</p>
+   <p region='pop1' style='basic' begin='00:25:34:08' end='00:25:36:07' tts:origin='25% 84.66%' tts:extent='65% 5.33%'>This motherfucker's crazy.</p>
+   <p region='pop1' style='basic' begin='00:25:45:01' end='00:25:46:07' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>[laughs]</p>
+   <p region='pop1' style='basic' begin='00:25:46:09' end='00:25:48:03' tts:origin='15% 84.66%' tts:extent='70% 5.33%'>What the fuck was that shit?</p>
+   <p region='pop1' style='basic' begin='00:25:58:19' end='00:26:00:01' tts:origin='67.5% 84.66%' tts:extent='22.5% 5.33%'>[chatter]</p>
+   <p region='pop1' style='basic' begin='00:26:01:20' end='00:26:03:17' tts:origin='25% 79.33%' tts:extent='20% 5.33%'>- OMFNG.</p>
+   <p region='pop2' style='basic' begin='00:26:01:20' end='00:26:03:17' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>- [engine shuts off]</p>
+   <p region='pop1' style='basic' begin='00:26:03:19' end='00:26:06:22' tts:origin='20% 79.33%' tts:extent='62.5% 5.33%'>Look at that body damage.</p>
+   <p region='pop2' style='basic' begin='00:26:03:19' end='00:26:06:22' tts:origin='20% 84.66%' tts:extent='47.5% 5.33%'>This is structural.</p>
+   <p region='pop1' style='basic' begin='00:26:07:00' end='00:26:07:22' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>What happened here?</p>
+   <p region='pop1' style='basic' begin='00:26:08:00' end='00:26:10:01' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Shit, Mark. Shit happened.</p>
+   <p region='pop1' style='basic' begin='00:26:10:03' end='00:26:11:19' tts:origin='10% 84.66%' tts:extent='65% 5.33%'>Just like the saying goes.</p>
+   <p region='pop1' style='basic' begin='00:26:11:21' end='00:26:13:17' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>And I didn't fill it up</p>
+   <p region='pop2' style='basic' begin='00:26:11:21' end='00:26:13:17' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>with gas, either.</p>
+   <p region='pop1' style='basic' begin='00:26:13:19' end='00:26:16:09' tts:origin='40% 79.33%' tts:extent='50% 5.33%'>Well, I'm gonna need</p>
+   <p region='pop2' style='basic' begin='00:26:13:19' end='00:26:16:09' tts:origin='40% 84.66%' tts:extent='35% 5.33%'>a full report.</p>
+   <p region='pop1' style='basic' begin='00:26:16:11' end='00:26:18:10' tts:origin='40% 79.33%' tts:extent='42.5% 5.33%'>You... gonna have</p>
+   <p region='pop2' style='basic' begin='00:26:16:11' end='00:26:18:10' tts:origin='40% 84.66%' tts:extent='50% 5.33%'>to do the paperwork.</p>
+   <p region='pop1' style='basic' begin='00:26:18:12' end='00:26:19:22' tts:origin='10% 79.33%' tts:extent='35% 5.33%'>Your laws mean</p>
+   <p region='pop2' style='basic' begin='00:26:18:12' end='00:26:19:22' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>nothing to me.</p>
+   <p region='pop1' style='basic' begin='00:26:20:00' end='00:26:22:16' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>Last night I had a taste</p>
+   <p region='pop2' style='basic' begin='00:26:20:00' end='00:26:22:16' tts:origin='10% 84.66%' tts:extent='35% 5.33%'>of the A-list.</p>
+   <p region='pop1' style='basic' begin='00:26:22:18' end='00:26:26:20' tts:origin='10% 79.33%' tts:extent='77.5% 5.33%'>And it reminded me of something</p>
+   <p region='pop2' style='basic' begin='00:26:22:18' end='00:26:26:20' tts:origin='10% 84.66%' tts:extent='80% 5.33%'>I've known for a very long time.</p>
+   <p region='pop1' style='basic' begin='00:26:26:22' end='00:26:28:11' tts:origin='10% 84.66%' tts:extent='50% 5.33%'>I'm better than you.</p>
+   <p region='pop1' style='basic' begin='00:26:28:13' end='00:26:31:10' tts:origin='10% 79.33%' tts:extent='77.5% 5.33%'>This little fucking parking lot</p>
+   <p region='pop2' style='basic' begin='00:26:28:13' end='00:26:31:10' tts:origin='10% 84.66%' tts:extent='77.5% 5.33%'>here, this may be your kingdom,</p>
+   <p region='pop1' style='basic' begin='00:26:31:12' end='00:26:33:17' tts:origin='10% 79.33%' tts:extent='30% 5.33%'>your legacy.</p>
+   <p region='pop2' style='basic' begin='00:26:31:12' end='00:26:33:17' tts:origin='10% 84.66%' tts:extent='75% 5.33%'>It's a piss in the pool to me.</p>
+   <p region='pop1' style='basic' begin='00:26:33:19' end='00:26:36:12' tts:origin='10% 79.33%' tts:extent='60% 5.33%'>From this moment forward</p>
+   <p region='pop2' style='basic' begin='00:26:33:19' end='00:26:36:12' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>I'm getting what's mine.</p>
+   <p region='pop1' style='basic' begin='00:26:36:14' end='00:26:39:11' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>Fame, money, respect,</p>
+   <p region='pop2' style='basic' begin='00:26:36:14' end='00:26:39:11' tts:origin='10% 84.66%' tts:extent='37.5% 5.33%'>chicken chains.</p>
+   <p region='pop1' style='basic' begin='00:26:39:13' end='00:26:42:23' tts:origin='10% 79.33%' tts:extent='55% 5.33%'>And if you doubt that,</p>
+   <p region='pop2' style='basic' begin='00:26:39:13' end='00:26:42:23' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>all of you can suck my nuts.</p>
+   <p region='pop1' style='basic' begin='00:26:43:01' end='00:26:44:16' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>Suck on them so fucking hard</p>
+   <p region='pop1' style='basic' begin='00:26:44:18' end='00:26:46:12' tts:origin='10% 79.33%' tts:extent='52.5% 5.33%'>you can't even breath</p>
+   <p region='pop2' style='basic' begin='00:26:44:18' end='00:26:46:12' tts:origin='10% 84.66%' tts:extent='47.5% 5.33%'>through your mouth,</p>
+   <p region='pop1' style='basic' begin='00:26:46:14' end='00:26:49:01' tts:origin='10% 79.33%' tts:extent='57.5% 5.33%'>only through your nose,</p>
+   <p region='pop2' style='basic' begin='00:26:46:14' end='00:26:49:01' tts:origin='10% 84.66%' tts:extent='70% 5.33%'>but it'll be even hard to do</p>
+   <p region='pop1' style='basic' begin='00:26:49:03' end='00:26:51:17' tts:origin='12.5% 79.33%' tts:extent='65% 5.33%'>'cause my fucking fat dick</p>
+   <p region='pop2' style='basic' begin='00:26:49:03' end='00:26:51:17' tts:origin='10% 84.66%' tts:extent='67.5% 5.33%'>will be clogging that shit.</p>
+   <p region='pop1' style='basic' begin='00:26:51:19' end='00:26:55:19' tts:origin='10% 79.33%' tts:extent='75% 5.33%'>I'm no longer some slack-jawed</p>
+   <p region='pop2' style='basic' begin='00:26:51:19' end='00:26:55:19' tts:origin='10% 84.66%' tts:extent='60% 5.33%'>dipshit that rents cars.</p>
+   <p region='pop1' style='basic' begin='00:26:55:21' end='00:26:59:07' tts:origin='12.5% 79.33%' tts:extent='77.5% 5.33%'>Now I'm just back to just being</p>
+   <p region='pop2' style='basic' begin='00:26:55:21' end='00:26:59:07' tts:origin='12.5% 84.66%' tts:extent='55% 5.33%'>a regular to who I am.</p>
+   <p region='pop1' style='basic' begin='00:26:59:09' end='00:27:01:14' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>You wanna fucking air battle,</p>
+   <p region='pop2' style='basic' begin='00:26:59:09' end='00:27:01:14' tts:origin='10% 84.66%' tts:extent='15% 5.33%'>bitch?</p>
+   <p region='pop1' style='basic' begin='00:27:01:16' end='00:27:03:00' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>Let's fucking air battle,</p>
+   <p region='pop2' style='basic' begin='00:27:01:16' end='00:27:03:00' tts:origin='10% 84.66%' tts:extent='10% 5.33%'>huh.</p>
+   <p region='pop1' style='basic' begin='00:27:03:02' end='00:27:04:21' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>- [mimics punching sounds]</p>
+   <p region='pop2' style='basic' begin='00:27:03:02' end='00:27:04:21' tts:origin='17.5% 84.66%' tts:extent='37.5% 5.33%'>- Come on, man.</p>
+   <p region='pop1' style='basic' begin='00:27:04:23' end='00:27:06:03' tts:origin='22.5% 79.33%' tts:extent='40% 5.33%'>- You like that?</p>
+   <p region='pop2' style='basic' begin='00:27:04:23' end='00:27:06:03' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>- Don't fake punch me.</p>
+   <p region='pop1' style='basic' begin='00:27:06:05' end='00:27:07:19' tts:origin='10% 79.33%' tts:extent='37.5% 5.33%'>Come on. Put up</p>
+   <p region='pop2' style='basic' begin='00:27:06:05' end='00:27:07:19' tts:origin='10% 84.66%' tts:extent='55% 5.33%'>some fucking defenses.</p>
+   <p region='pop1' style='basic' begin='00:27:07:21' end='00:27:09:17' tts:origin='42.5% 84.66%' tts:extent='47.5% 5.33%'>Don't air punch me.</p>
+   <p region='pop1' style='basic' begin='00:27:09:19' end='00:27:11:14' tts:origin='42.5% 79.33%' tts:extent='47.5% 5.33%'>You're not doing it</p>
+   <p region='pop2' style='basic' begin='00:27:09:19' end='00:27:11:14' tts:origin='42.5% 84.66%' tts:extent='37.5% 5.33%'>good naturedly.</p>
+   <p region='pop1' style='basic' begin='00:27:11:16' end='00:27:13:06' tts:origin='65% 84.66%' tts:extent='25% 5.33%'>Stop, man.</p>
+   <p region='pop1' style='basic' begin='00:27:13:08' end='00:27:14:15' tts:origin='40% 84.66%' tts:extent='17.5% 5.33%'>[gasps]</p>
+   <p region='pop1' style='basic' begin='00:27:15:08' end='00:27:16:13' tts:origin='30% 84.66%' tts:extent='60% 5.33%'>You just connected, man.</p>
+   <p region='pop1' style='basic' begin='00:27:16:15' end='00:27:18:01' tts:origin='10% 79.33%' tts:extent='62.5% 5.33%'>OK, I know. That last one</p>
+   <p region='pop2' style='basic' begin='00:27:16:15' end='00:27:18:01' tts:origin='10% 84.66%' tts:extent='42.5% 5.33%'>got away from me.</p>
+   <p region='pop1' style='basic' begin='00:27:18:03' end='00:27:20:16' tts:origin='10% 79.33%' tts:extent='72.5% 5.33%'>But that is what happens when</p>
+   <p region='pop2' style='basic' begin='00:27:18:03' end='00:27:20:16' tts:origin='12.5% 84.66%' tts:extent='70% 5.33%'>people get into air battles.</p>
+   <p region='pop1' style='basic' begin='00:27:20:18' end='00:27:22:22' tts:origin='10% 84.66%' tts:extent='72.5% 5.33%'>Sometimes they connect, Mark.</p>
+   <p region='pop1' style='basic' begin='00:27:23:00' end='00:27:24:03' tts:origin='10% 84.66%' tts:extent='57.5% 5.33%'>Sometimes they connect.</p>
+   <p region='pop1' style='basic' begin='00:27:26:01' end='00:27:27:19' tts:origin='10% 84.66%' tts:extent='17.5% 5.33%'>I quit.</p>
+   <p region='pop1' style='basic' begin='00:27:27:21' end='00:27:31:01' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>[classic rock playing]</p>
+  </div>
+ </body>
+</tt>

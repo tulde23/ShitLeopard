@@ -17,3 +17,5 @@ export const SET_DIALOG_LINES = 'set_dialog_lines';
 export const SET_IS_OPEN = 'set_is_open';
 export const SET_HIGHLIGHTED_TEXT = 'set_highlighted_text';
 export const SET_ADJACENT_TEXT = 'set_adjacent_text';
+export const SET_SHOWS = 'set_shows';
+export const SET_SHOW_INDEX = 'set_show_index';

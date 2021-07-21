@@ -26,10 +26,7 @@ param(
  
  
  
- if( $buildVue -eq $True){
- Write-Host 'npm run build'
-  npm run build
- }
+
  
  
  $publish = "$PSScriptRoot\ubuntu"
@@ -49,15 +46,16 @@ param(
 
  if( $publishLocal -eq $True){
 		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.86.38:/home/tulde23/ubuntu';
-		pscp -P 22 -unsafe -r $destination tulde23@192.168.86.38:/home/tulde23/ubuntu 
+		pscp -P 22 -unsafe -r $destination tulde23@192.168.86.32:/home/tulde23/ubuntu 
 	}
 	else{
 		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/ubuntu';
 		pscp -P 22 -unsafe -r $destination tulde23@tully.world:/home/tulde23/ubuntu 
 	}
  }
- #sudo cp -RT sl/ubuntu /var/aspnetcore/shit_leopard
- #sudo systemctl restart kestrel-shitleopard.service
 
- #sudo cp -RT ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
+
+
+ #sudo cp -Rf ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
+  #sudo systemctl restart kestrel-shitleopard.service
 

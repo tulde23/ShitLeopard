@@ -35,6 +35,9 @@ namespace ShitLeopard.Api
 
             CreateMap<EpisodeModel, EpisodeDocument>()
               .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
+
+            CreateMap<ShowModel, ShowDocument>()
+                .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
         }
     }
 }

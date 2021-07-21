@@ -1,3 +1,4 @@
+import { ShowModel } from '@/models';
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
@@ -6,7 +7,7 @@ import {
   EpisodeGroup,
   Quote,
   ScriptLine,
-  Tag
+  Tag,
 } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
@@ -73,7 +74,13 @@ const mutations = {
   },
   [ACTIONS.SET_ADJACENT_TEXT](state: State, e: DialogModel[]) {
     state.adjacentText = e;
-  }
+  },
+  [ACTIONS.SET_SHOWS](state: State, e: ShowModel[]) {
+    state.shows = e;
+  },
+  [ACTIONS.SET_SHOW_INDEX](state: State, e: number) {
+    state.showIndex = e;
+  },
 };
 
 export default mutations;
