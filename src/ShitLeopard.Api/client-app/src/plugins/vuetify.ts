@@ -14,9 +14,10 @@ const opts = {
         error: '#870111',
         info: '#33658A',
         success: '#A8C256 ',
-        warning: '#585123'
-      }
-    }
-  }
+        warning: '#585123',
+      },
+    },
+  },
 };
+
 export default new Vuetify(opts);
