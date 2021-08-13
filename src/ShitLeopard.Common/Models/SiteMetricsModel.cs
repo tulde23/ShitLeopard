@@ -13,5 +13,7 @@ namespace ShitLeopard.Common.Models
 
         public string Route { get; set; }
         public DateTime? LastAccessTime { get; set; }
+
+        public string Body { get; set; }
     }
 }

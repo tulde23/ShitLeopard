@@ -25,13 +25,6 @@ export default class App extends Vue {
   public get authorizedRoutes() {
     return this.router.options.routes;
   }
-  public setIndex(i: number) {
-    this.$api.setShowIndex(i);
-  }
-  created() {
-    this.$api.setShowIndex(1);
-    // this.$vuetify.theme.dark = true;
-    console.log(this.authorizedRoutes);
-    this.$api.getShows();
-  }
+
+  created() {}
 }

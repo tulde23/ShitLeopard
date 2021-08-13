@@ -4,7 +4,6 @@ namespace ShitLeopard.DataLoader
 {
     public static class Title
     {
-
         private const string _logo = @"
 
  .-._                                                   _,-,
@@ -14,11 +13,11 @@ namespace ShitLeopard.DataLoader
            `._   `#==='''           '''===#'   _,'
               `._/)  ._ _.  (\_,'
                )*'     **.__     __.**     '*(
-#  .==..__  ""   ""  __..==,  # 
+#  .==..__  ""   ""  __..==,  #
                #   `'._(_).       .(_)_.''   #
 
-
 ";
+
         public static void Write()
         {
             var title = "ShitLeopard Data Loader - Pussy Tits.";

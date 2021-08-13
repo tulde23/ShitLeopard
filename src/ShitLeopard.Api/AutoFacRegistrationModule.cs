@@ -20,6 +20,9 @@ namespace ShitLeopard.Api
             builder.RegisterType<EntityContext>().As<IEntityContext>().InstancePerDependency();
             //builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
             builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
+
+   
+         
             //builder.RegisterType<StanfordNaturalLanguageService>().As<INaturalLanguageService>().InstancePerDependency();
         }
     }

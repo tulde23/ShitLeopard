@@ -5,13 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
+using ShitLeopard.Api.ViewModels;
+using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class EpisodeController : ServiceController<IEpisodeService>
+
+    public class EpisodeController : ServiceController<IEpisodeService, IShowService>
     {
-        public EpisodeController(ILoggerFactory loggerFactory, IEpisodeService service) : base(loggerFactory, service)
+        public EpisodeController(ILoggerFactory loggerFactory, IEpisodeService service, IShowService showService) : base(loggerFactory, service, showService)
         {
         }
 
@@ -20,34 +23,44 @@ namespace ShitLeopard.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Produces("application/json")]
-        [ProducesResponseType(200, Type = typeof(List<EpisodeModel>))]
-        public async Task<IEnumerable<EpisodeModel>> GetEpisodes([FromQuery] string pattern = null)
+        public async Task<IActionResult> GetEpisodes([FromQuery] string pattern = null)
         {
-            return await Service.GetEpisodes(pattern);
+            var viewModel = new EpisodeViewModel
+            {
+                Episodes = new List<EpisodeModel>(await Service.GetEpisodes(pattern)),
+                Shows = new List<ShowModel>(await Service2.GetShowsAsync())
+            };
+            return View("Episodes", viewModel);
         }
 
         /// <summary>
         /// Retrieves all Episodes.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GroupBySeason")]
+        [HttpGet("GroupBySeason/{showid}")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(List<EpisodeModel>))]
-        public async Task<IEnumerable<EpisodeGroupingModel>> GetEpisodesBySeason([FromQuery] string pattern = null)
+        public async Task<EpisodeGroupingViewModel> GetEpisodesBySeason([FromRoute] string showid, [FromQuery] string pattern = null)
         {
-            var episodes = await Service.GetEpisodes(pattern);
+            var episodes = await Service.GetEpisodes(showid, pattern);
             var items = new List<EpisodeGroupingModel>();
+
+            var show = await  this.Service2.GetShowAsync(showid);
             foreach (var item in episodes.GroupBy(x => x.SeasonId))
             {
                 items.Add(new EpisodeGroupingModel
                 {
+         
                     Season = $"Season {item.Key}",
                     SeasonId = item.Key,
                     Episodes = new List<EpisodeModel>(item)
+                
                 });
             }
-            return items;
+
+            items = items.OrderBy(x => int.Parse(x.SeasonId)).ToList();
+            var model = new EpisodeGroupingViewModel { ShowName = show.Title,  Episodes = items, SeasonCount = items.Count, EpisodeCount = items.SelectMany(x=>x.Episodes).Count() };
+            return model;
         }
 
         /// <summary>

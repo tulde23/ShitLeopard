@@ -1,0 +1,17 @@
+{
+  "ShowName": "Trailer Park Boys",
+  "ClosedCaptionsPath": "./TrailerParkBoys/ClosedCaptions",
+  "ClosedCaptionsParser": "SMPTE-TT",
+  "ClosedCaptionsFileExtension": ".html",
+  "Metadata": {
+    "Provider": "wikipedia",
+    "ShowId": "60f6d90310ab6bd56f5ec7c4",
+    "ClassSelectors": [
+      "wikitable",
+      "plainrowheaders",
+      "wikiepisodetable"
+    ],
+    "ShowName": "List_of_Trailer_Park_Boys_episodes",
+    "LastEpisodeId": 105
+  }
+}

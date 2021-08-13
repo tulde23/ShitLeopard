@@ -1,0 +1,44 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+
+
+@if (searchResults == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+<ul>
+    @foreach (var quote in searchResults)
+    {
+        <li>
+            <p>
+                @quote.showName
+            </p>
+            Season @quote.seasonId, Episode @quote.episodeNumber - @quote.episodeTitle
+
+            <p>
+                @quote.body
+            </p>
+        </li>
+    }
+</ul>
+    
+           
+  
+}
+
+@code {
+    private SearchResult[] searchResults;
+
+    protected override async Task OnInitializedAsync()
+    {
+        searchResults = await Http.GetFromJsonAsync<SearchResult[]>("/sample-data/search.json");
+        //    var json = await response.Content.ReadAsStringAsync();
+        //    searchResults = System.Text.Json.JsonSerializer.Deserialize(json);
+    }
+
+
+}

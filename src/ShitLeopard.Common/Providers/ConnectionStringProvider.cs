@@ -23,7 +23,7 @@ namespace ShitLeopard.Common.Providers
         public string GetConnectionString()
         {
             var cs = GetString("connectionString");
-            Console.WriteLine(cs);
+
             return cs;
         }
 
@@ -31,31 +31,29 @@ namespace ShitLeopard.Common.Providers
         {
             try
             {
-                if (_hostEnvironment.IsProduction())
-                {
-                    var val = _configuration[key];
-                    _logger.LogWarning($"Production setting {key}= {val}");
-                    return val;
-                }
-                else
-                {
-                    var cs = _configuration[key];
-                    var secretKey = _configuration[cs];
-                    var val = _configuration[secretKey];
+                var cs = _configuration[key];
 
-                    if (string.IsNullOrWhiteSpace(val))
+                var secretKey = _configuration[cs];
+
+                try
+                {
+                    var k = _configuration[secretKey];
+                    if(!string.IsNullOrEmpty(k))
                     {
-                        val = cs;
+                        secretKey = k;
                     }
-                    _logger.LogWarning($"Non Production setting {key}= {val}");
-                    return val;
                 }
+                catch { }
+          
+
+                
+                _logger.LogWarning($"Mongo Connection {key}= {secretKey} ");
+                return string.IsNullOrEmpty(secretKey) ? cs : secretKey;
             }
-            catch
+            catch(Exception ex)
             {
-                var val = _configuration[key];
-                _logger.LogWarning($"Non Production setting {key}= {val}");
-                return val;
+                _logger.LogWarning($"{key} does not exist.");
+                return null;
             }
         }
     }

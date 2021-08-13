@@ -1,25 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using MongoDB.Entities;
 using ShitLeopard.Common.Documents;
 using ShitLeopard.DataLayer.Entities;
-using MongoDB.Driver.Linq;
+using ShitLeopard.DataLoader.Configuration;
 using ShitLeopard.DataLoader.Contracts;
 
 namespace ShitLeopard.DataLoader.Parsers
 {
     internal class BulkDataImporter : IShowBulkDataImporter
     {
+        private readonly ConnectionString _connectionString;
+        private readonly Options _options;
+        private readonly IConsoleLogger _consoleLogger;
+
+        public BulkDataImporter(ConnectionString connectionString, Options options, IConsoleLogger consoleLogger)
+        {
+            _connectionString = connectionString;
+            _options = options;
+            _consoleLogger = consoleLogger;
+        }
+
         public async Task InitAsync()
         {
-            await DB.InitAsync("ShitLeopard", MongoClientSettings.FromConnectionString("mongodb://admin:Tulde30#@192.168.86.27:27017"));
+            await DB.InitAsync("ShitLeopard", MongoClientSettings.FromConnectionString(_connectionString.Value));
+            _consoleLogger.Write($"Initialized Shitleopard db connection: {_connectionString.Value}", ConsoleColor.Magenta);
         }
 
         public async Task<int> ImportAsync(IEnumerable<Season> seasons)
         {
-          
             var dialogLines = new List<DialogDocument>();
 
             var showId = seasons.SelectMany(x => x.Episode.Select(y => y.Show.ShowId)).Distinct().FirstOrDefault();
@@ -28,7 +41,6 @@ namespace ShitLeopard.DataLoader.Parsers
 
             var show = await DB.Collection<ShowDocument>().Find(filter).SingleOrDefaultAsync();
 
-
             var episodes = seasons.SelectMany(x => x.Episode.Select(y => new { Season = x, Episode = y }).Select(x => new EpisodeDocument
             {
                 EpisodeNumber = x.Episode.Id,
@@ -36,6 +48,7 @@ namespace ShitLeopard.DataLoader.Parsers
                 Title = x.Episode.Title,
                 SeasonId = $"{ x.Season.Id}",
                 Synopsis = x.Episode.Synopsis,
+                Body = string.Join(" ", x.Episode.Script.Select(x=>x.Body)),
                 Show = show ?? new ShowDocument
                 {
                     ID = showId
@@ -58,7 +71,8 @@ namespace ShitLeopard.DataLoader.Parsers
                             Body = line.Body,
                             End = line.End,
                             Start = line.Start,
-                            Episode = match
+                            Episode = match,
+                            Offset = line.Offset
                         };
                         dialogLines.Add(dialog);
                     }
@@ -67,60 +81,29 @@ namespace ShitLeopard.DataLoader.Parsers
 
             await DB.Collection<DialogDocument>().InsertManyAsync(dialogLines);
 
-            //var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(z => z.ScriptLine.Select(a => new { Line = a, Episode = y }))));
-            //var scriptLines = lines.Select(x => new LineDocument
-            //{
-            //    ScriptLineId = x.Line.Id,
-            //    Body = x.Line.Body,
-            //    EpisodeId = x.Episode.Id,
-            //    EpisodeTitle = x.Episode.Title,
-
-            //    Character = x.Line.Character == null ? new CharacterDocument() : new CharacterDocument
-            //    {
-            //        Aliases = x.Line.Character.Aliases,
-            //        ID = x.Line.Character.Id,
-            //        Name = x.Line.Character.Name,
-            //        Notes = x.Line.Character.Notes,
-            //        PlayedBy = x.Line.Character.PlayedBy
-            //    }
-            //});
-
-            //await scriptLineCollection.InsertManyAsync(lines.Select(x => new LineDocument
-            //{
-            //    ID = x.Line.Id,
-            //    Body = x.Line.Body,
-            //    EpisodeId = x.Episode.Id,
-            //    EpisodeTitle = x.Episode.Title,
-
-            //    Character = x.Line.Character == null ? new CharacterDocument() : new CharacterDocument
-            //    {
-            //        Aliases = x.Line.Character.Aliases,
-            //        ID = x.Line.Character.Id,
-            //        Name = x.Line.Character.Name,
-            //        Notes = x.Line.Character.Notes,
-            //        PlayedBy = x.Line.Character.PlayedBy
-            //    }
-            //}));
-
-            //var episodes = seasons.SelectMany(x => x.Episode);
-            //await episodeCollection.InsertManyAsync(episodes.Select(x => new EpisodeDocument
-            //{
-            //    ID = x.Id,
-            //    OffsetId = x.OffsetId,
-            //    SeasonId = x.SeasonId,
-            //    Synopsis = x.Synopsis,
-            //    Title = x.Title
-            //  }));
+              var lines = seasons.SelectMany(x => x.Episode.SelectMany(y => y.Script.SelectMany(z => z.ScriptLine.Select(a => new { Line = a, Episode = y }))));
+            var scriptLines = lines.Select(x => new LineDocument
+            {
+                ScriptLineId = x.Line.Id,
+                Body = x.Line.Body,
+                EpisodeId = x.Episode.Id,
+                EpisodeTitle = x.Episode.Title,
+            });
+            await DB.Collection<LineDocument>().InsertManyAsync(scriptLines);
 
             return 0;
         }
 
-        public async Task RecycleIndexes()
+        public async Task DropCollectionsAsync()
         {
             await DB.DropCollectionAsync<CharacterDocument>();
             await DB.DropCollectionAsync<TagsDocument>();
             await DB.DropCollectionAsync<DialogDocument>();
             await DB.DropCollectionAsync<EpisodeDocument>();
+            await DB.DropCollectionAsync<LineDocument>();
+            await DB.DropCollectionAsync<TagsByAddressDocument>();
+            await DB.DropCollectionAsync<RequestProfileDocument>();
+
 
             await DB.Index<CharacterDocument>()
                .Key(k => k.Name, KeyType.Text)
@@ -134,6 +117,7 @@ namespace ShitLeopard.DataLoader.Parsers
             await DB.Index<EpisodeDocument>()
               .Key(k => k.Title, KeyType.Text)
               .Key(k => k.Synopsis, KeyType.Text)
+              .Key(k => k.Body, KeyType.Text)
               .CreateAsync();
             await DB.Index<DialogDocument>()
                .Key(k => k.Body, KeyType.Text)
@@ -142,46 +126,16 @@ namespace ShitLeopard.DataLoader.Parsers
             await DB.Index<DialogDocument>()
              .Key(k => k.DialogLineNumber, KeyType.Ascending)
              .CreateAsync();
+
+            await DB.Index<LineDocument>()
+        .Key(k => k.EpisodeId, KeyType.Ascending)
+        .CreateAsync();
+
+            await DB.Index<TagsByAddressDocument>()
+       .Key(k => k.TagId, KeyType.Ascending)
+       .CreateAsync();
+
+            _consoleLogger.Write($"Completed dropping of collections and indexes.", ConsoleColor.Magenta);
         }
-
-        //public async Task<int> UpdateEpisodes(IEnumerable<Episode> episodes)
-        //{
-        //    var client = new MongoClient("mongodb://admin:Tulde30#@192.168.86.27:27017");
-        //    var db = client.GetDatabase("ShitLeopard");
-        //    Console.WriteLine(db.Settings);
-        //    var seasonCollection = db.GetCollection<Season>("season");
-
-        //    foreach (var episode in episodes)
-        //    {
-        //        var filter = Builders<Season>.Filter.Eq(x => x.Episode.First().Id, episode.Id);
-        //        var document = await seasonCollection.Find(filter).FirstAsync();
-
-        //        var result = await seasonCollection.FindOneAndUpdateAsync(s => s.Episode.Any(e => e.Id == episode.Id),
-        //            Builders<Season>.Update
-        //                     .Set(x => x.Episode[-1].Title, episode.Title)
-        //                     .Set(x => x.Episode[-1].Synopsis, episode.Synopsis)
-        //                     .Set(x => x.Episode[-1].OffsetId, episode.OffsetId));
-
-        //        //var update = Builders<Season>.Update
-        //        //     .Set(x => x.Episode.First().Title, episode.Title)
-        //        //     .Set(x => x.Episode.First().Synopsis, episode.Synopsis)
-        //        //     .Set(x => x.Episode.First().OffsetId, episode.OffsetId);
-
-        //        //seasonCollection.UpdateOne(filter, update);
-        //    }
-        //    //using (var db = _contextProvider())
-        //    //{
-        //    //  await   db.BulkUpdateAsync(episodes.ToList(), new BulkConfig
-        //    //    {
-        //    //        PropertiesToInclude = new List<string>()
-        //    //        {
-        //    //            "OffsetId",
-        //    //            "Synopsis"
-        //    //        }
-        //    //    });
-        //    //}
-        //    //return episodes.Count();
-        //    return 0;
-        //}
     }
 }

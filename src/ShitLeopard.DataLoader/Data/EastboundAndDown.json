@@ -1,0 +1,16 @@
+{
+  "ShowName": "Eastbound And Down",
+  "ClosedCaptionsPath": "./EastboundAndDown/ClosedCaptions",
+  "ClosedCaptionsParser": "SMPTE-TT",
+  "ClosedCaptionsFileExtension": ".xml",
+  "Metadata": {
+    "Provider": "wikipedia",
+    "ShowId": "60f6d94e10ab6bd56f5ec7c5",
+    "ClassSelectors": [
+      "wikitable",
+      "plainrowheaders"
+    ],
+    "ShowName": "List_of_Eastbound_%26_Down_episodes",
+    "LastEpisodeId": 29
+  }
+}

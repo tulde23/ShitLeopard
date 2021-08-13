@@ -11,6 +11,8 @@ namespace ShitLeopard.Api.Models
         public string SeasonId { get; set; }
         public string Synopsis { get; set; }
 
+        public string Body { get; set; }
+
         public ShowModel Show { get; set; }
 
 

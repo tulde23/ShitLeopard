@@ -9,5 +9,6 @@ namespace ShitLeopard.Common.Contracts
     public interface IShowService
     {
         Task<IEnumerable<ShowModel>> GetShowsAsync();
+        Task<ShowModel> GetShowAsync(string showId);
     }
 }

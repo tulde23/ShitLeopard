@@ -12,5 +12,8 @@ namespace ShitLeopard.Common.Documents
         public EpisodeDocument Episode { get; set; }
         public string SeasonId { get; set; }
 
+        public int? Offset { get; set; }
+        public double? Score { get; set; }
+
     }
 }

@@ -81,6 +81,15 @@ const mutations = {
   [ACTIONS.SET_SHOW_INDEX](state: State, e: number) {
     state.showIndex = e;
   },
+  [ACTIONS.SET_TEXT_MAP](state: State, e: Map<string, DialogModel[]>) {
+    state.textMap = e;
+  },
+  [ACTIONS.SET_TEXT_ENTRY](state: State, e: { id: string; value: DialogModel[] }) {
+    state.textMap.set(e.id, e.value);
+  },
+  [ACTIONS.SET_QUESTION_](state: State, e: string) {
+    state.question = e;
+  },
 };
 
 export default mutations;

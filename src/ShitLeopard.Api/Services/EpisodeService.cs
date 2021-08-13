@@ -24,20 +24,26 @@ namespace ShitLeopard.Api.Services
             return _entityContext.Mapper.Map<EpisodeModel>(episode);
         }
 
-        public async Task<IEnumerable<EpisodeModel>> GetEpisodes(string pattern = null)
+        public async Task<IEnumerable<EpisodeModel>> GetEpisodes(string showId, string pattern = null)
         {
             if (!string.IsNullOrEmpty(pattern))
             {
                 return _entityContext.Mapper.MapCollection<EpisodeModel, EpisodeDocument>((await DB.Find<EpisodeDocument>()
 
+              .Match(m=>m.Eq(f=>f.Show.ID, showId))
               .Match(f => f.Text(pattern, new TextSearchOptions { CaseSensitive = false }))
               .SortByTextScore()
+              .Sort(x=> x.Show.Title, Order.Ascending)
               .Sort(x => x.SeasonId, Order.Ascending)
+               .Sort(x => x.EpisodeNumber, Order.Ascending)
               .ExecuteAsync() ).SortByRelevance(pattern, x=>x.Title));
             }
 
             return _entityContext.Mapper.MapCollection<EpisodeModel, EpisodeDocument>(await DB.Find<EpisodeDocument>()
-          .Sort(x => x.SeasonId, Order.Ascending)
+                    .Match(m => m.Eq(f => f.Show.ID, showId))
+             .Sort(x => x.Show.Title, Order.Ascending)
+              .Sort(x => x.SeasonId, Order.Ascending)
+               .Sort(x => x.EpisodeNumber, Order.Ascending)
           .ExecuteAsync());
         }
     }

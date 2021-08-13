@@ -16,5 +16,7 @@ namespace ShitLeopard.Common.Models
         public string EpisodeTitle { get; set; }
         public string SeasonId { get; set; }
         public string Synopsis { get; set; }
+
+        public string ShowName { get; set; }
     }
 }

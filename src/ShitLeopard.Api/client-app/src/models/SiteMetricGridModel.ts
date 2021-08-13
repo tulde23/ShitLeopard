@@ -7,21 +7,27 @@ export class SiteMetricGridModel extends GridModel {
         text: 'IP',
         align: 'left',
         sortable: false,
-        value: 'ipaddress'
+        value: 'ipaddress',
       },
 
       {
         text: 'Route',
         align: 'left',
         sortable: false,
-        value: 'route'
+        value: 'route',
       },
       {
         text: 'Access Time',
         align: 'left',
         sortable: false,
-        value: 'lastAccessTime'
-      }
+        value: 'lastAccessTime',
+      },
+      {
+        text: 'Term',
+        align: 'left',
+        sortable: false,
+        value: 'body',
+      },
     ];
   }
 }

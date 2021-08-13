@@ -15,7 +15,7 @@ namespace ShitLeopard.DataLoader.Contracts
         /// Recycles the indexes.
         /// </summary>
         /// <returns></returns>
-        Task RecycleIndexes();
+        Task DropCollectionsAsync();
         /// <summary>
         /// Imports the asynchronous.
         /// </summary>

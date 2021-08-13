@@ -12,10 +12,20 @@ namespace ShitLeopard.DataLoader.Parsers
             _index = index;
         }
 
-        public ISeasonParser GetParser(string key)
+        public bool TryGetParser(string key, out ISeasonParser seasonParser)
         {
-            var parser = _index[key];
-            return parser;
+            try
+            {
+                seasonParser = _index[key];
+                return true;
+            }
+            catch
+            {
+                seasonParser = null;
+                return false;
+            }
+          
+          
         }
     }
 }

@@ -1,0 +1,52 @@
+﻿@model EpisodeViewModel
+@{
+    var counter = 0;
+}
+@section Scripts{
+    <script src="~/js/episode/index.js"></script>
+}
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+<select class="form-select" aria-label="Default select example">
+    @foreach (var episode in Model.Shows)
+    {
+        <option value="@episode.Id">@episode.Title</option>
+     }
+    </select>
+}
+
+   
+
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th scope="col">Show</th>
+                <th scope="col">Season</th>
+                <th scope="col">Episode</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var episode in Model.Episodes)
+            {
+                var collapseid = $"{counter}collapse";
+                var collapseSelector = $"#{collapseid}";
+
+                var headerid = $"{counter}header";
+                var headerSelector = $"#{headerid}";
+                counter++;
+
+                <tr>
+                    <td>@episode.Show.Title</td>
+                    <td>Season @episode.SeasonId</td>
+                    <td>Episode: @episode.OffsetId @episode.Title</td>
+                </tr>
+                <tr >
+                    @episode.Body
+                </tr>
+
+            }
+        </tbody>
+    </table>

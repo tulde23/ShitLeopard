@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Serilog;
 using ShitLeopard.Api.HostedServices;
 using ShitLeopard.Common.Contracts;
@@ -17,6 +16,8 @@ namespace ShitLeopard
 {
     public class Startup
     {
+        private readonly string ShitleopardOrigins = "ShitleopardOrigins";
+
         public ILifetimeScope AutofacContainer { get; private set; }
 
         public Startup(IConfiguration configuration)
@@ -29,9 +30,27 @@ namespace ShitLeopard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                options.AddPolicy(ShitleopardOrigins, policy => policy
+                .WithOrigins(
+                    "http://shitleopard.com",
+                    "https://shitleopard.com",
+                    "http://www.shitleopard.com",
+                    "https://www.shitleopard.com",
+                    "https://tullys.online",
+                    "http://www.tullys.online",
+                    "https://www.tullys.online",
+                    "https://localhost:44398",
+                    "https://localhost:5001",
+                    "https://localhost:5002")
+                .AllowAnyMethod());
+            });
             services.AddOptions();
             services.AddHttpClient();
-            services.AddControllers().AddNewtonsoftJson(a =>
+            services.AddControllersWithViews().AddNewtonsoftJson(a =>
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
@@ -39,10 +58,25 @@ namespace ShitLeopard
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
             services.AddHostedService<MongoHostedService>();
             services.AddAutoMapper(typeof(Startup));
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shit Leopard", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shit Leopard", Version = "v1" });
+            //});
+            //services.AddOpenTelemetryTracing((builder) => builder
+            //         .AddAspNetCoreInstrumentation()
+            //         .AddHttpClientInstrumentation()
+            //         .AddConsoleExporter());
+            //// For options which can be bound from IConfiguration.
+            //services.Configure<AspNetCoreInstrumentationOptions>(this.Configuration.GetSection("AspNetCoreInstrumentation"));
+
+            //// For options which can be configured from code only.
+            //services.Configure<AspNetCoreInstrumentationOptions>(options =>
+            //{
+            //    options.Filter = (req) =>
+            //    {
+            //        return req.Request.Host != null;
+            //    };
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,20 +84,20 @@ namespace ShitLeopard
         {
             // If, for some reason, you need a reference to the built container, you
             // can use the convenience extension method GetAutofacRoot.
-            this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+            AutofacContainer = app.ApplicationServices.GetAutofacRoot();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            //app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shit Leopard");
-                c.RoutePrefix = "docs";
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shit Leopard");
+            //    c.RoutePrefix = "docs";
+            //});
 
             app.UseDeveloperExceptionPage();
-            app.UseSerilogRequestLogging();
+          //  app.UseSerilogRequestLogging();
             //     app.UseDefaultFiles();
             //     app.UseStaticFiles();
 
@@ -73,8 +107,11 @@ namespace ShitLeopard
             }); ;
 
             //      app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors();
 
             //    app.UseAuthorization();
 

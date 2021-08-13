@@ -13,6 +13,7 @@ namespace ShitLeopard.Common.Documents
         public string SeasonId { get; set; }
         public string Synopsis { get; set; }
 
+        public string Body { get; set; }
         public ShowDocument Show { get; set; }
     }
 }

@@ -7,5 +7,7 @@
         public string Category { get; set; }
 
         public long Frequency { get; set; }
+
+        public string IpAddress { get; set; }
     }
 }

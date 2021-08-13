@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Details from '../views/Details.vue';
-import Home from '../views/Home.vue';
-import Metrics from '../views/Metrics.vue';
-import TimeLine from '../views/TimeLine.vue';
-
+import Home from '../views/home/Home.vue';
+import Metrics from '../views/metrics/Metrics.vue';
+import SearchResults from '../views/search/SearchResults.vue';
+import Episodes from '../views/episodes/Episodes.vue';
+import Shows from '../views/shows/Shows.vue';
+import Terms from '../views/terms/Terms.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,15 +16,14 @@ const routes = [
     title: 'Home',
     icon: 'mdi-home-circle',
 
-    component: Home
+    component: Home,
   },
   {
-    path: '/timeline',
-    name: 'timeline',
-    title: 'Timeline',
-    icon: 'mdi-chart-timeline-variant',
+    path: '/query/:pattern',
+    name: 'Search',
+    title: 'Search',
 
-    component: TimeLine
+    component: SearchResults,
   },
   {
     path: '/metrics',
@@ -31,20 +31,36 @@ const routes = [
     title: 'Metrics',
     icon: 'mdi-finance',
 
-    component: Metrics
+    component: Metrics,
   },
   {
-    path: '/details/:id',
-    name: 'details',
-    title: 'details',
+    path: '/episodes/:showid',
+    name: 'episodes',
+    title: 'episodes',
     icon: 'mdi-finance',
 
-    component: Details
-  }
+    component: Episodes,
+  },
+  {
+    path: '/shows',
+    name: 'shows',
+    title: 'shows',
+    icon: 'mdi-finance',
+
+    component: Shows,
+  },
+  {
+    path: '/terms',
+    name: 'terms',
+    title: 'terms',
+    icon: 'mdi-finance',
+
+    component: Terms,
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;

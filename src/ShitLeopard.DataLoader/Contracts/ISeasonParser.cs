@@ -2,6 +2,8 @@
 using System.IO;
 using System.Threading.Tasks;
 using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.DataLoader.Configuration;
+using ShitLeopard.DataLoader.Models;
 
 namespace ShitLeopard.DataLoader.Contracts
 {
@@ -12,6 +14,6 @@ namespace ShitLeopard.DataLoader.Contracts
         /// </summary>
         /// <param name="directoryInfo">The directory information.</param>
         /// <returns></returns>
-        Task<IEnumerable<Season>> GetSeasonsAsync(DirectoryInfo directoryInfo);
+        Task<IEnumerable<Season>> GetSeasonsAsync(ShowConfiguration showConfiguration);
     }
 }

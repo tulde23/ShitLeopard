@@ -35,12 +35,15 @@ export interface State {
   distance: number;
   shows: ShowModel[];
   showIndex: number;
+  textMap: Map<string, DialogModel[]>;
+  question: string;
 }
 
 export const InitState = {
   isBusy: false,
   isOpen: false,
   timeToRefresh: false,
+  question: '',
   distance: 2,
   highlightedText: [],
   adjacentText: [],
@@ -59,4 +62,5 @@ export const InitState = {
   selectedDialog: {},
   shows: [],
   showIndex: 1,
+  textMap: new Map<string, DialogModel[]>(),
 };

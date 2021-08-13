@@ -10,6 +10,8 @@ namespace ShitLeopard.Common.Models
         public string AgentString { get; set; }
 
         public string Route { get; set; }
+
+        public string Body { get; set; }
         public DateTime? LastAccessTime { get; set; }
     }
 }

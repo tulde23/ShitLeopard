@@ -8,7 +8,9 @@ import { Store } from 'vuex';
 import { HttpService } from './http.service';
 
 export class DataService {
-  constructor(private store: Store<any>, private http: HttpService) {}
+  constructor(private store: Store<any>, private http: HttpService) {
+    this.store.commit(A.SET_TEXT_MAP, new Map<string, DialogModel>());
+  }
 
   updateRefreshInterval(state: boolean) {
     this.store.commit(A.SET_REFRESH, state);
@@ -34,17 +36,7 @@ export class DataService {
       )
     );
   }
-  getEpisodeGroups() {
-    //
-    return this.http.get('/api/Episode/GroupBySeason').then((resp) =>
-      this.store.commit(
-        A.SET_EPISODES_GROUPED,
-        resp.data.map((x: any) => {
-          return x;
-        })
-      )
-    );
-  }
+
   getCharacters() {
     return this.http
       .get('/api/Character')
@@ -66,17 +58,7 @@ export class DataService {
       }
     });
   }
-  search(question: QuestionModel) {
-    return this.http
-      .post(`/api/Search`, question)
-      .then((resp) => this.store.commit(A.SET_DIALOG_LINES, resp.data));
-  }
-  getEpisode(id: number) {
-    this.store.commit(A.SET_EPISODE, undefined);
-    return this.http
-      .get(`/api/Episode/${id}`)
-      .then((resp) => this.store.commit(A.SET_EPISODE, resp.data));
-  }
+
   upvote(item: number | undefined) {
     return this.http.post(`/api/Quote/${item}`, {});
   }
@@ -105,24 +87,34 @@ export class DataService {
   setSelectedDialog(dialog: DialogModel) {
     this.store.commit(A.SET_SELECTED_DIALOG, dialog);
   }
-  setHighlightedText(text: string) {
-    this.store.commit(A.SET_HIGHLIGHTED_TEXT, [text]);
-  }
+
   getAdjacentText(id?: string, distance?: number) {
     if (!distance || distance <= 0) {
       return;
     }
     return this.http
       .get(`/api/Search/${id}?distance=${distance}`)
-      .then((resp) => this.store.commit(A.SET_ADJACENT_TEXT, resp.data));
+      .then((resp) => this.store.commit(A.SET_TEXT_ENTRY, { id: id, value: resp.data }));
   }
-  getShows() {
-    return this.http.get('/api/Show').then((resp) => this.store.commit(A.SET_SHOWS, resp.data));
-  }
+
   setShowIndex(i: number) {
     this.store.commit(A.SET_SHOW_INDEX, i);
   }
   clearAdjacentText() {
     this.store.commit(A.SET_ADJACENT_TEXT, []);
+  }
+  public groupBy(xs: any, key: any) {
+    return xs.reduce((rv: any, x: any) => {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  }
+
+  public getAdjacentTextFor(id: string): DialogModel[] {
+    const map = this.store.getters.textMap as Map<string, DialogModel[]>;
+    if (map && map.has(id)) {
+      return map.get(id) as DialogModel[];
+    }
+    return [];
   }
 }

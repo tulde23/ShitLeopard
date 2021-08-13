@@ -17,7 +17,9 @@ param(
     [Parameter(HelpMessage="Publish Local")]
 	[switch] $publishLocal,
     [Parameter(HelpMessage="Remote Compy")]
-	[switch] $pscp
+	[switch] $pscp,
+	[Parameter(HelpMessage="console")]
+	[switch] $console
 
 
 
@@ -45,17 +47,22 @@ param(
  if( $pscp){
 
  if( $publishLocal -eq $True){
-		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.86.38:/home/tulde23/ubuntu';
+		Write-Host ' pscp -unsafe -r $destination  tulde23@192.168.86.38:/home/tulde23/ubuntu';
 		pscp -P 22 -unsafe -r $destination tulde23@192.168.86.32:/home/tulde23/ubuntu 
 	}
 	else{
 		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/ubuntu';
-		pscp -P 22 -unsafe -r $destination tulde23@tully.world:/home/tulde23/ubuntu 
+		pscp -P 22 -unsafe -r $destination tulde23@shitleopard.com:/home/tulde23/ubuntu 
 	}
  }
 
 
-
+if( $console){
+ ssh gabbitos 
+}
+ #sudo cp -Rf /home/tulde23/ubuntu/ubuntu /var/www/aspnetcore/shit_leopard/
  #sudo cp -Rf ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
   #sudo systemctl restart kestrel-shitleopard.service
+  #sudo systemctl restart kestrel-shitleopard.service
+  #$ journalctl --since "1 minute ago"
 

@@ -33,6 +33,8 @@ const getters = {
   adjacentText: (state: State): DialogModel[] => state.adjacentText,
   shows: (state: State): ShowModel[] => state.shows,
   showIndex: (state: State): number => state.showIndex,
+  textMap: (state: State): Map<string, DialogModel[]> => state.textMap,
+  question: (state: State): string => state.question,
 };
 
 export default getters;

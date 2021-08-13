@@ -9,6 +9,8 @@ export class DialogModel {
     public episodeOffsetId?: string,
     public episodeTitle?: string,
     public seasonId?: string,
-    public synopsis?: string
+    public synopsis?: string,
+    public showName?: string,
+    public lines?: Array<string>
   ) {}
 }

@@ -8,16 +8,16 @@ const opts = {
   theme: {
     themes: {
       light: {
-        primary: '#870111',
-        secondary: '#ECC91A',
-        accent: '#929982',
-        error: '#870111',
-        info: '#33658A',
-        success: '#A8C256 ',
-        warning: '#585123',
+        primary: '#0d0c18',
+        secondary: '#b0bec5',
+        anchor: '#8c9eff',
+      },
+      dark: {
+        primary: '#0d0c18',
+        secondary: '#b0bec5',
+        anchor: '#8c9eff',
       },
     },
   },
 };
-
 export default new Vuetify(opts);

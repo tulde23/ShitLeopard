@@ -1,0 +1,23 @@
+.active {
+  background-color: yellow;
+}
+
+.popular-tags,
+.v-chip,
+.v-chip__content {
+  color: white;
+}
+
+.breadcrumbs a {
+  color: #860211;
+  font-weight: 600;
+}
+.view-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.buffer {
+  height: 66px;
+}

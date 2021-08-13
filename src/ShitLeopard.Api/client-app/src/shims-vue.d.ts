@@ -1,6 +1,11 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import { DataService, Helper, HttpService } from '@/services';
+import { MetricService } from './services/metric.service';
+import { SearchService } from './services/search.service';
+import { EpisodeService } from './services/episode.service';
+import { SeasonService } from './services/season.service';
+import { ShowService } from './services/show.service';
 
 declare module '*.vue' {
   import Vue from 'vue';
@@ -15,5 +20,10 @@ declare module 'vue/types/vue' {
     $helper: Helper;
     $http: HttpService;
     $api: DataService;
+    $metrics: MetricService;
+    $search: SearchService;
+    $episodes: EpisodeService;
+    $seasons: SeasonService;
+    $shows: ShowService;
   }
 }

@@ -6,6 +6,6 @@ namespace ShitLeopard.DataLoader.Contracts
 {
     public interface ISeasonParserFactory
     {
-        ISeasonParser GetParser(string key);
+        bool TryGetParser(string key, out ISeasonParser seasonParser);
     }
 }

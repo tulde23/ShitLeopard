@@ -13,5 +13,7 @@
 
         public string Start { get; set; }
         public string End { get; set; }
+
+        public int Offset { get; set; }
     }
 }

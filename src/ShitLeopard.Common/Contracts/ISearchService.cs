@@ -17,6 +17,14 @@ namespace ShitLeopard.Api.Contracts
 
 
         /// <summary>
+        /// Finds the quotes asynchronous.
+        /// </summary>
+        /// <param name="question">The question.</param>
+        /// <returns></returns>
+        Task<IEnumerable<QuoteModel>> FindQuotesAsync(Question question);
+
+
+        /// <summary>
         /// Asks the question asynchronous.
         /// </summary>
         /// <param name="question">The question.</param>

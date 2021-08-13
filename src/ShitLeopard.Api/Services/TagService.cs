@@ -35,11 +35,16 @@ namespace ShitLeopard.Api.Services
                 var t = _entityContext.Mapper.Map<TagsDocument>(tags);
                 t.Frequency = 1;
                 await t.SaveAsync();
+                await SaveTagByAddressAsync(t.ID, tags.IpAddress, true);
             }
             else
             {
-                existing.Frequency = existing.Frequency + 1;
-                await DB.Update<TagsDocument>().Match(x => x.Eq(f => f.ID, existing.ID)).Modify(x => x.Frequency, existing.Frequency++).ExecuteAsync();
+                if (!await TagExistsForIPAsync(existing.ID, tags.IpAddress))
+                {
+                    existing.Frequency = existing.Frequency + 1;
+                    await DB.Update<TagsDocument>().Match(x => x.Eq(f => f.ID, existing.ID)).Modify(x => x.Frequency, existing.Frequency++).ExecuteAsync();
+                    await SaveTagByAddressAsync(existing.ID, tags.IpAddress);
+                }
             }
         }
 
@@ -107,6 +112,35 @@ namespace ShitLeopard.Api.Services
                         where t.Name == name && t.Category == category
                         select t;
             return await query.FirstOrDefaultAsync();
+        }
+
+        private async Task<bool> TagExistsForIPAsync(string tagId, string ipAddress)
+        {
+            var query = from t in DB.Queryable<TagsByAddressDocument>()
+                        where t.TagId == tagId && t.IPAddresses.Contains(ipAddress)
+                        select t.TagId;
+            var result = await query.FirstOrDefaultAsync();
+            return !string.IsNullOrEmpty(result);
+        }
+
+        private async Task SaveTagByAddressAsync(string tagId, string ipAddress, bool insert = false)
+        {
+            if (insert)
+            {
+                await new TagsByAddressDocument
+                {
+                    TagId = tagId,
+                    IPAddresses = new List<string>()
+                      {
+                         ipAddress
+                      }
+                }.SaveAsync();
+                return;
+             }
+
+            var filter = Builders<TagsByAddressDocument>.Filter.Eq(x => x.TagId, tagId);
+            var update = Builders<TagsByAddressDocument>.Update.Push<string>(e => e.IPAddresses, ipAddress);
+            await DB.Collection<TagsByAddressDocument>().FindOneAndUpdateAsync(filter, update);
         }
     }
 }

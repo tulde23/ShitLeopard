@@ -19,3 +19,6 @@ export const SET_HIGHLIGHTED_TEXT = 'set_highlighted_text';
 export const SET_ADJACENT_TEXT = 'set_adjacent_text';
 export const SET_SHOWS = 'set_shows';
 export const SET_SHOW_INDEX = 'set_show_index';
+export const SET_TEXT_MAP = 'set_text_map';
+export const SET_TEXT_ENTRY = 'set_text_entry';
+export const SET_QUESTION_ = 'set_question';

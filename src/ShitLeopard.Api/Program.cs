@@ -17,7 +17,6 @@ namespace ShitLeopard
            .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
            .Enrich.FromLogContext()
            .WriteTo.Console()
-              .WriteTo.File("ShitLeopardSpots.txt", rollingInterval: RollingInterval.Day)
            .CreateLogger();
 
             try
@@ -39,12 +38,11 @@ namespace ShitLeopard
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-
             .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb => AutoFacRegistrationModule.Build(cb)))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).UseSerilog(); 
+                });
     }
 
     public class Rootobject
