@@ -49,10 +49,11 @@ namespace ShitLeopard
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
             .UseMetrics()
+            .UseMetricsWebTracking(c=> { c.ApdexTrackingEnabled = true; c.ApdexTSeconds = 5; })
              .ConfigureMetricsWithDefaults(
                 builder =>
                 {
-                    builder.Report.ToConsole(TimeSpan.FromSeconds(2));
+                    builder.Report.ToInfluxDb("http://192.168.86.32:8086", "shitleopard");
                 })
 
             .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb => AutoFacRegistrationModule.Build(cb)))

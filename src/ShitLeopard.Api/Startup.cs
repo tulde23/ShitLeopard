@@ -67,14 +67,14 @@ namespace ShitLeopard
             {
                 a.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
-            services.AddMetrics()
-                .AddMetricsEndpoints()
-                .AddMetricsTrackingMiddleware()
-                .AddAppMetricsCollectors()
-                .AddAppMetricsGcEventsMetricsCollector()
-                .AddAppMetricsHealthPublishing()
-                .AddAppMetricsSystemMetricsCollector()
-                .AddMetricsReportingHostedService();
+            //services.AddMetrics()
+            //    .AddMetricsEndpoints()
+            //    .AddMetricsTrackingMiddleware()
+            //    .AddAppMetricsCollectors()
+            //    .AddAppMetricsGcEventsMetricsCollector()
+            //    .AddAppMetricsHealthPublishing()
+            //    .AddAppMetricsSystemMetricsCollector()
+            //    .AddMetricsReportingHostedService();
             services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
             services.AddHostedService<MongoHostedService>();
