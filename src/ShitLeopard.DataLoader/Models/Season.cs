@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShitLeopard.DataLayer.Entities
+namespace ShitLeopard.DataLoader.Models
 {
     public partial class Season
     {
@@ -10,9 +10,12 @@ namespace ShitLeopard.DataLayer.Entities
             Episode = new List<Episode>();
         }
 
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
 
         public virtual List<Episode> Episode { get; set; }
+
+
+        
     }
 }

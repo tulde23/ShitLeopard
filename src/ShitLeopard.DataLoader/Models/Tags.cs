@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShitLeopard.DataLayer.Entities
+namespace ShitLeopard.DataLoader.Models
 {
     public partial class Tags
     {

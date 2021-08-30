@@ -1,19 +1,14 @@
-using System.Collections.Generic;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
 using OpenTelemetry;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using Serilog;
-using ShitLeopard.Api.HostedServices;
 using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Providers;
 
@@ -41,7 +36,6 @@ namespace ShitLeopard
                       .SetSampler(new TraceIdRatioBasedSampler(0.25))
                       .AddAspNetCoreInstrumentation()
                       .AddHttpClientInstrumentation()
-                      .AddProcessor(new BatchActivityExportProcessor(new ShitLeopard.Api.ShitleopardExporter()))
                   );
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddCors(options =>
@@ -77,7 +71,7 @@ namespace ShitLeopard
             //    .AddMetricsReportingHostedService();
             services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");
             services.AddSingleton<IConnectionStringProvider, ConnectionStringProvider>();
-            services.AddHostedService<MongoHostedService>();
+
             services.AddAutoMapper(typeof(Startup));
             //services.AddSwaggerGen(c =>
             //{
@@ -118,7 +112,7 @@ namespace ShitLeopard
             //});
 
             app.UseDeveloperExceptionPage();
-          //  app.UseSerilogRequestLogging();
+            //  app.UseSerilogRequestLogging();
             //     app.UseDefaultFiles();
             //     app.UseStaticFiles();
 

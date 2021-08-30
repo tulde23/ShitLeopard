@@ -5,7 +5,7 @@ using CommandLine;
 using CommandLine.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.DataLoader.Models;
 
 namespace ShitLeopard.DataLoader
 {

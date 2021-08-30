@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MongoDB.Entities;
+
 
 namespace ShitLeopard.Common.Documents
 {
-    public class RequestProfileDocument : Entity
+    public class RequestProfileDocument : ElasticDocument
     {
         public object Headers { get; set; }
 

@@ -1,4 +1,4 @@
-﻿namespace ShitLeopard.DataLayer.Entities
+﻿namespace ShitLeopard.DataLoader.Models
 {
     public partial class ScriptLine
     {

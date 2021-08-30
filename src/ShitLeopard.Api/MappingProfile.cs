@@ -22,22 +22,22 @@ namespace ShitLeopard.Api
             //       .ForMember(dest => dest.Headers, opts =>
             //       opts.MapFrom(src => JsonConvert.DeserializeObject(src.Headers ?? string.Empty)));
 
-            CreateMap<DialogDocument, DialogModel>()
-                .ForMember(dest => dest.Id, src => src.MapFrom(s => s.ID)).ReverseMap();
-            CreateMap<EpisodeDocument, DialogModel>()
-               .ForMember(dest => dest.SeasonId, src => src.MapFrom(s => s.SeasonId))
-                .ForMember(dest => dest.Synopsis, src => src.MapFrom(s => s.Synopsis))
-                 .ForMember(dest => dest.EpisodeTitle, src => src.MapFrom(s => s.Title))
-                  .ForMember(dest => dest.EpisodeNumber, src => src.MapFrom(s => s.EpisodeNumber))
-                  .ForMember(dest => dest.EpisodeOffsetId, src => src.MapFrom(s => s.OffsetId)).ReverseMap();
-            CreateMap<TagsModel, TagsDocument>()
-               .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
+            //CreateMap<DialogDocument, DialogModel>()
+            //    .ForMember(dest => dest.Id, src => src.MapFrom(s => s.ID)).ReverseMap();
+            //CreateMap<EpisodeDocument, DialogModel>()
+            //   .ForMember(dest => dest.SeasonId, src => src.MapFrom(s => s.SeasonId))
+            //    .ForMember(dest => dest.Synopsis, src => src.MapFrom(s => s.Synopsis))
+            //     .ForMember(dest => dest.EpisodeTitle, src => src.MapFrom(s => s.Title))
+            //      .ForMember(dest => dest.EpisodeNumber, src => src.MapFrom(s => s.EpisodeNumber))
+            //      .ForMember(dest => dest.EpisodeOffsetId, src => src.MapFrom(s => s.OffsetId)).ReverseMap();
+            //CreateMap<TagsModel, TagsDocument>()
+            //   .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
 
-            CreateMap<EpisodeModel, EpisodeDocument>()
-              .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
+            //CreateMap<EpisodeModel, EpisodeDocument>()
+            //  .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
 
-            CreateMap<ShowModel, ShowDocument>()
-                .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
+            //CreateMap<ShowModel, ShowDocument>()
+            //    .ForMember(dest => dest.ID, src => src.MapFrom(s => s.Id)).ReverseMap();
         }
     }
 }

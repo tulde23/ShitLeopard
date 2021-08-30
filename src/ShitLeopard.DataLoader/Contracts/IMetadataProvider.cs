@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.DataLoader.Models;
 using ShitLeopard.DataLoader.Configuration;
 using ShitLeopard.DataLoader.Models;
 

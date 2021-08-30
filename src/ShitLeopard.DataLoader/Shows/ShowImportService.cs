@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac.Features.Indexed;
 using Newtonsoft.Json;
-using ShitLeopard.DataLayer.Entities;
 using ShitLeopard.DataLoader.Configuration;
 using ShitLeopard.DataLoader.Contracts;
+using ShitLeopard.DataLoader.Models;
 
 namespace ShitLeopard.DataLoader.Shows
 {
@@ -15,12 +14,12 @@ namespace ShitLeopard.DataLoader.Shows
     {
         private readonly IIndex<string, IMetadataProvider> _metadataProvider;
         private readonly ISeasonParserFactory _seasonParserFactory;
-        private readonly IShowBulkDataImporter _showBulkDataImporter;
+        private readonly IElasticDocumentIndexService _showBulkDataImporter;
         private readonly IConsoleLogger _consoleLogger;
 
         public ShowImportService(ConsoleApplication consoleApplication, Options options,
             ISeasonParserFactory seasonParserFactory,
-            IIndex<string, IMetadataProvider> metadataProvider, IShowBulkDataImporter showBulkDataImporter, IConsoleLogger consoleLogger)
+            IIndex<string, IMetadataProvider> metadataProvider, IElasticDocumentIndexService showBulkDataImporter, IConsoleLogger consoleLogger)
         {
             _seasonParserFactory = seasonParserFactory;
             _metadataProvider = metadataProvider;
@@ -32,15 +31,16 @@ namespace ShitLeopard.DataLoader.Shows
         public ConsoleApplication ConsoleApplication { get; }
         public Options Options { get; }
 
-        public async Task ImportAsync(ShowConfiguration showConfiguration)
+        public async Task<Show> ImportAsync(ShowConfiguration showConfiguration)
         {
+            var show = new Show(showConfiguration);
             _consoleLogger.Write("Downloading Episode Metadata For " + showConfiguration.ShowName, ConsoleColor.Magenta);
 
             var exists = TryGetService(showConfiguration.Metadata.Provider, out var service);
             if (!exists)
             {
                 _consoleLogger.Write($"no metadata service  exists with key {showConfiguration.Metadata.Provider}.  Exiting... ", ConsoleColor.Red);
-                return;
+                return null;
             }
             var episodes = await service.GetMetadataAsync(showConfiguration);
             _consoleLogger.Write("Downloaded " + episodes.Count() + " episode metadata");
@@ -48,7 +48,7 @@ namespace ShitLeopard.DataLoader.Shows
             if (!exists)
             {
                 _consoleLogger.Write($"no closed caption parser  exists with key {showConfiguration.ClosedCaptionsParser} .  Exiting...", ConsoleColor.Red);
-                return;
+                return null;
             }
 
             IEnumerable<Season> seasons = null;
@@ -74,20 +74,19 @@ namespace ShitLeopard.DataLoader.Shows
                     match.Episode.Synopsis = e.Synopsis;
                     match.Episode.OffsetId = e.OffsetId;
                     match.Episode.Season = match.Season;
-                    match.Episode.Show = new Models.Show
-                    {
-                        ShowId = showConfiguration.Metadata.ShowId
-                    };
+                    match.Episode.Show = show;
                 }
             }
+            show.Seasons = new List<Season>(seasons);
+            return show;
 
-            var sw = new Stopwatch();
-            sw.Start();
-            _consoleLogger.Write($"Importing {seasons.Count()} seasons and {seasons.SelectMany(x => x.Episode).Count()} episodes for '{showConfiguration.ShowName}'", ConsoleColor.Cyan);
-            await _showBulkDataImporter.ImportAsync(seasons);
-            sw.Stop();
-            _consoleLogger.Write($"Imported documents in {sw.Elapsed.TotalSeconds} seconds.", ConsoleColor.Cyan);
-            ConsoleApplication.TokenSource.Cancel();
+            //var sw = new Stopwatch();
+            //sw.Start();
+            //_consoleLogger.Write($"Importing {seasons.Count()} seasons and {seasons.SelectMany(x => x.Episode).Count()} episodes for '{showConfiguration.ShowName}'", ConsoleColor.Cyan);
+            //await _showBulkDataImporter.IndexShowsAsync(seasons);
+            //sw.Stop();
+            //_consoleLogger.Write($"Imported documents in {sw.Elapsed.TotalSeconds} seconds.", ConsoleColor.Cyan);
+            //ConsoleApplication.TokenSource.Cancel();
         }
 
         private bool TryGetService(string key, out IMetadataProvider provider)

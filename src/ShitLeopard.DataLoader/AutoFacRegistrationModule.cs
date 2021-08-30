@@ -12,7 +12,7 @@ namespace ShitLeopard.DataLoader
         public static void Build(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterType<XDocParser>().As<ISeasonParser>().SingleInstance().Named<ISeasonParser>(Constants.DependencyNames.CCParserSMPTE);
-            containerBuilder.RegisterType<BulkDataImporter>().As<IShowBulkDataImporter>().InstancePerDependency();
+            containerBuilder.RegisterType<ElasticDocumentIndexService>().As<IElasticDocumentIndexService>().InstancePerDependency();
             containerBuilder.RegisterType<SeasonParserFactory>().As<ISeasonParserFactory>().SingleInstance();
             containerBuilder.RegisterType<ConsoleLogger>().As<IConsoleLogger>().SingleInstance();
             containerBuilder.RegisterType<ConnectionString>().SingleInstance();

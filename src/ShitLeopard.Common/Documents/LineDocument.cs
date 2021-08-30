@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using MongoDB.Entities;
+
 
 namespace ShitLeopard.Common.Documents
 {
     [Display(Name = "lines")]
-    public class LineDocument : Entity
+    public class LineDocument : ElasticDocument
     {
         public long ScriptLineId { get; set; }
         public string Body { get; set; }

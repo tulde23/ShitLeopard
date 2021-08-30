@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using MongoDB.Entities;
+
 
 namespace ShitLeopard.Common.Documents
 {
     [Display(Name = "characters")]
-    public partial class CharacterDocument : Entity
+    public partial class CharacterDocument : ElasticDocument
     {
         public CharacterDocument()
         {

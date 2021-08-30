@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using MongoDB.Entities;
+
 
 namespace ShitLeopard.Common.Documents
 {
     [Display(Name = "tags")]
-    public class TagsDocument : Entity
+    public class TagsDocument : ElasticDocument
     {
         public string Name { get; set; }
         public string Category { get; set; }

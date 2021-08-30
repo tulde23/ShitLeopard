@@ -2,6 +2,7 @@
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Services;
 using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Providers;
 
 namespace ShitLeopard.Api
 {
@@ -16,13 +17,13 @@ namespace ShitLeopard.Api
             builder.RegisterType<ShowService>().As<IShowService>().InstancePerDependency();
             //builder.RegisterType<MongoProvider>().As<IMongoProvider>().SingleInstance();
             //builder.RegisterType<ScriptService>().As<IScriptService>().InstancePerDependency();
-            builder.RegisterType<SearchService>().As<ISearchService>().InstancePerDependency();
+            builder.RegisterType<ElasticSearchService>().As<ISearchService>().InstancePerDependency();
             builder.RegisterType<EntityContext>().As<IEntityContext>().InstancePerDependency();
             //builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
             builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
 
-   
-         
+            builder.RegisterType<ElasticSearchConnectionProvider>().As<IElasticSearchConnectionProvider>().SingleInstance();
+
             //builder.RegisterType<StanfordNaturalLanguageService>().As<INaturalLanguageService>().InstancePerDependency();
         }
     }

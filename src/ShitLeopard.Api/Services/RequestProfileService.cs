@@ -1,8 +1,5 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
-using MongoDB.Entities;
+﻿using System.Threading.Tasks;
+using AutoMapper;
 using ShitLeopard.Common.Contracts;
 using ShitLeopard.Common.Documents;
 using ShitLeopard.Common.Models;
@@ -11,36 +8,26 @@ namespace ShitLeopard.Api.Services
 {
     public class RequestProfileService : IRequestProfileService
     {
-        private readonly IEntityContext _entityContext;
+        private readonly IElasticSearchConnectionProvider _elasticSearchConnectionProvider;
+        private readonly IMapper _mapper;
 
-        public RequestProfileService(IEntityContext entityContext)
+        public RequestProfileService(IElasticSearchConnectionProvider elasticSearchConnectionProvider, IMapper mapper)
         {
-            _entityContext = entityContext;
+            _elasticSearchConnectionProvider = elasticSearchConnectionProvider;
+            _mapper = mapper;
         }
 
         public async Task SaveAsync(RequestProfileModel requestProfileModel)
         {
-            if (requestProfileModel.Ipaddress != "::1")
-            {
-                var entity = _entityContext.Mapper.Map<RequestProfileDocument>(requestProfileModel);
-                await entity.SaveAsync();
-            }
+           var document =  _mapper.Map<RequestProfileDocument>(requestProfileModel);
+            document.DocumentId = requestProfileModel.ID;
+   
+            await _elasticSearchConnectionProvider.Client.IndexAsync(document, b => b.Index("search_requests"));
         }
 
-        public async Task<PagedResult<SiteMetricsModel>> SearchAsync(RequestProfileSearchCommand command)
+        public Task<PagedResult<SiteMetricsModel>> SearchAsync(RequestProfileSearchCommand command)
         {
-            var query = from p in DB.Queryable<RequestProfileDocument>() where p.Ipaddress != "::1" select p;
-            query = query.OrderByDescending(x => x.LastAccessTime).Skip(command.PageNumber * command.PageSize).Take(command.PageSize);
-            var count = query.Count();
-            var results = await query.ToListAsync();
-
-            var data = _entityContext.Mapper.MapCollection<SiteMetricsModel, RequestProfileDocument>(results);
-
-            return new PagedResult<SiteMetricsModel>
-            {
-                Count = count,
-                Result = data.ToList()
-            };
+            throw new System.NotImplementedException();
         }
     }
 }

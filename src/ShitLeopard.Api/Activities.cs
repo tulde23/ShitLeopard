@@ -1,9 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using MongoDB.Bson;
-using MongoDB.Entities;
-using Newtonsoft.Json;
-using OpenTelemetry;
+﻿using System.Diagnostics;
 
 namespace ShitLeopard.Api
 {
@@ -23,27 +18,4 @@ namespace ShitLeopard.Api
                           //opt.Credentials = new SslCredentials();
                       })
      * */
-
-    public class ShitleopardExporter : OpenTelemetry.BaseExporter<Activity>
-    {
-        public ShitleopardExporter()
-        {
-       
-        }
-        public override ExportResult Export(in Batch<Activity> batch)
-        {
-            var db = DB.Database("ShitLeopard");
-            var collection = db.GetCollection<BsonDocument>("OpenTelemetry");
-            foreach (var item in batch)
-            {
-             
-                var json = $"{JsonConvert.SerializeObject(item, Formatting.Indented)}";
-       
-
-                collection.InsertOne(BsonDocument.Parse(json));
-            }
-
-            return ExportResult.Success;
-        }
-    }
 }

@@ -33,9 +33,7 @@
               <v-list-item-title class="text-overline mb-1 white--text"> </v-list-item-title>
 
               <p v-for="(l, i) in d.lines" class="white--text">
-                <i>
-                  <text-highlight :queries="query"> {{ l }} </text-highlight>
-                </i>
+                <i v-html="l"> </i>
               </p>
             </v-list-item-content>
             <v-list-item-content
@@ -64,9 +62,7 @@
                 class="white--text d-flex flex-1 align-self-stretch"
                 style="margin:0; padding:0"
               >
-                <i>
-                  <text-highlight :queries="query"> {{ l }} </text-highlight>
-                </i>
+                <i v-html="{ l }"> </i>
               </p>
             </div>
             <a class="text-overline mb-4 " v-on:click="toggle(i)">
@@ -90,4 +86,27 @@
 </template>
 
 <script lang="ts" src="./SearchResults.ts"></script>
-<style scoped src="./SearchResults.scss" lang="scss"></style>
+<style>
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.fade-leave {
+}
+
+.fade-leave-active {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+.s-hidden {
+  display: none;
+}
+.highlight {
+  background-color: rgb(254, 204, 0);
+  color: black;
+}
+</style>

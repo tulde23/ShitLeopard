@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.DataLoader.Models;
 using ShitLeopard.DataLoader.Configuration;
 using ShitLeopard.DataLoader.Contracts;
 

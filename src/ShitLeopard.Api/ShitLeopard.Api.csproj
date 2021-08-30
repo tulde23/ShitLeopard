@@ -47,6 +47,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NEST" Version="7.14.1" />
     <PackageReference Include="OpenTelemetry" Version="1.1.0" />
     <PackageReference Include="OpenTelemetry.Api" Version="1.1.0" />
     <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.1.0" />
@@ -89,11 +90,13 @@
     <Compile Include="Services\EntityContext.cs" />
     <Compile Include="Services\EpisodeService.cs" />
     <Compile Include="Services\RequestProfileService.cs" />
-    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\ElasticSearchService.cs" />
     <Compile Include="Services\ShowService.cs" />
     <Compile Include="Services\TagService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="HostedServices\" />
     <Folder Include="NewFolder\" />
     <Folder Include="Queries\" />
   </ItemGroup>

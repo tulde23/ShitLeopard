@@ -1,8 +1,8 @@
-﻿using MongoDB.Entities;
+﻿
 
 namespace ShitLeopard.Common.Documents
 {
-    public class DialogDocument : Entity
+    public class DialogDocument : ElasticDocument
     {
         public long DialogLineNumber { get; set; }
         public string Start { get; set; }
@@ -13,7 +13,7 @@ namespace ShitLeopard.Common.Documents
         public string SeasonId { get; set; }
 
         public int? Offset { get; set; }
-        public double? Score { get; set; }
+
 
     }
 }

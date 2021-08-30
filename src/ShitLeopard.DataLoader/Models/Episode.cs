@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ShitLeopard.DataLoader.Models;
 
-namespace ShitLeopard.DataLayer.Entities
+namespace ShitLeopard.DataLoader.Models
 {
     public partial class Episode
     {
