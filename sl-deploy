@@ -1,17 +1,11 @@
 #!/bin/bash
 
 # Shitleopard deployment script.
-sudo rm -Rf /var/www/aspnetcore/shit_leopard/
-echo 'removed target directory'
-sudo mkdir -p /var/www/aspnetcore/shit_leopard/
-echo 'created target directory'
-sudo cp -Rf /home/tulde23/ubuntu/ubuntu /var/www/aspnetcore/shit_leopard/
-echo 'copied  /home/tulde23/ubuntu/ubuntu /var/www/aspnetcore/shit_leopard'
-dir  /var/www/aspnetcore/shit_leopard
-sudo rm /var/www/aspnetcore/shit_leopard/ubuntu/appsettings.Development.json
-sudo rm /var/www/aspnetcore/shit_leopard/ubuntu/appsettings.production.json
+sudo rsync -avzr  --progress /home/tulde23/shitleopard.com/ /var/www/shitleopard.com/
+sudo rm /var/www/shitleopard.com/appsettings.Development.json
+sudo rm /var/www/shitleopard.com/appsettings.production.json
 echo 'delete files'
-sudo systemctl restart kestrel-shitleopard.service
+sudo systemctl restart shitleopard.service
 echo 'restarted'
-sudo systemctl status kestrel-shitleopard.service
+sudo systemctl status shitleopard.service
 sudo journalctl --since "1 minutes ago"

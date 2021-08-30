@@ -18,8 +18,11 @@ param(
 	[switch] $publishLocal,
     [Parameter(HelpMessage="Remote Compy")]
 	[switch] $pscp,
-	[Parameter(HelpMessage="console")]
-	[switch] $console
+	[Parameter(HelpMessage="run remote copy")]
+	[switch] $remoteCopy,
+	[Parameter(HelpMessage="deploy script")]
+	[switch] $deployScript
+
 
 
 
@@ -43,22 +46,20 @@ param(
  dotnet publish -c Release -o $source -r linux-x64
  }
 
+ if ($deployScript){
+	 bash -c "rsync -avzr -e \`"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\`" --progress /mnt/c/development/shitleopard/sl-deploy tulde23@camaro:/home/tulde23/sl-deploy"
+ }
 
  if( $pscp){
 
- if( $publishLocal -eq $True){
-		Write-Host ' pscp -unsafe -r $destination  tulde23@192.168.86.38:/home/tulde23/ubuntu';
-		pscp -P 22 -unsafe -r $destination tulde23@192.168.86.32:/home/tulde23/ubuntu 
-	}
-	else{
-		Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/ubuntu';
-		pscp -P 22 -unsafe -r $destination tulde23@shitleopard.com:/home/tulde23/ubuntu 
-	}
+	bash -c "rsync -avzr -e \`"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\`" --progress /mnt/c/development/shitleopard/src/ubuntu/ tulde23@camaro:/home/tulde23/shitleopard.com/"
+ 
  }
 
 
-if( $console){
- ssh gabbitos 
+if( $remoteCopy){
+	ssh tulde23@camaro "~/sl-deploy" -S
+
 }
  #sudo cp -Rf /home/tulde23/ubuntu/ubuntu /var/www/aspnetcore/shit_leopard/
  #sudo cp -Rf ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
