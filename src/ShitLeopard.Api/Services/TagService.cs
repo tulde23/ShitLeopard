@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
+using MongoDB.Entities;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Documents;
 
 namespace ShitLeopard.Api.Services
 {
-    public class TagService : BaseService, ITagService
+    public class TagService : ITagService
     {
-        public TagService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
+        private readonly IEntityContext _entityContext;
+
+        public TagService(IEntityContext entityContext)
         {
+            _entityContext = entityContext;
         }
 
         public async Task SaveTagAsync(TagsModel tags)
@@ -26,39 +29,31 @@ namespace ShitLeopard.Api.Services
                 return;
             }
 
-            using (var context = ContextProvider())
+            var existing = await FindByNameAndCategoryAsync(tags.Name, tags.Category);
+            if (existing == null)
             {
-                var existing = await (context.Tags.FirstOrDefaultAsync(x =>
-                   x.Category.Equals(tags.Category) &&
-                   x.Name.Equals(tags.Name)));
-                if (existing == null)
-                {
-                    var t = Mapper.Map<TagsModel, Tags>(tags);
-                    t.Frequency = 1;
-                    context.Tags.Add(t);
-                    await context.SaveChangesAsync();
-                }
-                else
+                var t = _entityContext.Mapper.Map<TagsDocument>(tags);
+                t.Frequency = 1;
+                await t.SaveAsync();
+                await SaveTagByAddressAsync(t.ID, tags.IpAddress, true);
+            }
+            else
+            {
+                if (!await TagExistsForIPAsync(existing.ID, tags.IpAddress))
                 {
                     existing.Frequency = existing.Frequency + 1;
-                    context.Tags.Update(existing);
-                    await context.SaveChangesAsync();
+                    await DB.Update<TagsDocument>().Match(x => x.Eq(f => f.ID, existing.ID)).Modify(x => x.Frequency, existing.Frequency++).ExecuteAsync();
+                    await SaveTagByAddressAsync(existing.ID, tags.IpAddress);
                 }
             }
         }
 
         public async Task RemoveAsync(TagsModel tags)
         {
-            using (var context = ContextProvider())
+            var existing = await FindByNameAndCategoryAsync(tags.Name, tags.Category);
+            if (existing != null)
             {
-                var existing = await (context.Tags.Where(x =>
-                    x.Category.Equals(tags.Category, StringComparison.OrdinalIgnoreCase) &&
-                    x.Name.Equals(tags.Name, StringComparison.OrdinalIgnoreCase)).FirstOrDefaultAsync());
-                if (existing != null)
-                {
-                    context.Tags.Remove(existing);
-                    await context.SaveChangesAsync();
-                }
+                await DB.DeleteAsync<TagsDocument>(existing.ID);
             }
         }
 
@@ -68,15 +63,15 @@ namespace ShitLeopard.Api.Services
             {
                 return Enumerable.Empty<TagsModel>();
             }
-            using (var context = ContextProvider())
-            {
-                var query = from t in context.Tags select t;
-                query = query.Where(x => x.Category.Equals(category));
-                query = query.Where(x => !string.IsNullOrEmpty(x.Name));
 
-                query = query.OrderByDescending(x => x.Frequency);
-                return Mapper.MapCollection<TagsModel, Tags>(await (query.Take(count).ToListAsync()));
-            }
+            var query = from t in DB.Queryable<TagsDocument>() select t;
+
+            query = query.Where(x => x.Category.Equals(category));
+            query = query.Where(x => !string.IsNullOrEmpty(x.Name));
+            query = query.OrderByDescending(x => x.Frequency);
+
+            var results = await (query.Take(count).ToListAsync());
+            return _entityContext.Mapper.MapCollection<TagsModel, TagsDocument>(results);
         }
 
         public async Task<IEnumerable<TagsModel>> SearchAsync(string category, string name)
@@ -86,33 +81,66 @@ namespace ShitLeopard.Api.Services
                 return Enumerable.Empty<TagsModel>();
             }
 
-            using (var context = ContextProvider())
+            var query = from t in DB.Queryable<TagsDocument>() select t;
+            query = query.Where(x => x.Category.Equals(category));
+            if (!string.IsNullOrEmpty(name))
             {
-                var query = from t in context.Tags select t;
-                query = query.Where(x => x.Category.Equals(category));
-                if (!string.IsNullOrEmpty(name))
-                {
-                    query = query.Where(x => x.Name.StartsWith(name));
-                }
-                query = query.OrderByDescending(x => x.Frequency);
-                return Mapper.MapCollection<TagsModel, Tags>(await (query.ToListAsync()));
+                query = query.Where(x => x.Name.StartsWith(name));
             }
+            query = query.OrderByDescending(x => x.Frequency);
+
+            return _entityContext.Mapper.MapCollection<TagsModel, TagsDocument>(await (query.ToListAsync()));
         }
 
         public async Task<IEnumerable<string>> SearchCategoriesAsync(string term = null)
         {
-            using (var context = ContextProvider())
+            if (!string.IsNullOrEmpty(term))
             {
-                if (!string.IsNullOrEmpty(term))
-                {
-                    return await (context.Tags.Where(x =>
-                        x.Category.StartsWith(term, StringComparison.OrdinalIgnoreCase)).Select(x => x.Category).Distinct().ToListAsync());
-                }
-                else
-                {
-                    return await (context.Tags.Select(x => x.Category).Distinct().ToListAsync());
-                }
+                var results = await DB.Collection<TagsDocument>().Find(Builders<TagsDocument>.Filter.Text(term, new TextSearchOptions { CaseSensitive = true })).Project(x => x.Category).ToListAsync();
+                return results;
             }
+            else
+            {
+                var results = await DB.Collection<TagsDocument>().Distinct(x => x.Category, Builders<TagsDocument>.Filter.Text(term, new TextSearchOptions { CaseSensitive = true })).ToListAsync();
+                return results;
+            }
+        }
+
+        private async Task<TagsDocument> FindByNameAndCategoryAsync(string name, string category)
+        {
+            var query = from t in DB.Queryable<TagsDocument>()
+                        where t.Name == name && t.Category == category
+                        select t;
+            return await query.FirstOrDefaultAsync();
+        }
+
+        private async Task<bool> TagExistsForIPAsync(string tagId, string ipAddress)
+        {
+            var query = from t in DB.Queryable<TagsByAddressDocument>()
+                        where t.TagId == tagId && t.IPAddresses.Contains(ipAddress)
+                        select t.TagId;
+            var result = await query.FirstOrDefaultAsync();
+            return !string.IsNullOrEmpty(result);
+        }
+
+        private async Task SaveTagByAddressAsync(string tagId, string ipAddress, bool insert = false)
+        {
+            if (insert)
+            {
+                await new TagsByAddressDocument
+                {
+                    TagId = tagId,
+                    IPAddresses = new List<string>()
+                      {
+                         ipAddress
+                      }
+                }.SaveAsync();
+                return;
+             }
+
+            var filter = Builders<TagsByAddressDocument>.Filter.Eq(x => x.TagId, tagId);
+            var update = Builders<TagsByAddressDocument>.Update.Push<string>(e => e.IPAddresses, ipAddress);
+            await DB.Collection<TagsByAddressDocument>().FindOneAndUpdateAsync(filter, update);
         }
     }
 }

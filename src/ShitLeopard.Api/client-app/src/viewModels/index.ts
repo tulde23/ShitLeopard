@@ -7,3 +7,4 @@ export * from './ScriptWord';
 export * from './EpisodeGroup';
 export * from './Quote';
 export * from './Tag';
+export * from './DialogModel';

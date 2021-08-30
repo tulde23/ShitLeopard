@@ -1,7 +1,13 @@
 using System;
+using System.Diagnostics;
+using App.Metrics;
+using App.Metrics.AspNetCore;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using OpenTelemetry;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
 using Serilog.Events;
 using ShitLeopard.Api;
@@ -12,12 +18,15 @@ namespace ShitLeopard
     {
         public static int Main(string[] args)
         {
+
+            Activity.DefaultIdFormat = ActivityIdFormat.W3C;
+            Activity.ForceDefaultIdFormat = true;
+
             Log.Logger = new LoggerConfiguration()
            .MinimumLevel.Debug()
            .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
            .Enrich.FromLogContext()
            .WriteTo.Console()
-              .WriteTo.File("ShitLeopardSpots.txt", rollingInterval: RollingInterval.Day)
            .CreateLogger();
 
             try
@@ -39,12 +48,23 @@ namespace ShitLeopard
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .UseMetrics()
+            .UseMetricsWebTracking(c=> { c.ApdexTrackingEnabled = true; c.ApdexTSeconds = 5; })
+             .ConfigureMetricsWithDefaults(
+                builder =>
+                {
+                    builder.Report.ToInfluxDb("http://192.168.86.32:8086", "shitleopard");
+                })
 
             .UseServiceProviderFactory(new AutofacServiceProviderFactory(cb => AutoFacRegistrationModule.Build(cb)))
-                .ConfigureWebHostDefaults(webBuilder =>
+             .ConfigureLogging((context, builder) =>
+             {
+                
+             })
+            .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).UseSerilog(); 
+                });
     }
 
     public class Rootobject

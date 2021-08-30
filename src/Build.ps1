@@ -17,7 +17,12 @@ param(
     [Parameter(HelpMessage="Publish Local")]
 	[switch] $publishLocal,
     [Parameter(HelpMessage="Remote Compy")]
-	[switch] $pscp
+	[switch] $pscp,
+	[Parameter(HelpMessage="run remote copy")]
+	[switch] $remoteCopy,
+	[Parameter(HelpMessage="deploy script")]
+	[switch] $deployScript
+
 
 
 
@@ -26,10 +31,7 @@ param(
  
  
  
- if( $buildVue -eq $True){
- Write-Host 'npm run build'
-  npm run build
- }
+
  
  
  $publish = "$PSScriptRoot\ubuntu"
@@ -44,17 +46,24 @@ param(
  dotnet publish -c Release -o $source -r linux-x64
  }
 
+ if ($deployScript){
+	 bash -c "rsync -avzr -e \`"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\`" --progress /mnt/c/development/shitleopard/sl-deploy tulde23@camaro:/home/tulde23/sl-deploy"
+ }
 
  if( $pscp){
 
- if( $publishLocal -eq $True){
- Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@192.168.1.96:/home/tulde23/sl';
- pscp -unsafe -r $destination tulde23@192.168.1.96:/home/tulde23/sl
+	bash -c "rsync -avzr -e \`"ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\`" --progress /mnt/c/development/shitleopard/src/ubuntu/ tulde23@camaro:/home/tulde23/shitleopard.com/"
+ 
  }
- else{
- Write-Host ' pscp -unsafe -r .\ubuntu\*.* tulde23@tully.world:/home/tulde23/sl';
- pscp -unsafe -r $destination tulde23@tully.world:/home/tulde23/sl
- }
- }
- #sudo cp -RT sl/ubuntu /var/aspnetcore/shit_leopard
- #sudo systemctl restart kestrel-shit-leopard.service
+
+
+if( $remoteCopy){
+	ssh tulde23@camaro "~/sl-deploy" -S
+
+}
+ #sudo cp -Rf /home/tulde23/ubuntu/ubuntu /var/www/aspnetcore/shit_leopard/
+ #sudo cp -Rf ubuntu/ /var/www/aspnetcore/shit_leopard/ubuntu/
+  #sudo systemctl restart kestrel-shitleopard.service
+  #sudo systemctl restart kestrel-shitleopard.service
+  #$ journalctl --since "1 minute ago"
+

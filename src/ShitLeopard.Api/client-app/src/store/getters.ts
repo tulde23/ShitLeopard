@@ -1,11 +1,13 @@
+import { ShowModel } from '@/models';
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
+  DialogModel,
   Episode,
   EpisodeGroup,
   Quote,
   ScriptLine,
-  Tag
+  Tag,
 } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
@@ -14,6 +16,7 @@ import { State } from './state';
 
 const getters = {
   isBusy: (state: State): boolean => state.isBusy,
+  isOpen: (state: State): boolean => state.isOpen,
   selectedEpisode: (state: State): Episode => state.episode,
   episodes: (state: State): Episode[] => state.episodes,
   answer: (state: State): string => state.answer,
@@ -23,7 +26,15 @@ const getters = {
   groupedEpisodes: (state: State): EpisodeGroup[] => state.groupedEpisodes,
   tags: (state: State): Tag[] => state.tags,
   siteMetrics: (state: State): PagedResult<SiteMetric> => state.siteMetrics,
-  questionAnswer: (state: State): QuestionAnswer => state.questionAnswer
+  questionAnswer: (state: State): QuestionAnswer => state.questionAnswer,
+  selectedDialog: (state: State): DialogModel => state.selectedDialog,
+  dialogLines: (state: State): DialogModel[] => state.dialogLines,
+  highlightedText: (state: State): string[] => state.highlightedText,
+  adjacentText: (state: State): DialogModel[] => state.adjacentText,
+  shows: (state: State): ShowModel[] => state.shows,
+  showIndex: (state: State): number => state.showIndex,
+  textMap: (state: State): Map<string, DialogModel[]> => state.textMap,
+  question: (state: State): string => state.question,
 };
 
 export default getters;

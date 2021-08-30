@@ -1,15 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.2" />
+    <Compile Remove="Contracts\**" />
+    <EmbeddedResource Remove="Contracts\**" />
+    <None Remove="Contracts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Contracts\IConnectionStringProvider.cs" />
+    <Compile Include="Contracts\IEntityContext.cs" />
+    <Compile Include="Contracts\IEpisodeService.cs" />
+    <Compile Include="Contracts\IRequestProfileService.cs" />
+    <Compile Include="Contracts\ISearchService.cs" />
+    <Compile Include="Contracts\IShowService.cs" />
+    <Compile Include="Contracts\ITagService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
+    <PackageReference Include="MongoDB.Entities" Version="20.20.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
- 
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+
   </ItemGroup>
 
 </Project>

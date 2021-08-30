@@ -4,7 +4,7 @@ namespace ShitLeopard.Common.Models
 {
     public class SiteMetricsModel
     {
-        public long Id { get; set; }
+        public string ID { get; set; }
         public object Headers { get; set; }
 
         public string Ipaddress { get; set; }
@@ -13,5 +13,7 @@ namespace ShitLeopard.Common.Models
 
         public string Route { get; set; }
         public DateTime? LastAccessTime { get; set; }
+
+        public string Body { get; set; }
     }
 }

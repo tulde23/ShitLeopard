@@ -14,9 +14,9 @@ namespace Microsoft.AspNetCore.Builder
     public static class VueHelper
     {
         // default port number of 'npm run serve'
-        private static int Port { get; } = 8080;
+        private static int Port { get; } = 8081;
         private static Uri DevelopmentServerEndpoint { get; } = new Uri($"http://localhost:{Port}");
-        private static TimeSpan Timeout { get; } = TimeSpan.FromSeconds(30);
+        private static TimeSpan Timeout { get; } = TimeSpan.FromSeconds(45);
         // done message of 'npm run serve' command.
         private static string DoneMessage { get; } = "DONE  Compiled successfully in";
 

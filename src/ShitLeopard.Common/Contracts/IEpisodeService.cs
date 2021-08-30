@@ -13,7 +13,7 @@ namespace ShitLeopard.Api.Contracts
         /// Gets the episodes.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<EpisodeModel>> GetEpisodes();
+        Task<IEnumerable<EpisodeModel>> GetEpisodes(string showId, string pattern=null);
         /// <summary>
         /// Gets the episode.
         /// </summary>

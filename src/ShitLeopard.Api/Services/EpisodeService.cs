@@ -1,40 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using MongoDB.Entities;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Documents;
 
 namespace ShitLeopard.Api.Services
 {
-    public class EpisodeService : BaseService, IEpisodeService
+    public class EpisodeService : IEpisodeService
     {
-        public EpisodeService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
+        private readonly IEntityContext _entityContext;
+
+        public EpisodeService(IEntityContext entityContext)
         {
+            _entityContext = entityContext;
         }
 
         public async Task<EpisodeModel> GetEpisode(long episodeId)
         {
-            using (var context = ContextProvider())
-            {
-
-
-                return Mapper.Map<EpisodeModel>(await context.Episode.AsNoTracking()
-                        .Include(x => x.Script)
-                        .ThenInclude(x => x.ScriptLine)
-                        .FirstOrDefaultAsync(x => x.Id == episodeId));
-            }
+            var episode = await DB.Find<EpisodeDocument>().Match(x => x.Eq(f => f.EpisodeNumber, episodeId)).ExecuteFirstAsync();
+            return _entityContext.Mapper.Map<EpisodeModel>(episode);
         }
 
-        public async Task<IEnumerable<EpisodeModel>> GetEpisodes()
+        public async Task<IEnumerable<EpisodeModel>> GetEpisodes(string showId, string pattern = null)
         {
-            using (var context = ContextProvider())
+            if (!string.IsNullOrEmpty(pattern))
             {
-                return Mapper.MapCollection<EpisodeModel, Episode>(await context.Episode.AsNoTracking().ToListAsync());
+                return _entityContext.Mapper.MapCollection<EpisodeModel, EpisodeDocument>((await DB.Find<EpisodeDocument>()
+
+              .Match(m=>m.Eq(f=>f.Show.ID, showId))
+              .Match(f => f.Text(pattern, new TextSearchOptions { CaseSensitive = false }))
+              .SortByTextScore()
+              .Sort(x=> x.Show.Title, Order.Ascending)
+              .Sort(x => x.SeasonId, Order.Ascending)
+               .Sort(x => x.EpisodeNumber, Order.Ascending)
+              .ExecuteAsync() ).SortByRelevance(pattern, x=>x.Title));
             }
+
+            return _entityContext.Mapper.MapCollection<EpisodeModel, EpisodeDocument>(await DB.Find<EpisodeDocument>()
+                    .Match(m => m.Eq(f => f.Show.ID, showId))
+             .Sort(x => x.Show.Title, Order.Ascending)
+              .Sort(x => x.SeasonId, Order.Ascending)
+               .Sort(x => x.EpisodeNumber, Order.Ascending)
+          .ExecuteAsync());
         }
     }
 }

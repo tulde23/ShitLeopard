@@ -2,7 +2,7 @@
   "profiles": {
     "ShitLeopard.DataLoader": {
       "commandName": "Project",
-      "commandLineArgs": "-a fuckoff"
+      "commandLineArgs": "-d \"C:\\Development\\ShitLeopard\\src\\ShitLeopard.DataLoader\\Data\"  -s all -x"
     }
   }
 }

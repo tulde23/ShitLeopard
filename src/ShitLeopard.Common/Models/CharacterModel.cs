@@ -4,7 +4,7 @@ namespace ShitLeopard.Api.Models
 {
     public class CharacterModel
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Aliases { get; set; }
         public string Notes { get; set; }

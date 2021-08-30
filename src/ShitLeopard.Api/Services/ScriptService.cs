@@ -1,72 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
 using ShitLeopard.Api.Contracts;
 using ShitLeopard.Api.Models;
-using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.Common.Contracts;
+using ShitLeopard.Common.Documents;
 
 namespace ShitLeopard.Api.Services
 {
     public class ScriptService : BaseService, IScriptService
     {
-        public ScriptService(ILoggerFactory loggerFactory, Func<ShitLeopardContext> contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
+        public ScriptService(ILoggerFactory loggerFactory, IMongoProvider contextProvider, IMapper mapper) : base(loggerFactory, contextProvider, mapper)
         {
         }
 
-        public async Task<ScriptModel> GetScript(long scriptId)
+        public async Task<ScriptModel> GetScriptAsync(long episodeId)
         {
-            using (var context = ContextProvider())
+            var collection = ContextProvider.GetLinesCollection();
+            var documents = await collection.Find(Builders<LineDocument>.Filter.Eq(x => x.EpisodeId, episodeId)).ToListAsync();
+
+            var sb = new StringBuilder();
+            foreach (var item in documents)
             {
-                return Mapper.Map<ScriptModel>(await context.Script.AsNoTracking()
-            .Include(x => x.Episode)
-            .Include(x => x.ScriptLine)
-            .ThenInclude(y => y.ScriptWord)
-            .SingleOrDefaultAsync(x => x.Id == scriptId));
+                sb.AppendLine(item.Body);
             }
+            return new ScriptModel
+            {
+                Body = sb.ToString(),
+                EpisodeId = episodeId
+            };
         }
 
-        public async Task<IEnumerable<ScriptLineModel>> GetScriptLines(long scriptId, bool? includeAll = null)
-        {
-            using (var context = ContextProvider())
-            {
-                return Mapper.MapCollection<ScriptLineModel, ScriptLine>(await context.ScriptLine.AsNoTracking().Where(x => x.ScriptId == scriptId).ToListAsync());
-            }
-        }
+      
 
-        public async Task<IEnumerable<ScriptWordModel>> GetScriptWords(long scriptLineId)
+        public async Task<IEnumerable<ScriptLineModel>> SearchScriptLinesAsync(string pattern)
         {
-            using (var context = ContextProvider())
+            var collection = ContextProvider.GetLinesCollection();
+            var filter = Builders<LineDocument>.Filter.Empty;
+            if (!string.IsNullOrEmpty(pattern))
             {
-                return Mapper.MapCollection<ScriptWordModel, ScriptWord>(await context.ScriptWord.AsNoTracking().Where(x => x.ScriptLineId == scriptLineId).ToListAsync());
+                filter = Builders<LineDocument>.Filter.Text(pattern, new TextSearchOptions { CaseSensitive = false });
             }
+            var results = await collection.Find(filter).ToListAsync();
+            return Mapper.MapCollection<ScriptLineModel, LineDocument>(results);
         }
 
         public async Task UpdateScriptLineAsync(ScriptLineModel model)
         {
-            using (var context = ContextProvider())
-            {
-                var item = await context.ScriptLine.FirstOrDefaultAsync(x => x.Id == model.Id);
+            var collection = ContextProvider.GetLinesCollection();
 
-                if (item != null)
-                {
-                    var existingLength = item.Body.Length - model.Body.Length;
-                    if( existingLength < 0)
-                    {
-                        existingLength = existingLength * -1;
-                    }
-                    if( !string.IsNullOrEmpty(model.Body) &&  existingLength <= 10)
-                    {
-                        item.Body = model.Body;
-                    }
-                    item.CharacterId = model.CharacterId;
-                    context.Update(item);
-                    await context.SaveChangesAsync();
-                }
-            }
+            var result = await collection.FindOneAndUpdateAsync(s => s.ID == model.Id,
+                 Builders<LineDocument>.Update
+                    .Set(x => x.Body, model.Body));
         }
     }
 }

@@ -4,6 +4,12 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class App extends Vue {
   public isErrorAvailable = false;
 
+  public get showIndex() {
+    return this.$store.getters.showIndex;
+  }
+  public get shows() {
+    return this.$store.getters.shows;
+  }
   public get busy() {
     return this.$store.getters.isBusy;
   }
@@ -19,8 +25,6 @@ export default class App extends Vue {
   public get authorizedRoutes() {
     return this.router.options.routes;
   }
-  created() {
-    // this.$vuetify.theme.dark = true;
-    console.log(this.authorizedRoutes);
-  }
+
+  created() {}
 }

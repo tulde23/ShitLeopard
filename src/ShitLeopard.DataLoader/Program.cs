@@ -41,7 +41,6 @@ namespace ShitLeopard.DataLoader
              {
                  services.AddSingleton(options);
                  services.AddSingleton(consoleApplication);
-                 services.AddTransient<ShitLeopardContext>();
                  services.AddHostedService<ConsoleService>();
              })
              .Build().RunAsync(consoleApplication.TokenSource.Token);

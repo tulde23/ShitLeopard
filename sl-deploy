@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Shitleopard deployment script.
+sudo rsync -avzr  --progress /home/tulde23/shitleopard.com/ /var/www/shitleopard.com/
+sudo rm /var/www/shitleopard.com/appsettings.Development.json
+sudo rm /var/www/shitleopard.com/appsettings.production.json
+echo 'delete files'
+sudo systemctl restart shitleopard.service
+echo 'restarted'
+sudo systemctl status shitleopard.service
+sudo journalctl --since "1 minutes ago"

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ShitLeopard.Api.Contracts;
-using ShitLeopard.Api.Filters;
 using ShitLeopard.Api.Models;
 using ShitLeopard.Common.Models;
 
@@ -14,7 +13,7 @@ namespace ShitLeopard.Api.Controllers
         {
         }
 
-        [InboundRequestInspectorFilter]
+        //    [InboundRequestInspectorFilter]
         [HttpPost]
         public async Task<QuestionAnswer> Ask([FromBody] Question question)
         {

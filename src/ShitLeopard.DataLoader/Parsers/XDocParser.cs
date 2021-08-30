@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
 using ShitLeopard.DataLayer.Entities;
+using ShitLeopard.DataLoader.Configuration;
 using ShitLeopard.DataLoader.Contracts;
 
 namespace ShitLeopard.DataLoader.Parsers
@@ -16,23 +17,26 @@ namespace ShitLeopard.DataLoader.Parsers
     {
         private readonly Options _options;
         private readonly ILogger<XDocParser> _logger;
-
+        private readonly IConsoleLogger _consoleLogger;
         private readonly List<XNamespace> _ns = new List<XNamespace>()
         {
           "http://www.w3.org/2006/10/ttaf1",
             "http://www.w3.org/ns/ttml"
         };
 
-        public XDocParser(Options options, ILogger<XDocParser> logger)
+        public XDocParser(Options options, ILogger<XDocParser> logger, IConsoleLogger consoleLogger)
         {
             _options = options;
             _logger = logger;
+            _consoleLogger = consoleLogger;
         }
 
-        public Task<IEnumerable<Season>> GetSeasonsAsync(DirectoryInfo directoryInfo)
+        public Task<IEnumerable<Season>> GetSeasonsAsync(ShowConfiguration showConfiguration)
         {
-            XNamespace tt = "http://www.w3.org/2006/10/ttaf1";
-            var documents = directoryInfo.GetFiles("*.html", SearchOption.AllDirectories);
+            var rootDir = new DirectoryInfo(showConfiguration.RootFolder);
+
+            var directoryInfo = new DirectoryInfo(Path.Combine(rootDir.FullName, showConfiguration.ClosedCaptionsPath));
+            var documents = directoryInfo.GetFiles($"*{showConfiguration.ClosedCaptionsFileExtension}", SearchOption.AllDirectories);
             var seasons = new List<Season>();
             int episodeCount = 1;
             int lineCounter = 1;
@@ -42,7 +46,7 @@ namespace ShitLeopard.DataLoader.Parsers
             {
                 //first level directory will be the season
                 var season = document.Key;
-                Console.WriteLine($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
+                _consoleLogger.Write($"Processing Season: {season}.  Contains {document.Count()} closed caption files.");
                 var seasonEntity = new Season
                 {
                     Id = int.Parse(document.Key.Replace("s", string.Empty)),
@@ -52,14 +56,13 @@ namespace ShitLeopard.DataLoader.Parsers
                 seasons.Add(seasonEntity);
                 foreach (var closedCaptionFile in document)
                 {
-                   
                     var episode = new Episode()
                     {
                         Id = episodeCount++,
                         SeasonId = seasonEntity.Id,
                         Title = string.Empty
                     };
-                   
+
                     seasonEntity.Episode.Add(episode);
                     var doc = XDocument.Load(closedCaptionFile.FullName);
 
@@ -76,21 +79,20 @@ namespace ShitLeopard.DataLoader.Parsers
                     node.Season = seasonEntity.Id;
                     node.Episode = episode.Id;
                     var scriptBuilder = new StringBuilder();
-                    var lines = new List<string>();
+                    var lines = new List<Paragraph>();
                     if (node?.Node == null)
                     {
-                        Console.WriteLine("no root node");
+                        _consoleLogger.Write("no root node");
                         continue;
                     }
                     try
                     {
                         var root = NextParagrah(node);
-                   
+
                         while ((root = NextParagrah(root)) != null)
                         {
-                           
                             scriptBuilder.AppendLine(root.Text);
-                            lines.Add(root.Text);
+                            lines.Add(root);
                             root = root.NextNode;
                         }
                         episode.Script = new List<Script>()
@@ -102,10 +104,12 @@ namespace ShitLeopard.DataLoader.Parsers
                                   EpisodeId = episode.Id,
                                   ScriptLine = lines.Select( s=> new ScriptLine
                                   {
-                                      Id= lineCounter,
-                                       Body = s,
+                                      Id= lineCounter++,
+                                       Body = s.Text,
+                                       End = s.EndLocation,
+                                       Start = s.StartLocation,
                                        ScriptId = scriptCounter,
-                                        ScriptWord = GetWordsFromLine(s,lineCounter++, ref wordCounter)
+                                       Offset = s.Offset ?? 0
                                   }).ToList()
                             }
                         };
@@ -113,10 +117,10 @@ namespace ShitLeopard.DataLoader.Parsers
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.StackTrace);
+                        _consoleLogger.Write(ex.StackTrace);
                     }
 
-                    Console.WriteLine($"\tEpisode {episode.Id} has  {episode.Script?.FirstOrDefault()?.ScriptLine?.Count} Lines.");
+                    _consoleLogger.Write($"\tEpisode {episode.Id} has  {episode.Script?.FirstOrDefault()?.ScriptLine?.Count} Lines.");
                 }
             }
 
@@ -161,7 +165,6 @@ namespace ShitLeopard.DataLoader.Parsers
         private Paragraph NextParagrah(Paragraph node)
         {
             Paragraph p = node;
-          
 
             if (p?.Name?.Equals("p") == true)
             {
@@ -208,6 +211,11 @@ namespace ShitLeopard.DataLoader.Parsers
             public long Season { get; set; }
             public long Episode { get; set; }
             public string EndLocation { get; set; }
+
+            public string StartLocation { get; set; }
+
+            public int? Offset { get; set; } = 0;
+
             public Paragraph(XNode element)
             {
                 Node = element;
@@ -220,13 +228,27 @@ namespace ShitLeopard.DataLoader.Parsers
                           .Replace("-", string.Empty)
                           .Replace("\n", string.Empty);
                 var text = sb.ToString().Trim();
+
                 text = Regex.Replace(text, @"(\[(.+)\])+", string.Empty);
-                Text = Regex.Replace(text, @"(\s{1,})", " ").ToUpper();
+                text = Regex.Replace(text, @"(\s{1,})", " ").ToLower();
+                if (text.Length > 1)
+                {
+                    sb = new StringBuilder(text);
+                    sb[0] = char.ToUpper(sb[0]);
+                    Text = sb.ToString();
+                }
+                else
+                {
+                    Text = text;
+                }
+
                 if (!string.IsNullOrEmpty(Text))
                 {
                     EndsWithPunctuation = EndsWith(Text);
                 }
                 EndLocation = e.Attribute("end")?.Value;
+                StartLocation = e.Attribute("begin")?.Value;
+                Offset = Offset + Text.Length;
             }
 
             public Paragraph(Paragraph paragraph)
@@ -237,6 +259,7 @@ namespace ShitLeopard.DataLoader.Parsers
                 Episode = paragraph?.Episode ?? 0;
                 Paragraph next = paragraph;
                 Text = paragraph?.Text;
+                Offset += paragraph?.Offset;
                 var sb = new StringBuilder(" ");
                 sb.Append(Text);
                 while ((next = next?.NextNode) != null)

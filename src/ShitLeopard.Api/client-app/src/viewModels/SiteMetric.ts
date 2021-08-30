@@ -5,6 +5,7 @@ export class SiteMetric {
     public ipaddress?: string,
     public agentString?: string,
     public route?: string,
-    public lastAccessTime?: string
+    public lastAccessTime?: string,
+    public body?: string
   ) {}
 }

@@ -17,12 +17,12 @@ namespace ShitLeopard.Api.Controllers
         /// Retrieves all Episodes.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{scriptId:long}")]
+        [HttpGet("{episodeId:long}")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(ScriptModel))]
-        public async Task<ScriptModel> GetScript(long scriptId)
+        public async Task<ScriptModel> GetScript(long episodeId)
         {
-            return await Service.GetScript(scriptId);
+            return await Service.GetScriptAsync(episodeId);
         }
 
         /// <summary>
@@ -31,12 +31,12 @@ namespace ShitLeopard.Api.Controllers
         /// <param name="scriptId">The script identifier.</param>
         /// <param name="includeAll">The include all.</param>
         /// <returns></returns>
-        [HttpGet("Lines/{scriptId:long}")]
+        [HttpGet("Lines")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(ScriptLineModel))]
-        public async Task<IEnumerable<ScriptLineModel>> GetScriptLineModels([FromRoute] long scriptId, [FromQuery] bool? includeAll = null)
+        public async Task<IEnumerable<ScriptLineModel>> GetScriptLineModels([FromQuery] string pattern = null)
         {
-            return await Service.GetScriptLines(scriptId, includeAll);
+            return await Service.SearchScriptLinesAsync(pattern);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ShitLeopard.Api.Controllers
         [ProducesResponseType(200, Type = typeof(ScriptWordModel))]
         public async Task<IEnumerable<ScriptWordModel>> GetScriptWords(long scriptLineId)
         {
-            return await Service.GetScriptWords(scriptLineId);
+            return await Service.GetScriptWordsForLineAsync(scriptLineId);
         }
 
         /// <summary>

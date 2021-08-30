@@ -1,11 +1,13 @@
+import { ShowModel } from '@/models';
 import { PagedResult } from '@/models/PagedResult';
 import {
   Character,
+  DialogModel,
   Episode,
   EpisodeGroup,
   Quote,
   ScriptLine,
-  Tag
+  Tag,
 } from '@/viewModels';
 import { QuestionAnswer } from '@/viewModels/QuestionAnswer';
 import { SiteMetric } from '@/viewModels/SiteMetric';
@@ -57,7 +59,37 @@ const mutations = {
   },
   [ACTIONS.SET_METRICS](state: State, e: PagedResult<SiteMetric>) {
     state.siteMetrics = e;
-  }
+  },
+  [ACTIONS.SET_DIALOG_LINES](state: State, e: DialogModel[]) {
+    state.dialogLines = e;
+  },
+  [ACTIONS.SET_SELECTED_DIALOG](state: State, e: DialogModel) {
+    state.selectedDialog = e;
+  },
+  [ACTIONS.SET_IS_OPEN](state: State, e: boolean) {
+    state.isOpen = e;
+  },
+  [ACTIONS.SET_HIGHLIGHTED_TEXT](state: State, e: string[]) {
+    state.highlightedText = e;
+  },
+  [ACTIONS.SET_ADJACENT_TEXT](state: State, e: DialogModel[]) {
+    state.adjacentText = e;
+  },
+  [ACTIONS.SET_SHOWS](state: State, e: ShowModel[]) {
+    state.shows = e;
+  },
+  [ACTIONS.SET_SHOW_INDEX](state: State, e: number) {
+    state.showIndex = e;
+  },
+  [ACTIONS.SET_TEXT_MAP](state: State, e: Map<string, DialogModel[]>) {
+    state.textMap = e;
+  },
+  [ACTIONS.SET_TEXT_ENTRY](state: State, e: { id: string; value: DialogModel[] }) {
+    state.textMap.set(e.id, e.value);
+  },
+  [ACTIONS.SET_QUESTION_](state: State, e: string) {
+    state.question = e;
+  },
 };
 
 export default mutations;

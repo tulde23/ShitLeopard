@@ -7,13 +7,21 @@ namespace ShitLeopard.Api.Contracts
 {
     public interface ISearchService
     {
-        Task<IEnumerable<ScriptLineModel>> SearchScriptLinesAsync(Question question);
+        Task<IEnumerable<DialogModel>> SearchScriptLinesAsync(Question question);
 
         /// <summary>
         /// Finds the random single quote.
         /// </summary>
         /// <returns></returns>
-        Task<ScriptLineModel> FindRandomSingleQuoteAsync();
+        Task<DialogModel> FindRandomSingleQuoteAsync();
+
+
+        /// <summary>
+        /// Finds the quotes asynchronous.
+        /// </summary>
+        /// <param name="question">The question.</param>
+        /// <returns></returns>
+        Task<IEnumerable<QuoteModel>> FindQuotesAsync(Question question);
 
 
         /// <summary>
@@ -22,5 +30,13 @@ namespace ShitLeopard.Api.Contracts
         /// <param name="question">The question.</param>
         /// <returns></returns>
         Task<QuestionAnswer> AskQuestionAsync(Question question);
+
+        /// <summary>
+        /// Gets the adjacent dialog text by distance.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns></returns>
+        Task<IEnumerable<DialogModel>> GetAdjacentDialogTextAsync(string id, int distance);
     }
 }

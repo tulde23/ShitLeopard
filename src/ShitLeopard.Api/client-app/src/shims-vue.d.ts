@@ -1,11 +1,17 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import { DataService, Helper, HttpService } from '@/services';
+import { MetricService } from './services/metric.service';
+import { SearchService } from './services/search.service';
+import { EpisodeService } from './services/episode.service';
+import { SeasonService } from './services/season.service';
+import { ShowService } from './services/show.service';
 
 declare module '*.vue' {
   import Vue from 'vue';
   export default Vue;
 }
+
 // 2. Specify a file with the types you want to augment
 //    Vue has the constructor type in types/vue.d.ts
 declare module 'vue/types/vue' {
@@ -14,5 +20,10 @@ declare module 'vue/types/vue' {
     $helper: Helper;
     $http: HttpService;
     $api: DataService;
+    $metrics: MetricService;
+    $search: SearchService;
+    $episodes: EpisodeService;
+    $seasons: SeasonService;
+    $shows: ShowService;
   }
 }
