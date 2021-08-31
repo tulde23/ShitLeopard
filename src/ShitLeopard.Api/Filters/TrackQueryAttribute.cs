@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -11,31 +12,31 @@ using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Filters
 {
-    public class TagAttribute : Attribute, IFilterFactory
+    public class TrackQueryAttribute : Attribute, IFilterFactory
     {
         public bool IsReusable => false;
 
         public string Key { get; }
 
-        public TagAttribute(string key)
+        public TrackQueryAttribute(string key)
         {
             Key = key;
         }
 
         public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
         {
-            var service = serviceProvider.GetService<IRequestProfileService>();
+            var service = serviceProvider.GetService<ITrackedQueryService>();
             var tag = serviceProvider.GetService<ITagService>();
             return new AsyncFilter(service, tag, Key);
         }
 
         internal class AsyncFilter : IAsyncActionFilter
         {
-            private readonly IRequestProfileService _requestProfileService;
+            private readonly ITrackedQueryService _requestProfileService;
             private readonly ITagService _tagService;
             private readonly string _key;
 
-            public AsyncFilter(IRequestProfileService requestProfileService, ITagService tagService, string key)
+            public AsyncFilter(ITrackedQueryService requestProfileService, ITagService tagService, string key)
             {
                 _requestProfileService = requestProfileService;
                 _tagService = tagService;
@@ -44,7 +45,7 @@ namespace ShitLeopard.Api.Filters
 
             public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
             {
-                var model = new RequestProfileModel();
+                var model = new TrackedQueryModel();
                 var headers = context.HttpContext.Request.Headers;
                 var question = context.ActionArguments[_key] as Question;
                 if( question?.Text?.Length <= 3)
@@ -65,19 +66,14 @@ namespace ShitLeopard.Api.Filters
 
                 model.Ipaddress = context.HttpContext.Connection.RemoteIpAddress.ToString();
                 model.LastAccessTime = DateTime.UtcNow;
-                model.Headers = JsonConvert.SerializeObject(context.HttpContext.Request.Headers, Formatting.Indented);
-                model.Route = $"{context.HttpContext.Request.Method}:  {context.HttpContext.Request.Path}";
-                if (context.ActionArguments != null)
+                model.Headers = new Dictionary<string, object>();
+                foreach ( var item in context.HttpContext.Request.Headers)
                 {
-                   var body = JsonConvert.SerializeObject(context.ActionArguments, Formatting.Indented);
-                    if (body.Length > 255)
-                    {
-                        context.Result = new BadRequestResult();
-
-                        return;
-                    }
-                    model.Body = body;
+                    model.Headers.Add(item.Key, item.Value);
                 }
+               
+                model.Route = $"{context.HttpContext.Request.Method}:  {context.HttpContext.Request.Path}";
+                model.Query = question.Text;
 
                
                 await _requestProfileService.SaveAsync(model);

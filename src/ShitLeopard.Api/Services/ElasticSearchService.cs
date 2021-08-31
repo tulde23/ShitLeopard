@@ -21,12 +21,12 @@ namespace ShitLeopard.Api.Services
 
         public async Task<IEnumerable<QuoteModel>> FindQuotesAsync(Question question)
         {
-            var limit = question.Limit <= 0 || question.Limit > 500 ? 500 : question.Limit;
+            var limit = question.Limit <= 0 || question.Limit > 100 ? 100 : question.Limit;
 
-            var pattern = question.FormatText();
             var searchResults = await this._elasticSearchConnectionProvider.Client.SearchAsync<EpisodeDocument>(
                 s => s
 
+                .Size(limit)
                         .Query(q => q
                             .MatchPhrase(m => m
                                 .Field(f => f.Body)

@@ -7,9 +7,9 @@ using ShitLeopard.Common.Models;
 
 namespace ShitLeopard.Api.Controllers
 {
-    public class SiteMetricsController : ServiceController<IRequestProfileService>
+    public class SiteMetricsController : ServiceController<ITrackedQueryService>
     {
-        public SiteMetricsController(ILoggerFactory loggerFactory, IRequestProfileService service) : base(loggerFactory, service)
+        public SiteMetricsController(ILoggerFactory loggerFactory, ITrackedQueryService service) : base(loggerFactory, service)
         {
         }
 
@@ -17,7 +17,7 @@ namespace ShitLeopard.Api.Controllers
         [Consumes("application/json")]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(PagedResult<SiteMetricsModel>))]
-        public async Task<PagedResult<SiteMetricsModel>> Search([FromBody]RequestProfileSearchCommand command)
+        public async Task<PagedResult<SiteMetricsModel>> Search([FromBody]TrackedQuerySearchCommand command)
         {
             return await Service.SearchAsync(command);
         }

@@ -7,21 +7,21 @@ namespace ShitLeopard.Common.Contracts
     /// <summary>
     ///
     /// </summary>
-    public interface IRequestProfileService
+    public interface ITrackedQueryService
     {
         /// <summary>
         /// Saves the asynchronous.
         /// </summary>
         /// <param name="requestProfileModel">The request profile model.</param>
         /// <returns></returns>
-        Task SaveAsync(RequestProfileModel requestProfileModel);
+        Task SaveAsync(TrackedQueryModel requestProfileModel);
 
         /// <summary>
         /// Searches the asynchronous.
         /// </summary>
         /// <param name="command">The command.</param>
         /// <returns></returns>
-        Task<PagedResult<SiteMetricsModel>> SearchAsync(RequestProfileSearchCommand command);
+        Task<PagedResult<SiteMetricsModel>> SearchAsync(TrackedQuerySearchCommand command);
 
 
     }

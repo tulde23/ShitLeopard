@@ -21,6 +21,8 @@ namespace ShitLeopard.Common.Providers
             .DefaultMappingFor<EpisodeDocument>(d=> d.IndexName("episodes"))
              .DefaultMappingFor<ShowDocument>(d => d.IndexName("shows"))
               .DefaultMappingFor<SeasonDocument>(d => d.IndexName("seasons"))
+               .DefaultMappingFor<TagsDocument>(d => d.IndexName("tags"))
+                .DefaultMappingFor<TrackedQueryDocument>(d => d.IndexName("tracked_queries"))
              .RequestTimeout(TimeSpan.FromMinutes(2));
             //ConnectionSettings.DefaultMappingFor<TDocument>()
             Client = new ElasticClient(settings);

@@ -15,7 +15,7 @@
     <Compile Include="Contracts\IElasticSearchConnectionProvider.cs" />
     <Compile Include="Contracts\IEntityContext.cs" />
     <Compile Include="Contracts\IEpisodeService.cs" />
-    <Compile Include="Contracts\IRequestProfileService.cs" />
+    <Compile Include="Contracts\ITrackedQueryService.cs" />
     <Compile Include="Contracts\ISearchService.cs" />
     <Compile Include="Contracts\IShowService.cs" />
     <Compile Include="Contracts\ITagService.cs" />

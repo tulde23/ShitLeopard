@@ -89,7 +89,7 @@
     <Compile Include="Controllers\TagsController.cs" />
     <Compile Include="Services\EntityContext.cs" />
     <Compile Include="Services\EpisodeService.cs" />
-    <Compile Include="Services\RequestProfileService.cs" />
+    <Compile Include="Services\TrackedQueryService.cs" />
     <Compile Include="Services\ElasticSearchService.cs" />
     <Compile Include="Services\ShowService.cs" />
     <Compile Include="Services\TagService.cs" />

@@ -9,7 +9,7 @@ namespace ShitLeopard.Api
     {
         public MappingProfile()
         {
-            //CreateMap<Tags, TagsModel>().ReverseMap();
+            CreateMap<TagsDocument, TagsModel>().ReverseMap();
             //CreateMap<Character, CharacterModel>().ReverseMap();
             //CreateMap<Episode, EpisodeModel>().ReverseMap();
             //CreateMap<Quote, QuoteModel>().ReverseMap();
@@ -17,8 +17,8 @@ namespace ShitLeopard.Api
             //CreateMap<Script, ScriptModel>().ReverseMap();
             //CreateMap<ScriptWord, ScriptWordModel>().ReverseMap();
             //CreateMap<Season, SeasonModel>().ReverseMap();
-            CreateMap<RequestProfileDocument, RequestProfileModel>().ReverseMap();
-            CreateMap<RequestProfileDocument, SiteMetricsModel>();
+            CreateMap<TrackedQueryDocument, TrackedQueryModel>().ReverseMap();
+            CreateMap<TrackedQueryDocument, SiteMetricsModel>();
             //       .ForMember(dest => dest.Headers, opts =>
             //       opts.MapFrom(src => JsonConvert.DeserializeObject(src.Headers ?? string.Empty)));
 

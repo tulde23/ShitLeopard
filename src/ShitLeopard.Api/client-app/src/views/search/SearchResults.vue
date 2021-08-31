@@ -62,7 +62,7 @@
                 class="white--text d-flex flex-1 align-self-stretch"
                 style="margin:0; padding:0"
               >
-                <i v-html="{ l }"> </i>
+                <i v-html="l"> </i>
               </p>
             </div>
             <a class="text-overline mb-4 " v-on:click="toggle(i)">

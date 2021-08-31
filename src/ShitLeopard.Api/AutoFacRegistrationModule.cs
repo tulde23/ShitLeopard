@@ -20,7 +20,7 @@ namespace ShitLeopard.Api
             builder.RegisterType<ElasticSearchService>().As<ISearchService>().InstancePerDependency();
             builder.RegisterType<EntityContext>().As<IEntityContext>().InstancePerDependency();
             //builder.RegisterType<SeasonService>().As<ISeasonService>().InstancePerDependency();
-            builder.RegisterType<RequestProfileService>().As<IRequestProfileService>().InstancePerDependency();
+            builder.RegisterType<TrackedQueryService>().As<ITrackedQueryService>().InstancePerDependency();
 
             builder.RegisterType<ElasticSearchConnectionProvider>().As<IElasticSearchConnectionProvider>().SingleInstance();
 

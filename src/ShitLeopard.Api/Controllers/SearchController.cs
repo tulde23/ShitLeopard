@@ -24,7 +24,7 @@ namespace ShitLeopard.Api.Controllers
         /// </summary>
         /// <param name="question">The question.</param>
         /// <returns></returns>
-        [Tag("question")]
+        [TrackQuery("question")]
         [HttpPost()]
         public async Task<IEnumerable<QuoteModel>> FindQuotes([FromBody] Question question)
         {
